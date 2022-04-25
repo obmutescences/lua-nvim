@@ -108,6 +108,17 @@ return require('packer').startup(function(use)
   use 'glepnir/oceanic-material'
   use 'sainnhe/everforest'
 
+  use({
+    "themercorp/themer.lua",
+    config = function()
+      require("themer").setup({
+        colorscheme = "everforest",
+        styles = {
+        },
+      })
+    end
+  })
+
 
 
   -- language packs

@@ -12,11 +12,11 @@ vim.g.background = "dark"
 vim.g.everforest_background = 'medium'
 vim.g.material_theme_style = "everforest"
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-    vim.notify("colorscheme " .. colorscheme .. " not found!")
-    return
-end
+-- local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+-- if not status_ok then
+--     vim.notify("colorscheme " .. colorscheme .. " not found!")
+--     return
+-- end
 
 -- eleline.vim
 vim.g.airline_powerline_fonts = "0"
