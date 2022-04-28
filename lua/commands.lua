@@ -56,7 +56,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " GitGutter
 autocmd BufWritePost * GitGutter
-
+"autocmd BufEnter * hi ColorColumn guibg=NONE ctermbg=NONE
 " Undotree
 let g:undotree_DiffAutoOpen = 1
 let g:undotree_SetFocusWhenToggle = 1
@@ -119,14 +119,14 @@ let g:rainbow_active = 1
 " ===
 " === vim-illuminate
 " ===
-let g:Illuminate_delay = 750
-hi illuminatedWord cterm=undercurl gui=undercurl
+let g:illuminate_delay = 750
+hi illuminatedword cterm=undercurl gui=undercurl
 
 
 " ===
 " === vim-rooter
 " ===
-let g:rooter_patterns = ['__vim_project_root', '.git/']
+let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod']
 
 
 

@@ -1,16 +1,25 @@
 -- Themes
 
--- Material
--- vim.g.material_style = 'oceanic'
--- vim.cmd [[colorscheme everforest]]
-local colorscheme = "everforest"
--- require "user.conf.github-nvim-theme"
+-- local colorscheme = "everforest"
 
 
 vim.g.termguicolors = true
 vim.g.background = "dark"
 vim.g.everforest_background = 'medium'
+vim.g.everforest_better_performance = 1
+vim.g.everforest_enable_italic = 1
+vim.g.everforest_disable_italic_comment = 1
+vim.g.everforest_cursor = "green"
+vim.g.everforest_transparent_background = 1
+vim.g.everforest_ui_contrast = "high"
+vim.g.everforest_diagnostic_text_highlight = 1
+vim.g.everforest_diagnostic_virtual_text = "colored"
+
 vim.g.material_theme_style = "everforest"
+
+
+vim.g.material_style = "everforest"
+-- vim.cmd [[colorscheme everforest]]
 
 -- local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 -- if not status_ok then

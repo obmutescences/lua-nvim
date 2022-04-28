@@ -1,3 +1,5 @@
 require "conf.treesitter"
 require "conf.cmp"
 require "conf.nvim-tree"
+require "conf.telescope"
+require "conf.truezen"

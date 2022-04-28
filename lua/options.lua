@@ -31,13 +31,13 @@ vim.o.tw           = 0
 vim.o.foldlevel    = 99
 vim.o.re           = 1
 vim.o.synmaxcol    = 128
-vim.wo.colorcolumn = '80'
+-- vim.wo.colorcolumn = '80'
 vim.o.viewoptions  = 'cursor,folds,slash,unix'
 vim.o.indentexpr   = ''
 vim.o.foldmethod   = 'indent'
 vim.o.inccommand   = 'split'
 vim.o.completeopt  = 'longest,noinsert,menuone,noselect,preview'
-vim.o.virtualedit  = 'block'
+-- vim.o.virtualedit  = 'block'
 vim.opt.formatoptions:remove('tc')
 vim.opt.shortmess:append('tc')
 
@@ -57,7 +57,6 @@ vim.g.floaterm_keymap_toggle = '<F12>'
 
 -- set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:b:cANSI
 -- vim.g.guifont = 'CodeNewRoman\\ Nerd\\ Font\\ Mono:h15:cANSI'
-
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_cursor_vfx_opacity = 800.0
@@ -69,6 +68,7 @@ vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_hide_mouse_when_typing = 1
 vim.g.neovide_floating_blur = 1
 vim.g.neovide_floating_opacity = 0.2
+-- vim.g.neovide_fullscreen= true
 
 -- lint: ale
 
@@ -80,3 +80,4 @@ vim.g.ale_set_highlights = 0
 
 -- rust
 vim.g.rustfmt_autosave = 1
+

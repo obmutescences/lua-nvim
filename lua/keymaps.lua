@@ -6,6 +6,8 @@ local vnoremap = Utils.vnoremap
 -- local xnoremap = Utils.xnoremap
 local inoremap = Utils.inoremap
 local cnoremap = Utils.cnoremap
+local vnoremap = Utils.vnoremap
+local cnoremap = Utils.cnoremap
 -- local tnoremap = Utils.tnoremap
 local nmap = Utils.nmap
 -- local xmap = Utils.xmap
@@ -15,27 +17,24 @@ vim.g.maplocalleader = " "
 
 
 -- Save & quit
-nnoremap("Q", ":q<CR>")
-nnoremap("<C-q>", ":q<CR>")
-nnoremap("S", ":w<CR>")
+nnoremap("Q", ":q<cr>")
+nnoremap("<c-q>", ":q<cr>")
+nnoremap("S", ":w<cr>")
 
--- Open Startify
-nnoremap("<LEADER>st", ":Startify<CR>")
 
--- Undo operations
+-- undo operations
 nnoremap("l", "u")
 
---Insert Key
+--insert key
 nnoremap("k", "i")
-nnoremap("k", "I")
 
--- make Y to copy till the end of the line
-nnoremap("Y", "y$")
+-- make y to copy till the end of the line
+nnoremap("y", "y$")
 
--- Copy to system clipboard
-vnoremap("Y", '"+y')
+-- copy to system clipboard
+vnoremap("y", '"+y')
 
--- Cursor Movement
+-- cursor movement
 nnoremap("u", "k")
 nnoremap("n", "h")
 nnoremap("e", "j")
@@ -44,6 +43,9 @@ nnoremap("gu", "gk")
 nnoremap("ge", "gj")
 nnoremap("U", "5k")
 nnoremap("E", "5j")
+vnoremap("i", "l")
+vnoremap("n", "h")
+vnoremap("u", "k")
 
 
 -- N key: go to the start of the line
@@ -81,7 +83,7 @@ cnoremap("<C-w>", "<S-Right>")
 nnoremap("<LEADER>w", "<C-w>w")
 nnoremap("<LEADER>u", "<C-w>k")
 nnoremap("<LEADER>e", "<C-w>j")
-nnoremap("<LEADER>n", "<C-w>h")
+-- nnoremap("<LEADER>n", "<C-w>h")
 nnoremap("<LEADER>i", "<C-w>l")
 
 --split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
@@ -109,12 +111,12 @@ nnoremap("\\s", ":%s//g<left><left>")
 nnoremap("r", ":call CompileRunGcc()<CR>")
 
 -- clap
-nnoremap("<C-i>", ":Clap filer<CR>")
+-- nnoremap("<C-i>", ":Clap filer<CR>")
 
 
 --Telescope
 nnoremap("<C-p>", ":Telescope find_files<CR>")
-nnoremap("<C-l>", ":Telescope current_buffer_fuzzy_find<CR>")
+nnoremap("<C-l>", ":Telescope live_grep<CR>")
 
 -- GitGutter
 nnoremap("<LEADER>gf", ":GitGutterFold<CR>")
@@ -137,8 +139,13 @@ nnoremap("<", "<<")
 nnoremap(">", ">>")
 
 -- goyo
-nmap('<LEADER>n', ':Goyo<CR>')
+-- nmap('<LEADER>n', ':TZAtaraxis<CR>')
+nmap('<LEADER>n', ':ZenMode<CR>')
+-- nmap('<LEADER>n', ':Goyo<CR>')
 
 
 -- nvim-tree
 nmap("tt", ":NvimTreeToggle<CR>")
+
+-- find and replace
+nnoremap("<LEADER>r", "<cmd>lua require('spectre').open()<CR>")

@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["TrueZen.nvim"] = {
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/TrueZen.nvim",
+    url = "https://github.com/Pocco81/TrueZen.nvim"
+  },
   ale = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/ale",
@@ -119,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/cmp-spell",
     url = "https://github.com/f3fora/cmp-spell"
   },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -134,15 +144,28 @@ _G.packer_plugins = {
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/far.vim",
     url = "https://github.com/brooth/far.vim"
   },
+  ["fidget.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0" },
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["goyo.vim"] = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/goyo.vim",
     url = "https://github.com/junegunn/goyo.vim"
   },
-  ["impatient.nvim"] = {
+  ["hlargs.nvim"] = {
+    config = { "\27LJ\2\nd\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\venable\1\0\1\ncolor\f#3b7960\nsetup\vhlargs\frequire\0" },
     loaded = true,
-    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/impatient.nvim",
-    url = "https://github.com/lewis6991/impatient.nvim"
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/hlargs.nvim",
+    url = "https://github.com/m-demare/hlargs.nvim"
+  },
+  ["hop.nvim"] = {
+    config = { "\27LJ\2\n¤\1\0\0\t\0\t\1\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0006\3\3\0009\3\4\0039\3\5\3'\5\6\0'\6\a\0'\a\b\0004\b\0\0B\3\5\0?\3\0\0B\0\2\1K\0\1\0-<cmd>lua require'hop'.hint_char1({})<cr>\6f\6n\20nvim_set_keymap\bapi\bvim\nsetup\bhop\frequire\3€€À™\4\0" },
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
   },
   indentLine = {
     loaded = true,
@@ -159,11 +182,22 @@ _G.packer_plugins = {
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
   },
+  ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\18init_lsp_saga\flspsaga\frequire\0" },
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.lualine\frequire\0" },
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
+  },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -180,6 +214,11 @@ _G.packer_plugins = {
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-spectre"] = {
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-spectre",
+    url = "https://github.com/windwp/nvim-spectre"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -189,6 +228,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -204,21 +253,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/oceanic-material",
     url = "https://github.com/glepnir/oceanic-material"
-  },
-  ["oceanic-next"] = {
-    loaded = true,
-    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/oceanic-next",
-    url = "https://github.com/mhartington/oceanic-next"
-  },
-  ["oceanic-next-color-scheme"] = {
-    loaded = true,
-    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/oceanic-next-color-scheme",
-    url = "https://github.com/voronianski/oceanic-next-color-scheme"
-  },
-  ["onedark.vim"] = {
-    loaded = true,
-    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/onedark.vim",
-    url = "https://github.com/joshdick/onedark.vim"
   },
   ["packer.nvim"] = {
     loaded = false,
@@ -246,20 +280,20 @@ _G.packer_plugins = {
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/semshi",
     url = "https://github.com/numirias/semshi"
   },
-  ["space-vim-dark"] = {
+  ["telescope-file-browser.nvim"] = {
     loaded = true,
-    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/space-vim-dark",
-    url = "https://github.com/liuchengxu/space-vim-dark"
-  },
-  ["space-vim-theme"] = {
-    loaded = true,
-    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/space-vim-theme",
-    url = "https://github.com/liuchengxu/space-vim-theme"
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope-ui-select.nvim"] = {
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/telescope-ui-select.nvim",
+    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -270,6 +304,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/terminus",
     url = "https://github.com/wincent/terminus"
+  },
+  ["themer.lua"] = {
+    config = { "\27LJ\2\nÉ\2\0\0\5\0\20\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\0035\4\t\0=\4\n\0035\4\v\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\0035\4\17\0=\4\18\3=\3\19\2B\0\2\1K\0\1\0\vstyles\fkeyword\1\0\1\afg\f#A7C080\19keywordBuiltIn\1\0\1\afg\f#A7C080\16conditional\1\0\1\afg\f#A7C080\20functionBuiltIn\1\0\1\afg\f#89BEBA\rfunction\1\0\1\afg\f#89BEBA\fcomment\1\0\1\afg\f#549688\vstring\1\0\0\1\0\1\afg\f#A7C080\1\0\1\16colorscheme\15everforest\nsetup\vthemer\frequire\0" },
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/themer.lua",
+    url = "https://github.com/themercorp/themer.lua"
   },
   ultisnips = {
     loaded = true,
@@ -341,11 +381,6 @@ _G.packer_plugins = {
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/vim-json",
     url = "https://github.com/elzr/vim-json"
   },
-  ["vim-polyglot"] = {
-    loaded = true,
-    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/vim-polyglot",
-    url = "https://github.com/sheerun/vim-polyglot"
-  },
   ["vim-python-pep8-indent"] = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent",
@@ -366,18 +401,48 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/vim-textobj-user",
     url = "https://github.com/kana/vim-textobj-user"
+  },
+  ["zen-mode.nvim"] = {
+    config = { "\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fshowcmd\1\fenabled\2\vwindow\1\0\0\foptions\1\0\2\17cursorcolumn\1\15signcolumn\ano\1\0\3\vheight\3\1\nwidth\3d\rbackdrop\3\1\nsetup\rzen-mode\frequire\0" },
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.lualine\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
 -- Config for: vim-startify
 time([[Config for vim-startify]], true)
 try_loadstring("\27LJ\2\n{\0\0\5\0\a\0\0146\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\2'\1\4\0&\0\1\0006\1\0\0009\1\5\1'\3\6\0\18\4\0\0&\3\4\3B\1\2\1K\0\1\0\fsource \bcmd\30/lua/plugins/startify.vim\vconfig\fstdpath\afn\bvim\0", "config", "vim-startify")
 time([[Config for vim-startify]], false)
+-- Config for: hlargs.nvim
+time([[Config for hlargs.nvim]], true)
+try_loadstring("\27LJ\2\nd\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\venable\1\0\1\ncolor\f#3b7960\nsetup\vhlargs\frequire\0", "config", "hlargs.nvim")
+time([[Config for hlargs.nvim]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.lualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\n¤\1\0\0\t\0\t\1\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0006\3\3\0009\3\4\0039\3\5\3'\5\6\0'\6\a\0'\a\b\0004\b\0\0B\3\5\0?\3\0\0B\0\2\1K\0\1\0-<cmd>lua require'hop'.hint_char1({})<cr>\6f\6n\20nvim_set_keymap\bapi\bvim\nsetup\bhop\frequire\3€€À™\4\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
+-- Config for: themer.lua
+time([[Config for themer.lua]], true)
+try_loadstring("\27LJ\2\nÉ\2\0\0\5\0\20\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\0035\4\t\0=\4\n\0035\4\v\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\0035\4\17\0=\4\18\3=\3\19\2B\0\2\1K\0\1\0\vstyles\fkeyword\1\0\1\afg\f#A7C080\19keywordBuiltIn\1\0\1\afg\f#A7C080\16conditional\1\0\1\afg\f#A7C080\20functionBuiltIn\1\0\1\afg\f#89BEBA\rfunction\1\0\1\afg\f#89BEBA\fcomment\1\0\1\afg\f#549688\vstring\1\0\0\1\0\1\afg\f#A7C080\1\0\1\16colorscheme\15everforest\nsetup\vthemer\frequire\0", "config", "themer.lua")
+time([[Config for themer.lua]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+try_loadstring("\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fshowcmd\1\fenabled\2\vwindow\1\0\0\foptions\1\0\2\17cursorcolumn\1\15signcolumn\ano\1\0\3\vheight\3\1\nwidth\3d\rbackdrop\3\1\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
+time([[Config for zen-mode.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
