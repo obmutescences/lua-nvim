@@ -92,13 +92,13 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local servers = { "bashls", "pyright", "jsonls", "dockerls", "golangci_lint_ls", "gopls" }
-for _, lsp in ipairs(servers) do
-  require('lspconfig')[lsp].setup({
-    on_attach = M.on_attach,
-    capabilities = capabilities,
-  })
-end
+-- local servers = { "bashls", "pyright", "jsonls", "dockerls", "golangci_lint_ls", "gopls" }
+-- for _, lsp in ipairs(servers) do
+--   require('lspconfig')[lsp].setup({
+--     on_attach = M.on_attach,
+--     capabilities = capabilities,
+--   })
+-- end
 
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -107,5 +107,4 @@ if not status_ok then
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-capabilities.offsetEncoding = { "utf-16" }
 return M

@@ -81,10 +81,10 @@ cnoremap("<C-w>", "<S-Right>")
 
 -- Window management
 nnoremap("<LEADER>w", "<C-w>w")
-nnoremap("<LEADER>u", "<C-w>k")
-nnoremap("<LEADER>e", "<C-w>j")
+-- nnoremap("<LEADER>u", "<C-w>k")
+-- nnoremap("<LEADER>e", "<C-w>j")
 -- nnoremap("<LEADER>n", "<C-w>h")
-nnoremap("<LEADER>i", "<C-w>l")
+-- nnoremap("<LEADER>i", "<C-w>l")
 
 --split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
 -- noremap su :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
@@ -104,7 +104,7 @@ nnoremap("<right>", ":vertical resize+5<CR>")
 nnoremap("`", "~")
 nnoremap("<C-c>", "zz")
 
-nnoremap("\\s", ":%s//g<left><left>")
+-- nnoremap("\\s", ":%s//g<left><left>")
 
 
 --Compile function

@@ -136,6 +136,6 @@ let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod']
 exec "nohlsearch"
 
 " ale
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
 
 ]])

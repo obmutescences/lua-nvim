@@ -60,7 +60,7 @@ return require('packer').startup(function(use)
   -- Python
   -- use 'tmhedberg/SimpylFold', { 'for' :['python', 'vim-plug'] }
   use 'Vimjas/vim-python-pep8-indent'
-  use 'numirias/semshi'
+  -- use 'numirias/semshi'
 
   -- Editor Enhancement
   use 'jiangmiao/auto-pairs'
@@ -146,17 +146,18 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   -- lint
-  use 'dense-analysis/ale'
+  -- use 'dense-analysis/ale'
 
   -- float
   use 'voldikss/vim-floaterm'
 
   -- LSP server
-  use({
-    'neovim/nvim-lspconfig',
-    -- config = function() require('plugins.lspconfig') end
-  })
-  use 'williamboman/nvim-lsp-installer' -- Helper for installing most language servers
+  use {
+	  'williamboman/nvim-lsp-installer', -- Helper for installing most language servers
+	  {
+		'neovim/nvim-lspconfig',
+	  }
+	}
   use "ray-x/lsp_signature.nvim" -- show function signature when typing
   use({ 
       'glepnir/lspsaga.nvim',
@@ -186,10 +187,10 @@ return require('packer').startup(function(use)
   use "f3fora/cmp-spell" -- spell check
 
   -- statusline
-  use({
-    'hoob3rt/lualine.nvim',
-    config = function() require('plugins.lualine') end,
-  })
+  -- use({
+  --   'hoob3rt/lualine.nvim',
+  --   config = function() require('plugins.lualine') end,
+  -- })
 
   -- NvimTree
   use({
@@ -317,6 +318,18 @@ return require('packer').startup(function(use)
 
 	-- true zen
 	use "Pocco81/TrueZen.nvim"
+	
+	-- navigator
+	use {'ray-x/navigator.lua', 
+		requires = {'ray-x/guihua.lua', 
+		run = 'cd lua/fzy && make'},
+		config = function()
+		  -- you can configure Hop the way you like here; see :h hop-config
+		  require'navigator'.setup { 
+		}
+		end
+	}
+
 
 
   if packer_bootstrap then

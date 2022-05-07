@@ -1,5 +1,7 @@
 -- Providers
-vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
+vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.4/bin/python3.10'
+vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.4/bin/python3.10'
+
 
 --system--
 vim.o.autochdir = true
@@ -67,16 +69,16 @@ vim.g.neovide_cursor_trail_length = 1.0
 vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_hide_mouse_when_typing = 1
 vim.g.neovide_floating_blur = 1
-vim.g.neovide_floating_opacity = 0.2
+vim.g.neovide_floating_opacity = 0.8
 -- vim.g.neovide_fullscreen= true
 
 -- lint: ale
 
-vim.g.ale_lint_on_text_changed = "never"
-vim.g.ale_lint_on_insert_leave = 0
-vim.g.ale_lint_on_enter = 0
-vim.g.ale_fix_on_save = 1
-vim.g.ale_set_highlights = 0
+-- vim.g.ale_lint_on_text_changed = "never"
+-- vim.g.ale_lint_on_insert_leave = 0
+-- vim.g.ale_lint_on_enter = 0
+-- vim.g.ale_fix_on_save = 1
+-- vim.g.ale_set_highlights = 0
 
 -- rust
 vim.g.rustfmt_autosave = 1
