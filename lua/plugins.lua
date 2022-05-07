@@ -50,7 +50,6 @@ return require('packer').startup(function(use)
   use 'elzr/vim-json'
 
   -- " Go
-  -- Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }
   use 'fatih/vim-go'
 
   -- rust
@@ -58,16 +57,10 @@ return require('packer').startup(function(use)
 
 
   -- Python
-  -- use 'tmhedberg/SimpylFold', { 'for' :['python', 'vim-plug'] }
   use 'Vimjas/vim-python-pep8-indent'
-  -- use 'numirias/semshi'
 
   -- Editor Enhancement
   use 'jiangmiao/auto-pairs'
-
-
-  -- Formatter
-  -- use 'Chiel92/vim-autoformat'
 
   -- For general writing
   use 'junegunn/goyo.vim'
@@ -135,18 +128,8 @@ return require('packer').startup(function(use)
     end
   })
 
-
-
-  -- language packs
-  -- use 'sheerun/vim-polyglot'
-
-
   -- find and grep
-  -- use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'kyazdani42/nvim-web-devicons'
-
-  -- lint
-  -- use 'dense-analysis/ale'
 
   -- float
   use 'voldikss/vim-floaterm'
@@ -171,8 +154,6 @@ return require('packer').startup(function(use)
 
   use({
     "hrsh7th/nvim-cmp",
-    -- Sources for nvim-cmp
-    -- config = function() require('plugins.cmp') end,
     requires = {
       {"tzachar/cmp-tabnine", run = "./install.sh"} -- tabnine 源,提供基于 AI 的智能补全
     }
@@ -186,24 +167,15 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-nvim-lua"
   use "f3fora/cmp-spell" -- spell check
 
-  -- statusline
-  -- use({
-  --   'hoob3rt/lualine.nvim',
-  --   config = function() require('plugins.lualine') end,
-  -- })
-
   -- NvimTree
   use({
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    -- config = function() require('plugins.nvimtree') end, -- Must add this manually
   })
 
   -- Treesitter
   use({
     'nvim-treesitter/nvim-treesitter',
-    -- commit = "668de0951a36ef17016074f1120b6aacbe6c4515",
-    -- config = function() require('plugins.treesitter') end,
     run = ':TSUpdate'
   })
   use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -266,7 +238,6 @@ return require('packer').startup(function(use)
     end
   }
   
-
   -- zen mode
   use {
     "folke/zen-mode.nvim",
@@ -329,8 +300,6 @@ return require('packer').startup(function(use)
 		}
 		end
 	}
-
-
 
   if packer_bootstrap then
     -- require('packer').sync()
