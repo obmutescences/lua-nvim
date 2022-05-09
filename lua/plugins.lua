@@ -103,7 +103,9 @@ return require('packer').startup(function(use)
         colorscheme = "everforest",
 		styles = {
 			string = {
-				fg = "#A7C080"
+				-- fg = "#00552e"
+				-- fg = "#69b076"
+				fg = "#47885e"
 			},
 			comment = {
 				fg = "#549688"
@@ -115,14 +117,17 @@ return require('packer').startup(function(use)
 				fg = "#89BEBA"
 			},
 			conditional = {
-				fg = "#A7C080"
+				fg = "#82ae46"
 			},
 			keywordBuiltIn = {
-				fg = "#A7C080"
+				fg = "#82ae46"
 			},
 			keyword = {
-				fg = "#A7C080"
-			}
+				fg = "#82ae46"
+			},
+			variable = {
+				fg = "#cee4ae"
+			},
 		}
       })
     end

@@ -132,3 +132,6 @@ let g:go_highlight_diagnostic_warnings = 1
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
+autocmd BufEnter * highlight GHListHl guifg=#007b43 guibg=#323d43
+autocmd BufEnter * highlight GHTextViewDark guifg=#007b43 guibg=#323d43
+" autocmd BufEnter * highlight GHListDark guifg=#e4ab9b guibg=#323d43
