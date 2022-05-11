@@ -303,8 +303,56 @@ return require('packer').startup(function(use)
 		config = function()
 		  -- you can configure Hop the way you like here; see :h hop-config
 		  require'navigator'.setup { 
+			  lsp = {
+				diagnostic = {
+				  underline = true,
+				  virtual_text = true, -- show virtual for diagnostic message
+				  update_in_insert = true, -- update diagnostic message in insert mode
+				},
+				diagnostic_virtual_text = true,
+			  }
 		}
 		end
+	}
+
+	-- trouble
+	use {
+		"folke/trouble.nvim",
+		config = function()
+			require("trouble").setup {
+				position = "right"
+			}
+		end
+	}
+
+	-- context vt
+	use "romgrk/nvim-treesitter-context"
+	
+	-- windows pick
+	use "https://gitlab.com/yorickpeterse/nvim-window.git"
+
+	-- focus auto focus windows 
+	use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
+
+	-- highlight todo
+	use {
+	  "folke/todo-comments.nvim",
+	  requires = "nvim-lua/plenary.nvim",
+	  config = function()
+		require("todo-comments").setup {
+		  -- your configuration comes here
+		  -- or leave it empty to use the default settings
+		  -- refer to the configuration section below
+		}
+		end
+	}
+
+	-- gitsigns
+	use {
+	  'lewis6991/gitsigns.nvim',
+	  config = function()
+		require('gitsigns').setup()
+	  end
 	}
 
   if packer_bootstrap then

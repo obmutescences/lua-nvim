@@ -119,8 +119,7 @@ let g:rainbow_active = 1
 " ===
 " === vim-illuminate
 " ===
-let g:illuminate_delay = 750
-hi illuminatedword cterm=undercurl gui=undercurl
+let g:Illuminate_delay = 400
 
 
 " ===

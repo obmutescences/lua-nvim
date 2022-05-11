@@ -80,7 +80,7 @@ cnoremap("<C-b>", "<S-Left>")
 cnoremap("<C-w>", "<S-Right>")
 
 -- Window management
-nnoremap("<LEADER>w", "<C-w>w")
+-- nnoremap("<LEADER>w", "<C-w>w")
 -- nnoremap("<LEADER>u", "<C-w>k")
 -- nnoremap("<LEADER>e", "<C-w>j")
 -- nnoremap("<LEADER>n", "<C-w>h")
@@ -149,3 +149,6 @@ nmap("tt", ":NvimTreeToggle<CR>")
 
 -- find and replace
 nnoremap("<LEADER>r", "<cmd>lua require('spectre').open()<CR>")
+
+-- nvim-window windows pick
+nmap("<leader>w", ":lua require('nvim-window').pick()<CR>")
