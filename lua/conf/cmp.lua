@@ -200,16 +200,20 @@ cmp_config = {
       spell = "(Spell)",
     },
     duplicates = {
-      buffer = 1,
+      buffer = 0,
       path = 1,
-      nvim_lsp = 0,
-      luasnip = 1,
+      nvim_lsp = 1,
+      luasnip = 0,
+	  vsnip = 0,
+	  cmp_tabnine = 1,
     },
     duplicates_default = 0,
 	format = lspkind.cmp_format({
 		mode = "symbol_text",
 	  	before = function (entry, vim_item)
 			 vim_item.menu = cmp_config.formatting.source_names[entry.source.name]
+		     vim_item.dup = cmp_config.formatting.duplicates[entry.source.name]
+				or cmp_config.formatting.duplicates_default
 			return vim_item
 		end
 	}),
