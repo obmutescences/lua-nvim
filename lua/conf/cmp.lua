@@ -138,21 +138,28 @@ require("luasnip.loaders.from_vscode").load({ paths = { -- load custom snippets
   vim.fn.stdpath("config") .. "/my-snippets"
 } }) -- Load snippets from my-snippets folder
 
+
+local lspkind = require("lspkind")
+
 cmp_config = {
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
+    select = true,
   },
   completion = {
     ---@usage The minimum length of a word to complete on.
     keyword_length = 1,
+	completeopt = 'menu,menuone,noinsert',
   },
   experimental = {
     ghost_text = true,
-    native_menu = false,
   },
+  view = {
+	  -- entries = "native"
+  },
+  preselect = cmp.PreselectMode.None,
   formatting = {
-    fields = { "kind", "abbr", "menu" },
+    -- fields = { "kind", "abbr", "menu" },
     max_width = 0,
     kind_icons = {
       Class = " ",
@@ -199,17 +206,35 @@ cmp_config = {
       luasnip = 1,
     },
     duplicates_default = 0,
-    format = function(entry, vim_item)
-      local max_width = cmp_config.formatting.max_width
-      if max_width ~= 0 and #vim_item.abbr > max_width then
-        vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "…"
-      end
-      vim_item.kind = cmp_config.formatting.kind_icons[vim_item.kind]
-      vim_item.menu = cmp_config.formatting.source_names[entry.source.name]
-      vim_item.dup = cmp_config.formatting.duplicates[entry.source.name]
-          or cmp_config.formatting.duplicates_default
-      return vim_item
-    end,
+	format = lspkind.cmp_format({
+		mode = "symbol_text",
+	  	before = function (entry, vim_item)
+			 vim_item.menu = cmp_config.formatting.source_names[entry.source.name]
+			return vim_item
+		end
+	}),
+    -- format = function(entry, vim_item)
+    --   local max_width = cmp_config.formatting.max_width
+    --   if max_width ~= 0 and #vim_item.abbr > max_width then
+    --     vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "…"
+    --   end
+    --   vim_item.kind = cmp_config.formatting.kind_icons[vim_item.kind]
+    --   vim_item.menu = cmp_config.formatting.source_names[entry.source.name]
+    --   vim_item.dup = cmp_config.formatting.duplicates[entry.source.name]
+    --       or cmp_config.formatting.duplicates_default
+    --   return vim_item
+    -- end,
+  },
+  sorting = {
+    comparators = {
+      cmp.config.compare.score,
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.kind,
+      -- cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    }
   },
   snippet = {
     expand = function(args)
@@ -221,10 +246,10 @@ cmp_config = {
     documentation = cmp.config.window.bordered(),
   },
   sources = {
+    { name = "cmp_tabnine" },
     { name = "nvim_lsp" },
     { name = "path" },
     { name = "luasnip" },
-    { name = "cmp_tabnine" },
     { name = "nvim_lua" },
     { name = "buffer" },
     { name = "spell" },

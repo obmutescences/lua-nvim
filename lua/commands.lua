@@ -23,7 +23,7 @@ vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
 
 vim.cmd([[
 
-set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h15:cANSI
+set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:cANSI
 
 silent !mkdir -p ~/.config/nvim/tmp/backup
 silent !mkdir -p ~/.config/nvim/tmp/undo

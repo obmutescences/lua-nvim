@@ -171,6 +171,7 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   use "f3fora/cmp-spell" -- spell check
+  use "onsails/lspkind.nvim" -- cmp kind
 
   -- NvimTree
   use({
