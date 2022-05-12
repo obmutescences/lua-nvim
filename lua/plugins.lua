@@ -186,17 +186,6 @@ return require('packer').startup(function(use)
   })
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
-  -- Telescope
-  use({
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  })
-
-  use { 'nvim-telescope/telescope-ui-select.nvim' }
-
-  use { "nvim-telescope/telescope-file-browser.nvim" }
-
-  use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 
   -- Startify
   use({
@@ -258,7 +247,7 @@ return require('packer').startup(function(use)
           -- * an absolute number of cells when > 1
           -- * a percentage of the width / height of the editor when <= 1
           -- * a function that returns the width or the height
-          width = 100, -- width of the zen window
+          width = .40, -- width of the zen window
           height = 1, -- height of the zen window
           -- by default, no options are changed for the zen window
           -- uncomment any of the options below, or add other vim.wo options you want to apply
@@ -354,6 +343,18 @@ return require('packer').startup(function(use)
 		require('gitsigns').setup()
 	  end
 	}
+
+	-- Telescope
+	use({
+		'nvim-telescope/telescope.nvim',
+		requires = { { 'nvim-lua/plenary.nvim' } }
+	})
+
+	use { 'nvim-telescope/telescope-ui-select.nvim' }
+
+	use { "nvim-telescope/telescope-file-browser.nvim" }
+
+	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 
   if packer_bootstrap then
     -- require('packer').sync()

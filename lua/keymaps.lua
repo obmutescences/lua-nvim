@@ -139,8 +139,8 @@ nnoremap("<", "<<")
 nnoremap(">", ">>")
 
 -- goyo
--- nmap('<LEADER>n', ':TZAtaraxis<CR>')
-nmap('<LEADER>n', ':ZenMode<CR>')
+nmap('<LEADER>n', ':TZAtaraxis<CR>')
+-- nmap('<LEADER>n', ':ZenMode<CR>')
 -- nmap('<LEADER>n', ':Goyo<CR>')
 
 

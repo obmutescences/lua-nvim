@@ -32,7 +32,7 @@ vim.o.ttimeoutlen  = 0
 vim.o.tw           = 0
 vim.o.foldlevel    = 99
 vim.o.re           = 1
-vim.o.synmaxcol    = 128
+-- vim.o.synmaxcol    = 128
 -- vim.wo.colorcolumn = '80'
 vim.o.viewoptions  = 'cursor,folds,slash,unix'
 vim.o.indentexpr   = ''
@@ -69,7 +69,9 @@ vim.g.neovide_cursor_trail_length = 1.0
 vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_hide_mouse_when_typing = 1
 vim.g.neovide_floating_blur = 1
-vim.g.neovide_floating_opacity = 0.8
+vim.g.neovide_floating_opacity = 0.3
+-- vim.g.neovide_floating_blur_amount_x = 5
+-- vim.g.neovide_floating_blur_amount_y = 20
 -- vim.g.neovide_fullscreen= true
 
 -- lint: ale
