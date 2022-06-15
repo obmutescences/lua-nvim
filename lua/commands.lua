@@ -18,7 +18,7 @@
 ---- my---
 
 vim.cmd('syntax enable')
-vim.cmd('syntax sync minlines=256')
+-- vim.cmd('syntax sync minlines=256')
 vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
 
 vim.cmd([[
@@ -48,11 +48,14 @@ func! CompileRunGcc()
 		set splitbelow
 		:sp
 		:term go run .
+	elseif &filetype == 'http'
+		:sp
+		:lua require('rest-nvim').run()
 	endif
 endfunc
 
-set noexpandtab
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" set noexpandtab
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " GitGutter
 autocmd BufWritePost * GitGutter
@@ -74,10 +77,10 @@ endfunc
 " ===
 " === Far.vim
 " ===
-noremap <LEADER>f :F  **/*<left><left><left><left><left>
-let g:far#mapping = {
-			\ "replace_undo" : ["l"],
-			\ }
+" noremap <LEADER>f :F  **/*<left><left><left><left><left>
+" let g:far#mapping = {
+"			\ "replace_undo" : ["l"],
+"			\ }
 
 
 " ===
@@ -136,6 +139,14 @@ exec "nohlsearch"
 
 " ale
 " let g:airline#extensions#ale#enabled = 1
+
+
+" vim-json
+
+" indentLine 
+autocmd FileType json,markdown,http let g:indentLine_conceallevel = 0
+" vim-json
+autocmd FileType json,markdown,http let g:vim_json_syntax_conceal = 0
 
 
 ]])

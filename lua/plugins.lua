@@ -63,8 +63,8 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'
 
   -- For general writing
-  use 'junegunn/goyo.vim'
-  use 'junegunn/limelight.vim'
+  -- use 'junegunn/goyo.vim'
+  -- use 'junegunn/limelight.vim'
 
   -- Find & Replace
   use 'brooth/far.vim'
@@ -87,57 +87,66 @@ return require('packer').startup(function(use)
 
   -- themes
   -- use 'mhartington/oceanic-next'
-  -- use 'voronianski/oceanic-next-color-scheme'
-  -- use 'liuchengxu/space-vim-theme'
-  -- use 'joshdick/onedark.vim'
-  -- use 'liuchengxu/space-vim-dark'
-  use 'wadackel/vim-dogrun'
-  use 'glepnir/oceanic-material'
   use 'sainnhe/everforest'
-  use 'marko-cerovac/material.nvim'
-
+  use 'shaunsingh/nord.nvim'
   use({
-    "themercorp/themer.lua",
-    config = function()
-      require("themer").setup({
-        colorscheme = "everforest",
-		styles = {
-			string = {
-				-- fg = "#00552e"
-				-- fg = "#69b076"
-				fg = "#47885e"
+	  "Yagua/nebulous.nvim",
+	  config = function()
+		  require("nebulous").setup {
+			variant = "fullmoon",
+			italic = {
+				comments   = false,
+				keywords   = false,
+				functions  = false,
+				variables  = false,
 			},
-			comment = {
-				fg = "#549688"
-			},
-			['function' ]= {
-				fg = "#89BEBA"
-			},
-			functionBuiltIn = {
-				fg = "#89BEBA"
-			},
-			conditional = {
-				fg = "#82ae46"
-			},
-			keywordBuiltIn = {
-				fg = "#82ae46"
-			},
-			keyword = {
-				fg = "#82ae46"
-			},
-			variable = {
-				fg = "#cee4ae"
-			},
-		}
-      })
-    end
+	}
+		end
   })
+  use 'ful1e5/onedark.nvim'
+
+  -- use({
+    -- "themercorp/themer.lua",
+    -- config = function()
+      -- require("themer").setup({
+      --   colorscheme = "everforest",
+		-- styles = {
+			-- string = {
+				-- -- fg = "#00552e"
+				-- -- fg = "#69b076"
+				-- fg = "#47885e"
+			-- },
+			-- comment = {
+				-- fg = "#549688"
+			-- },
+			-- ['function' ]= {
+				-- fg = "#89BEBA"
+			-- },
+			-- functionBuiltIn = {
+				-- fg = "#89BEBA"
+			-- },
+			-- conditional = {
+				-- fg = "#82ae46"
+			-- },
+			-- keywordBuiltIn = {
+				-- fg = "#82ae46"
+			-- },
+			-- keyword = {
+				-- fg = "#82ae46"
+			-- },
+			-- variable = {
+				-- fg = "#cee4ae"
+			-- },
+		-- }
+      -- })
+    -- end
+  -- })
 
   -- find and grep
   use 'kyazdani42/nvim-web-devicons'
 
   -- float
-  use 'voldikss/vim-floaterm'
+  -- use 'voldikss/vim-floaterm'
 
   -- LSP server
   use {
@@ -210,7 +219,7 @@ return require('packer').startup(function(use)
     end 
   })
 
-  -- hlargs 
+  -- hlargs function param color
   use({
     'm-demare/hlargs.nvim',
     config = function()
@@ -247,7 +256,7 @@ return require('packer').startup(function(use)
           -- * an absolute number of cells when > 1
           -- * a percentage of the width / height of the editor when <= 1
           -- * a function that returns the width or the height
-          width = .40, -- width of the zen window
+          width = 70, -- width of the zen window
           height = 1, -- height of the zen window
           -- by default, no options are changed for the zen window
           -- uncomment any of the options below, or add other vim.wo options you want to apply
@@ -355,6 +364,38 @@ return require('packer').startup(function(use)
 	use { "nvim-telescope/telescope-file-browser.nvim" }
 
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+
+	-- do http request
+	use {
+		"NTBBloodbath/rest.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("rest-nvim").setup({
+			-- Open request results in a horizontal split
+			result_split_horizontal = false,
+			-- Keep the http file buffer above|left when split horizontal|vertical
+			result_split_in_place = false,
+			-- Skip SSL verification, useful for unknown certificates
+			skip_ssl_verification = false,
+			-- Highlight request on run
+			highlight = {
+				enabled = true,
+				timeout = 150,
+			},
+			result = {
+				-- toggle showing URL, HTTP info, headers at top the of result window
+				show_url = true,
+				show_http_info = true,
+				show_headers = true,
+			},
+			-- Jump to request line on run
+			jump_to_request = false,
+			-- env_file = '.env',
+			custom_dynamic_variables = {},
+			yank_dry_run = true,
+		})
+		end
+	}
 
   if packer_bootstrap then
     -- require('packer').sync()

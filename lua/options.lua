@@ -27,13 +27,13 @@ vim.o.visualbell = true
 vim.o.tabstop      = 4
 vim.o.softtabstop  = 4
 vim.o.shiftwidth   = 4
-vim.o.scrolloff    = 4
+-- vim.o.scrolloff    = 4
 vim.o.ttimeoutlen  = 0
 vim.o.tw           = 0
 vim.o.foldlevel    = 99
 vim.o.re           = 1
--- vim.o.synmaxcol    = 128
--- vim.wo.colorcolumn = '80'
+-- vim.o.synmaxcol    = 80
+-- vim.o.colorcolumn = '60'
 vim.o.viewoptions  = 'cursor,folds,slash,unix'
 vim.o.indentexpr   = ''
 vim.o.foldmethod   = 'indent'
@@ -47,7 +47,7 @@ vim.opt.shortmess:append('tc')
 vim.g.neoterm_autoscroll = 1
 vim.g.notimeout = true
 vim.g.noshowmode = true
-vim.g.updatetime = '1000'
+-- vim.g.updatetime = '1000'
 
 -- floaterm
 vim.g.floaterm_keymap_new = '<Leader>ft'

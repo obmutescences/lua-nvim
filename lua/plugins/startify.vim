@@ -4,7 +4,7 @@
 noremap <LEADER>st :Startify<CR>
 
 " Don't show [e] and [q] options
-let g:startify_enable_special = 0
+let g:startify_enable_special = 1
 
 " Change directory when opening file using Startify
 let g:startify_change_to_dir  = 1  " This is the default value
