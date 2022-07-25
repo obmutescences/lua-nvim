@@ -31,53 +31,53 @@ let g:startify_lists = [
 " === goyo
 " ===
 
-""进入goyo模式后自动触发limelight,退出后则关闭
-"autocmd! user goyoenter nested call <sid>goyo_enter()
-"autocmd! user goyoleave nested call <sid>goyo_leave()
-"let g:goyo_width = 100
-"let g:goyo_height = '100%'
-"let g:goyo_linenr = 0
+"进入goyo模式后自动触发limelight,退出后则关闭
+autocmd! user goyoenter nested call <sid>goyo_enter()
+autocmd! user goyoleave nested call <sid>goyo_leave()
+let g:goyo_width = 150
+let g:goyo_height = '100%'
+let g:goyo_linenr = 0
 
-"function! s:goyo_enter()
-"	if executable('tmux') && strlen($tmux)
-"		silent !tmux set status off
-"		silent !tmux list-panes -f '\#f' | grep -q z || tmux resize-pane -z
-"	endif
-"	set noshowmode
-"	set noshowcmd
-"	set scrolloff=999
-"	" let g:limelight_conceal_ctermfg='#5c6370'
-"	" let g:limelight_conceal_guifg='#5c6370'
-"	" limelight
-"	" ...
-"endfunction
+function! s:goyo_enter()
+	if executable('tmux') && strlen($tmux)
+		silent !tmux set status off
+		silent !tmux list-panes -f '\#f' | grep -q z || tmux resize-pane -z
+	endif
+	set noshowmode
+	set noshowcmd
+	set scrolloff=999
+	" let g:limelight_conceal_ctermfg='#5c6370'
+	" let g:limelight_conceal_guifg='#5c6370'
+	" limelight
+	" ...
+endfunction
 
-"function! s:goyo_leave()
-"	if executable('tmux') && strlen($tmux)
-"		silent !tmux set status on
-"		silent !tmux list-panes -f '\#f' | grep -q z && tmux resize-pane -z
-"	endif
-"	set showmode
-"	set showcmd
-"	set scrolloff=5
-"	" limelight!
-"	" hi comment cterm=italic
-"	" hi comment guifg=#5c6370 ctermfg=59
-"	" hi normal     ctermbg=none guibg=none
-"	" hi linenr     ctermbg=none guibg=none
-"	" hi signcolumn ctermbg=none guibg=none
-"	" hi normal guibg=#011f14
-"	" hi comment cterm=italic
-"	" hi comment guifg=#5c6370 ctermfg=59
-"	" hi normal     ctermbg=none guibg=#323d43
-"	hi linenr     ctermbg=none guibg=none
-"	hi signcolumn ctermbg=none guibg=none
-"	" let g:limelight_conceal_ctermfg='#5c6370'
-"	" let g:limelight_conceal_guifg='#5c6370'
-"	" limelight!
+function! s:goyo_leave()
+	if executable('tmux') && strlen($tmux)
+		silent !tmux set status on
+		silent !tmux list-panes -f '\#f' | grep -q z && tmux resize-pane -z
+	endif
+	" set showmode
+	set showcmd
+	set scrolloff=5
+	" limelight!
+	" hi comment cterm=italic
+	" hi comment guifg=#5c6370 ctermfg=59
+	" hi normal     ctermbg=none guibg=none
+	" hi linenr     ctermbg=none guibg=none
+	" hi signcolumn ctermbg=none guibg=none
+	" hi normal guibg=#011f14
+	" hi comment cterm=italic
+	" hi comment guifg=#5c6370 ctermfg=59
+	" hi normal     ctermbg=none guibg=#323d43
+	" hi linenr     ctermbg=none guibg=none
+	" hi signcolumn ctermbg=none guibg=none
+	" let g:limelight_conceal_ctermfg='#5c6370'
+	" let g:limelight_conceal_guifg='#5c6370'
+	" limelight!
 
-"	" ...
-"endfunction
+	" ...
+endfunction
 
 
 " hi Comment cterm=italic
@@ -133,8 +133,8 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
 " navigator 
-autocmd BufEnter * highlight GHListHl guifg=#007b43 guibg=#323d43
-autocmd BufEnter * highlight GHTextViewDark guifg=#007b43 guibg=#323d43
+" autocmd BufEnter * highlight GHListHl guifg=#007b43 guibg=#323d43
+" autocmd BufEnter * highlight GHTextViewDark guifg=#007b43 guibg=#323d43
 " autocmd BufEnter * highlight GHListDark guifg=#e4ab9b guibg=#323d43
 
 " gitsigns

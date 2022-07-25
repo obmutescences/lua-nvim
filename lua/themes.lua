@@ -1,6 +1,6 @@
 -- Themes
 
-local colorscheme = "nebulous"
+local colorscheme = "everforest"
 
 
 vim.g.termguicolors = true
@@ -19,7 +19,7 @@ vim.g.material_theme_style = "everforest"
 
 
 vim.g.material_style = "everforest"
--- vim.cmd [[colorscheme everforest]]
+vim.cmd[[colorscheme everforest]]
 
 -- nord
 vim.g.nord_contrast = true
@@ -40,8 +40,8 @@ vim.g.gitgutter_map_keys = 0
 vim.g.gitgutter_override_sign_column_highlight = 0
 vim.g.gitgutter_preview_win_floating = 1
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-    vim.notify("colorscheme " .. colorscheme .. " not found!")
-    return
-end
+-- local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+-- if not status_ok then
+--     vim.notify("colorscheme " .. colorscheme .. " not found!")
+--     return
+-- end

@@ -23,7 +23,10 @@ vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
 
 vim.cmd([[
 
-set guifont=UbuntuMono\ Nerd\ Font\ Mono:h15:cANSI
+" set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:cANSI
+set guifont=CodeNewRoman\ Nerd\ Font:h14
+" set guifont=UbuntuMono\ Nerd\ Font\ Mono:h15:cANSI
+
 
 silent !mkdir -p ~/.config/nvim/tmp/backup
 silent !mkdir -p ~/.config/nvim/tmp/undo
@@ -86,18 +89,18 @@ endfunc
 " ===
 " === Ultisnips
 " ===
-let g:tex_flavor = "latex"
-inoremap <c-n> <nop>
-let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-e>"
-let g:UltiSnipsJumpBackwardTrigger="<c-n>"
-let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/Ultisnips/', $HOME.'/.config/nvim/plugged/vim-snippets/UltiSnips/']
-silent! au BufEnter,BufRead,BufNewFile * silent! unmap <c-r>
+" let g:tex_flavor = "latex"
+" inoremap <c-n> <nop>
+" let g:UltiSnipsExpandTrigger="<c-e>"
+" let g:UltiSnipsJumpForwardTrigger="<c-e>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-n>"
+" let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/Ultisnips/', $HOME.'/.config/nvim/plugged/vim-snippets/UltiSnips/']
+" silent! au BufEnter,BufRead,BufNewFile * silent! unmap <c-r>
 " Solve extreme insert-mode lag on macOS (by disabling autotrigger)
-augroup ultisnips_no_auto_expansion
-	au!
-	au VimEnter * au! UltiSnips_AutoTrigger
-augroup END
+" augroup ultisnips_no_auto_expansion
+"	au!
+"	au VimEnter * au! UltiSnips_AutoTrigger
+" augroup END
 
 " ===
 " === anzu
@@ -150,3 +153,22 @@ autocmd FileType json,markdown,http let g:vim_json_syntax_conceal = 0
 
 
 ]])
+
+if vim.g.nvui then
+	vim.cmd [[
+	NvuiFullscreen 1
+	NvuiScrollAnimationDuration 0.1
+	NvuiCursorAnimationDuration 0.2
+	NvuiCmdBorderWidth 0.5
+	NvuiCmdPadding 15
+	NvuiCharspace 1
+	" NvuiOpacity 0.7
+	NvuiCmdCenterXPos 0.5
+	NvuiCmdCenterYPos 0.4
+	NvuiCmdWidth 0.2
+	NvuiCmdFontFamily Ubuntu Mono
+	NvuiCmdFontSize 17
+	NvuiFullscreen 1
+	NvuiCmdBg #1B5E20
+	]]
+end

@@ -1,5 +1,15 @@
 local M = {}
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_ok then
+  return
+end
+
+M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- TODO: backfill this to template
 M.setup = function()
   local signs = {
@@ -25,13 +35,13 @@ M.setup = function()
     severity_sort = true,
     float = {
       focusable = false,
-      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      -- close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
       style = "minimal",
       border = "rounded",
       source = "always",
       header = "",
       prefix = "",
-      scope = 'cursor',
+      -- scope = 'cursor',
     },
   }
 
@@ -45,21 +55,32 @@ M.setup = function()
   })
 end
 
+
 local function lsp_highlight_document(client)
-  -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec(
-      [[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]] ,
-      false
-    )
+  -- if client.server_capabilities.document_highlight then
+  local status_oks, illuminate = pcall(require, "illuminate")
+  if not status_oks then
+    return
   end
+  illuminate.on_attach(client)
+  -- end
 end
+
+-- local function lsp_highlight_document(client)
+--   -- Set autocommands conditional on server_capabilities
+--   if client.resolved_capabilities.document_highlight then
+--     vim.api.nvim_exec(
+--       [[
+--       augroup lsp_document_highlight
+--         autocmd! * <buffer>
+--         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+--         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+--       augroup END
+--     ]] ,
+--       false
+--     )
+--   end
+-- end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
@@ -90,21 +111,26 @@ M.on_attach = function(client, bufnr)
   require "lsp_signature".on_attach()
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
 
--- local servers = { "bashls", "pyright", "jsonls", "dockerls", "golangci_lint_ls", "gopls" }
--- for _, lsp in ipairs(servers) do
---   require('lspconfig')[lsp].setup({
---     on_attach = M.on_attach,
---     capabilities = capabilities,
---   })
--- end
+local gopls_cmd = {'gopls', '--remote=auto', '--remote.listen.timeout=5m', 'serve'}
 
+local servers = { "bashls", "pyright", "jsonls", "dockerls", "golangci_lint_ls", "gopls", 
+	"quick_lint_js", "volar", "yamlls", "rust_analyzer" }
+for _, lsp in ipairs(servers) do
+	if lsp == "gopls" then
+		require('lspconfig')[lsp].setup({
+			cmd = gopls_cmd,
+			on_attach = M.on_attach,
+			capabilities = capabilities,
+	  })
+  else
+	  require('lspconfig')[lsp].setup({
+		on_attach = M.on_attach,
+		capabilities = capabilities,
+	  })
+  end
 
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-  return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
 return M

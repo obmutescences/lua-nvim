@@ -1,6 +1,6 @@
 -- Providers
-vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.4/bin/python3.10'
-vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.4/bin/python3.10'
+vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.5/bin/python3.10'
+vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.5/bin/python3.10'
 
 
 --system--
@@ -13,7 +13,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.cursorline = true
 -- vim.bo.noexpandtab = true
 vim.o.autoindent = true
-vim.o.foldenable = true
+vim.o.foldenable = false
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.smartcase = true
@@ -30,18 +30,21 @@ vim.o.shiftwidth   = 4
 -- vim.o.scrolloff    = 4
 vim.o.ttimeoutlen  = 0
 vim.o.tw           = 0
-vim.o.foldlevel    = 99
+-- vim.o.foldlevel    = 99
 vim.o.re           = 1
 -- vim.o.synmaxcol    = 80
 -- vim.o.colorcolumn = '60'
 vim.o.viewoptions  = 'cursor,folds,slash,unix'
 vim.o.indentexpr   = ''
 vim.o.foldmethod   = 'indent'
+-- vim.o.foldmethod   = 'expr'
+-- vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.o.inccommand   = 'split'
 vim.o.completeopt  = 'longest,noinsert,menuone,noselect,preview'
 -- vim.o.virtualedit  = 'block'
 vim.opt.formatoptions:remove('tc')
 vim.opt.shortmess:append('tc')
+vim.opt.synmaxcol = 2048
 
 
 vim.g.neoterm_autoscroll = 1
@@ -70,8 +73,8 @@ vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_hide_mouse_when_typing = 1
 vim.g.neovide_floating_blur = 1
 vim.g.neovide_floating_opacity = 0.3
--- vim.g.neovide_floating_blur_amount_x = 5
--- vim.g.neovide_floating_blur_amount_y = 20
+vim.g.neovide_floating_blur_amount_x = 5
+vim.g.neovide_floating_blur_amount_y = 10
 -- vim.g.neovide_fullscreen= true
 
 -- lint: ale
