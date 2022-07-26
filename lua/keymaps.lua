@@ -47,6 +47,9 @@ vnoremap("i", "l")
 vnoremap("n", "h")
 vnoremap("u", "k")
 
+-- delete a word
+nnoremap("dw", "daw")
+
 
 -- N key: go to the start of the line
 nnoremap("N", "0")
@@ -80,7 +83,7 @@ cnoremap("<C-b>", "<S-Left>")
 cnoremap("<C-w>", "<S-Right>")
 
 -- Window management
--- nnoremap("<LEADER>w", "<C-w>w")
+nnoremap("<LEADER>w", "<C-w>w")
 -- nnoremap("<LEADER>u", "<C-w>k")
 -- nnoremap("<LEADER>e", "<C-w>j")
 -- nnoremap("<LEADER>n", "<C-w>h")
@@ -119,10 +122,10 @@ nnoremap("<C-p>", ":Telescope find_files<CR>")
 nnoremap("<C-l>", ":Telescope live_grep<CR>")
 
 -- GitGutter
-nnoremap("<LEADER>gf", ":GitGutterFold<CR>")
-nnoremap("H", ":GitGutterPreviewHunk<CR>")
-nnoremap("<LEADER>g-", ":GitGutterPrevHunk<CR>")
-nnoremap("<LEADER>g=", ":GitGutterNextHunk<CR>")
+-- nnoremap("<LEADER>gf", ":GitGutterFold<CR>")
+-- nnoremap("H", ":GitGutterPreviewHunk<CR>")
+-- nnoremap("<LEADER>g-", ":GitGutterPrevHunk<CR>")
+-- nnoremap("<LEADER>g=", ":GitGutterNextHunk<CR>")
 
 -- vim-fugitive
 nnoremap("gb", ":Gblame<CR>")
@@ -149,6 +152,3 @@ nmap("tt", ":NvimTreeToggle<CR>")
 
 -- find and replace
 nnoremap("<LEADER>r", "<cmd>lua require('spectre').open()<CR>")
-
--- nvim-window windows pick
-nmap("<leader>w", ":lua require('nvim-window').pick()<CR>")

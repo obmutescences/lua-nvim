@@ -78,43 +78,11 @@ function g:Undotree_CustomMap()
 endfunc
 
 " ===
-" === Far.vim
-" ===
-" noremap <LEADER>f :F  **/*<left><left><left><left><left>
-" let g:far#mapping = {
-"			\ "replace_undo" : ["l"],
-"			\ }
-
-
-" ===
-" === Ultisnips
-" ===
-" let g:tex_flavor = "latex"
-" inoremap <c-n> <nop>
-" let g:UltiSnipsExpandTrigger="<c-e>"
-" let g:UltiSnipsJumpForwardTrigger="<c-e>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-n>"
-" let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/Ultisnips/', $HOME.'/.config/nvim/plugged/vim-snippets/UltiSnips/']
-" silent! au BufEnter,BufRead,BufNewFile * silent! unmap <c-r>
-" Solve extreme insert-mode lag on macOS (by disabling autotrigger)
-" augroup ultisnips_no_auto_expansion
-"	au!
-"	au VimEnter * au! UltiSnips_AutoTrigger
-" augroup END
-
-" ===
 " === anzu
 " ===
 set statusline=%{anzu#search_status()}
 nnoremap = n
 nnoremap - N
-
-
-" ===
-" === vim-easy-align
-" ===
-" xmap ga <Plug>(EasyAlign)
-" nmap ga <Plug>(EasyAlign)
 
 " ===
 " === rainbow
@@ -132,8 +100,6 @@ let g:Illuminate_delay = 400
 " === vim-rooter
 " ===
 let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod']
-
-
 
 " ===
 " === Necessary Commands to Execute

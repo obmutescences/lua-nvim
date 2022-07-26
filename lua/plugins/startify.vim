@@ -133,9 +133,9 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
 " navigator 
-" autocmd BufEnter * highlight GHListHl guifg=#007b43 guibg=#323d43
-" autocmd BufEnter * highlight GHTextViewDark guifg=#007b43 guibg=#323d43
-" autocmd BufEnter * highlight GHListDark guifg=#e4ab9b guibg=#323d43
+autocmd BufEnter * highlight GuihuaListHl guifg=#FF0000 guibg=#323d43
+" autocmd BufEnter * highlight GuihuaTextViewDark guifg=#007b43 guibg=#323d43
+" autocmd BufEnter * highlight GuihuaListDark guifg=#e4ab9b guibg=#323d43
 
 " gitsigns
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame

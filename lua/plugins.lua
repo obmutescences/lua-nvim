@@ -23,7 +23,6 @@ cmd([[packadd packer.nvim]])
 
 -- Initialize pluggins
 return require('packer').startup(function(use)
-  -- use "lewis6991/impatient.nvim"
   -- Let Packer manage itself
   use({ 'wbthomason/packer.nvim', opt = true })
 
@@ -34,10 +33,6 @@ return require('packer').startup(function(use)
   -- Pretty Dress
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
-
-
-  -- Snippets
-  -- use 'SirVer/ultisnips'
 
   -- Undo Tree
   use 'mbbill/undotree'
@@ -50,7 +45,7 @@ return require('packer').startup(function(use)
   use 'elzr/vim-json'
 
   -- " Go
-  use 'fatih/vim-go'
+  -- use 'fatih/vim-go'
 
   -- rust
   use 'rust-lang/rust.vim'
@@ -65,10 +60,6 @@ return require('packer').startup(function(use)
   -- For general writing
   use 'junegunn/goyo.vim'
   use 'junegunn/limelight.vim'
-
-  -- Find & Replace
-  use 'brooth/far.vim'
-  use 'osyo-manga/vim-anzu'
 
   -- Other visual enhancement
   use 'ryanoasis/vim-devicons'
@@ -157,14 +148,14 @@ return require('packer').startup(function(use)
 	  }
 	}
   use "ray-x/lsp_signature.nvim" -- show function signature when typing
-  use({ 
-      'glepnir/lspsaga.nvim',
-      config = function()
-        require("lspsaga").init_lsp_saga()
-      end
-    })
+  -- use({ 
+  --     'glepnir/lspsaga.nvim',
+  --     config = function()
+  --       require("lspsaga").init_lsp_saga()
+  --     end
+  --   })
 
-  -- Autocomplete
+  -- 代码片段，用于cmp自动提示
   use "L3MON4D3/LuaSnip" -- Snippet engine
 
   use({
@@ -315,20 +306,17 @@ return require('packer').startup(function(use)
 	}
 
 	-- trouble
-	use {
-		"folke/trouble.nvim",
-		config = function()
-			require("trouble").setup {
-				position = "right"
-			}
-		end
-	}
+	-- use {
+	-- 	"folke/trouble.nvim",
+	-- 	config = function()
+	-- 		require("trouble").setup {
+	-- 			position = "right"
+	-- 		}
+	-- 	end
+	-- }
 
 	-- context vt
 	use "romgrk/nvim-treesitter-context"
-
-	-- windows pick
-	use "https://gitlab.com/yorickpeterse/nvim-window.git"
 
 	-- highlight todo
 	use {

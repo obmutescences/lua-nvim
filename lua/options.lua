@@ -52,11 +52,6 @@ vim.g.notimeout = true
 vim.g.noshowmode = true
 -- vim.g.updatetime = '1000'
 
--- floaterm
-vim.g.floaterm_keymap_new = '<Leader>ft'
-vim.g.floaterm_keymap_kill = '<Leader>fk'
-vim.g.floaterm_keymap_toggle = '<F12>'
-
 
 -- neovide
 
