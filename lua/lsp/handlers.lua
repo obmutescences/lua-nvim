@@ -117,20 +117,77 @@ local gopls_cmd = {'gopls', '--remote=auto', '--remote.listen.timeout=5m', 'serv
 local servers = { "bashls", "pyright", "jsonls", "dockerls", "golangci_lint_ls", "gopls", 
 	"quick_lint_js", "volar", "yamlls", "rust_analyzer" }
 for _, lsp in ipairs(servers) do
-	if lsp == "gopls" then
-		require('lspconfig')[lsp].setup({
-			cmd = gopls_cmd,
-			on_attach = M.on_attach,
-			capabilities = capabilities,
-	  })
-  else
-	  require('lspconfig')[lsp].setup({
-		on_attach = M.on_attach,
-		capabilities = capabilities,
-	  })
-  end
+	-- if lsp == "gopls" then
+	-- 	require('lspconfig')[lsp].setup({
+	-- 		cmd = gopls_cmd,
+	-- 		on_attach = M.on_attach,
+	-- 		capabilities = capabilities,
+	--   })
+  -- else
+  require('lspconfig')[lsp].setup({
+	on_attach = M.on_attach,
+	capabilities = capabilities,
+  })
+  -- end
 
 end
+
+local lspconfig = require('lspconfig')
+
+
+local on_attach = function(client, bufnr)
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      pattern = client.config.filetypes,
+      callback = function()
+        vim.lsp.buf.format({
+          bufnr = bufnr,
+          async = true,
+        })
+      end,
+    })
+  end
+end
+
+lspconfig.gopls.setup({
+  on_attach = on_attach,
+  cmd = { 'gopls', '--remote=auto' },
+  capabilities = capabilities,
+  init_options = {
+    usePlaceholders = true,
+    completeUnimported = true,
+  },
+})
+
+lspconfig.rust_analyzer.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ['rust-analyzer'] = {
+      assist = {
+        importGranularity = true,
+        importPrefix = "crate",
+      },
+      cargo = {
+        loadOutDirsFromCheck = true,
+		allFeatures = true
+      },
+	  checkOnSave = {
+          -- default: `cargo check`
+          command = "clippy"
+	  },
+	  inlayHints = {
+          lifetimeElisionHints = {
+            enable = true,
+            useParameterNames = true
+          },
+        },
+      procMacro = {
+        enable = true,
+      },
+    },
+  },
+})
 
 
 return M

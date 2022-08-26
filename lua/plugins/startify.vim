@@ -34,7 +34,7 @@ let g:startify_lists = [
 "进入goyo模式后自动触发limelight,退出后则关闭
 autocmd! user goyoenter nested call <sid>goyo_enter()
 autocmd! user goyoleave nested call <sid>goyo_leave()
-let g:goyo_width = 150
+let g:goyo_width = 90
 let g:goyo_height = '100%'
 let g:goyo_linenr = 0
 

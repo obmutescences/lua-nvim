@@ -23,7 +23,7 @@ vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
 
 vim.cmd([[
 
-" set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:cANSI
+" set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:i
 set guifont=CodeNewRoman\ Nerd\ Font:h14
 " set guifont=UbuntuMono\ Nerd\ Font\ Mono:h15:cANSI
 
@@ -99,7 +99,7 @@ let g:Illuminate_delay = 400
 " ===
 " === vim-rooter
 " ===
-let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod']
+let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod', 'Cargo.lock']
 
 " ===
 " === Necessary Commands to Execute

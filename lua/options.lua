@@ -61,15 +61,16 @@ vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_cursor_vfx_opacity = 800.0
 vim.g.neovide_cursor_vfx_particle_lifetime = 1.5
-vim.g.neovide_cursor_vfx_particle_density = 30.0
-vim.g.neovide_cursor_vfx_particle_speed = 50.0
+vim.g.neovide_cursor_vfx_particle_density = 40.0
+vim.g.neovide_cursor_vfx_particle_speed = 40.0
 vim.g.neovide_cursor_trail_length = 1.0
-vim.g.neovide_cursor_animation_length = 0.05
+vim.g.neovide_cursor_animation_length = 0.1
 vim.g.neovide_hide_mouse_when_typing = 1
 vim.g.neovide_floating_blur = 1
-vim.g.neovide_floating_opacity = 0.3
-vim.g.neovide_floating_blur_amount_x = 5
-vim.g.neovide_floating_blur_amount_y = 10
+vim.g.neovide_floating_opacity = 0.1
+vim.g.neovide_floating_blur_amount_x = 13
+vim.g.neovide_floating_blur_amount_y = 13
+vim.g.neovide_scroll_animation_length = 0.15
 -- vim.g.neovide_fullscreen= true
 
 -- lint: ale

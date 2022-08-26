@@ -1,70 +1,70 @@
 local true_zen = require("true-zen")
 
+local function tmux_off()
+  if vim.fn.exists "$TMUX" == 0 then
+    return
+  end
+  vim.cmd [[silent !tmux set status off]]
+end
+
+local function tmux_on()
+  if vim.fn.exists "$TMUX" == 0 then
+    return
+  end
+  vim.cmd [[silent !tmux set status on]]
+end
+
+local function open_cb()
+  tmux_off()
+end
+
+local function close_cb()
+  tmux_on()
+end
+
 true_zen.setup({
-	ui = {
-		bottom = {
-			laststatus = 0,
-			ruler = false,
-			showmode = false,
-			showcmd = false,
-			cmdheight = 1,
-		},
-		top = {
-			showtabline = 0,
-		},
-		left = {
-			number = false,
-			relativenumber = false,
-			signcolumn = "no",
-		},
-	},
 	modes = {
 		ataraxis = {
-			left_padding = 60,
-			right_padding = 0,
-			top_padding = 0,
-			bottom_padding = 0,
-			ideal_writing_area_width = {0},
-			auto_padding = false,
-			keep_default_fold_fillchars = true,
-			custom_bg = {"none", ""},
-			bg_configuration = true,
-			quit = "untoggle",
-			ignore_floating_windows = true,
-			affected_higroups = {
-				NonText = true,
-				FoldColumn = true,
-				ColorColumn = true,
-				VertSplit = true,
-				StatusLine = true,
-				StatusLineNC = true,
-				SignColumn = true,
+			shade = "dark", -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
+			backdrop = 0, -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
+			minimum_writing_area = { -- minimum size of main window
+				width = 70,
+				height = 0,
 			},
+			quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode
+			padding = { -- padding windows
+				left = 80,
+				right = 20,
+				top = 0,
+				bottom = 0,
+			},
+			open_callback = open_cb, -- run a function when opening Ataraxis mode
+			close_callback = close_cb, -- run a function when closing Ataraxis mode
 		},
-		focus = {
-			margin_of_error = 5,
-			focus_method = "experimental"
+		minimalist = {
+			options = { -- options to be disabled when entering Minimalist mode
+				number = false,
+				relativenumber = false,
+				showtabline = 0,
+				signcolumn = "yes",
+				statusline = "",
+				cmdheight = 1,
+				laststatus = 0,
+				showcmd = true,
+				showmode = false,
+				ruler = false,
+				numberwidth = 1,
+			},
+			open_callback = open_cb,
+			close_callback = close_cb,
 		},
 	},
 	integrations = {
-		vim_gitgutter = false,
-		galaxyline = false,
-		tmux = false,
-		gitsigns = true,
-		nvim_bufferline = false,
-		limelight = false,
-		twilight = false,
-		vim_airline = false,
-		vim_powerline = false,
-		vim_signify = false,
-		express_line = false,
-		lualine = false,
-		lightline = false,
-		feline = false
+		tmux = true, -- hide tmux status bar in (minimalist, ataraxis)
+		kitty = { -- increment font size in Kitty. Note: you must set `allow_remote_control socket-only` and `listen_on unix:/tmp/kitty` in your personal config (ataraxis)
+			enabled = true,
+			font = "+1"
+		},
+		twilight = true -- enable twilight (ataraxis)
 	},
-	misc = {
-		on_off_commands = false,
-		ui_elements_commands = false,
-		cursor_by_mode = false,
-	}
 })

@@ -8,6 +8,8 @@ local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
+  -- Load Packer
+  cmd([[packadd packer.nvim]])
 end
 
 -- Rerun PackerCompile everytime pluggins.lua is updated
@@ -18,8 +20,7 @@ cmd([[
   augroup end
 ]])
 
--- Load Packer
-cmd([[packadd packer.nvim]])
+
 
 -- Initialize pluggins
 return require('packer').startup(function(use)
@@ -45,10 +46,18 @@ return require('packer').startup(function(use)
   use 'elzr/vim-json'
 
   -- " Go
-  -- use 'fatih/vim-go'
+  use 'fatih/vim-go'
 
   -- rust
-  use 'rust-lang/rust.vim'
+  -- use 'rust-lang/rust.vim'
+  use ({
+	  'simrat39/rust-tools.nvim',
+	  config = function ()
+		  require("rust-tools").setup {
+
+		  }
+	  end
+  })
 
 
   -- Python
@@ -58,8 +67,8 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'
 
   -- For general writing
-  use 'junegunn/goyo.vim'
-  use 'junegunn/limelight.vim'
+  -- use 'junegunn/goyo.vim'
+  -- use 'junegunn/limelight.vim'
 
   -- Other visual enhancement
   use 'ryanoasis/vim-devicons'
@@ -137,8 +146,6 @@ return require('packer').startup(function(use)
   -- find and grep
   use 'kyazdani42/nvim-web-devicons'
 
-  -- float
-  -- use 'voldikss/vim-floaterm'
 
   -- LSP server
   use {
@@ -185,7 +192,7 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   })
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  -- use 'nvim-treesitter/nvim-treesitter-textobjects'
 
 
   -- Startify
@@ -233,7 +240,7 @@ return require('packer').startup(function(use)
     }
     end
   }
-  
+
   -- zen mode
   use {
     "folke/zen-mode.nvim",
@@ -248,7 +255,7 @@ return require('packer').startup(function(use)
           -- * an absolute number of cells when > 1
           -- * a percentage of the width / height of the editor when <= 1
           -- * a function that returns the width or the height
-          width = .45, -- width of the zen window
+          width = 80, -- width of the zen window
           height = 1, -- height of the zen window
           -- by default, no options are changed for the zen window
           -- uncomment any of the options below, or add other vim.wo options you want to apply
@@ -284,15 +291,15 @@ return require('packer').startup(function(use)
     }
 
 	-- true zen
-	use "Pocco81/TrueZen.nvim"
-	
+	use "Pocco81/true-zen.nvim"
+
 	-- navigator
-	use {'ray-x/navigator.lua', 
-		requires = {'ray-x/guihua.lua', 
+	use {'ray-x/navigator.lua',
+		requires = {'ray-x/guihua.lua',
 		run = 'cd lua/fzy && make'},
 		config = function()
 		  -- you can configure Hop the way you like here; see :h hop-config
-		  require'navigator'.setup { 
+		  require'navigator'.setup {
 			  lsp = {
 				diagnostic = {
 				  underline = true,
