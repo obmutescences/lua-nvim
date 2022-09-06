@@ -94,6 +94,8 @@ telescope.setup {
       },
     },
 
+	winblend = 96,
+
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,

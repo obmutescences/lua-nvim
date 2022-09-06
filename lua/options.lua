@@ -66,11 +66,15 @@ vim.g.neovide_cursor_vfx_particle_speed = 40.0
 vim.g.neovide_cursor_trail_length = 1.0
 vim.g.neovide_cursor_animation_length = 0.1
 vim.g.neovide_hide_mouse_when_typing = 1
-vim.g.neovide_floating_blur = 1
-vim.g.neovide_floating_opacity = 0.1
-vim.g.neovide_floating_blur_amount_x = 13
-vim.g.neovide_floating_blur_amount_y = 13
 vim.g.neovide_scroll_animation_length = 0.15
+vim.g.neovide_floating_blur = 1
+vim.g.neovide_floating_opacity = 0.2
+vim.g.neovide_floating_blur_amount_x = 2.0
+vim.g.neovide_floating_blur_amount_y = 4.0
+-- vim.g.neovide_transparency=0.8
+-- vim.g.transparency = 0.9
+vim.o.pumblend = 50
+vim.o.winblend = 95
 -- vim.g.neovide_fullscreen= true
 
 -- lint: ale

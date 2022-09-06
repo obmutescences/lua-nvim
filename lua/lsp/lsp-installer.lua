@@ -21,6 +21,24 @@ lsp_installer.on_server_ready(function(server)
 		opts = vim.tbl_deep_extend("force", pyright_opts, opts)
 	end
 
+	if server.name == "rust_analyzer" then
+		require("rust-tools").setup({
+			tools = {
+				reload_workspace_from_cargo_toml = true,
+				inlay_hints = {
+					auto = true,
+					only_current_line = true,
+					show_parameter_hints = true,
+					other_hints_prefix = "-> ",
+				}
+			},
+			server = {
+				on_attach = opts.on_attach,
+				cmd = { vim.fn.stdpath('data') .. "/lsp_servers/rust/rust-analyzer" };
+			}
+		})
+	end
+
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	server:setup(opts)

@@ -51,12 +51,7 @@ return require('packer').startup(function(use)
   -- rust
   -- use 'rust-lang/rust.vim'
   use ({
-	  'simrat39/rust-tools.nvim',
-	  config = function ()
-		  require("rust-tools").setup {
-
-		  }
-	  end
+	  'simrat39/rust-tools.nvim'
   })
 
 
@@ -307,6 +302,8 @@ return require('packer').startup(function(use)
 				  update_in_insert = true, -- update diagnostic message in insert mode
 				},
 				diagnostic_virtual_text = true,
+				diagnostic_update_in_insert = true,
+				diagnostic_scrollbar_sign = false,
 			  }
 		}
 		end
@@ -388,6 +385,16 @@ return require('packer').startup(function(use)
 			yank_dry_run = true,
 		})
 		end
+	}
+
+	-- rust crates
+	use {
+		'saecki/crates.nvim',
+		tag = 'v0.2.1',
+		requires = { 'nvim-lua/plenary.nvim' },
+		config = function()
+			require('crates').setup()
+		end,
 	}
 
   if packer_bootstrap then
