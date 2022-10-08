@@ -117,6 +117,11 @@ autocmd FileType json,markdown,http let g:indentLine_conceallevel = 0
 " vim-json
 autocmd FileType json,markdown,http let g:vim_json_syntax_conceal = 0
 
+if exists("g:neovide")
+	let pumblend = 50
+	let winblend = 95
+endif
+
 
 ]])
 

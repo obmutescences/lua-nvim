@@ -61,85 +61,85 @@
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
-  vim.notify("nvim-tree not found!")
-  return
+	vim.notify("nvim-tree not found!")
+	return
 end
 
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status_ok then
-  return
+	return
 end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
-  disable_netrw = true,
-  hijack_netrw = true,
-  -- open_on_setup = false,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-    "startup",
-  },
-  -- auto_close = true,
-  open_on_tab = false,
-  hijack_cursor = false,
-  update_cwd = true,
-  diagnostics = {
-    enable = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  },
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-    ignore_list = {},
-  },
-  git = {
-    enable = true,
-    ignore = true,
-    timeout = 500,
-  },
-  view = {
-    width = 30,
-    height = 30,
-    hide_root_folder = false,
-    side = "left",
-    -- auto_resize = true,
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "I", "<CR>", "o" }, action = "edit" },
-        { key = "h", action = "close_node" },
-        { key = "v", action = "vsplit" },
-        { key = "O", action = "cd" },
-        { key = "tt", action = "toggle" }
-      },
-    },
-    number = false,
-    relativenumber = false,
-  },
-  -- quit_on_open = 0,
-  -- git_hl = 1,
-  -- disable_window_picker = 0,
-  -- root_folder_modifier = ":t",
-  -- show_icons = {
-  --   git = 1,
-  --   folders = 1,
-  --   files = 1,
-  --   folder_arrows = 1,
-  --   tree_width = 30,
-  -- },
-  actions = {
-    open_file = {
-      resize_window = true -- close half-screen usage when open a new file
-    }
-  }
+	disable_netrw = true,
+	hijack_netrw = true,
+	-- open_on_setup = false,
+	ignore_ft_on_setup = {
+		"startify",
+		"dashboard",
+		"alpha",
+		"startup",
+	},
+	-- auto_close = true,
+	open_on_tab = false,
+	hijack_cursor = false,
+	update_cwd = true,
+	diagnostics = {
+		enable = true,
+		icons = {
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
+		},
+	},
+	update_focused_file = {
+		enable = true,
+		update_cwd = true,
+		ignore_list = {},
+	},
+	git = {
+		enable = true,
+		ignore = true,
+		timeout = 500,
+	},
+	view = {
+		width = 30,
+		-- height = 30,
+		hide_root_folder = false,
+		side = "left",
+		-- auto_resize = true,
+		mappings = {
+			custom_only = false,
+			list = {
+				{ key = { "I", "<CR>", "o" }, action = "edit" },
+				{ key = "h", action = "close_node" },
+				{ key = "v", action = "vsplit" },
+				{ key = "O", action = "cd" },
+				{ key = "tt", action = "toggle" }
+			},
+		},
+		number = false,
+		relativenumber = false,
+	},
+	-- quit_on_open = 0,
+	-- git_hl = 1,
+	-- disable_window_picker = 0,
+	-- root_folder_modifier = ":t",
+	-- show_icons = {
+	--   git = 1,
+	--   folders = 1,
+	--   files = 1,
+	--   folder_arrows = 1,
+	--   tree_width = 30,
+	-- },
+	actions = {
+		open_file = {
+			resize_window = true -- close half-screen usage when open a new file
+		}
+	}
 }
 
 -- with relative path
@@ -149,7 +149,7 @@ require "nvim-tree.events".on_file_created(function(file) vim.cmd("edit " .. fil
 
 -- auto close feature
 vim.cmd(
-[[
+	[[
     autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]
 )

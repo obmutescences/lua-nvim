@@ -24,23 +24,23 @@ vim.o.ttyfast = true
 vim.o.lazyredraw = true
 vim.o.visualbell = true
 
-vim.o.tabstop      = 4
-vim.o.softtabstop  = 4
-vim.o.shiftwidth   = 4
+vim.o.tabstop     = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth  = 4
 -- vim.o.scrolloff    = 4
-vim.o.ttimeoutlen  = 0
-vim.o.tw           = 0
+vim.o.ttimeoutlen = 0
+vim.o.tw          = 0
 -- vim.o.foldlevel    = 99
-vim.o.re           = 1
+vim.o.re          = 1
 -- vim.o.synmaxcol    = 80
 -- vim.o.colorcolumn = '60'
-vim.o.viewoptions  = 'cursor,folds,slash,unix'
-vim.o.indentexpr   = ''
-vim.o.foldmethod   = 'indent'
+vim.o.viewoptions = 'cursor,folds,slash,unix'
+vim.o.indentexpr  = ''
+vim.o.foldmethod  = 'indent'
 -- vim.o.foldmethod   = 'expr'
 -- vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.o.inccommand   = 'split'
-vim.o.completeopt  = 'longest,noinsert,menuone,noselect,preview'
+vim.o.inccommand  = 'split'
+vim.o.completeopt = 'longest,noinsert,menuone,noselect,preview'
 -- vim.o.virtualedit  = 'block'
 vim.opt.formatoptions:remove('tc')
 vim.opt.shortmess:append('tc')
@@ -57,6 +57,7 @@ vim.g.noshowmode = true
 
 -- set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:b:cANSI
 -- vim.g.guifont = 'CodeNewRoman\\ Nerd\\ Font\\ Mono:h15:cANSI'
+vim.g.neovide_refresh_rate = 75
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_cursor_vfx_opacity = 800.0
@@ -73,8 +74,6 @@ vim.g.neovide_floating_blur_amount_x = 2.0
 vim.g.neovide_floating_blur_amount_y = 4.0
 -- vim.g.neovide_transparency=0.8
 -- vim.g.transparency = 0.9
-vim.o.pumblend = 50
-vim.o.winblend = 95
 -- vim.g.neovide_fullscreen= true
 
 -- lint: ale
@@ -87,4 +86,3 @@ vim.o.winblend = 95
 
 -- rust
 vim.g.rustfmt_autosave = 1
-
