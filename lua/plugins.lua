@@ -162,16 +162,16 @@ return require('packer').startup(function(use)
 
 	use "ray-x/lsp_signature.nvim" -- show function signature when typing
 	use({
-	    'glepnir/lspsaga.nvim',
+		'glepnir/lspsaga.nvim',
 		branch = "main",
-	    config = function()
+		config = function()
 			local saga = require("lspsaga")
 			saga.init_lsp_saga({
 				border_style = "single",
 				saga_winblend = 60,
 			})
-	    end
-	  })
+		end
+	})
 
 	-- 代码片段，用于cmp自动提示
 	use "L3MON4D3/LuaSnip" -- Snippet engine
@@ -413,6 +413,20 @@ return require('packer').startup(function(use)
 			require('crates').setup()
 		end,
 	}
+
+	-- notify ui
+	use({
+		"folke/noice.nvim",
+		event = "VimEnter",
+		config = function()
+				require("noice").setup()
+			end,
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		}
+	})
 
 	if packer_bootstrap then
 		-- require('packer').sync()

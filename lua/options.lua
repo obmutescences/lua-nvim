@@ -1,6 +1,6 @@
 -- Providers
-vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.5/bin/python3.10'
-vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.5/bin/python3.10'
+vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.8/bin/python3.10'
+vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.8/bin/python3.10'
 
 
 --system--
@@ -21,7 +21,7 @@ vim.o.showcmd = true
 vim.o.wildmenu = true
 vim.o.ignorecase = true
 vim.o.ttyfast = true
-vim.o.lazyredraw = true
+-- vim.o.lazyredraw = true
 vim.o.visualbell = true
 
 vim.o.tabstop     = 4

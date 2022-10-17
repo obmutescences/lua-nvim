@@ -1,26 +1,26 @@
 local true_zen = require("true-zen")
 
-local function tmux_off()
-  if vim.fn.exists "$TMUX" == 0 then
-    return
-  end
-  vim.cmd [[silent !tmux set status off]]
-end
+-- local function tmux_off()
+--   if vim.fn.exists "$TMUX" == 0 then
+--     return
+--   end
+--   vim.cmd [[silent !tmux set status off]]
+-- end
 
-local function tmux_on()
-  if vim.fn.exists "$TMUX" == 0 then
-    return
-  end
-  vim.cmd [[silent !tmux set status on]]
-end
+-- local function tmux_on()
+--   if vim.fn.exists "$TMUX" == 0 then
+--     return
+--   end
+--   vim.cmd [[silent !tmux set status on]]
+-- end
 
-local function open_cb()
-  tmux_off()
-end
+-- local function open_cb()
+--   tmux_off()
+-- end
 
-local function close_cb()
-  tmux_on()
-end
+-- local function close_cb()
+--   tmux_on()
+-- end
 
 true_zen.setup({
 	modes = {
@@ -38,8 +38,8 @@ true_zen.setup({
 				top = 0,
 				bottom = 0,
 			},
-			open_callback = open_cb, -- run a function when opening Ataraxis mode
-			close_callback = close_cb, -- run a function when closing Ataraxis mode
+			open_callback = nil, -- run a function when opening Ataraxis mode
+			close_callback = nil, -- run a function when closing Ataraxis mode
 		},
 		minimalist = {
 			options = { -- options to be disabled when entering Minimalist mode
@@ -55,8 +55,8 @@ true_zen.setup({
 				ruler = false,
 				numberwidth = 1,
 			},
-			open_callback = open_cb,
-			close_callback = close_cb,
+			open_callback = nil,
+			close_callback = nil,
 		},
 	},
 	integrations = {
@@ -65,6 +65,7 @@ true_zen.setup({
 			enabled = true,
 			font = "+1"
 		},
-		twilight = true -- enable twilight (ataraxis)
+		twilight = false, -- enable twilight (ataraxis)
+		lualine = false
 	},
 })

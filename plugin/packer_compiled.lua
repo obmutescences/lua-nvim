@@ -205,10 +205,23 @@ _G.packer_plugins = {
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/minimal.nvim",
     url = "https://github.com/Yazeed1s/minimal.nvim"
   },
+  ["noice.nvim"] = {
+    config = { "\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nnoice\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/opt/noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
+  },
   ["nord.nvim"] = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nord.nvim",
     url = "https://github.com/shaunsingh/nord.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -219,6 +232,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-spectre"] = {
     loaded = true,
@@ -277,7 +295,7 @@ _G.packer_plugins = {
     url = "https://github.com/luochen1990/rainbow"
   },
   ["rest.nvim"] = {
-    config = { "\27LJ\2\n¨\2\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0024\3\0\0=\3\b\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\1\0\3\17show_headers\2\19show_http_info\2\rshow_url\2\14highlight\1\0\2\ftimeout\3–\1\fenabled\2\1\0\5\17yank_dry_run\2\26skip_ssl_verification\1\26result_split_in_place\1\28result_split_horizontal\1\20jump_to_request\1\nsetup\14rest-nvim\frequire\0" },
+    config = { "\27LJ\2\n¨\2\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0024\3\0\0=\3\b\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\1\0\3\19show_http_info\2\rshow_url\2\17show_headers\2\14highlight\1\0\2\ftimeout\3–\1\fenabled\2\1\0\5\26skip_ssl_verification\1\26result_split_in_place\1\28result_split_horizontal\1\20jump_to_request\1\17yank_dry_run\2\nsetup\14rest-nvim\frequire\0" },
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/rest.nvim",
     url = "https://github.com/NTBBloodbath/rest.nvim"
@@ -401,7 +419,7 @@ _G.packer_plugins = {
     url = "https://github.com/kana/vim-textobj-user"
   },
   ["zen-mode.nvim"] = {
-    config = { "\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fshowcmd\1\fenabled\2\vwindow\1\0\0\foptions\1\0\2\15signcolumn\ano\17cursorcolumn\1\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0" },
+    config = { "\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fenabled\2\fshowcmd\1\vwindow\1\0\0\foptions\1\0\2\15signcolumn\ano\17cursorcolumn\1\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0" },
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
     url = "https://github.com/folke/zen-mode.nvim"
@@ -409,50 +427,57 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: themer.lua
-time([[Config for themer.lua]], true)
-try_loadstring("\27LJ\2\nè\2\0\0\5\0\22\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\0035\4\t\0=\4\n\0035\4\v\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\0035\4\17\0=\4\18\0035\4\19\0=\4\20\3=\3\21\2B\0\2\1K\0\1\0\vstyles\rvariable\1\0\1\afg\f#cee4ae\fkeyword\1\0\1\afg\f#82ae46\19keywordBuiltIn\1\0\1\afg\f#82ae46\16conditional\1\0\1\afg\f#82ae46\20functionBuiltIn\1\0\1\afg\f#89BEBA\rfunction\1\0\1\afg\f#89BEBA\fcomment\1\0\1\afg\f#549688\vstring\1\0\0\1\0\1\afg\f#47885e\1\0\1\16colorscheme\15everforest\nsetup\vthemer\frequire\0", "config", "themer.lua")
-time([[Config for themer.lua]], false)
--- Config for: hlargs.nvim
-time([[Config for hlargs.nvim]], true)
-try_loadstring("\27LJ\2\nd\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\venable\1\0\1\ncolor\f#3b7960\nsetup\vhlargs\frequire\0", "config", "hlargs.nvim")
-time([[Config for hlargs.nvim]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-try_loadstring("\27LJ\2\nh\0\0\4\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0B\1\2\1K\0\1\0\1\0\2\17border_style\vsingle\18saga_winblend\3<\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
-time([[Config for lspsaga.nvim]], false)
--- Config for: crates.nvim
-time([[Config for crates.nvim]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
-time([[Config for crates.nvim]], false)
--- Config for: fidget.nvim
-time([[Config for fidget.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
-time([[Config for fidget.nvim]], false)
 -- Config for: hop.nvim
 time([[Config for hop.nvim]], true)
 try_loadstring("\27LJ\2\n¤\1\0\0\t\0\t\1\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0006\3\3\0009\3\4\0039\3\5\3'\5\6\0'\6\a\0'\a\b\0004\b\0\0B\3\5\0?\3\0\0B\0\2\1K\0\1\0-<cmd>lua require'hop'.hint_char1({})<cr>\6f\6n\20nvim_set_keymap\bapi\bvim\nsetup\bhop\frequire\3€€À™\4\0", "config", "hop.nvim")
 time([[Config for hop.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\nh\0\0\4\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0B\1\2\1K\0\1\0\1\0\2\17border_style\vsingle\18saga_winblend\3<\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
 -- Config for: rest.nvim
 time([[Config for rest.nvim]], true)
-try_loadstring("\27LJ\2\n¨\2\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0024\3\0\0=\3\b\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\1\0\3\17show_headers\2\19show_http_info\2\rshow_url\2\14highlight\1\0\2\ftimeout\3–\1\fenabled\2\1\0\5\17yank_dry_run\2\26skip_ssl_verification\1\26result_split_in_place\1\28result_split_horizontal\1\20jump_to_request\1\nsetup\14rest-nvim\frequire\0", "config", "rest.nvim")
+try_loadstring("\27LJ\2\n¨\2\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0024\3\0\0=\3\b\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\1\0\3\19show_http_info\2\rshow_url\2\17show_headers\2\14highlight\1\0\2\ftimeout\3–\1\fenabled\2\1\0\5\26skip_ssl_verification\1\26result_split_in_place\1\28result_split_horizontal\1\20jump_to_request\1\17yank_dry_run\2\nsetup\14rest-nvim\frequire\0", "config", "rest.nvim")
 time([[Config for rest.nvim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-try_loadstring("\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fshowcmd\1\fenabled\2\vwindow\1\0\0\foptions\1\0\2\15signcolumn\ano\17cursorcolumn\1\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
-time([[Config for zen-mode.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 -- Config for: vim-startify
 time([[Config for vim-startify]], true)
 try_loadstring("\27LJ\2\n{\0\0\5\0\a\0\0146\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\2'\1\4\0&\0\1\0006\1\0\0009\1\5\1'\3\6\0\18\4\0\0&\3\4\3B\1\2\1K\0\1\0\fsource \bcmd\30/lua/plugins/startify.vim\vconfig\fstdpath\afn\bvim\0", "config", "vim-startify")
 time([[Config for vim-startify]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: themer.lua
+time([[Config for themer.lua]], true)
+try_loadstring("\27LJ\2\nè\2\0\0\5\0\22\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\0035\4\t\0=\4\n\0035\4\v\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\0035\4\17\0=\4\18\0035\4\19\0=\4\20\3=\3\21\2B\0\2\1K\0\1\0\vstyles\rvariable\1\0\1\afg\f#cee4ae\fkeyword\1\0\1\afg\f#82ae46\19keywordBuiltIn\1\0\1\afg\f#82ae46\16conditional\1\0\1\afg\f#82ae46\20functionBuiltIn\1\0\1\afg\f#89BEBA\rfunction\1\0\1\afg\f#89BEBA\fcomment\1\0\1\afg\f#549688\vstring\1\0\0\1\0\1\afg\f#47885e\1\0\1\16colorscheme\15everforest\nsetup\vthemer\frequire\0", "config", "themer.lua")
+time([[Config for themer.lua]], false)
+-- Config for: crates.nvim
+time([[Config for crates.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
+time([[Config for crates.nvim]], false)
+-- Config for: hlargs.nvim
+time([[Config for hlargs.nvim]], true)
+try_loadstring("\27LJ\2\nd\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\venable\1\0\1\ncolor\f#3b7960\nsetup\vhlargs\frequire\0", "config", "hlargs.nvim")
+time([[Config for hlargs.nvim]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+try_loadstring("\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fenabled\2\fshowcmd\1\vwindow\1\0\0\foptions\1\0\2\15signcolumn\ano\17cursorcolumn\1\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
+time([[Config for zen-mode.nvim]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'noice.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

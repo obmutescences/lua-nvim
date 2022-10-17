@@ -132,22 +132,22 @@ end
 
 -- end
 
--- local lspconfig = require('lspconfig')
+local lspconfig = require('lspconfig')
 
 
--- local on_attach = function(client, bufnr)
--- 	if client.server_capabilities.documentFormattingProvider then
--- 		vim.api.nvim_create_autocmd('BufWritePre', {
--- 			pattern = client.config.filetypes,
--- 			callback = function()
--- 				vim.lsp.buf.format({
--- 					bufnr = bufnr,
--- 					async = true,
--- 				})
--- 			end,
--- 		})
--- 	end
--- end
+local on_attach = function(client, bufnr)
+	if client.server_capabilities.documentFormattingProvider then
+		vim.api.nvim_create_autocmd('BufWritePre', {
+			pattern = client.config.filetypes,
+			callback = function()
+				vim.lsp.buf.format({
+					bufnr = bufnr,
+					async = true,
+				})
+			end,
+		})
+	end
+end
 
 -- lspconfig.gopls.setup({
 -- 	on_attach = on_attach,
@@ -202,34 +202,34 @@ end
 -- 	},
 -- }
 
--- lspconfig.rust_analyzer.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- 	settings = {
--- 		['rust-analyzer'] = {
--- 			assist = {
--- 				importGranularity = true,
--- 				importPrefix = "crate",
--- 			},
--- 			cargo = {
--- 				loadOutDirsFromCheck = true,
--- 				allFeatures = true
--- 			},
--- 			checkOnSave = {
--- 				-- default: `cargo check`
--- 				command = "clippy"
--- 			},
--- 			inlayHints = {
--- 				lifetimeElisionHints = {
--- 					enable = true,
--- 					useParameterNames = true
--- 				},
--- 			},
--- 			procMacro = {
--- 				enable = true,
--- 			},
--- 		},
--- 	},
--- })
+lspconfig.rust_analyzer.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		['rust-analyzer'] = {
+			assist = {
+				importGranularity = true,
+				importPrefix = "crate",
+			},
+			cargo = {
+				loadOutDirsFromCheck = true,
+				allFeatures = true
+			},
+			checkOnSave = {
+				-- default: `cargo check`
+				command = "clippy"
+			},
+			inlayHints = {
+				lifetimeElisionHints = {
+					enable = true,
+					useParameterNames = true
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
+})
 
 return M

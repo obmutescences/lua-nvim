@@ -1,3 +1,6 @@
+
+local vim = vim
+
 local function default_config()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
@@ -42,14 +45,32 @@ local function default_config()
 	})
 end
 
-local function lsp_keymaps(bufnr)
+-- local function lsp_keymaps(bufnr)
+-- 	local opts = { noremap = true, silent = true }
+-- 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+-- 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+-- 	vim.api.nviu_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+-- 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+-- 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+-- 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<Cmd>Telescope lsp_references<CR>", opts)
+-- 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>u", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+-- 	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+-- 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+-- 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-n>", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+-- 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-i>", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+-- 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+-- 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+-- 	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+-- end
+
+local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	-- vim.api.nviu_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<Cmd>Telescope lsp_references<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>u", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
@@ -58,17 +79,24 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
-end
 
-local function lsp_highlight_document(client)
-	-- if client.server_capabilities.document_highlight then
 	local status_oks, illuminate = pcall(require, "illuminate")
 	if not status_oks then
 		return
 	end
 	illuminate.on_attach(client)
-	-- end
+
 end
+
+-- local function lsp_highlight_document(client)
+-- 	-- if client.server_capabilities.document_highlight then
+-- 	local status_oks, illuminate = pcall(require, "illuminate")
+-- 	if not status_oks then
+-- 		return
+-- 	end
+-- 	illuminate.on_attach(client)
+-- 	-- end
+-- end
 
 default_config()
 
@@ -106,11 +134,11 @@ local lsp_setup_config = {
 		-- Support custom the on_attach function for global
 		-- Formatting on save as default
 		require('lsp-setup.utils').format_on_save(client)
-		lsp_keymaps(bufnr)
-		lsp_highlight_document(client)
+		-- lsp_keymaps(bufnr)
+		-- lsp_highlight_document(client)
 
-		-- add outline support for evey lanuage
-		require "lsp_signature".on_attach()
+		-- -- add outline support for evey lanuage
+		-- require "lsp_signature".on_attach()
 	end,
 	-- Global capabilities
 	capabilities = vim.lsp.protocol.make_client_capabilities(),
@@ -147,7 +175,8 @@ local lsp_setup_config = {
 				},
 			},
 			server = {
-				capabilities = require("cmp_nvim_lsp").update_capabilities(c),
+				capabilities = require("cmp_nvim_lsp").default_capabilities(c),
+				on_attach = on_attach,
 				settings = {
 					['rust-analyzer'] = {
 						cargo = {
@@ -184,3 +213,13 @@ local lsp_setup_config = {
 }
 
 lsp_setup.setup(lsp_setup_config)
+require('lspconfig')["sumneko_lua"].setup{
+    on_attach = on_attach,
+}
+require('lspconfig')["gopls"].setup{
+    on_attach = on_attach,
+}
+require('lspconfig')["pyright"].setup{
+    on_attach = on_attach,
+}
+require "lsp_signature".on_attach()
