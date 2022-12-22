@@ -24,7 +24,7 @@ vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
 vim.cmd([[
 
 " set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:i
-set guifont=CodeNewRoman\ Nerd\ Font:h14
+set guifont=CodeNewRoman\ Nerd\ Font:h14:#e-antialias:#h-slight
 " set guifont=UbuntuMono\ Nerd\ Font\ Mono:h15:cANSI
 
 
@@ -63,6 +63,7 @@ endfunc
 " GitGutter
 autocmd BufWritePost * GitGutter
 "autocmd BufEnter * hi ColorColumn guibg=NONE ctermbg=NONE
+autocmd BufEnter * hi LineNr guifg=#556B2F
 " Undotree
 let g:undotree_DiffAutoOpen = 1
 let g:undotree_SetFocusWhenToggle = 1
@@ -108,6 +109,9 @@ exec "nohlsearch"
 
 " ale
 " let g:airline#extensions#ale#enabled = 1
+" let g:ale_linters = { 'rust': ['analyzer', 'cargo']}
+" let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+
 
 
 " vim-json

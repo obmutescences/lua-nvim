@@ -11,6 +11,7 @@ vim.o.clipboard = 'unnamedplus'
 --editor--
 
 vim.o.cursorline = true
+vim.o.number = true
 -- vim.bo.noexpandtab = true
 vim.o.autoindent = true
 vim.o.foldenable = false
@@ -81,8 +82,16 @@ vim.g.neovide_floating_blur_amount_y = 4.0
 -- vim.g.ale_lint_on_text_changed = "never"
 -- vim.g.ale_lint_on_insert_leave = 0
 -- vim.g.ale_lint_on_enter = 0
--- vim.g.ale_fix_on_save = 1
+-- vim.g.ale_fix_on_save = 0
 -- vim.g.ale_set_highlights = 0
+-- vim.g.ale_rust_cargo_use_check = 0
+-- vim.g.ale_set_loclist = 0
+-- vim.g.ale_set_quickfix = 0
+-- vim.g.ale_open_list = 0
+-- vim.g.ale_keep_list_window_open = 0
+-- vim.g.ale_sign_column_always = 1
+-- vim.g.ale_sign_error = '✗'
+-- vim.g.ale_sign_warning = ''
 
 -- rust
 vim.g.rustfmt_autosave = 1

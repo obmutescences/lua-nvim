@@ -100,7 +100,6 @@ end
 
 default_config()
 
-local c = vim.lsp.protocol.make_client_capabilities()
 
 local status_cmp_ok, lsp_setup = pcall(require, "lsp-setup")
 if not status_cmp_ok then
@@ -175,7 +174,7 @@ local lsp_setup_config = {
 				},
 			},
 			server = {
-				capabilities = require("cmp_nvim_lsp").default_capabilities(c),
+				-- capabilities = require("cmp_nvim_lsp").default_capabilities(c),
 				on_attach = on_attach,
 				settings = {
 					['rust-analyzer'] = {
