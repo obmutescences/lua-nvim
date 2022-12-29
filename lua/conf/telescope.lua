@@ -94,7 +94,7 @@ local tel_config = {
 			},
 		},
 
-		winblend = 50,
+		winblend = 70,
 		color_devicons = true,
 
 		mappings = {

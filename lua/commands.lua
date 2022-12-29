@@ -24,7 +24,7 @@ vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
 vim.cmd([[
 
 " set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:i
-set guifont=CodeNewRoman\ Nerd\ Font:h14:#e-antialias:#h-slight
+set guifont=CodeNewRoman\ Nerd\ Font:h14
 " set guifont=UbuntuMono\ Nerd\ Font\ Mono:h15:cANSI
 
 
@@ -63,7 +63,8 @@ endfunc
 " GitGutter
 autocmd BufWritePost * GitGutter
 "autocmd BufEnter * hi ColorColumn guibg=NONE ctermbg=NONE
-autocmd BufEnter * hi LineNr guifg=#556B2F
+"autocmd BufEnter * hi LineNr guifg=#556B2F
+" autocmd BufEnter * hi LineNr guifg=#8B8386
 " Undotree
 let g:undotree_DiffAutoOpen = 1
 let g:undotree_SetFocusWhenToggle = 1
@@ -122,7 +123,7 @@ autocmd FileType json,markdown,http let g:indentLine_conceallevel = 0
 autocmd FileType json,markdown,http let g:vim_json_syntax_conceal = 0
 
 if exists("g:neovide")
-	let pumblend = 50
+	let pumblend = 70
 	let winblend = 95
 endif
 

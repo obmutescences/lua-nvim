@@ -8,17 +8,16 @@ vim.g.background = "dark"
 vim.g.everforest_background = 'medium'
 vim.g.everforest_better_performance = 1
 vim.g.everforest_enable_italic = 1
-vim.g.everforest_disable_italic_comment = 1
+vim.g.everforest_disable_italic_comment = 0
 vim.g.everforest_cursor = "green"
-vim.g.everforest_transparent_background = 1
-vim.g.everforest_ui_contrast = "high"
+vim.g.everforest_transparent_background = 0
+vim.g.everforest_ui_contrast = "low"
 vim.g.everforest_diagnostic_text_highlight = 1
 vim.g.everforest_diagnostic_virtual_text = "colored"
 
-vim.g.material_theme_style = "everforest"
+vim.g.material_theme_style = "minimal"
 
-
-vim.g.material_style = "everforest"
+vim.g.material_style = "minimal"
 vim.cmd[[colorscheme everforest]]
 
 -- nord
@@ -26,13 +25,13 @@ vim.g.nord_contrast = true
 vim.g.nord_borders = true
 vim.g.nord_disable_background = false
 vim.g.nord_italic = false
+vim.g.nord_bold = false
 
 
 -- eleline.vim
 vim.g.airline_powerline_fonts = "0"
 vim.g.airline_section_c = "%F"
-vim.g.airline_theme = "everforest"
-
+vim.g.airline_theme = "nord"
 
 -- GitGutter
 vim.g.gitgutter_signs = 0

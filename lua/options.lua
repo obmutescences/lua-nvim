@@ -1,6 +1,6 @@
 -- Providers
-vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.8/bin/python3.10'
-vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.10/3.10.8/bin/python3.10'
+vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.1/bin/python3.11'
+vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.1/bin/python3.11'
 
 
 --system--
@@ -71,8 +71,8 @@ vim.g.neovide_hide_mouse_when_typing = 1
 vim.g.neovide_scroll_animation_length = 0.15
 vim.g.neovide_floating_blur = 1
 vim.g.neovide_floating_opacity = 0.2
-vim.g.neovide_floating_blur_amount_x = 2.0
-vim.g.neovide_floating_blur_amount_y = 4.0
+vim.g.neovide_floating_blur_amount_x = 1.0
+vim.g.neovide_floating_blur_amount_y = 1.0
 -- vim.g.neovide_transparency=0.8
 -- vim.g.transparency = 0.9
 -- vim.g.neovide_fullscreen= true

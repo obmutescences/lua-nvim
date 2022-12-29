@@ -82,7 +82,7 @@ return require('packer').startup(function(use)
 
 	-- themes
 	-- use 'mhartington/oceanic-next'
-	use 'sainnhe/everforest'
+	-- use 'sainnhe/everforest'
 	use 'shaunsingh/nord.nvim'
 	use 'Yazeed1s/minimal.nvim'
 	-- use({
@@ -100,43 +100,57 @@ return require('packer').startup(function(use)
 	-- end
 	-- })
 	use 'ful1e5/onedark.nvim'
-
 	use({
-		"themercorp/themer.lua",
+		"neanias/everforest-nvim",
+		-- Optional; default configuration will be used if setup isn't called.
 		config = function()
-			require("themer").setup({
-				colorscheme = "everforest",
-				styles = {
-					string = {
-						-- fg = "#00552e"
-						-- fg = "#69b076"
-						fg = "#47885e"
-					},
-					comment = {
-						fg = "#549688"
-					},
-					['function'] = {
-						fg = "#89BEBA"
-					},
-					functionBuiltIn = {
-						fg = "#89BEBA"
-					},
-					conditional = {
-						fg = "#82ae46"
-					},
-					keywordBuiltIn = {
-						fg = "#82ae46"
-					},
-					keyword = {
-						fg = "#82ae46"
-					},
-					variable = {
-						fg = "#cee4ae"
-					},
-				}
+			require("everforest").setup({
+				background = "medium",
+				transparent_background_level = 2,
+				enable_italic = 1,
+				cursor = "green",
+				diagnostic_text_highlight = 1,
+				diagnostic_virtual_text = "colored"
 			})
-		end
+		end,
 	})
+
+	-- use({
+	-- 	"themercorp/themer.lua",
+	-- 	config = function()
+	-- 		require("themer").setup({
+	-- 			colorscheme = "everforest",
+	-- 			-- styles = {
+	-- 			-- 	string = {
+	-- 			-- 		-- fg = "#00552e"
+	-- 			-- 		-- fg = "#69b076"
+	-- 			-- 		fg = "#47885e"
+	-- 			-- 	},
+	-- 			-- 	comment = {
+	-- 			-- 		fg = "#549688"
+	-- 			-- 	},
+	-- 			-- 	['function'] = {
+	-- 			-- 		fg = "#89BEBA"
+	-- 			-- 	},
+	-- 			-- 	functionBuiltIn = {
+	-- 			-- 		fg = "#89BEBA"
+	-- 			-- 	},
+	-- 			-- 	conditional = {
+	-- 			-- 		fg = "#82ae46"
+	-- 			-- 	},
+	-- 			-- 	keywordBuiltIn = {
+	-- 			-- 		fg = "#82ae46"
+	-- 			-- 	},
+	-- 			-- 	keyword = {
+	-- 			-- 		fg = "#82ae46"
+	-- 			-- 	},
+	-- 			-- 	variable = {
+	-- 			-- 		fg = "#cee4ae"
+	-- 			-- 	},
+	-- 			-- }
+	-- 		})
+	-- 	end
+	-- })
 
 	-- find and grep
 	use 'kyazdani42/nvim-web-devicons'
@@ -231,15 +245,15 @@ return require('packer').startup(function(use)
 	})
 
 	-- hlargs function param color
-	use({
-		'm-demare/hlargs.nvim',
-		config = function()
-			require('hlargs').setup {
-				color = "#3b7960"
-			}
-			require('hlargs').enable()
-		end
-	})
+	-- use({
+	-- 	'm-demare/hlargs.nvim',
+	-- 	config = function()
+	-- 		require('hlargs').setup {
+	-- 			color = "#3b7960"
+	-- 		}
+	-- 		require('hlargs').enable()
+	-- 	end
+	-- })
 
 	-- hop easy to move
 	use {
