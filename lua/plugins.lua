@@ -114,6 +114,7 @@ return require('packer').startup(function(use)
 			})
 		end,
 	})
+	use 'Yazeed1s/oh-lucy.nvim'
 
 	-- use({
 	-- 	"themercorp/themer.lua",
@@ -245,15 +246,15 @@ return require('packer').startup(function(use)
 	})
 
 	-- hlargs function param color
-	-- use({
-	-- 	'm-demare/hlargs.nvim',
-	-- 	config = function()
-	-- 		require('hlargs').setup {
-	-- 			color = "#3b7960"
-	-- 		}
-	-- 		require('hlargs').enable()
-	-- 	end
-	-- })
+	use({
+		'm-demare/hlargs.nvim',
+		config = function()
+			require('hlargs').setup {
+				color = "#698b22"
+			}
+			require('hlargs').enable()
+		end
+	})
 
 	-- hop easy to move
 	use {

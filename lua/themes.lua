@@ -17,6 +17,9 @@ vim.g.everforest_diagnostic_virtual_text = "colored"
 
 vim.g.material_theme_style = "minimal"
 
+vim.g.oh_lucy_evening_italic_functions = true
+vim.g.oh_lucy_evening_italic_comments = true
+
 vim.g.material_style = "minimal"
 vim.cmd[[colorscheme everforest]]
 
@@ -31,7 +34,7 @@ vim.g.nord_bold = false
 -- eleline.vim
 vim.g.airline_powerline_fonts = "0"
 vim.g.airline_section_c = "%F"
-vim.g.airline_theme = "nord"
+vim.g.airline_theme = "luna"
 
 -- GitGutter
 vim.g.gitgutter_signs = 0
