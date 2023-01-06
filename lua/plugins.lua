@@ -371,8 +371,8 @@ return require('packer').startup(function(use)
 	-- 		"rcarriga/nvim-notify",
 	-- 	}
 	-- })
-
-	-- use 'dense-analysis/ale'
+	use "jose-elias-alvarez/null-ls.nvim"
+	use "jayp0521/mason-null-ls.nvim"
 
 	if packer_bootstrap then
 		-- require('packer').sync()

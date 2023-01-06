@@ -19,6 +19,11 @@ local settings = {
         package_pending = "◍",
         package_uninstalled = "◍",
         },
+		keymaps = {
+			install_package = "I",
+            -- Keymap to reinstall/update the package under the current cursor position
+            update_package = "a",
+		}
     },
     log_level = vim.log.levels.INFO,
     max_concurrent_installers = 4,
