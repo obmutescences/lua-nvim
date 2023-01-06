@@ -1,21 +1,3 @@
--- -- Define commands
-
--- -- Remove trailing whitespaces
--- -- (if a file requires trailing spaces, exclude its type using the regex)
--- vim.cmd [[autocmd BufWritePre * %s/\s\+$//e ]]
-
--- -- Swap folder
--- vim.cmd('command! ListSwap split | enew | r !ls -l ~/.local/share/nvim/swap')
--- vim.cmd('command! CleanSwap !rm -rf ~/.local/share/nvim/swap/')
-
--- -- Open help tags
--- vim.cmd("command! HelpTags Telescope help_tags")
-
--- -- Create ctags
--- vim.cmd('command! MakeCTags !ctags -R --exclude=@.ctagsignore .')
-
-
----- my---
 
 vim.cmd('syntax enable')
 -- vim.cmd('syntax sync minlines=256')
@@ -107,12 +89,6 @@ let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod', 
 " === Necessary Commands to Execute
 " ===
 exec "nohlsearch"
-
-" ale
-" let g:airline#extensions#ale#enabled = 1
-" let g:ale_linters = { 'rust': ['analyzer', 'cargo']}
-" let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
-
 
 
 " vim-json

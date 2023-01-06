@@ -1,13 +1,16 @@
 local M = {}
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
 	return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+local capabilities = cmp_nvim_lsp.default_capabilities()
+
+M.capabilities = capabilities
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- TODO: backfill this to template
@@ -86,7 +89,7 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
@@ -101,135 +104,11 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	-- if client.name == "tsserver" or client.name == "clangd" then
-	-- client.resolved_capabilities.document_formatting = false
-	-- end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 
 	-- add outline support for evey lanuage
 	require "lsp_signature".on_attach()
 end
-
-
--- local gopls_cmd = { 'gopls', '--remote=auto', '--remote.listen.timeout=5m', 'serve' }
-
--- local servers = { "bashls", "pyright", "jsonls", "dockerls", "golangci_lint_ls", "gopls",
--- 	"quick_lint_js", "volar", "yamlls", "rust_analyzer" }
--- for _, lsp in ipairs(servers) do
--- 	-- if lsp == "gopls" then
--- 	-- 	require('lspconfig')[lsp].setup({
--- 	-- 		cmd = gopls_cmd,
--- 	-- 		on_attach = M.on_attach,
--- 	-- 		capabilities = capabilities,
--- 	--   })
--- 	-- else
--- 	require('lspconfig')[lsp].setup({
--- 		on_attach = M.on_attach,
--- 		capabilities = capabilities,
--- 	})
--- 	-- end
-
--- end
-
--- local lspconfig = require('lspconfig')
-
-
--- local on_attach = function(client, bufnr)
--- 	if client.server_capabilities.documentFormattingProvider then
--- 		vim.api.nvim_create_autocmd('BufWritePre', {
--- 			pattern = client.config.filetypes,
--- 			callback = function()
--- 				vim.lsp.buf.format({
--- 					bufnr = bufnr,
--- 					async = true,
--- 				})
--- 			end,
--- 		})
--- 	end
--- end
-
--- lspconfig.gopls.setup({
--- 	on_attach = on_attach,
--- 	cmd = { 'gopls', '--remote=auto' },
--- 	capabilities = capabilities,
--- 	init_options = {
--- 		usePlaceholders = true,
--- 		completeUnimported = true,
--- 	},
--- })
-
--- local rust_opts = {
--- 	tools = {
--- 		executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
--- 		reload_workspace_from_cargo_toml = true,
--- 		inlay_hints = {
--- 			auto = true,
--- 			only_current_line = false,
--- 			show_parameter_hints = true,
--- 			parameter_hints_prefix = "<-",
--- 			other_hints_prefix = "->",
--- 			max_len_align = false,
--- 			max_len_align_padding = 1,
--- 			right_align = false,
--- 			right_align_padding = 7,
--- 			highlight = "Comment",
--- 		},
--- 		hover_actions = {
--- 			border = {
--- 				{ "╭", "FloatBorder" },
--- 				{ "─", "FloatBorder" },
--- 				{ "╮", "FloatBorder" },
--- 				{ "│", "FloatBorder" },
--- 				{ "╯", "FloatBorder" },
--- 				{ "─", "FloatBorder" },
--- 				{ "╰", "FloatBorder" },
--- 				{ "│", "FloatBorder" },
--- 			},
--- 			auto_focus = true,
--- 		},
--- 	},
--- 	server = {
--- 		on_init = require("lvim.lsp").common_on_init,
--- 		on_attach = function(client, bufnr)
--- 			require("lvim.lsp").common_on_attach(client, bufnr)
--- 			local rt = require "rust-tools"
--- 			-- Hover actions
--- 			vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
--- 			-- Code action groups
--- 			vim.keymap.set("n", "<leader>lA", rt.code_action_group.code_action_group, { buffer = bufnr })
--- 		end,
--- 	},
--- }
-
--- lspconfig.rust_analyzer.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- 	settings = {
--- 		['rust-analyzer'] = {
--- 			assist = {
--- 				importGranularity = true,
--- 				importPrefix = "crate",
--- 			},
--- 			cargo = {
--- 				loadOutDirsFromCheck = true,
--- 				allFeatures = true
--- 			},
--- 			checkOnSave = {
--- 				-- default: `cargo check`
--- 				command = "clippy"
--- 			},
--- 			inlayHints = {
--- 				lifetimeElisionHints = {
--- 					enable = true,
--- 					useParameterNames = true
--- 				},
--- 			},
--- 			procMacro = {
--- 				enable = true,
--- 			},
--- 		},
--- 	},
--- })
 
 return M

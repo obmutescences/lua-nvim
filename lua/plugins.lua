@@ -49,7 +49,6 @@ return require('packer').startup(function(use)
 	use 'fatih/vim-go'
 
 	-- rust
-	-- use 'rust-lang/rust.vim'
 	use({
 		'simrat39/rust-tools.nvim'
 	})
@@ -60,10 +59,6 @@ return require('packer').startup(function(use)
 
 	-- Editor Enhancement
 	use 'jiangmiao/auto-pairs'
-
-	-- For general writing
-	-- use 'junegunn/goyo.vim'
-	-- use 'junegunn/limelight.vim'
 
 	-- Other visual enhancement
 	use 'ryanoasis/vim-devicons'
@@ -85,20 +80,6 @@ return require('packer').startup(function(use)
 	-- use 'sainnhe/everforest'
 	use 'shaunsingh/nord.nvim'
 	use 'Yazeed1s/minimal.nvim'
-	-- use({
-	-- "Yagua/nebulous.nvim",
-	-- config = function()
-	-- require("nebulous").setup {
-	-- variant = "fullmoon",
-	-- italic = {
-	-- comments   = false,
-	-- keywords   = false,
-	-- functions  = false,
-	-- variables  = false,
-	-- },
-	-- }
-	-- end
-	-- })
 	use 'ful1e5/onedark.nvim'
 	use({
 		"neanias/everforest-nvim",
@@ -116,64 +97,14 @@ return require('packer').startup(function(use)
 	})
 	use 'Yazeed1s/oh-lucy.nvim'
 
-	-- use({
-	-- 	"themercorp/themer.lua",
-	-- 	config = function()
-	-- 		require("themer").setup({
-	-- 			colorscheme = "everforest",
-	-- 			-- styles = {
-	-- 			-- 	string = {
-	-- 			-- 		-- fg = "#00552e"
-	-- 			-- 		-- fg = "#69b076"
-	-- 			-- 		fg = "#47885e"
-	-- 			-- 	},
-	-- 			-- 	comment = {
-	-- 			-- 		fg = "#549688"
-	-- 			-- 	},
-	-- 			-- 	['function'] = {
-	-- 			-- 		fg = "#89BEBA"
-	-- 			-- 	},
-	-- 			-- 	functionBuiltIn = {
-	-- 			-- 		fg = "#89BEBA"
-	-- 			-- 	},
-	-- 			-- 	conditional = {
-	-- 			-- 		fg = "#82ae46"
-	-- 			-- 	},
-	-- 			-- 	keywordBuiltIn = {
-	-- 			-- 		fg = "#82ae46"
-	-- 			-- 	},
-	-- 			-- 	keyword = {
-	-- 			-- 		fg = "#82ae46"
-	-- 			-- 	},
-	-- 			-- 	variable = {
-	-- 			-- 		fg = "#cee4ae"
-	-- 			-- 	},
-	-- 			-- }
-	-- 		})
-	-- 	end
-	-- })
-
 	-- find and grep
 	use 'kyazdani42/nvim-web-devicons'
 
 
 	-- LSP server
-	-- use 'neovim/nvim-lspconfig'
-	-- use {
-	-- 	'williamboman/mason.nvim', -- Helper for installing most language servers
-	-- 	config = function()
-	-- 		require('mason').setup()
-	-- 	end
-	-- }
-	-- use 'williamboman/mason-lspconfig.nvim'
-	use {
-		'junnplus/lsp-setup.nvim',
-		requires = {
-			'neovim/nvim-lspconfig',
-			'williamboman/mason.nvim',
-			'williamboman/mason-lspconfig.nvim',
-		}
-	}
+	use 'neovim/nvim-lspconfig'
+	use 'williamboman/mason.nvim' -- Helper for installing most language servers
+	use 'williamboman/mason-lspconfig.nvim'
 
 	use "ray-x/lsp_signature.nvim" -- show function signature when typing
 	use({
@@ -219,8 +150,6 @@ return require('packer').startup(function(use)
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	})
-	-- use 'nvim-treesitter/nvim-treesitter-textobjects'
-
 
 	-- Startify
 	use({
@@ -430,18 +359,18 @@ return require('packer').startup(function(use)
 	}
 
 	-- notify ui
-	use({
-		"folke/noice.nvim",
-		event = "VimEnter",
-		config = function()
-			require("noice").setup()
-		end,
-		requires = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		}
-	})
+	-- use({
+	-- 	"folke/noice.nvim",
+	-- 	event = "VimEnter",
+	-- 	config = function()
+	-- 		require("noice").setup()
+	-- 	end,
+	-- 	requires = {
+	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"rcarriga/nvim-notify",
+	-- 	}
+	-- })
 
 	-- use 'dense-analysis/ale'
 

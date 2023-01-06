@@ -218,7 +218,7 @@ require('lspconfig')["sumneko_lua"].setup{
 require('lspconfig')["gopls"].setup{
     on_attach = on_attach,
 }
-require('lspconfig')["pyright"].setup{
+require('lspconfig').ruff_lsp.setup{
     on_attach = on_attach,
 }
 require "lsp_signature".on_attach()

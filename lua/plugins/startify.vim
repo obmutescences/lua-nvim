@@ -25,61 +25,6 @@ let g:startify_lists = [
           \ { 'type': 'commands',  'header': ['   Commands']       },
           \ ]
 
-
-
-" ===
-" === goyo
-" ===
-
-"进入goyo模式后自动触发limelight,退出后则关闭
-autocmd! user goyoenter nested call <sid>goyo_enter()
-autocmd! user goyoleave nested call <sid>goyo_leave()
-let g:goyo_width = 90
-let g:goyo_height = '100%'
-let g:goyo_linenr = 0
-
-function! s:goyo_enter()
-	if executable('tmux') && strlen($tmux)
-		silent !tmux set status off
-		silent !tmux list-panes -f '\#f' | grep -q z || tmux resize-pane -z
-	endif
-	set noshowmode
-	set noshowcmd
-	set scrolloff=999
-	" let g:limelight_conceal_ctermfg='#5c6370'
-	" let g:limelight_conceal_guifg='#5c6370'
-	" limelight
-	" ...
-endfunction
-
-function! s:goyo_leave()
-	if executable('tmux') && strlen($tmux)
-		silent !tmux set status on
-		silent !tmux list-panes -f '\#f' | grep -q z && tmux resize-pane -z
-	endif
-	" set showmode
-	set showcmd
-	set scrolloff=5
-	" limelight!
-	" hi comment cterm=italic
-	" hi comment guifg=#5c6370 ctermfg=59
-	" hi normal     ctermbg=none guibg=none
-	" hi linenr     ctermbg=none guibg=none
-	" hi signcolumn ctermbg=none guibg=none
-	" hi normal guibg=#011f14
-	" hi comment cterm=italic
-	" hi comment guifg=#5c6370 ctermfg=59
-	" hi normal     ctermbg=none guibg=#323d43
-	" hi linenr     ctermbg=none guibg=none
-	" hi signcolumn ctermbg=none guibg=none
-	" let g:limelight_conceal_ctermfg='#5c6370'
-	" let g:limelight_conceal_guifg='#5c6370'
-	" limelight!
-
-	" ...
-endfunction
-
-
 " hi Comment cterm=italic
 " hi Comment guifg=#5C6370 ctermfg=59
 " hi Normal     ctermbg=NONE guibg=#323d43
@@ -87,13 +32,6 @@ hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 hi NonText ctermfg=gray guifg=grey10
 hi ColorColumn guibg=NONE
-" let g:clap_layout = { 'relative': 'editor' }
-" let g:clap_theme = { 'search_text': {'guifg': 'red', 'ctermfg': 'red'} }
-" let g:clap_layout = { 'width': '40%', 'height': '60%', 'col': '15%', 'row': '17%' }
-" let g:clap_use_pure_python = 1
-" let g:clap_preview_size = 50
-" let g:clap_popup_border = 'nil'
-
 
 " ===
 " === vim-go
@@ -124,8 +62,6 @@ let g:go_highlight_types = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_doc_keywordprg_enabled = 0
-
-" new add
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_diagnostic_errors = 1
 let g:go_highlight_diagnostic_warnings = 1
