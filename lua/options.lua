@@ -11,7 +11,7 @@ vim.o.clipboard = 'unnamedplus'
 --editor--
 
 vim.o.cursorline = true
-vim.o.number = true
+-- vim.o.number = true
 -- vim.bo.noexpandtab = true
 vim.o.autoindent = true
 vim.o.foldenable = false
@@ -58,7 +58,7 @@ vim.g.noshowmode = true
 
 -- set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:b:cANSI
 -- vim.g.guifont = 'CodeNewRoman\\ Nerd\\ Font\\ Mono:h15:cANSI'
-vim.g.neovide_refresh_rate = 75
+-- vim.g.neovide_refresh_rate = 75
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_cursor_vfx_opacity = 800.0

@@ -15,7 +15,7 @@ end
 -- Rerun PackerCompile everytime pluggins.lua is updated
 cmd([[
   augroup packer_user_config
-    autocmd!
+	autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
 ]])
@@ -50,6 +50,8 @@ return require('packer').startup(function(use)
 
 	-- rust
 	use({
+		-- simrat39
+		-- kdarkhan
 		'simrat39/rust-tools.nvim'
 	})
 
@@ -88,7 +90,7 @@ return require('packer').startup(function(use)
 			require("everforest").setup({
 				background = "medium",
 				transparent_background_level = 2,
-				enable_italic = 1,
+				enable_italic = true,
 				cursor = "green",
 				diagnostic_text_highlight = 1,
 				diagnostic_virtual_text = "colored"
@@ -111,10 +113,19 @@ return require('packer').startup(function(use)
 		'glepnir/lspsaga.nvim',
 		branch = "main",
 		config = function()
-			local saga = require("lspsaga")
-			saga.init_lsp_saga({
-				border_style = "single",
-				saga_winblend = 60,
+			require('lspsaga').setup({
+				ui = {
+					theme = 'round',
+					-- border type can be single,double,rounded,solid,shadow.
+					border = 'rounded',
+					winblend = 20,
+					colors = {
+						--float window normal bakcground color
+						normal_bg = '#556b2f',
+						--title background color
+						title_bg = '#556b2f',
+					}
+				}
 			})
 		end
 	})
@@ -177,12 +188,12 @@ return require('packer').startup(function(use)
 	-- hlargs function param color
 	use({
 		'm-demare/hlargs.nvim',
-		config = function()
-			require('hlargs').setup {
-				color = "#698b22"
-			}
-			require('hlargs').enable()
-		end
+		-- config = function()
+		-- 	require('hlargs').setup {
+		-- 		color = "#698b22"
+		-- 	}
+		-- 	require('hlargs').enable()
+		-- end
 	})
 
 	-- hop easy to move
@@ -281,7 +292,7 @@ return require('packer').startup(function(use)
 	--}
 
 	-- context vt
-	use "romgrk/nvim-treesitter-context"
+	-- use "romgrk/nvim-treesitter-context"
 
 	-- highlight todo
 	use {
@@ -371,8 +382,8 @@ return require('packer').startup(function(use)
 	-- 		"rcarriga/nvim-notify",
 	-- 	}
 	-- })
-	use "jose-elias-alvarez/null-ls.nvim"
-	use "jayp0521/mason-null-ls.nvim"
+	-- use "jose-elias-alvarez/null-ls.nvim"
+	-- use "jayp0521/mason-null-ls.nvim"
 
 	if packer_bootstrap then
 		-- require('packer').sync()

@@ -8,7 +8,7 @@ if not status_ok_1 then
     return
 end
 
-local servers = {"sumneko_lua", "bashls", "jsonls", "dockerls", "golangci_lint_ls", "gopls", "yamlls", "rust_analyzer", "pylsp", "pyright" }
+local servers = {"sumneko_lua", "bashls", "jsonls", "dockerls", "golangci_lint_ls", "gopls", "yamlls", "rust_analyzer", "pylsp", "pyright", "tsserver", "vuels" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {

@@ -5,8 +5,8 @@ vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
 
 vim.cmd([[
 
-" set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:i
-set guifont=CodeNewRoman\ Nerd\ Font:h14
+set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:#e-antialias:#h-none
+" set guifont=CodeNewRoman\ Nerd\ Font:h14
 " set guifont=UbuntuMono\ Nerd\ Font\ Mono:h15:cANSI
 
 

@@ -166,13 +166,13 @@ local tel_config = {
 		find_files = {
 			theme = "dropdown",
 			-- previewer = false,
-			find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+			-- find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
 		},
 		live_grep = {
 			theme = "dropdown",
 			-- previewer = false,
 			-- find_command = { "find", "-type", "f" },
-			find_command = { "fd" },
+			-- find_command = { "fd" },
 		},
 		-- Default configuration for builtin pickers goes here:
 		-- picker_name = {

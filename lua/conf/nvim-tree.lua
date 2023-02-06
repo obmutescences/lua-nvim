@@ -76,12 +76,12 @@ nvim_tree.setup {
 	disable_netrw = true,
 	hijack_netrw = true,
 	-- open_on_setup = false,
-	ignore_ft_on_setup = {
-		"startify",
-		"dashboard",
-		"alpha",
-		"startup",
-	},
+	-- ignore_ft_on_setup = {
+	-- 	"startify",
+	-- 	"dashboard",
+	-- 	"alpha",
+	-- 	"startup",
+	-- },
 	-- auto_close = true,
 	open_on_tab = false,
 	hijack_cursor = false,
@@ -102,7 +102,7 @@ nvim_tree.setup {
 	},
 	git = {
 		enable = true,
-		ignore = true,
+		ignore = false,
 		timeout = 500,
 	},
 	view = {
@@ -153,3 +153,5 @@ vim.cmd(
     autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]
 )
+
+

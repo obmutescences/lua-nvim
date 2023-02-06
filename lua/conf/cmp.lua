@@ -141,6 +141,18 @@ require("luasnip.loaders.from_vscode").load({ paths = { -- load custom snippets
 
 local lspkind = require("lspkind")
 
+local buffer_option = {
+  -- Complete from all visible buffers (splits)
+  get_bufnrs = function()
+    local bufs = {}
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+      bufs[vim.api.nvim_win_get_buf(win)] = true
+    end
+    return vim.tbl_keys(bufs)
+  end
+}
+
+
 cmp_config = {
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -150,6 +162,7 @@ cmp_config = {
 		---@usage The minimum length of a word to complete on.
 		keyword_length = 1,
 		completeopt = 'menu,menuone,noinsert',
+		-- completeopt = "menu,noselect",
 	},
 	experimental = {
 		ghost_text = true,
@@ -190,11 +203,11 @@ cmp_config = {
 		},
 		source_names = {
 			nvim_lsp = "(LSP)",
-			emoji = "(Emoji)",
+			-- emoji = "(Emoji)",
 			path = "(Path)",
-			calc = "(Calc)",
+			-- calc = "(Calc)",
 			cmp_tabnine = "(Tabnine)",
-			vsnip = "(Snippet)",
+			-- vsnip = "(Snippet)",
 			luasnip = "(Snippet)",
 			buffer = "(Buffer)",
 			spell = "(Spell)",
@@ -204,7 +217,7 @@ cmp_config = {
 			path = 1,
 			nvim_lsp = 1,
 			luasnip = 0,
-			vsnip = 0,
+			-- vsnip = 0,
 			cmp_tabnine = 1,
 		},
 		duplicates_default = 0,
@@ -231,9 +244,17 @@ cmp_config = {
 	},
 	sorting = {
 		comparators = {
-			cmp.config.compare.score,
+			-- cmp.config.compare.exact,
+			-- cmp.config.compare.locality,
+			-- cmp.config.compare.recently_used,
+			-- cmp.config.compare.score,
+			-- cmp.config.compare.offset,
+			-- cmp.config.compare.sort_text,
+			-- cmp.config.compare.order,
+
 			cmp.config.compare.offset,
 			cmp.config.compare.exact,
+			cmp.config.compare.score,
 			cmp.config.compare.kind,
 			-- cmp.config.compare.sort_text,
 			cmp.config.compare.length,
@@ -249,19 +270,24 @@ cmp_config = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
-	sources = {
+	sources = cmp.config.sources({
 		-- { name = "cmp_tabnine" },
-		{ name = "nvim_lsp", keyword_length = 1 },
-		{ name = "nvim_lsp_signature_help" },
-		{ name = "buffer" },
-		{ name = "path" },
-		-- { name = "luasnip" },
-		{ name = "nvim_lua" },
+		{ name = "nvim_lsp", priority = 9 },
+		-- { name = "nvim_lsp_signature_help", priority = 9 },
+		{
+			name = "buffer",
+			keyword_length = 2,
+			priority = 7,
+			option = buffer_option,
+		},
+		{ name = "nvim_lua", priority = 5 },
+		{ name = "path", priority = 4 },
+		{ name = "luasnip" },
 		-- { name = "emoji" },
-		{ name = "treesitter" },
+		-- { name = "treesitter" },
 		{ name = "crates" },
-		{ name = "calc" },
-	},
+		-- { name = "calc" },
+	}),
 	mapping = cmp.mapping.preset.insert {
 		["<C-u>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
@@ -273,7 +299,7 @@ cmp_config = {
 				cmp.select_next_item()
 			elseif luasnip.expandable() then
 				luasnip.expand()
-			elseif jumpable() then
+			elseif jumpable(0) then
 				luasnip.jump(1)
 			elseif check_backspace() then
 				fallback()
@@ -301,22 +327,23 @@ cmp_config = {
 
 		-- ["<C-f>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping(function(fallback)
-			if cmp.visible() and cmp.confirm(cmp_config.confirm_opts) then
-				if jumpable() then
-					luasnip.jump(1)
-				end
-				return
-			end
+		-- ["<CR>"] = cmp.mapping(function(fallback)
+		-- 	if cmp.visible() and cmp.confirm(cmp_config.confirm_opts) then
+		-- 		if jumpable(0) then
+		-- 			luasnip.jump(1)
+		-- 		end
+		-- 		return
+		-- 	end
 
-			if jumpable() then
-				if not luasnip.jump(1) then
-					fallback()
-				end
-			else
-				fallback()
-			end
-		end),
+		-- 	if jumpable(0) then
+		-- 		if not luasnip.jump(1) then
+		-- 			fallback()
+		-- 		end
+		-- 	else
+		-- 		fallback()
+		-- 	end
+		-- end),
+		["<CR>"] = cmp.mapping.confirm { select = true },
 	},
 }
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).

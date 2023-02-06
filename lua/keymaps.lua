@@ -119,7 +119,7 @@ nnoremap("r", ":call CompileRunGcc()<CR>")
 
 --Telescope
 nnoremap("<C-p>", ":Telescope find_files<CR>")
-nnoremap("<C-l>", ":Telescope current_buffer_fuzzy_find<CR>")
+nnoremap("<C-l>", ":Telescope live_grep<CR>")
 nnoremap("<C-;>", ":Telescope file_browser<CR>")
 
 -- GitGutter
