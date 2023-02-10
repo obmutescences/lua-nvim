@@ -33,9 +33,9 @@ vim.g.nord_uniform_diff_backgroud = true
 
 
 -- eleline.vim
-vim.g.airline_powerline_fonts = "0"
-vim.g.airline_section_c = "%F"
-vim.g.airline_theme = "luna"
+-- vim.g.airline_powerline_fonts = "0"
+-- vim.g.airline_section_c = "%F"
+-- vim.g.airline_theme = "luna"
 
 -- GitGutter
 vim.g.gitgutter_signs = 0

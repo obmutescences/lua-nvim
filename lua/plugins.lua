@@ -31,9 +31,11 @@ return require('packer').startup(function(use)
 	use 'pechorin/any-jump.vim'
 	use 'airblade/vim-rooter'
 
-	-- Pretty Dress
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	-- lualine
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 
 	-- Undo Tree
 	use 'mbbill/undotree'
@@ -162,14 +164,31 @@ return require('packer').startup(function(use)
 		run = ':TSUpdate'
 	})
 
-	-- Startify
-	use({
-		'mhinz/vim-startify',
-		config = function()
-			local path = vim.fn.stdpath('config') .. '/lua/plugins/startify.vim'
-			vim.cmd('source ' .. path)
-		end
-	})
+	-- -- Startify
+	-- use({
+	-- 	'mhinz/vim-startify',
+	-- 	config = function()
+	-- 		local path = vim.fn.stdpath('config') .. '/lua/plugins/startify.vim'
+	-- 		vim.cmd('source ' .. path)
+	-- 	end
+	-- })
+	-- dashboard-nvim
+	use {
+		'glepnir/dashboard-nvim',
+		-- event = 'VimEnter',
+		-- config = function()
+		-- 	require('dashboard').setup {
+		-- 	-- config
+		-- 	theme = "doom",
+		-- 	config = {
+		-- 		week_header = {
+		-- 			enable = true,
+		-- 		}
+		-- 	}
+		-- }
+		-- end,
+		requires = {'nvim-tree/nvim-web-devicons'}
+	}
 
 	-- find and Replace
 	use 'windwp/nvim-spectre'
@@ -188,12 +207,12 @@ return require('packer').startup(function(use)
 	-- hlargs function param color
 	use({
 		'm-demare/hlargs.nvim',
-		-- config = function()
-		-- 	require('hlargs').setup {
-		-- 		color = "#698b22"
-		-- 	}
-		-- 	require('hlargs').enable()
-		-- end
+		config = function()
+			require('hlargs').setup {
+				color = "#698b22"
+			}
+			require('hlargs').enable()
+		end
 	})
 
 	-- hop easy to move

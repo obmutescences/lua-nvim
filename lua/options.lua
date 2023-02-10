@@ -62,7 +62,7 @@ vim.g.noshowmode = true
 -- vim.g.neovide_refresh_rate = 75
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
-vim.g.neovide_cursor_vfx_opacity = 100.0
+vim.g.neovide_cursor_vfx_opacity = 1000.0
 vim.g.neovide_cursor_vfx_particle_lifetime = 1.5
 vim.g.neovide_cursor_vfx_particle_density = 40.0
 vim.g.neovide_cursor_vfx_particle_speed = 40.0
@@ -97,3 +97,4 @@ vim.g.neovide_scale_factor = 1.0
 
 -- rust
 vim.g.rustfmt_autosave = 1
+
