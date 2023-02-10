@@ -46,6 +46,7 @@ vim.o.completeopt = 'longest,noinsert,menuone,noselect,preview'
 vim.opt.formatoptions:remove('tc')
 vim.opt.shortmess:append('tc')
 vim.opt.synmaxcol = 2048
+vim.opt.linespace = 3
 
 
 vim.g.neoterm_autoscroll = 1
@@ -61,7 +62,7 @@ vim.g.noshowmode = true
 -- vim.g.neovide_refresh_rate = 75
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
-vim.g.neovide_cursor_vfx_opacity = 800.0
+vim.g.neovide_cursor_vfx_opacity = 100.0
 vim.g.neovide_cursor_vfx_particle_lifetime = 1.5
 vim.g.neovide_cursor_vfx_particle_density = 40.0
 vim.g.neovide_cursor_vfx_particle_speed = 40.0
@@ -73,6 +74,7 @@ vim.g.neovide_floating_blur = 1
 vim.g.neovide_floating_opacity = 0.2
 vim.g.neovide_floating_blur_amount_x = 1.0
 vim.g.neovide_floating_blur_amount_y = 1.0
+vim.g.neovide_scale_factor = 1.0
 -- vim.g.neovide_transparency=0.8
 -- vim.g.transparency = 0.9
 -- vim.g.neovide_fullscreen= true

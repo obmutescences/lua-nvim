@@ -153,3 +153,17 @@ nmap("tt", ":NvimTreeToggle<CR>")
 
 -- find and replace
 nnoremap("<LEADER>r", "<cmd>lua require('spectre').open()<CR>")
+
+-- neovide change scale 
+local change_scale_factor_add = function(delta)
+  vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + delta
+end
+local change_scale_factor_delete = function(delta)
+  vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - delta
+end
+vim.keymap.set("n", "<C-=>", function()
+  change_scale_factor_add(0.05)
+end)
+vim.keymap.set("n", "<C-->", function()
+  change_scale_factor_delete(0.05)
+end)

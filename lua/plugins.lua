@@ -88,12 +88,12 @@ return require('packer').startup(function(use)
 		-- Optional; default configuration will be used if setup isn't called.
 		config = function()
 			require("everforest").setup({
-				background = "medium",
-				transparent_background_level = 2,
-				enable_italic = true,
-				cursor = "green",
-				diagnostic_text_highlight = 1,
-				diagnostic_virtual_text = "colored"
+				background = "soft",
+				transparent_background_level = 0,
+				italics = true,
+				-- cursor = "green",
+				-- diagnostic_text_highlight = 1,
+				-- diagnostic_virtual_text = "colored"
 			})
 		end,
 	})
