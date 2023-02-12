@@ -77,7 +77,7 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-commentary'
 
 	-- indentLine
-	use 'Yggdroot/indentLine'
+	-- use 'Yggdroot/indentLine'
 
 	-- themes
 	-- use 'mhartington/oceanic-next'
@@ -173,21 +173,16 @@ return require('packer').startup(function(use)
 	-- 	end
 	-- })
 	-- dashboard-nvim
+	-- use {
+	-- 	'glepnir/dashboard-nvim',
+	-- 	requires = {'nvim-tree/nvim-web-devicons'}
+	-- }
 	use {
-		'glepnir/dashboard-nvim',
-		-- event = 'VimEnter',
-		-- config = function()
-		-- 	require('dashboard').setup {
-		-- 	-- config
-		-- 	theme = "doom",
-		-- 	config = {
-		-- 		week_header = {
-		-- 			enable = true,
-		-- 		}
-		-- 	}
-		-- }
-		-- end,
-		requires = {'nvim-tree/nvim-web-devicons'}
+		"startup-nvim/startup.nvim",
+		requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+		config = function()
+			require"startup".setup(require"conf.startup")
+		end
 	}
 
 	-- find and Replace
@@ -343,6 +338,8 @@ return require('packer').startup(function(use)
 	use { 'nvim-telescope/telescope-ui-select.nvim' }
 
 	use { "nvim-telescope/telescope-file-browser.nvim" }
+	
+	use { "nvim-telescope/telescope-project.nvim" }
 
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 

@@ -292,8 +292,7 @@ cmp_config = {
 		["<C-u>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
-		-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
-		-- TODO: potentially fix emmet nonsense
+		['<C-p>'] = cmp.config.disable,
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -327,7 +326,7 @@ cmp_config = {
 
 		-- ["<C-f>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		-- ["<CR>"] = cmp.mapping(function(fallback)
+		-- ["<CR>"] = cmp.mapping(function(fallbackk)
 		-- 	if cmp.visible() and cmp.confirm(cmp_config.confirm_opts) then
 		-- 		if jumpable(0) then
 		-- 			luasnip.jump(1)
