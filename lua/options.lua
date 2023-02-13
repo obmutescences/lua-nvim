@@ -31,34 +31,23 @@ vim.o.shiftwidth  = 4
 -- vim.o.scrolloff    = 4
 vim.o.ttimeoutlen = 0
 vim.o.tw          = 0
--- vim.o.foldlevel    = 99
 vim.o.re          = 1
--- vim.o.synmaxcol    = 80
--- vim.o.colorcolumn = '60'
 vim.o.viewoptions = 'cursor,folds,slash,unix'
 vim.o.indentexpr  = ''
--- vim.o.foldmethod  = 'indent'
--- vim.o.foldmethod   = 'expr'
--- vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.o.inccommand  = 'split'
 vim.o.completeopt = 'longest,noinsert,menuone,noselect,preview'
--- vim.o.virtualedit  = 'block'
 vim.opt.formatoptions:remove('tc')
 vim.opt.shortmess:append('tc')
 vim.opt.synmaxcol = 2048
-vim.opt.linespace = 3
+vim.opt.linespace = 2
 
 
 vim.g.neoterm_autoscroll = 1
 vim.g.notimeout = true
 vim.g.noshowmode = true
--- vim.g.updatetime = '1000'
 
 
 -- neovide
-
--- set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:b:cANSI
--- vim.g.guifont = 'CodeNewRoman\\ Nerd\\ Font\\ Mono:h15:cANSI'
 -- vim.g.neovide_refresh_rate = 75
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
@@ -79,22 +68,6 @@ vim.g.neovide_scale_factor = 1.0
 -- vim.g.transparency = 0.9
 -- vim.g.neovide_fullscreen= true
 
--- lint: ale
-
--- vim.g.ale_lint_on_text_changed = "never"
--- vim.g.ale_lint_on_insert_leave = 0
--- vim.g.ale_lint_on_enter = 0
--- vim.g.ale_fix_on_save = 0
--- vim.g.ale_set_highlights = 0
--- vim.g.ale_rust_cargo_use_check = 0
--- vim.g.ale_set_loclist = 0
--- vim.g.ale_set_quickfix = 0
--- vim.g.ale_open_list = 0
--- vim.g.ale_keep_list_window_open = 0
--- vim.g.ale_sign_column_always = 1
--- vim.g.ale_sign_error = '✗'
--- vim.g.ale_sign_warning = ''
-
--- rust
+-- rust-tools
 vim.g.rustfmt_autosave = 1
 

@@ -44,7 +44,7 @@ endfunc
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " GitGutter
-autocmd BufWritePost * GitGutter
+" autocmd BufWritePost * GitGutter
 "autocmd BufEnter * hi ColorColumn guibg=NONE ctermbg=NONE
 "autocmd BufEnter * hi LineNr guifg=#556B2F
 " autocmd BufEnter * hi LineNr guifg=#8B8386
@@ -63,16 +63,9 @@ function g:Undotree_CustomMap()
 endfunc
 
 " ===
-" === anzu
-" ===
-" set statusline=%{anzu#search_status()}
-" nnoremap = n
-" nnoremap - N
-
-" ===
 " === rainbow
 " ===
-let g:rainbow_active = 1
+" let g:rainbow_active = 1
 
 
 " ===

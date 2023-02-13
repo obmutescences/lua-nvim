@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
 	use({ 'wbthomason/packer.nvim', opt = true })
 
 	use 'RRethy/vim-illuminate'
-	use 'pechorin/any-jump.vim'
+	-- use 'pechorin/any-jump.vim'
 	use 'airblade/vim-rooter'
 
 	-- lualine
@@ -41,11 +41,11 @@ return require('packer').startup(function(use)
 	use 'mbbill/undotree'
 
 	-- Git
-	use 'tpope/vim-fugitive'
-	use 'airblade/vim-gitgutter'
+	-- use 'tpope/vim-fugitive'
+	-- use 'airblade/vim-gitgutter'
 
 	-- JSON.
-	use 'elzr/vim-json'
+	-- use 'elzr/vim-json'
 
 	-- " Go
 	use 'fatih/vim-go'
@@ -57,27 +57,28 @@ return require('packer').startup(function(use)
 		'simrat39/rust-tools.nvim'
 	})
 
-
-	-- Python
-	use 'Vimjas/vim-python-pep8-indent'
-
-	-- Editor Enhancement
-	use 'jiangmiao/auto-pairs'
+	-- auto pairs
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
 
 	-- Other visual enhancement
-	use 'ryanoasis/vim-devicons'
-	use 'luochen1990/rainbow'
-	use 'wincent/terminus'
+	-- use 'ryanoasis/vim-devicons'
+	-- use 'luochen1990/rainbow'
+	-- use 'wincent/terminus'
 
 	-- Dependencies
-	use 'kana/vim-textobj-user'
-	use 'roxma/nvim-yarp'
+	-- use 'kana/vim-textobj-user'
+	-- use 'roxma/nvim-yarp'
 
 	-- comment
-	use 'tpope/vim-commentary'
-
-	-- indentLine
-	-- use 'Yggdroot/indentLine'
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	}
 
 	-- themes
 	-- use 'mhartington/oceanic-next'
@@ -164,19 +165,6 @@ return require('packer').startup(function(use)
 		run = ':TSUpdate'
 	})
 
-	-- -- Startify
-	-- use({
-	-- 	'mhinz/vim-startify',
-	-- 	config = function()
-	-- 		local path = vim.fn.stdpath('config') .. '/lua/plugins/startify.vim'
-	-- 		vim.cmd('source ' .. path)
-	-- 	end
-	-- })
-	-- dashboard-nvim
-	-- use {
-	-- 	'glepnir/dashboard-nvim',
-	-- 	requires = {'nvim-tree/nvim-web-devicons'}
-	-- }
 	use {
 		"startup-nvim/startup.nvim",
 		requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
@@ -189,7 +177,7 @@ return require('packer').startup(function(use)
 	use 'windwp/nvim-spectre'
 
 	-- rainbow color ({})
-	use 'p00f/nvim-ts-rainbow'
+	use 'mrjones2014/nvim-ts-rainbow'
 
 	-- fidget lsp loading ui
 	use({
@@ -271,43 +259,6 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	-- true zen
-	use "Pocco81/true-zen.nvim"
-
-	-- navigator
-	-- use { 'ray-x/navigator.lua',
-	-- 	requires = { 'ray-x/guihua.lua',
-	-- 		run = 'cd lua/fzy && make' },
-	-- 	config = function()
-	-- 		-- you can configure Hop the way you like here; see :h hop-config
-	-- 		require 'navigator'.setup {
-	-- 			lsp = {
-	-- 				diagnostic = {
-	-- 					underline = true,
-	-- 					virtual_text = true, -- show virtual for diagnostic message
-	-- 					update_in_insert = true, -- update diagnostic message in insert mode
-	-- 				},
-	-- 				diagnostic_virtual_text = true,
-	-- 				diagnostic_update_in_insert = true,
-	-- 				diagnostic_scrollbar_sign = false,
-	-- 			}
-	-- 		}
-	-- 	end
-	-- }
-
-	----trouble
-	--use {
-	--	"folke/trouble.nvim",
-	--	config = function()
-	--		require("trouble").setup {
-	--			position = "right"
-	--		}
-	--	end
-	--}
-
-	-- context vt
-	-- use "romgrk/nvim-treesitter-context"
-
 	-- highlight todo
 	use {
 		"folke/todo-comments.nvim",
@@ -338,42 +289,10 @@ return require('packer').startup(function(use)
 	use { 'nvim-telescope/telescope-ui-select.nvim' }
 
 	use { "nvim-telescope/telescope-file-browser.nvim" }
-	
+
 	use { "nvim-telescope/telescope-project.nvim" }
 
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
-
-	-- do http request
-	use {
-		"NTBBloodbath/rest.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("rest-nvim").setup({
-				-- Open request results in a horizontal split
-				result_split_horizontal = false,
-				-- Keep the http file buffer above|left when split horizontal|vertical
-				result_split_in_place = false,
-				-- Skip SSL verification, useful for unknown certificates
-				skip_ssl_verification = false,
-				-- Highlight request on run
-				highlight = {
-					enabled = true,
-					timeout = 150,
-				},
-				result = {
-					-- toggle showing URL, HTTP info, headers at top the of result window
-					show_url = true,
-					show_http_info = true,
-					show_headers = true,
-				},
-				-- Jump to request line on run
-				jump_to_request = false,
-				-- env_file = '.env',
-				custom_dynamic_variables = {},
-				yank_dry_run = true,
-			})
-		end
-	}
 
 	-- rust crates
 	use {
@@ -385,21 +304,13 @@ return require('packer').startup(function(use)
 		end,
 	}
 
-	-- notify ui
-	-- use({
-	-- 	"folke/noice.nvim",
-	-- 	event = "VimEnter",
-	-- 	config = function()
-	-- 		require("noice").setup()
-	-- 	end,
-	-- 	requires = {
-	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"rcarriga/nvim-notify",
-	-- 	}
-	-- })
-	-- use "jose-elias-alvarez/null-ls.nvim"
-	-- use "jayp0521/mason-null-ls.nvim"
+	-- show nvim diagnostic using virtual lines
+	use({
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	})
 
 	if packer_bootstrap then
 		-- require('packer').sync()

@@ -230,28 +230,9 @@ cmp_config = {
 				return vim_item
 			end
 		}),
-		-- format = function(entry, vim_item)
-		--   local max_width = cmp_config.formatting.max_width
-		--   if max_width ~= 0 and #vim_item.abbr > max_width then
-		--     vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "…"
-		--   end
-		--   vim_item.kind = cmp_config.formatting.kind_icons[vim_item.kind]
-		--   vim_item.menu = cmp_config.formatting.source_names[entry.source.name]
-		--   vim_item.dup = cmp_config.formatting.duplicates[entry.source.name]
-		--       or cmp_config.formatting.duplicates_default
-		--   return vim_item
-		-- end,
 	},
 	sorting = {
 		comparators = {
-			-- cmp.config.compare.exact,
-			-- cmp.config.compare.locality,
-			-- cmp.config.compare.recently_used,
-			-- cmp.config.compare.score,
-			-- cmp.config.compare.offset,
-			-- cmp.config.compare.sort_text,
-			-- cmp.config.compare.order,
-
 			cmp.config.compare.offset,
 			cmp.config.compare.exact,
 			cmp.config.compare.score,
@@ -324,24 +305,7 @@ cmp_config = {
 			"s",
 		}),
 
-		-- ["<C-f>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		-- ["<CR>"] = cmp.mapping(function(fallbackk)
-		-- 	if cmp.visible() and cmp.confirm(cmp_config.confirm_opts) then
-		-- 		if jumpable(0) then
-		-- 			luasnip.jump(1)
-		-- 		end
-		-- 		return
-		-- 	end
-
-		-- 	if jumpable(0) then
-		-- 		if not luasnip.jump(1) then
-		-- 			fallback()
-		-- 		end
-		-- 	else
-		-- 		fallback()
-		-- 	end
-		-- end),
 		["<CR>"] = cmp.mapping.confirm { select = true },
 	},
 }

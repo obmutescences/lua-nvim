@@ -19,7 +19,9 @@ configs.setup {
     "vue",
 	"http",
 	"javascript",
-	"rust"
+	"rust",
+	"markdown",
+	"markdown_inline"
   }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing

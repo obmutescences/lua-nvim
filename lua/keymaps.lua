@@ -113,20 +113,11 @@ nnoremap("<C-c>", "zz")
 --Compile function
 nnoremap("r", ":call CompileRunGcc()<CR>")
 
--- clap
--- nnoremap("<C-i>", ":Clap filer<CR>")
-
-
 --Telescope
 nnoremap("<C-p>", ":Telescope find_files<CR>")
 nnoremap("<C-l>", ":Telescope live_grep<CR>")
 nnoremap("<C-;>", ":Telescope file_browser<CR>")
 
--- GitGutter
--- nnoremap("<LEADER>gf", ":GitGutterFold<CR>")
--- nnoremap("H", ":GitGutterPreviewHunk<CR>")
--- nnoremap("<LEADER>g-", ":GitGutterPrevHunk<CR>")
--- nnoremap("<LEADER>g=", ":GitGutterNextHunk<CR>")
 
 -- vim-fugitive
 nnoremap("gb", ":Gblame<CR>")
@@ -142,10 +133,8 @@ nnoremap("<C-w>", ":GonvimWorkspaceNew<CR>")
 nnoremap("<", "<<")
 nnoremap(">", ">>")
 
--- goyo
--- nmap('<LEADER>n', ':TZAtaraxis<CR>')
+-- zen mode
 nmap('<LEADER>n', ':ZenMode<CR>')
--- nmap('<LEADER>n', ':Goyo<CR>')
 
 
 -- nvim-tree
