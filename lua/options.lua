@@ -1,6 +1,6 @@
 -- Providers
-vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.1/bin/python3.11'
-vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.1/bin/python3.11'
+vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.2_1/bin/python3.11'
+vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.2_1/bin/python3.11'
 
 
 --system--
@@ -52,20 +52,29 @@ vim.g.noshowmode = true
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_cursor_vfx_opacity = 1000.0
-vim.g.neovide_cursor_vfx_particle_lifetime = 1.5
+vim.g.neovide_cursor_vfx_particle_lifetime = 2.5
 vim.g.neovide_cursor_vfx_particle_density = 40.0
-vim.g.neovide_cursor_vfx_particle_speed = 40.0
-vim.g.neovide_cursor_trail_length = 1.0
-vim.g.neovide_cursor_animation_length = 0.1
+vim.g.neovide_cursor_vfx_particle_speed = 30.0
+-- vim.g.neovide_cursor_trail_length = 2.0
+vim.g.neovide_cursor_animation_length = 0.15
+vim.g.neovide_cursor_trail_size = 0.3
+vim.g.neovide_cursor_antialiasing = true
+vim.g.neovide_cursor_animate_in_insert_mode = true
+vim.g.neovide_cursor_animate_command_line = true
 vim.g.neovide_hide_mouse_when_typing = 1
-vim.g.neovide_scroll_animation_length = 0.15
+vim.g.neovide_scroll_animation_length = 0.7
 vim.g.neovide_floating_blur = 1
 vim.g.neovide_floating_opacity = 0.2
 vim.g.neovide_floating_blur_amount_x = 1.0
 vim.g.neovide_floating_blur_amount_y = 1.0
 vim.g.neovide_scale_factor = 1.0
--- vim.g.neovide_transparency=0.8
--- vim.g.transparency = 0.9
+vim.g.neovide_transparency=0.0
+vim.g.transparency = 0.8
+local alpha = function()
+  return string.format("%x", math.floor(255 * 0.8))
+end
+-- vim.g.neovide_background_color = "#0f1117" .. alpha()
+vim.g.neovide_background_color = "#343F44" .. alpha()
 -- vim.g.neovide_fullscreen= true
 
 -- rust-tools

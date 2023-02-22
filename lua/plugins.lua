@@ -85,7 +85,7 @@ return require('packer').startup(function(use)
 	-- use 'sainnhe/everforest'
 	use 'shaunsingh/nord.nvim'
 	use 'Yazeed1s/minimal.nvim'
-	use 'ful1e5/onedark.nvim'
+	-- use 'ful1e5/onedark.nvim'
 	use({
 		"neanias/everforest-nvim",
 		-- Optional; default configuration will be used if setup isn't called.
