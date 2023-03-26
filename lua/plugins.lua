@@ -101,6 +101,7 @@ return require('packer').startup(function(use)
 		end,
 	})
 	use 'Yazeed1s/oh-lucy.nvim'
+	use { 'talha-akram/noctis.nvim' }
 
 	-- find and grep
 	use 'kyazdani42/nvim-web-devicons'
@@ -152,6 +153,7 @@ return require('packer').startup(function(use)
 	use "hrsh7th/cmp-nvim-lua"
 	use "f3fora/cmp-spell" -- spell check
 	use "onsails/lspkind.nvim" -- cmp kind
+	use "lukas-reineke/cmp-rg"
 
 	-- NvimTree
 	use({
@@ -192,7 +194,8 @@ return require('packer').startup(function(use)
 		'm-demare/hlargs.nvim',
 		config = function()
 			require('hlargs').setup {
-				color = "#698b22"
+				-- color = "#698b22"
+				color = "#ADCF9F",
 			}
 			require('hlargs').enable()
 		end
@@ -310,6 +313,50 @@ return require('packer').startup(function(use)
 			require("lsp_lines").setup()
 		end,
 	})
+
+	-- noice
+	-- use({
+	--   "folke/noice.nvim",
+	--   config = function()
+	-- 	require("noice").setup({
+	-- 		-- add any options here
+	-- 		cmdline = {
+	-- 			enabled = false,
+	-- 			view = "cmdline"
+	-- 		},
+	-- 		lsp = {
+	-- 			progress = {
+	-- 				enabled = false
+	-- 			},
+	-- 			signature = {
+	-- 				enabled = false
+	-- 			},
+	-- 			-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+	-- 			override = {
+	-- 			  ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+	-- 			  ["vim.lsp.util.stylize_markdown"] = true,
+	-- 			  ["cmp.entry.get_documentation"] = true,
+	-- 			},
+	-- 		  },
+	-- 		  -- you can enable a preset for easier configuration
+	-- 		  presets = {
+	-- 			bottom_search = true, -- use a classic bottom cmdline for search
+	-- 			command_palette = true, -- position the cmdline and popupmenu together
+	-- 			long_message_to_split = true, -- long messages will be sent to a split
+	-- 			inc_rename = false, -- enables an input dialog for inc-rename.nvim
+	-- 			lsp_doc_border = false, -- add a border to hover docs and signature help
+	-- 		  },
+	-- 	})
+	--   end,
+	--   requires = {
+	-- 	-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+	-- 	"MunifTanjim/nui.nvim",
+	-- 	-- OPTIONAL:
+	-- 	--   `nvim-notify` is only needed, if you want to use the notification view.
+	-- 	--   If not available, we use `mini` as the fallback
+	-- 	"rcarriga/nvim-notify",
+	-- 	}
+	-- })
 
 	if packer_bootstrap then
 		-- require('packer').sync()

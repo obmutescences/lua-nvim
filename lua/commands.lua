@@ -117,7 +117,7 @@ let g:go_doc_popup_window = 1
 let g:go_def_mapping_enabled = 0
 let g:go_template_autocreate = 0
 let g:go_textobj_enabled = 0
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 let g:go_def_mapping_enabled = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_build_constraints = 1
@@ -152,6 +152,9 @@ autocmd BufEnter * highlight GuihuaListHl guifg=#FF0000 guibg=#323d43
 
 " gitsigns
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
+
+" nvim-tree
+hi NvimTreeNormal guibg=NONE ctermbg=NONE
 
 
 

@@ -70,20 +70,13 @@ if not config_status_ok then
 	return
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+-- local gheight = vim.api.nvim_list_uis()[1].height
+local gwidth = vim.api.nvim_list_uis()[1].width
 
 nvim_tree.setup {
 	disable_netrw = true,
 	hijack_netrw = true,
-	-- open_on_setup = false,
-	-- ignore_ft_on_setup = {
-	-- 	"startify",
-	-- 	"dashboard",
-	-- 	"alpha",
-	-- 	"startup",
-	-- },
-	-- auto_close = true,
-	open_on_tab = false,
+	open_on_tab = true,
 	hijack_cursor = false,
 	update_cwd = true,
 	diagnostics = {
@@ -109,7 +102,7 @@ nvim_tree.setup {
 		width = 30,
 		-- height = 30,
 		hide_root_folder = false,
-		side = "left",
+		side = "right",
 		-- auto_resize = true,
 		mappings = {
 			custom_only = false,
@@ -118,17 +111,38 @@ nvim_tree.setup {
 				{ key = "h", action = "close_node" },
 				{ key = "v", action = "vsplit" },
 				{ key = "O", action = "cd" },
-				{ key = "tt", action = "toggle" }
+				{ key = "tt", action = "toggle" },
+				{ key = "<Tab>", action = "edit" }
 			},
 		},
 		number = false,
 		relativenumber = false,
+		float = {
+			enable = false,
+			quit_on_focus_loss = false,
+			open_win_config = {
+				-- relative = "editor",
+				relative = "win",
+				border = "none",
+				width = 35,
+				height = 35,
+				row = 0,
+				col = gwidth -15,
+          },
+		}
 	},
+	filters = {
+        dotfiles = true,
+        git_clean = false,
+        no_buffer = false,
+        custom = {},
+        exclude = {},
+    },
 	actions = {
 		open_file = {
 			resize_window = true -- close half-screen usage when open a new file
 		}
-	}
+	},
 }
 
 -- with relative path

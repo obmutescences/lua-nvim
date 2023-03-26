@@ -8,7 +8,8 @@ if not status_ok_1 then
     return
 end
 
-local servers = {"bashls", "jsonls", "dockerls", "golangci_lint_ls", "gopls", "yamlls", "rust_analyzer", "pylsp", "pyright", "tsserver", "vuels", "lua_ls" }
+-- pylsp pyright
+local servers = {"bashls", "jsonls", "dockerls", "golangci_lint_ls", "gopls", "yamlls", "rust_analyzer", "tsserver", "vuels", "lua_ls", "ruff_lsp", "pylsp"}
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {
@@ -66,25 +67,29 @@ for _, server in pairs(servers) do
 			plugins = {
 				pycodestyle = {
 					ignore = {'W391'},
-					maxLineLength = 120
+					maxLineLength = 120,
+					enabled = false,
 				},
-				-- autopep8 = {
-				-- 	enabled = false,
+				autopep8 = {
+					enabled = false,
+				},
+				flake8 = {
+					enabled = false,
+					maxLineLength = 120,
+				},
+				mccabe = {
+					enabled = false,
+				},
+				-- rope_autoimport = {
+				-- 	enabled = true,
+				-- 	memory = true,
 				-- },
-				-- flake8 = {
-				-- 	enabled = false,
-				-- 	maxLineLength = 120,
-				-- },
-				rope_autoimport = {
-					enabled = true,
-					memory = true,
-				},
-				rope_completion = {
-					enabled = true
-				},
-				-- pyflakes = {
+				-- rope_completion = {
 				-- 	enabled = true
-				-- }
+				-- },
+				pyflakes = {
+					enabled = false
+				}
 
 		}
 		}
