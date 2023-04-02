@@ -5,10 +5,10 @@ vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
 
 vim.cmd([[
 
-" set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h14:#e-antialias:#h-none
-set guifont=CodeNewRoman\ Nerd\ Font:h14:#e-antialias:#h-none
-" set guifont=CodeNewRoman\ Nerd\ Font:h14
-" set guifont=UbuntuMono\ Nerd\ Font\ Mono:h15:#e-antialias:#h-none
+" set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h15:i:#e-antialias:#h-none
+set guifont=CodeNewRoman\ Nerd\ Font:h14:#e-antialias:#h-none,SimSong
+" set guifont=UbuntuMono\ Nerd\ Font:h15:i:#e-antialias:#h-none,SimSong
+" set guifont=FiraCode\ Nerd\ Font\ Mono:h15:i:#e-antialias:#h-none
 
 
 silent !mkdir -p ~/.config/nvim/tmp/backup
@@ -155,8 +155,6 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " nvim-tree
 hi NvimTreeNormal guibg=NONE ctermbg=NONE
-
-
 
 ]])
 

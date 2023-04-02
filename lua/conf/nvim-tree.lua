@@ -120,15 +120,15 @@ nvim_tree.setup {
 		float = {
 			enable = false,
 			quit_on_focus_loss = false,
-			open_win_config = {
-				-- relative = "editor",
-				relative = "win",
-				border = "none",
-				width = 35,
-				height = 35,
-				row = 0,
-				col = gwidth -15,
-          },
+			-- open_win_config = {
+			-- 	-- relative = "editor",
+			-- 	relative = "win",
+			-- 	border = "none",
+			-- 	width = 35,
+			-- 	height = 35,
+			-- 	row = 0,
+			-- 	col = gwidth -15,
+   --        },
 		}
 	},
 	filters = {

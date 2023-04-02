@@ -39,7 +39,7 @@ vim.o.completeopt = 'longest,noinsert,menuone,noselect,preview'
 vim.opt.formatoptions:remove('tc')
 vim.opt.shortmess:append('tc')
 vim.opt.synmaxcol = 2048
-vim.opt.linespace = 2
+vim.opt.linespace = 4
 
 
 vim.g.neoterm_autoscroll = 1

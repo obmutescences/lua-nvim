@@ -92,7 +92,7 @@ return require('packer').startup(function(use)
 		config = function()
 			require("everforest").setup({
 				background = "soft",
-				transparent_background_level = 0,
+				transparent_background_level = 2,
 				italics = true,
 				-- cursor = "green",
 				-- diagnostic_text_highlight = 1,
@@ -123,13 +123,24 @@ return require('packer').startup(function(use)
 					-- border type can be single,double,rounded,solid,shadow.
 					border = 'rounded',
 					winblend = 20,
-					colors = {
-						--float window normal bakcground color
-						normal_bg = '#556b2f',
-						--title background color
-						title_bg = '#556b2f',
-					}
-				}
+				},
+				finder = {
+					--percentag
+					max_height = 0.5,
+					-- min_width = 20,
+					-- max_width = 20,
+					force_max_height = false,
+					keys = {
+					  jump_to = 'p',
+					  edit = { '<CR>' },
+					  vsplit = 's',
+					  split = 'i',
+					  tabe = 't',
+					  tabnew = 'r',
+					  quit = { 'q', '<ESC>' },
+					  close_in_preview = '<ESC>'
+					},
+				  },
 			})
 		end
 	})
@@ -146,7 +157,7 @@ return require('packer').startup(function(use)
 
 	use "hrsh7th/cmp-buffer" -- buffer completions
 	use "hrsh7th/cmp-path" -- path completions
-	use "hrsh7th/cmp-cmdline" -- cmdline completions
+	-- use "hrsh7th/cmp-cmdline" -- cmdline completions
 	use "saadparwaiz1/cmp_luasnip" -- snippet completions
 	use "hrsh7th/cmp-nvim-lsp"
 	use 'hrsh7th/cmp-nvim-lsp-signature-help'
@@ -195,7 +206,7 @@ return require('packer').startup(function(use)
 		config = function()
 			require('hlargs').setup {
 				-- color = "#698b22"
-				color = "#ADCF9F",
+				color = "#adcf9f",
 			}
 			require('hlargs').enable()
 		end
@@ -357,6 +368,16 @@ return require('packer').startup(function(use)
 	-- 	"rcarriga/nvim-notify",
 	-- 	}
 	-- })
+	--
+
+	-- cmdline 
+	use {
+		  "gelguy/wilder.nvim",
+		  -- event = 'CmdlineEnter', -- 懒加载：首次进入cmdline时载入
+		  -- config = function()
+			 --  require('wilder').setup({ modes = { ':', '/', '?' } })
+		  -- end
+	}
 
 	if packer_bootstrap then
 		-- require('packer').sync()
