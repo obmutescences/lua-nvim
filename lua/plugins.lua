@@ -102,6 +102,7 @@ return require('packer').startup(function(use)
 	})
 	use 'Yazeed1s/oh-lucy.nvim'
 	use { 'talha-akram/noctis.nvim' }
+	use 'folke/tokyonight.nvim'
 
 	-- find and grep
 	use 'kyazdani42/nvim-web-devicons'

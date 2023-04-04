@@ -68,8 +68,8 @@ vim.g.neovide_floating_opacity = 0.2
 vim.g.neovide_floating_blur_amount_x = 1.0
 vim.g.neovide_floating_blur_amount_y = 1.0
 vim.g.neovide_scale_factor = 1.0
-vim.g.neovide_transparency=0.0
-vim.g.transparency = 0.8
+vim.g.neovide_transparency=1
+vim.g.transparency = 0
 local alpha = function()
   return string.format("%x", math.floor(255 * 0.8))
 end
