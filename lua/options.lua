@@ -80,6 +80,6 @@ vim.g.neovide_background_color = "#343F44" .. alpha()
 -- rust-tools
 vim.g.rustfmt_autosave = 1
 
-vim.o.pumblend = 70
-vim.o.winblend = 30
+-- vim.o.pumblend = 70
+-- vim.o.winblend = 30
 

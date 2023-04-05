@@ -122,8 +122,9 @@ return require('packer').startup(function(use)
 				ui = {
 					theme = 'round',
 					-- border type can be single,double,rounded,solid,shadow.
-					border = 'rounded',
-					winblend = 20,
+					-- border = 'rounded',
+					border = 'none',
+					winblend = 0,
 				},
 				finder = {
 					--percentag

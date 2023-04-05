@@ -94,7 +94,7 @@ local tel_config = {
 			},
 		},
 
-		winblend = 70,
+		-- winblend = 60,
 		color_devicons = true,
 
 		mappings = {
@@ -225,10 +225,10 @@ local tel_config = {
 	},
 }
 
-if vim.g.neovide then
-else
-	tel_config.defaults.winblend = 20
-end
+-- if vim.g.neovide then
+-- else
+-- 	tel_config.defaults.winblend = 20
+-- end
 
 telescope.setup(tel_config)
 

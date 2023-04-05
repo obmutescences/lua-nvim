@@ -93,8 +93,8 @@ autocmd FileType json,markdown,http let g:indentLine_conceallevel = 0
 autocmd FileType json,markdown,http let g:vim_json_syntax_conceal = 0
 
 if exists("g:neovide")
-	let pumblend = 70
-	let winblend = 95
+	" let pumblend = 70
+	" let winblend = 70
 endif
 
 " fitgetui
