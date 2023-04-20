@@ -1,6 +1,6 @@
 -- Providers
-vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.2_1/bin/python3.11'
-vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.2_1/bin/python3.11'
+vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3.11'
+vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3.11'
 
 
 --system--
@@ -24,7 +24,6 @@ vim.o.ignorecase = true
 vim.o.ttyfast = true
 -- vim.o.lazyredraw = true
 vim.o.visualbell = true
-
 vim.o.tabstop     = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth  = 4
@@ -41,40 +40,39 @@ vim.opt.shortmess:append('tc')
 vim.opt.synmaxcol = 2048
 vim.opt.linespace = 4
 
-
 vim.g.neoterm_autoscroll = 1
 vim.g.notimeout = true
 vim.g.noshowmode = true
 
 
--- neovide
--- vim.g.neovide_refresh_rate = 75
+-- -- neovide
+-- vim.g.neovide_refresh_rate = 60
+vim.g.neovide_refresh_rate_idle = 60
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
-vim.g.neovide_cursor_vfx_opacity = 1000.0
+vim.g.neovide_cursor_vfx_opacity = 1500.0
 vim.g.neovide_cursor_vfx_particle_lifetime = 2.5
 vim.g.neovide_cursor_vfx_particle_density = 40.0
-vim.g.neovide_cursor_vfx_particle_speed = 30.0
--- vim.g.neovide_cursor_trail_length = 2.0
+vim.g.neovide_cursor_vfx_particle_speed = 5.0
 vim.g.neovide_cursor_animation_length = 0.15
 vim.g.neovide_cursor_trail_size = 0.3
 vim.g.neovide_cursor_antialiasing = true
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.g.neovide_cursor_animate_command_line = true
-vim.g.neovide_hide_mouse_when_typing = 1
-vim.g.neovide_scroll_animation_length = 0.7
-vim.g.neovide_floating_blur = 1
-vim.g.neovide_floating_opacity = 0.2
-vim.g.neovide_floating_blur_amount_x = 1.0
-vim.g.neovide_floating_blur_amount_y = 1.0
+vim.g.neovide_hide_mouse_when_typing = true
+vim.g.neovide_scroll_animation_length = 0.8
+-- vim.g.neovide_floating_blur = 1
+-- vim.g.neovide_floating_opacity = 0.2
+-- vim.g.neovide_floating_blur_amount_x = 1.0
+-- vim.g.neovide_floating_blur_amount_y = 1.0
 vim.g.neovide_scale_factor = 1.1
-vim.g.neovide_transparency=1
-vim.g.transparency = 0
+-- vim.g.neovide_transparency=1
+-- vim.g.transparency = 0
 local alpha = function()
   return string.format("%x", math.floor(255 * 0.8))
 end
 -- vim.g.neovide_background_color = "#0f1117" .. alpha()
-vim.g.neovide_background_color = "#343F44" .. alpha()
+-- vim.g.neovide_background_color = "#343F44" .. alpha()
 -- vim.g.neovide_fullscreen= true
 vim.g.neovide_remember_window_size = true
 

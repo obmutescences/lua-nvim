@@ -9,7 +9,7 @@ if not status_ok_1 then
 end
 
 -- pylsp pyright
-local servers = {"bashls", "jsonls", "dockerls", "golangci_lint_ls", "gopls", "yamlls", "rust_analyzer", "tsserver", "vuels", "lua_ls", "ruff_lsp", "pylsp"}
+local servers = {"bashls", "jsonls", "dockerls", "golangci_lint_ls", "gopls", "yamlls", "rust_analyzer", "tsserver", "vuels", "lua_ls", "ruff_lsp", "pylsp", "pyright"}
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {

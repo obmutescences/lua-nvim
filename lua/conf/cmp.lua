@@ -254,13 +254,13 @@ cmp_config = {
 	sources = cmp.config.sources({
 		-- { name = "cmp_tabnine" },
 		{ name = "nvim_lsp", priority = 9 },
-		-- { name = "nvim_lsp_signature_help", priority = 9 },
 		{
 			name = "buffer",
 			keyword_length = 2,
 			priority = 7,
 			option = buffer_option,
 		},
+		{ name = "nvim_lsp_signature_help", priority = 3 },
 		{ name = "nvim_lua", priority = 5 },
 		{ name = "path", priority = 4 },
 		{ name = "luasnip" },
