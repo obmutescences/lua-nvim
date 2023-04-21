@@ -252,7 +252,7 @@ cmp_config = {
 		documentation = cmp.config.window.bordered({ border = "none" }),
 	},
 	sources = cmp.config.sources({
-		-- { name = "cmp_tabnine" },
+		{ name = "cmp_tabnine", priority = 10 },
 		{ name = "nvim_lsp", priority = 9 },
 		{
 			name = "buffer",

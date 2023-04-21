@@ -43,6 +43,9 @@ vim.opt.linespace = 4
 vim.g.neoterm_autoscroll = 1
 vim.g.notimeout = true
 vim.g.noshowmode = true
+vim.opt.updatetime = 50
+
+vim.opt.colorcolumn = "120"
 
 
 -- -- neovide
