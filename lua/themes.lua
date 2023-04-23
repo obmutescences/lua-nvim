@@ -18,9 +18,10 @@ vim.g.material_theme_style = "minimal"
 vim.g.oh_lucy_evening_italic_functions = true
 vim.g.oh_lucy_evening_italic_comments = true
 
-vim.g.material_style = "minimal"
-vim.cmd[[colorscheme tokyonight-storm]]
--- vim.cmd[[colorscheme everforest]]
+vim.g.material_style = "deep ocean"
+-- vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd[[colorscheme everforest]]
+-- vim.cmd[[colorscheme material]]
 
 -- nord
 vim.g.nord_contrast = true

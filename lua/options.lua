@@ -45,8 +45,6 @@ vim.g.notimeout = true
 vim.g.noshowmode = true
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "120"
-
 
 -- -- neovide
 -- vim.g.neovide_refresh_rate = 60
@@ -99,6 +97,6 @@ vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true}
 -- rust-tools
 vim.g.rustfmt_autosave = 1
 
--- vim.o.pumblend = 70
+-- vim.o.pumblend = 40
 -- vim.o.winblend = 30
 

@@ -91,7 +91,7 @@ return require('packer').startup(function(use)
 		-- Optional; default configuration will be used if setup isn't called.
 		config = function()
 			require("everforest").setup({
-				background = "soft",
+				background = "hard",
 				transparent_background_level = 2,
 				italics = true,
 				-- cursor = "green",
@@ -103,6 +103,7 @@ return require('packer').startup(function(use)
 	use 'Yazeed1s/oh-lucy.nvim'
 	use { 'talha-akram/noctis.nvim' }
 	use 'folke/tokyonight.nvim'
+	use 'marko-cerovac/material.nvim'
 
 	-- find and grep
 	use 'kyazdani42/nvim-web-devicons'

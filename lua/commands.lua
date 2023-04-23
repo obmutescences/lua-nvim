@@ -154,7 +154,11 @@ autocmd BufEnter * highlight GuihuaListHl guifg=#FF0000 guibg=#323d43
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " nvim-tree
-hi NvimTreeNormal guibg=NONE ctermbg=NONE
+" hi NvimTreeNormal guibg=#272e33 ctermbg=NONE
+
+hi TelescopeBorder guibg=#272e33 guifg=#272e33
+hi TelescopeNormal guibg=#272e33 guifg=#5d6b66
+
 
 ]])
 
