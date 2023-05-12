@@ -48,7 +48,9 @@ return require('packer').startup(function(use)
 	-- use 'elzr/vim-json'
 
 	-- " Go
-	use 'fatih/vim-go'
+	-- use 'fatih/vim-go'
+	use 'ray-x/go.nvim'
+	use 'ray-x/guihua.lua'
 
 	-- rust
 	use({
@@ -152,9 +154,9 @@ return require('packer').startup(function(use)
 
 	use({
 		"hrsh7th/nvim-cmp",
-		requires = {
-			{ "tzachar/cmp-tabnine", run = "./install.sh" } -- tabnine 源,提供基于 AI 的智能补全
-		}
+		-- requires = {
+		-- 	{ "tzachar/cmp-tabnine", run = "./install.sh" } -- tabnine 源,提供基于 AI 的智能补全
+		-- }
 	})
 
 	use "hrsh7th/cmp-buffer" -- buffer completions

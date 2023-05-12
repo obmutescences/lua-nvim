@@ -8,8 +8,8 @@ if not status_ok_1 then
     return
 end
 
--- pylsp pyright
-local servers = {"bashls", "jsonls", "dockerls", "golangci_lint_ls", "gopls", "yamlls", "rust_analyzer", "tsserver", "vuels", "lua_ls", "ruff_lsp", "pylsp", "pyright"}
+-- pylsp pyright ruff_lsp
+local servers = {"bashls", "jsonls", "dockerls", "golangci_lint_ls", "gopls", "yamlls", "rust_analyzer", "tsserver", "vuels", "lua_ls", "pylsp", "pyright" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {
@@ -63,7 +63,7 @@ for _, server in pairs(servers) do
   if server == "pylsp" then
 	opts.settings = {
 		pylsp = {
-			-- configurationSources = {'flake8'},
+			configurationSources = {'ruff'},
 			plugins = {
 				pycodestyle = {
 					ignore = {'W391'},
@@ -89,6 +89,10 @@ for _, server in pairs(servers) do
 				-- },
 				pyflakes = {
 					enabled = false
+				},
+				ruff = {
+					enabled = true,
+					lineLength = 120,
 				}
 
 		}

@@ -165,7 +165,7 @@ cmp_config = {
 		-- completeopt = "menu,noselect",
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
 	},
 	view = {
 		-- entries = "native"
@@ -206,7 +206,7 @@ cmp_config = {
 			-- emoji = "(Emoji)",
 			path = "(Path)",
 			-- calc = "(Calc)",
-			cmp_tabnine = "(Tabnine)",
+			-- cmp_tabnine = "(Tabnine)",
 			-- vsnip = "(Snippet)",
 			luasnip = "(Snippet)",
 			buffer = "(Buffer)",
@@ -252,7 +252,7 @@ cmp_config = {
 		documentation = cmp.config.window.bordered({ border = "none" }),
 	},
 	sources = cmp.config.sources({
-		{ name = "cmp_tabnine", priority = 10 },
+		-- { name = "cmp_tabnine", priority = 10 },
 		{ name = "nvim_lsp", priority = 9 },
 		{
 			name = "buffer",
