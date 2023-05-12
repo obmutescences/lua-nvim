@@ -132,7 +132,7 @@ _G.packer_plugins = {
     url = "https://github.com/saecki/crates.nvim"
   },
   ["everforest-nvim"] = {
-    config = { "\27LJ\2\nw\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3!transparent_background_level\3\2\fitalics\2\15background\thard\nsetup\15everforest\frequire\0" },
+    config = { "\27LJ\2\nw\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\15background\thard!transparent_background_level\3\2\fitalics\2\nsetup\15everforest\frequire\0" },
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/everforest-nvim",
     url = "https://github.com/neanias/everforest-nvim"
@@ -142,6 +142,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
+  },
+  ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["go.nvim"] = {
     loaded = true,
@@ -182,7 +188,7 @@ _G.packer_plugins = {
     url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lspsaga.nvim"] = {
-    config = { "\27LJ\2\n™\2\0\0\6\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0005\4\a\0005\5\b\0=\5\t\0045\5\n\0=\5\v\4=\4\f\3=\3\r\2B\0\2\1K\0\1\0\vfinder\tkeys\tquit\1\3\0\0\6q\n<ESC>\tedit\1\2\0\0\t<CR>\1\0\6\vtabnew\6r\vvsplit\6s\fjump_to\6p\ttabe\6t\21close_in_preview\n<ESC>\nsplit\6i\1\0\2\15max_height\4\0€€€ÿ\3\21force_max_height\1\aui\1\0\0\1\0\2\vborder\nsolid\rwinblend\3\0\nsetup\flspsaga\frequire\0" },
+    config = { "\27LJ\2\n™\2\0\0\6\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0005\4\a\0005\5\b\0=\5\t\0045\5\n\0=\5\v\4=\4\f\3=\3\r\2B\0\2\1K\0\1\0\vfinder\tkeys\tquit\1\3\0\0\6q\n<ESC>\tedit\1\2\0\0\t<CR>\1\0\6\fjump_to\6p\vtabnew\6r\vvsplit\6s\nsplit\6i\21close_in_preview\n<ESC>\ttabe\6t\1\0\2\21force_max_height\1\15max_height\4\0€€€ÿ\3\aui\1\0\0\1\0\2\vborder\nsolid\rwinblend\3\0\nsetup\flspsaga\frequire\0" },
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
@@ -347,7 +353,7 @@ _G.packer_plugins = {
     url = "https://github.com/gelguy/wilder.nvim"
   },
   ["zen-mode.nvim"] = {
-    config = { "\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fenabled\2\fshowcmd\1\vwindow\1\0\0\foptions\1\0\2\17cursorcolumn\1\15signcolumn\ano\1\0\3\vheight\3\1\rbackdrop\3\1\nwidth\3P\nsetup\rzen-mode\frequire\0" },
+    config = { "\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\fenabled\2\nruler\1\fshowcmd\1\vwindow\1\0\0\foptions\1\0\2\15signcolumn\ano\17cursorcolumn\1\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0" },
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
     url = "https://github.com/folke/zen-mode.nvim"
@@ -355,38 +361,34 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: startup.nvim
-time([[Config for startup.nvim]], true)
-try_loadstring("\27LJ\2\nN\0\0\5\0\4\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0A\0\0\1K\0\1\0\17conf.startup\nsetup\fstartup\frequire\0", "config", "startup.nvim")
-time([[Config for startup.nvim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-try_loadstring("\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fenabled\2\fshowcmd\1\vwindow\1\0\0\foptions\1\0\2\17cursorcolumn\1\15signcolumn\ano\1\0\3\vheight\3\1\rbackdrop\3\1\nwidth\3P\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
-time([[Config for zen-mode.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n™\2\0\0\6\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0005\4\a\0005\5\b\0=\5\t\0045\5\n\0=\5\v\4=\4\f\3=\3\r\2B\0\2\1K\0\1\0\vfinder\tkeys\tquit\1\3\0\0\6q\n<ESC>\tedit\1\2\0\0\t<CR>\1\0\6\fjump_to\6p\vtabnew\6r\vvsplit\6s\nsplit\6i\21close_in_preview\n<ESC>\ttabe\6t\1\0\2\21force_max_height\1\15max_height\4\0€€€ÿ\3\aui\1\0\0\1\0\2\vborder\nsolid\rwinblend\3\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
 -- Config for: crates.nvim
 time([[Config for crates.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
 time([[Config for crates.nvim]], false)
--- Config for: hlargs.nvim
-time([[Config for hlargs.nvim]], true)
-try_loadstring("\27LJ\2\nd\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\venable\1\0\1\ncolor\f#adcf9f\nsetup\vhlargs\frequire\0", "config", "hlargs.nvim")
-time([[Config for hlargs.nvim]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-try_loadstring("\27LJ\2\n™\2\0\0\6\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0005\4\a\0005\5\b\0=\5\t\0045\5\n\0=\5\v\4=\4\f\3=\3\r\2B\0\2\1K\0\1\0\vfinder\tkeys\tquit\1\3\0\0\6q\n<ESC>\tedit\1\2\0\0\t<CR>\1\0\6\vtabnew\6r\vvsplit\6s\fjump_to\6p\ttabe\6t\21close_in_preview\n<ESC>\nsplit\6i\1\0\2\15max_height\4\0€€€ÿ\3\21force_max_height\1\aui\1\0\0\1\0\2\vborder\nsolid\rwinblend\3\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
-time([[Config for lspsaga.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
 -- Config for: everforest-nvim
 time([[Config for everforest-nvim]], true)
-try_loadstring("\27LJ\2\nw\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3!transparent_background_level\3\2\fitalics\2\15background\thard\nsetup\15everforest\frequire\0", "config", "everforest-nvim")
+try_loadstring("\27LJ\2\nw\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\15background\thard!transparent_background_level\3\2\fitalics\2\nsetup\15everforest\frequire\0", "config", "everforest-nvim")
 time([[Config for everforest-nvim]], false)
+-- Config for: hlargs.nvim
+time([[Config for hlargs.nvim]], true)
+try_loadstring("\27LJ\2\nd\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\venable\1\0\1\ncolor\f#adcf9f\nsetup\vhlargs\frequire\0", "config", "hlargs.nvim")
+time([[Config for hlargs.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: startup.nvim
+time([[Config for startup.nvim]], true)
+try_loadstring("\27LJ\2\nN\0\0\5\0\4\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0A\0\0\1K\0\1\0\17conf.startup\nsetup\fstartup\frequire\0", "config", "startup.nvim")
+time([[Config for startup.nvim]], false)
 -- Config for: hop.nvim
 time([[Config for hop.nvim]], true)
 try_loadstring("\27LJ\2\n¤\1\0\0\t\0\t\1\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0006\3\3\0009\3\4\0039\3\5\3'\5\6\0'\6\a\0'\a\b\0004\b\0\0B\3\5\0?\3\0\0B\0\2\1K\0\1\0-<cmd>lua require'hop'.hint_char1({})<cr>\6f\6n\20nvim_set_keymap\bapi\bvim\nsetup\bhop\frequire\3€€À™\4\0", "config", "hop.nvim")
@@ -395,14 +397,22 @@ time([[Config for hop.nvim]], false)
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
--- Config for: fidget.nvim
-time([[Config for fidget.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
-time([[Config for fidget.nvim]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+try_loadstring("\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\fenabled\2\nruler\1\fshowcmd\1\vwindow\1\0\0\foptions\1\0\2\15signcolumn\ano\17cursorcolumn\1\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
+time([[Config for zen-mode.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 -- Config for: lsp_lines.nvim
 time([[Config for lsp_lines.nvim]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14lsp_lines\frequire\0", "config", "lsp_lines.nvim")
 time([[Config for lsp_lines.nvim]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

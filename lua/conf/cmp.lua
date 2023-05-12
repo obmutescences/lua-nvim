@@ -2,6 +2,9 @@ local check_backspace = function()
 	local col = vim.fn.col "." - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
+require'luasnip'.filetype_extend("go", {"go"})
+require'luasnip'.filetype_extend("python", {"python"})
+require'luasnip'.filetype_extend("rust", {"rust"})
 
 ---when inside a snippet, seeks to the nearest luasnip field if possible, and checks if it is jumpable
 ---@param dir number 1 for forward, -1 for backward; defaults to 1
@@ -255,6 +258,11 @@ cmp_config = {
 		-- { name = "cmp_tabnine", priority = 10 },
 		{ name = "nvim_lsp", priority = 9 },
 		{
+			name = "luasnip",
+			priority = 8,
+			keyword_length = 1,
+		},
+		{
 			name = "buffer",
 			keyword_length = 2,
 			priority = 7,
@@ -263,7 +271,6 @@ cmp_config = {
 		{ name = "nvim_lsp_signature_help", priority = 3 },
 		{ name = "nvim_lua", priority = 5 },
 		{ name = "path", priority = 4 },
-		{ name = "luasnip" },
 		-- { name = "emoji" },
 		-- { name = "treesitter" },
 		{ name = "crates" },

@@ -383,6 +383,9 @@ return require('packer').startup(function(use)
 		  -- end
 	}
 
+	-- snippets
+	use "rafamadriz/friendly-snippets"
+
 	if packer_bootstrap then
 		-- require('packer').sync()
 	end
