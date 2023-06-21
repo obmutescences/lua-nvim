@@ -93,8 +93,8 @@ return require('packer').startup(function(use)
 		-- Optional; default configuration will be used if setup isn't called.
 		config = function()
 			require("everforest").setup({
-				background = "hard",
-				transparent_background_level = 2,
+				background = "soft",
+				transparent_background_level = 0,
 				italics = true,
 				-- cursor = "green",
 				-- diagnostic_text_highlight = 1,
@@ -199,6 +199,7 @@ return require('packer').startup(function(use)
 	-- fidget lsp loading ui
 	use({
 		'j-hui/fidget.nvim',
+		branch = "legacy",
 		config = function()
 			require('fidget').setup {}
 		end
@@ -385,6 +386,18 @@ return require('packer').startup(function(use)
 
 	-- snippets
 	use "rafamadriz/friendly-snippets"
+
+	use({
+	  "jackMort/ChatGPT.nvim",
+		config = function()
+		  require("chatgpt").setup()
+		end,
+		requires = {
+		  "MunifTanjim/nui.nvim",
+		  "nvim-lua/plenary.nvim",
+		  "nvim-telescope/telescope.nvim"
+		}
+	})
 
 	if packer_bootstrap then
 		-- require('packer').sync()

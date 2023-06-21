@@ -168,7 +168,7 @@ cmp_config = {
 		-- completeopt = "menu,noselect",
 	},
 	experimental = {
-		ghost_text = false,
+		ghost_text = true,
 	},
 	view = {
 		-- entries = "native"

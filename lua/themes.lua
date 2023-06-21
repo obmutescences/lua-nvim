@@ -3,7 +3,7 @@ local colorscheme = "everforest"
 
 vim.g.termguicolors = true
 vim.g.background = "dark"
-vim.g.everforest_background = 'medium'
+vim.g.everforest_background = 'soft'
 vim.g.everforest_better_performance = 0
 vim.g.everforest_enable_italic = true
 vim.g.everforest_disable_italic_comment = 0
@@ -20,7 +20,7 @@ vim.g.oh_lucy_evening_italic_comments = true
 
 vim.g.material_style = "deep ocean"
 -- vim.cmd[[colorscheme tokyonight-night]]
-vim.cmd[[colorscheme everforest]]
+vim.cmd[[colorscheme oh-lucy-evening]]
 -- vim.cmd[[colorscheme material]]
 
 -- nord

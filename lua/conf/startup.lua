@@ -37,8 +37,8 @@ local settings = {
             " ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
             " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
         },
-        highlight = "Statement",
-        default_color = "",
+        highlight = "TSString",
+        default_color = "#4EEE94",
         oldfiles_amount = 0,
     },
     -- name which will be displayed and command

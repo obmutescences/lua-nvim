@@ -104,7 +104,7 @@ highlight FidgetTitle guifg=#00EE76
 
 " hi Comment cterm=italic
 " hi Comment guifg=#5C6370 ctermfg=59
-" hi Normal     ctermbg=NONE guibg=#323d43
+" hi Normal     ctermbg=NONE guibg=#424c50
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 hi NonText ctermfg=gray guifg=grey10
@@ -156,8 +156,13 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 " nvim-tree
 " hi NvimTreeNormal guibg=#272e33 ctermbg=NONE
 
-hi TelescopeBorder guibg=#272e33 guifg=#272e33
-hi TelescopeNormal guibg=#272e33 guifg=#5d6b66
+" everforest
+" hi TelescopeBorder guibg=#272e33 guifg=#272e33
+" hi TelescopeNormal guibg=#272e33 guifg=#5d6b66
+
+" oh-lucy
+hi TelescopeBorder guibg=#14131A guifg=#14131A
+hi TelescopeNormal guibg=#14131A guifg=#6E4D55
 
 
 ]])
