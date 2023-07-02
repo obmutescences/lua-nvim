@@ -10,7 +10,6 @@ return {
       })
     end,
 
-    auto = true,
     inlay_hints = {
       -- Only show inlay hints for the current line
       only_current_line = false,
@@ -79,8 +78,12 @@ return {
         lens = {
           enable = true,
         },
-        checkOnSave = {
-          command = "clippy",
+		checkOnSave = {
+			enable = true,
+            command = "clippy",
+        },
+        cargo = {
+            allFeatures = true,
         },
       },
     },

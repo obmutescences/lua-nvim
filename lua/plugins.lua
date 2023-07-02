@@ -385,7 +385,7 @@ return require('packer').startup(function(use)
 	}
 
 	-- snippets
-	use "rafamadriz/friendly-snippets"
+	-- use "rafamadriz/friendly-snippets"
 
 	use({
 	  "jackMort/ChatGPT.nvim",

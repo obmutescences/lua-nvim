@@ -2,9 +2,9 @@ local check_backspace = function()
 	local col = vim.fn.col "." - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
-require'luasnip'.filetype_extend("go", {"go"})
-require'luasnip'.filetype_extend("python", {"python"})
-require'luasnip'.filetype_extend("rust", {"rust"})
+--require'luasnip'.filetype_extend("go", {"go"})
+--require'luasnip'.filetype_extend("python", {"python"})
+--require'luasnip'.filetype_extend("rust", {"rust"})
 
 ---when inside a snippet, seeks to the nearest luasnip field if possible, and checks if it is jumpable
 ---@param dir number 1 for forward, -1 for backward; defaults to 1
@@ -173,7 +173,7 @@ cmp_config = {
 	view = {
 		-- entries = "native"
 	},
-	preselect = cmp.PreselectMode.None,
+	-- preselect = cmp.PreselectMode.None,
 	formatting = {
 		-- fields = { "kind", "abbr", "menu" },
 		max_width = 0,
@@ -211,7 +211,7 @@ cmp_config = {
 			-- calc = "(Calc)",
 			-- cmp_tabnine = "(Tabnine)",
 			-- vsnip = "(Snippet)",
-			luasnip = "(Snippet)",
+			-- luasnip = "(Snippet)",
 			buffer = "(Buffer)",
 			spell = "(Spell)",
 		},
@@ -219,7 +219,7 @@ cmp_config = {
 			buffer = 0,
 			path = 1,
 			nvim_lsp = 1,
-			luasnip = 0,
+			-- luasnip = 0,
 			-- vsnip = 0,
 			cmp_tabnine = 1,
 		},
@@ -256,11 +256,12 @@ cmp_config = {
 	},
 	sources = cmp.config.sources({
 		-- { name = "cmp_tabnine", priority = 10 },
-		{ name = "nvim_lsp", priority = 9 },
-		{
-			name = "luasnip",
-			priority = 8,
-			keyword_length = 1,
+		{ 
+			name = "nvim_lsp",
+			priority = 9,
+			entry_filter = function(entry)
+                return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+            end
 		},
 		{
 			name = "buffer",
@@ -271,6 +272,11 @@ cmp_config = {
 		{ name = "nvim_lsp_signature_help", priority = 3 },
 		{ name = "nvim_lua", priority = 5 },
 		{ name = "path", priority = 4 },
+		{
+			name = "luasnip",
+			priority = 2,
+			keyword_length = 2,
+		},
 		-- { name = "emoji" },
 		-- { name = "treesitter" },
 		{ name = "crates" },
