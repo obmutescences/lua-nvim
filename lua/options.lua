@@ -30,20 +30,19 @@ vim.o.shiftwidth  = 4
 -- vim.o.scrolloff    = 4
 vim.o.ttimeoutlen = 0
 vim.o.tw          = 0
-vim.o.re          = 1
+-- vim.o.re          = 1
 vim.o.viewoptions = 'cursor,folds,slash,unix'
 vim.o.indentexpr  = ''
 vim.o.inccommand  = 'split'
 vim.o.completeopt = 'longest,noinsert,menuone,noselect,preview'
-vim.opt.formatoptions:remove('tc')
-vim.opt.shortmess:append('tc')
-vim.opt.synmaxcol = 2048
+-- vim.opt.formatoptions:remove('tc')
+-- vim.opt.shortmess:append('tc')
+vim.opt.synmaxcol = 500
 vim.opt.linespace = 4
-
-vim.g.neoterm_autoscroll = 1
-vim.g.notimeout = true
-vim.g.noshowmode = true
-vim.opt.updatetime = 50
+-- vim.g.neoterm_autoscroll = 1
+-- vim.g.notimeout = true
+-- vim.g.noshowmode = true
+-- vim.opt.updatetime = 50
 
 
 -- -- neovide
