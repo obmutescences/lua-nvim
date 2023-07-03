@@ -173,7 +173,7 @@ cmp_config = {
 	view = {
 		-- entries = "native"
 	},
-	-- preselect = cmp.PreselectMode.None,
+	preselect = cmp.PreselectMode.None,
 	formatting = {
 		-- fields = { "kind", "abbr", "menu" },
 		max_width = 0,

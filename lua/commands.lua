@@ -63,18 +63,6 @@ function g:Undotree_CustomMap()
 endfunc
 
 " ===
-" === rainbow
-" ===
-" let g:rainbow_active = 1
-
-
-" ===
-" === vim-illuminate
-" ===
-let g:Illuminate_delay = 400
-
-
-" ===
 " === vim-rooter
 " ===
 let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod', 'Cargo.lock']
