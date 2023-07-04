@@ -108,11 +108,7 @@ return require('packer').startup(function(use)
 	}
 
 	-- themes
-	-- use 'mhartington/oceanic-next'
-	-- use 'sainnhe/everforest'
 	use 'shaunsingh/nord.nvim'
-	use 'Yazeed1s/minimal.nvim'
-	-- use 'ful1e5/onedark.nvim'
 	use({
 		"neanias/everforest-nvim",
 		-- Optional; default configuration will be used if setup isn't called.
@@ -128,10 +124,8 @@ return require('packer').startup(function(use)
 		end,
 	})
 	use 'Yazeed1s/oh-lucy.nvim'
-	use { 'talha-akram/noctis.nvim' }
 	use 'folke/tokyonight.nvim'
 	use 'marko-cerovac/material.nvim'
-
 	-- find and grep
 	use 'kyazdani42/nvim-web-devicons'
 
