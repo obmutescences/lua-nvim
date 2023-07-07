@@ -29,29 +29,29 @@ return require('packer').startup(function(use)
 
 	use {
 		'nyngwang/murmur.lua',
-		config = function ()
-		require('murmur').setup{
-			cursor_rgb = {
-			guibg = '#263C05',
-		},
-		cursor_rgb_always_use_config = true, -- if set to `true`, then always use `cursor_rgb`.
-		-- yank_blink = {
-		--   enabled = true,
-		--   on_yank = nil, -- Can be customized. See `:h on_yank`.
-		-- },
-		max_len = 40,
-		min_len = 3, -- this is recommended since I prefer no cursorword highlighting on `if`.
-		exclude_filetypes = {},
-		callbacks = {
-			-- to trigger the close_events of vim.diagnostic.open_float.
-			function ()
-			-- Close floating diag. and make it triggerable again.
-			vim.cmd('doautocmd InsertEnter')
-			vim.w.diag_shown = false
-        end,
-      }
-	}
-	end
+		config = function()
+			require('murmur').setup {
+				cursor_rgb = {
+					guibg = '#263C05',
+				},
+				cursor_rgb_always_use_config = true, -- if set to `true`, then always use `cursor_rgb`.
+				-- yank_blink = {
+				--   enabled = true,
+				--   on_yank = nil, -- Can be customized. See `:h on_yank`.
+				-- },
+				max_len = 40,
+				min_len = 3, -- this is recommended since I prefer no cursorword highlighting on `if`.
+				exclude_filetypes = {},
+				callbacks = {
+					-- to trigger the close_events of vim.diagnostic.open_float.
+					function()
+						-- Close floating diag. and make it triggerable again.
+						vim.cmd('doautocmd InsertEnter')
+						vim.w.diag_shown = false
+					end,
+				}
+			}
+		end
 	}
 	-- use 'pechorin/any-jump.vim'
 	use 'airblade/vim-rooter'
@@ -114,8 +114,8 @@ return require('packer').startup(function(use)
 		-- Optional; default configuration will be used if setup isn't called.
 		config = function()
 			require("everforest").setup({
-				background = "soft",
-				transparent_background_level = 0,
+				background = "hard",
+				transparent_background_level = 2,
 				italics = true,
 				-- cursor = "green",
 				-- diagnostic_text_highlight = 1,
@@ -154,16 +154,16 @@ return require('packer').startup(function(use)
 					-- max_width = 20,
 					force_max_height = false,
 					keys = {
-					  jump_to = 'p',
-					  edit = { '<CR>' },
-					  vsplit = 's',
-					  split = 'i',
-					  tabe = 't',
-					  tabnew = 'r',
-					  quit = { 'q', '<ESC>' },
-					  close_in_preview = '<ESC>'
+						jump_to = 'p',
+						edit = { '<CR>' },
+						vsplit = 's',
+						split = 'i',
+						tabe = 't',
+						tabnew = 'r',
+						quit = { 'q', '<ESC>' },
+						close_in_preview = '<ESC>'
 					},
-				  },
+				},
 			})
 		end
 	})
@@ -178,14 +178,14 @@ return require('packer').startup(function(use)
 		-- }
 	})
 
-	use "hrsh7th/cmp-buffer" -- buffer completions
-	use "hrsh7th/cmp-path" -- path completions
+	use "hrsh7th/cmp-buffer"    -- buffer completions
+	use "hrsh7th/cmp-path"      -- path completions
 	-- use "hrsh7th/cmp-cmdline" -- cmdline completions
 	use "saadparwaiz1/cmp_luasnip" -- snippet completions
 	use "hrsh7th/cmp-nvim-lsp"
 	use 'hrsh7th/cmp-nvim-lsp-signature-help'
 	use "hrsh7th/cmp-nvim-lua"
-	use "f3fora/cmp-spell" -- spell check
+	use "f3fora/cmp-spell"  -- spell check
 	use "onsails/lspkind.nvim" -- cmp kind
 	use "lukas-reineke/cmp-rg"
 
@@ -203,9 +203,9 @@ return require('packer').startup(function(use)
 
 	use {
 		"startup-nvim/startup.nvim",
-		requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 		config = function()
-			require"startup".setup(require"conf.startup")
+			require "startup".setup(require "conf.startup")
 		end
 	}
 
@@ -394,27 +394,27 @@ return require('packer').startup(function(use)
 	-- })
 	--
 
-	-- cmdline 
+	-- cmdline
 	use {
-		  "gelguy/wilder.nvim",
-		  -- event = 'CmdlineEnter', -- 懒加载：首次进入cmdline时载入
-		  -- config = function()
-			 --  require('wilder').setup({ modes = { ':', '/', '?' } })
-		  -- end
+		"gelguy/wilder.nvim",
+		-- event = 'CmdlineEnter', -- 懒加载：首次进入cmdline时载入
+		-- config = function()
+		--  require('wilder').setup({ modes = { ':', '/', '?' } })
+		-- end
 	}
 
 	-- snippets
 	-- use "rafamadriz/friendly-snippets"
 
 	use({
-	  "jackMort/ChatGPT.nvim",
+		"jackMort/ChatGPT.nvim",
 		config = function()
-		  require("chatgpt").setup()
+			require("chatgpt").setup()
 		end,
 		requires = {
-		  "MunifTanjim/nui.nvim",
-		  "nvim-lua/plenary.nvim",
-		  "nvim-telescope/telescope.nvim"
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim"
 		}
 	})
 

@@ -1,4 +1,3 @@
-
 vim.cmd('syntax enable')
 -- vim.cmd('syntax sync minlines=256')
 vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
@@ -19,7 +18,7 @@ if has('persistent_undo')
 	set undofile
 	set undodir=~/.config/nvim/tmp/undo,.
 endif
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | 
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" |
 
 
 func! CompileRunGcc()
@@ -75,7 +74,7 @@ exec "nohlsearch"
 
 " vim-json
 
-" indentLine 
+" indentLine
 autocmd FileType json,markdown,http let g:indentLine_conceallevel = 0
 " vim-json
 autocmd FileType json,markdown,http let g:vim_json_syntax_conceal = 0
@@ -92,7 +91,7 @@ highlight FidgetTitle guifg=#00EE76
 
 " hi Comment cterm=italic
 " hi Comment guifg=#5C6370 ctermfg=59
-" hi Normal     ctermbg=NONE guibg=#424c50
+" hi Normal     ctermbg=NONE guibg=#01141F
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 hi NonText ctermfg=gray guifg=grey10
@@ -133,7 +132,7 @@ let g:go_highlight_diagnostic_warnings = 1
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
-" navigator 
+" navigator
 autocmd BufEnter * highlight GuihuaListHl guifg=#FF0000 guibg=#323d43
 " autocmd BufEnter * highlight GuihuaTextViewDark guifg=#007b43 guibg=#323d43
 " autocmd BufEnter * highlight GuihuaListDark guifg=#e4ab9b guibg=#323d43
@@ -145,12 +144,12 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 " hi NvimTreeNormal guibg=#272e33 ctermbg=NONE
 
 " everforest
-" hi TelescopeBorder guibg=#272e33 guifg=#272e33
-" hi TelescopeNormal guibg=#272e33 guifg=#5d6b66
+hi TelescopeBorder guibg=#272e33 guifg=#272e33
+hi TelescopeNormal guibg=#272e33 guifg=#5d6b66
 
 " oh-lucy
-hi TelescopeBorder guibg=#14131A guifg=#14131A
-hi TelescopeNormal guibg=#14131A guifg=#6E4D55
+" hi TelescopeBorder guibg=#14131A guifg=#14131A
+" hi TelescopeNormal guibg=#14131A guifg=#6E4D55
 
 
 ]])
