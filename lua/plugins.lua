@@ -418,6 +418,9 @@ return require('packer').startup(function(use)
 		}
 	})
 
+	-- lsp format
+	use "lukas-reineke/lsp-format.nvim"
+
 	if packer_bootstrap then
 		-- require('packer').sync()
 	end

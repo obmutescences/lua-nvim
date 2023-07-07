@@ -10,20 +10,20 @@ vim.o.clipboard = 'unnamedplus'
 
 --editor--
 
-vim.o.cursorline = true
+vim.o.cursorline  = true
 -- vim.o.number = true
 -- vim.bo.noexpandtab = true
-vim.o.autoindent = true
-vim.o.foldenable = false
-vim.o.splitright = true
-vim.o.splitbelow = true
-vim.o.smartcase = true
-vim.o.showcmd = true
-vim.o.wildmenu = true
-vim.o.ignorecase = true
-vim.o.ttyfast = true
+vim.o.autoindent  = true
+vim.o.foldenable  = false
+vim.o.splitright  = true
+vim.o.splitbelow  = true
+vim.o.smartcase   = true
+vim.o.showcmd     = true
+vim.o.wildmenu    = true
+vim.o.ignorecase  = true
+vim.o.ttyfast     = true
 -- vim.o.lazyredraw = true
-vim.o.visualbell = true
+vim.o.visualbell  = true
 vim.o.tabstop     = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth  = 4
@@ -70,7 +70,7 @@ vim.g.neovide_scale_factor = 1.0
 -- vim.g.transparency = 0
 vim.g.neovide_profiler = false
 local alpha = function()
-  return string.format("%x", math.floor(255 * 0.8))
+	return string.format("%x", math.floor(255 * 0.8))
 end
 -- vim.g.neovide_background_color = "#0f1117" .. alpha()
 -- vim.g.neovide_background_color = "#343F44" .. alpha()
@@ -78,25 +78,24 @@ end
 vim.g.neovide_remember_window_size = true
 
 if vim.g.neovide then
-  vim.g.neovide_input_use_logo = 1 -- enable use of the logo (cmd) key
-  vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
-  vim.keymap.set('v', '<D-c>', '"+y') -- Copy
-  vim.keymap.set('n', '<D-v>', '"+P') -- Paste normal mode
-  vim.keymap.set('v', '<D-v>', '"+P') -- Paste visual mode
-  vim.keymap.set('c', '<D-v>', '<C-R>+') -- Paste command mode
-  vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+	vim.g.neovide_input_use_logo = 1         -- enable use of the logo (cmd) key
+	vim.keymap.set('n', '<D-s>', ':w<CR>')   -- Save
+	vim.keymap.set('v', '<D-c>', '"+y')      -- Copy
+	vim.keymap.set('n', '<D-v>', '"+P')      -- Paste normal mode
+	vim.keymap.set('v', '<D-v>', '"+P')      -- Paste visual mode
+	vim.keymap.set('c', '<D-v>', '<C-R>+')   -- Paste command mode
+	vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
 end
 
 -- Allow clipboard copy paste in neovim
 vim.g.neovide_input_use_logo = 1
-vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 
 -- rust-tools
-vim.g.rustfmt_autosave = 1
+-- vim.g.rustfmt_autosave = 1
 
 -- vim.o.pumblend = 40
 -- vim.o.winblend = 30
-
