@@ -145,23 +145,25 @@ return require('packer').startup(function(use)
 					-- border type can be single,double,rounded,solid,shadow.
 					-- border = 'rounded',
 					border = 'solid',
-					winblend = 0,
+					-- winblend = 40,
+					title = false,
 				},
 				finder = {
 					--percentag
 					max_height = 0.5,
-					-- min_width = 20,
-					-- max_width = 20,
-					force_max_height = false,
+					left_width = 0.3,
+					layout = 'float',
+					-- force_max_height = false,
+					default = 'def+ref+imp',
 					keys = {
-						jump_to = 'p',
+						toggle_or_open = 'o',
 						edit = { '<CR>' },
 						vsplit = 's',
 						split = 'i',
-						tabe = 't',
-						tabnew = 'r',
-						quit = { 'q', '<ESC>' },
-						close_in_preview = '<ESC>'
+						-- tabe = 't',
+						-- tabnew = 'r',
+						quit = { '<ESC>', 'q' },
+						close = '<ESC>'
 					},
 				},
 			})
@@ -350,49 +352,49 @@ return require('packer').startup(function(use)
 	})
 
 	-- noice
-	-- use({
-	--   "folke/noice.nvim",
-	--   config = function()
-	-- 	require("noice").setup({
-	-- 		-- add any options here
-	-- 		cmdline = {
-	-- 			enabled = false,
-	-- 			view = "cmdline"
-	-- 		},
-	-- 		lsp = {
-	-- 			progress = {
-	-- 				enabled = false
-	-- 			},
-	-- 			signature = {
-	-- 				enabled = false
-	-- 			},
-	-- 			-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-	-- 			override = {
-	-- 			  ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-	-- 			  ["vim.lsp.util.stylize_markdown"] = true,
-	-- 			  ["cmp.entry.get_documentation"] = true,
-	-- 			},
-	-- 		  },
-	-- 		  -- you can enable a preset for easier configuration
-	-- 		  presets = {
-	-- 			bottom_search = true, -- use a classic bottom cmdline for search
-	-- 			command_palette = true, -- position the cmdline and popupmenu together
-	-- 			long_message_to_split = true, -- long messages will be sent to a split
-	-- 			inc_rename = false, -- enables an input dialog for inc-rename.nvim
-	-- 			lsp_doc_border = false, -- add a border to hover docs and signature help
-	-- 		  },
-	-- 	})
-	--   end,
-	--   requires = {
-	-- 	-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-	-- 	"MunifTanjim/nui.nvim",
-	-- 	-- OPTIONAL:
-	-- 	--   `nvim-notify` is only needed, if you want to use the notification view.
-	-- 	--   If not available, we use `mini` as the fallback
-	-- 	"rcarriga/nvim-notify",
-	-- 	}
-	-- })
-	--
+	use({
+		"folke/noice.nvim",
+		config = function()
+			require("noice").setup({
+				-- add any options here
+				cmdline = {
+					enabled = false,
+					view = "cmdline"
+				},
+				lsp = {
+					progress = {
+						enabled = true
+					},
+					signature = {
+						enabled = false
+					},
+					-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+					override = {
+						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+						["vim.lsp.util.stylize_markdown"] = true,
+						["cmp.entry.get_documentation"] = true,
+					},
+				},
+				-- you can enable a preset for easier configuration
+				presets = {
+					bottom_search = true, -- use a classic bottom cmdline for search
+					command_palette = true, -- position the cmdline and popupmenu together
+					long_message_to_split = true, -- long messages will be sent to a split
+					inc_rename = false, -- enables an input dialog for inc-rename.nvim
+					lsp_doc_border = false, -- add a border to hover docs and signature help
+				},
+			})
+		end,
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		}
+	})
+
 
 	-- cmdline
 	use {
