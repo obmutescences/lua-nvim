@@ -8,8 +8,8 @@ if not status_ok_1 then
 	return
 end
 
--- pylsp pyright ruff_lsp
-local servers = { "bashls", "jsonls", "dockerls", "golangci_lint_ls", "gopls", "yamlls", "rust_analyzer", "tsserver",
+-- pylsp pyright ruff_lsp golangci_lint_ls
+local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls", "rust_analyzer", "tsserver",
 	"vuels", "lua_ls", "pylsp", "pyright" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
@@ -99,6 +99,16 @@ for _, server in pairs(servers) do
 				}
 			}
 		}
+	end
+	if server == "gopls" then
+		local cfg = require 'go.lsp'.config()
+		cfg.settings.gopls.semanticTokens = false
+		cfg.settings.gopls.analyses = {
+			ST1003 = false,
+			QF1003 = false,
+		}
+		require('lspconfig').gopls.setup(cfg)
+		goto continue
 	end
 
 	lspconfig[server].setup(opts)

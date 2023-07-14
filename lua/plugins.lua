@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
 	-- Let Packer manage itself
 	use({ 'wbthomason/packer.nvim', opt = true })
 
+	-- cursor under word colored
 	use {
 		'nyngwang/murmur.lua',
 		config = function()
@@ -117,15 +118,23 @@ return require('packer').startup(function(use)
 				background = "hard",
 				transparent_background_level = 2,
 				italics = true,
-				-- cursor = "green",
-				-- diagnostic_text_highlight = 1,
-				-- diagnostic_virtual_text = "colored"
+				diagnostic_text_highlight = true,
+				---Which colour the diagnostic text should be. Options are `"grey"` or `"coloured"` (default)
+				diagnostic_virtual_text = "coloured",
+				---Some plugins support highlighting error/warning/info/hint lines, but this
+				---feature is disabled by default in this colour scheme.
+				diagnostic_line_highlight = true,
+				---By default, this color scheme won't colour the foreground of |spell|, instead
+				---colored under curls will be used. If you also want to colour the foreground,
+				---set this option to `true`.
+				spell_foreground = true,
 			})
 		end,
 	})
 	use 'Yazeed1s/oh-lucy.nvim'
 	use 'folke/tokyonight.nvim'
 	use 'marko-cerovac/material.nvim'
+
 	-- find and grep
 	use 'kyazdani42/nvim-web-devicons'
 
@@ -136,38 +145,47 @@ return require('packer').startup(function(use)
 	use 'williamboman/mason-lspconfig.nvim'
 
 	use "ray-x/lsp_signature.nvim" -- show function signature when typing
+	-- use({
+	-- 	'glepnir/lspsaga.nvim',
+	-- 	branch = "main",
+	-- 	config = function()
+	-- 		require('lspsaga').setup({
+	-- 			ui = {
+	-- 				-- border type can be single,double,rounded,solid,shadow.
+	-- 				-- border = 'rounded',
+	-- 				border = 'solid',
+	-- 				-- winblend = 40,
+	-- 				title = false,
+	-- 			},
+	-- 			finder = {
+	-- 				--percentag
+	-- 				max_height = 0.5,
+	-- 				left_width = 0.3,
+	-- 				layout = 'float',
+	-- 				-- force_max_height = false,
+	-- 				default = 'def+ref+imp',
+	-- 				keys = {
+	-- 					toggle_or_open = 'o',
+	-- 					edit = { '<CR>' },
+	-- 					vsplit = 's',
+	-- 					split = 'i',
+	-- 					-- tabe = 't',
+	-- 					-- tabnew = 'r',
+	-- 					quit = { '<ESC>', 'q' },
+	-- 					close = '<ESC>'
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end
+	-- })
+
+	-- lsp help
 	use({
-		'glepnir/lspsaga.nvim',
-		branch = "main",
-		config = function()
-			require('lspsaga').setup({
-				ui = {
-					-- border type can be single,double,rounded,solid,shadow.
-					-- border = 'rounded',
-					border = 'solid',
-					-- winblend = 40,
-					title = false,
-				},
-				finder = {
-					--percentag
-					max_height = 0.5,
-					left_width = 0.3,
-					layout = 'float',
-					-- force_max_height = false,
-					default = 'def+ref+imp',
-					keys = {
-						toggle_or_open = 'o',
-						edit = { '<CR>' },
-						vsplit = 's',
-						split = 'i',
-						-- tabe = 't',
-						-- tabnew = 'r',
-						quit = { '<ESC>', 'q' },
-						close = '<ESC>'
-					},
-				},
-			})
-		end
+		'ray-x/navigator.lua',
+		requires = {
+			{ 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
+			{ 'neovim/nvim-lspconfig' },
+		},
 	})
 
 	-- 代码片段，用于cmp自动提示
@@ -344,56 +362,56 @@ return require('packer').startup(function(use)
 	}
 
 	-- show nvim diagnostic using virtual lines
-	use({
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		config = function()
-			require("lsp_lines").setup()
-		end,
-	})
+	-- use({
+	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+	-- 	config = function()
+	-- 		require("lsp_lines").setup()
+	-- 	end,
+	-- })
 
 	-- noice
-	use({
-		"folke/noice.nvim",
-		config = function()
-			require("noice").setup({
-				-- add any options here
-				cmdline = {
-					enabled = false,
-					view = "cmdline"
-				},
-				lsp = {
-					progress = {
-						enabled = true
-					},
-					signature = {
-						enabled = false
-					},
-					-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-					override = {
-						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-						["vim.lsp.util.stylize_markdown"] = true,
-						["cmp.entry.get_documentation"] = true,
-					},
-				},
-				-- you can enable a preset for easier configuration
-				presets = {
-					bottom_search = true, -- use a classic bottom cmdline for search
-					command_palette = true, -- position the cmdline and popupmenu together
-					long_message_to_split = true, -- long messages will be sent to a split
-					inc_rename = false, -- enables an input dialog for inc-rename.nvim
-					lsp_doc_border = false, -- add a border to hover docs and signature help
-				},
-			})
-		end,
-		requires = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
-		}
-	})
+	-- use({
+	-- 	"folke/noice.nvim",
+	-- 	config = function()
+	-- 		require("noice").setup({
+	-- 			-- add any options here
+	-- 			cmdline = {
+	-- 				enabled = false,
+	-- 				view = "cmdline"
+	-- 			},
+	-- 			lsp = {
+	-- 				progress = {
+	-- 					enabled = true
+	-- 				},
+	-- 				signature = {
+	-- 					enabled = false
+	-- 				},
+	-- 				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+	-- 				override = {
+	-- 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+	-- 					["vim.lsp.util.stylize_markdown"] = true,
+	-- 					["cmp.entry.get_documentation"] = true,
+	-- 				},
+	-- 			},
+	-- 			-- you can enable a preset for easier configuration
+	-- 			presets = {
+	-- 				bottom_search = true, -- use a classic bottom cmdline for search
+	-- 				command_palette = true, -- position the cmdline and popupmenu together
+	-- 				long_message_to_split = true, -- long messages will be sent to a split
+	-- 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
+	-- 				lsp_doc_border = false, -- add a border to hover docs and signature help
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	requires = {
+	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		-- OPTIONAL:
+	-- 		--   `nvim-notify` is only needed, if you want to use the notification view.
+	-- 		--   If not available, we use `mini` as the fallback
+	-- 		"rcarriga/nvim-notify",
+	-- 	}
+	-- })
 
 
 	-- cmdline

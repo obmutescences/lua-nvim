@@ -21,7 +21,6 @@ vim.g.oh_lucy_evening_italic_comments = true
 vim.g.material_style = "deep ocean"
 -- vim.cmd[[colorscheme tokyonight-night]]
 -- vim.cmd[[colorscheme oh-lucy-evening]]
--- vim.cmd[[colorscheme material]]
 vim.cmd [[colorscheme everforest]]
 
 -- nord
