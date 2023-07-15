@@ -87,6 +87,7 @@ return {
 				},
 			},
 		},
+		standalone = true,
 	},
 }
 -- return {
