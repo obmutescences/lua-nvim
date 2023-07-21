@@ -137,22 +137,24 @@ if not status_luasnip_ok then
 end
 
 require("luasnip.loaders.from_vscode").lazy_load() -- load freindly-snippets
-require("luasnip.loaders.from_vscode").load({ paths = { -- load custom snippets
-	vim.fn.stdpath("config") .. "/my-snippets"
-} }) -- Load snippets from my-snippets folder
+require("luasnip.loaders.from_vscode").load({
+	paths = {                                      -- load custom snippets
+		vim.fn.stdpath("config") .. "/my-snippets"
+	}
+}) -- Load snippets from my-snippets folder
 
 
 local lspkind = require("lspkind")
 
 local buffer_option = {
-  -- Complete from all visible buffers (splits)
-  get_bufnrs = function()
-    local bufs = {}
-    for _, win in ipairs(vim.api.nvim_list_wins()) do
-      bufs[vim.api.nvim_win_get_buf(win)] = true
-    end
-    return vim.tbl_keys(bufs)
-  end
+	-- Complete from all visible buffers (splits)
+	get_bufnrs = function()
+		local bufs = {}
+		for _, win in ipairs(vim.api.nvim_list_wins()) do
+			bufs[vim.api.nvim_win_get_buf(win)] = true
+		end
+		return vim.tbl_keys(bufs)
+	end
 }
 
 
@@ -256,27 +258,27 @@ cmp_config = {
 	},
 	sources = cmp.config.sources({
 		-- { name = "cmp_tabnine", priority = 10 },
-		{ 
+		{
 			name = "nvim_lsp",
 			priority = 9,
 			entry_filter = function(entry)
-                return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-            end
+				return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+			end
 		},
-		{
-			name = "buffer",
-			keyword_length = 2,
-			priority = 7,
-			option = buffer_option,
-		},
-		{ name = "nvim_lsp_signature_help", priority = 3 },
-		{ name = "nvim_lua", priority = 5 },
-		{ name = "path", priority = 4 },
-		{
-			name = "luasnip",
-			priority = 2,
-			keyword_length = 2,
-		},
+		-- {
+		-- 	name = "buffer",
+		-- 	keyword_length = 2,
+		-- 	priority = 7,
+		-- 	option = buffer_option,
+		-- },
+		-- { name = "nvim_lsp_signature_help", priority = 3 },
+		-- { name = "nvim_lua", priority = 5 },
+		-- { name = "path", priority = 4 },
+		-- {
+		-- 	name = "luasnip",
+		-- 	priority = 2,
+		-- 	keyword_length = 2,
+		-- },
 		-- { name = "emoji" },
 		-- { name = "treesitter" },
 		{ name = "crates" },

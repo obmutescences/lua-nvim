@@ -14,7 +14,7 @@ require('go').setup({
 	go = 'go',                                   -- go command, can be go[default] or go1.18beta1
 	goimport = 'gopls',                          -- goimport command, can be gopls[default] or goimport
 	fillstruct = 'gopls',                        -- can be nil (use fillstruct, slower) and gopls
-	gofmt = 'gofumpt',                           --gofmt cmd,
+	gofmt = 'gofmt',                             --gofmt cmd,
 	max_line_len = 128,                          -- max line length in golines format, Target maximum line length for golines
 	tag_transform = false,                       -- can be transform option("snakecase", "camelcase", etc) check gomodifytags for details and more options
 	tag_options = 'json=omitempty',              -- sets options sent to gomodifytags, i.e., json=omitempty
@@ -47,9 +47,9 @@ require('go').setup({
 	-- set to true: use gopls to format
 	-- false if you want to use other formatter tool(e.g. efm, nulls)
 	lsp_inlay_hints = {
-		enable = true,
+		enable = false,
 		-- Only show inlay hints for the current line
-		only_current_line = false,
+		only_current_line = true,
 		-- Event which triggers a refersh of the inlay hints.
 		-- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
 		-- not that this may cause higher CPU usage.

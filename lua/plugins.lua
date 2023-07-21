@@ -233,7 +233,7 @@ return require('packer').startup(function(use)
 	use 'windwp/nvim-spectre'
 
 	-- rainbow color ({})
-	use 'mrjones2014/nvim-ts-rainbow'
+	use 'HiPhish/rainbow-delimiters.nvim'
 
 	-- fidget lsp loading ui
 	use({

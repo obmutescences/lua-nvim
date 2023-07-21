@@ -9,8 +9,8 @@ if not status_ok_1 then
 end
 
 -- pylsp pyright ruff_lsp golangci_lint_ls
-local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls", "rust_analyzer", "tsserver",
-	"vuels", "lua_ls", "pylsp", "pyright" }
+local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls", "rust_analyzer", "volar", "lua_ls", "pylsp",
+	"pyright" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {
@@ -109,6 +109,10 @@ for _, server in pairs(servers) do
 		}
 		require('lspconfig').gopls.setup(cfg)
 		goto continue
+	end
+
+	if server == "volar" then
+		opts.filetypes = { 'typescript', 'javascript', 'vue', 'json' }
 	end
 
 	lspconfig[server].setup(opts)

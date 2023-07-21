@@ -173,7 +173,7 @@ require 'navigator'.setup({
 	-- this value prevent slow in large projects, e.g. found 100000 reference in a project
 	transparency = 40,                 -- 0 ~ 100 blur the main window, 100: fully transparent, 0: opaque,  set to nil or 100 to disable it
 
-	lsp_signature_help = true,         -- if you would like to hook ray-x/lsp_signature plugin in navigator
+	lsp_signature_help = false,        -- if you would like to hook ray-x/lsp_signature plugin in navigator
 	-- setup here. if it is nil, navigator will not init signature help
 	signature_help_cfg = nil,          -- if you would like to init ray-x/lsp_signature plugin in navigator, and pass in your own config to signature help
 	icons = {
@@ -238,7 +238,7 @@ require 'navigator'.setup({
 		diagnostic_scrollbar_sign = { '▃', '▆', '█' }, -- experimental:  diagnostic status in scroll bar area; set to false to disable the diagnostic sign,
 		--                for other style, set to {'╍', 'ﮆ'} or {'-', '='}
 		diagnostic_virtual_text = true,          -- show virtual for diagnostic message
-		diagnostic_update_in_insert = true,      -- update diagnostic message in insert mode
+		diagnostic_update_in_insert = false,     -- update diagnostic message in insert mode
 		display_diagnostic_qf = true,            -- always show quickfix if there are diagnostic errors, set to false if you want to ignore it
 		-- tsserver = {
 		--   filetypes = {'typescript'} -- disable javascript etc,
