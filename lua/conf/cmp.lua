@@ -157,8 +157,7 @@ local buffer_option = {
 	end
 }
 
-
-local cmp_config = {
+cmp_config = {
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = true,
@@ -170,15 +169,15 @@ local cmp_config = {
 		-- completeopt = "menu,noselect",
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
+		native_menu = false,
 	},
 	view = {
-		-- entries = "native"
+		entries = "centered"
 	},
 	preselect = cmp.PreselectMode.None,
 	formatting = {
-		-- fields = { "kind", "abbr", "menu" },
-		max_width = 0,
+		fields = { "abbr", "kind", "menu" },
 		kind_icons = {
 			Class = " ",
 			Color = " ",
@@ -207,15 +206,15 @@ local cmp_config = {
 			Variable = " ",
 		},
 		source_names = {
-			nvim_lsp = "(LSP)",
-			-- emoji = "(Emoji)",
-			path = "(Path)",
+			nvim_lsp = "[LSP]",
+			-- emoji = "[Emoji]",
+			path = "[Path]",
 			-- calc = "(Calc)",
 			-- cmp_tabnine = "(Tabnine)",
 			-- vsnip = "(Snippet)",
 			-- luasnip = "(Snippet)",
-			buffer = "(Buffer)",
-			spell = "(Spell)",
+			buffer = "[Buffer]",
+			spell = "[Spell]",
 		},
 		duplicates = {
 			buffer = 0,
@@ -237,14 +236,20 @@ local cmp_config = {
 		}),
 	},
 	sorting = {
+		priority_weight = 1.0,
 		comparators = {
-			cmp.config.compare.exact,
-			cmp.config.compare.kind,
+			cmp.config.compare.locality,
+			cmp.config.compare.recently_used,
+			cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
 			cmp.config.compare.offset,
-			cmp.config.compare.score,
-			-- cmp.config.compare.sort_text,
-			cmp.config.compare.length,
 			cmp.config.compare.order,
+			-- cmp.config.compare.kind,
+			-- cmp.config.compare.exact,
+			-- cmp.config.compare.offset,
+			-- cmp.config.compare.order,
+			-- cmp.config.compare.score,
+			-- -- cmp.config.compare.sort_text,
+			-- cmp.config.compare.length,
 		}
 	},
 	snippet = {
