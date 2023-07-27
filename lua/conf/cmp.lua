@@ -158,7 +158,7 @@ local buffer_option = {
 }
 
 
-cmp_config = {
+local cmp_config = {
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = true,
@@ -238,10 +238,10 @@ cmp_config = {
 	},
 	sorting = {
 		comparators = {
-			cmp.config.compare.offset,
 			cmp.config.compare.exact,
-			cmp.config.compare.score,
 			cmp.config.compare.kind,
+			cmp.config.compare.offset,
+			cmp.config.compare.score,
 			-- cmp.config.compare.sort_text,
 			cmp.config.compare.length,
 			cmp.config.compare.order,
@@ -265,12 +265,12 @@ cmp_config = {
 				return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
 			end
 		},
-		-- {
-		-- 	name = "buffer",
-		-- 	keyword_length = 2,
-		-- 	priority = 7,
-		-- 	option = buffer_option,
-		-- },
+		{
+			name = "buffer",
+			keyword_length = 2,
+			priority = 7,
+			option = buffer_option,
+		},
 		-- { name = "nvim_lsp_signature_help", priority = 3 },
 		-- { name = "nvim_lua", priority = 5 },
 		-- { name = "path", priority = 4 },

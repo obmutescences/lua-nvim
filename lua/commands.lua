@@ -133,14 +133,6 @@ hi ColorColumn guibg=NONE
 " let g:go_def_mode='gopls'
 " let g:go_info_mode='gopls'
 
-" navigator
-" autocmd BufEnter * highlight GuihuaListHl guifg=#FF0000 guibg=#323d43
-" autocmd BufEnter * highlight GuihuaTextViewDark guifg=#007b43 guibg=#323d43
-" autocmd BufEnter * highlight GuihuaListDark guifg=#e4ab9b guibg=#323d43
-hi GuihuaTextViewDark guifg=#A23620 guibg=#38503E
-hi GuihuaListDark guifg=#A23620 guibg=#38503E
-hi GuihuaListHl guifg=#A23620 guibg=#38503E
-
 " gitsigns
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
@@ -148,12 +140,21 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 " hi NvimTreeNormal guibg=#272e33 ctermbg=NONE
 
 " everforest
-hi TelescopeBorder guibg=#272e33 guifg=#272e33
-hi TelescopeNormal guibg=#272e33 guifg=#5d6b66
+" hi TelescopeBorder guibg=#272e33 guifg=#272e33
+" hi TelescopeNormal guibg=#272e33 guifg=#5d6b66
 
 " oh-lucy
-" hi TelescopeBorder guibg=#14131A guifg=#14131A
-" hi TelescopeNormal guibg=#14131A guifg=#6E4D55
+hi TelescopeBorder guibg=#14131A guifg=#14131A
+hi TelescopeNormal guibg=#14131A guifg=#6E4D55
+
+" navigator
+" autocmd BufEnter * highlight GuihuaTextViewDark guifg=#a23620 guibg=#323d43
+" autocmd BufEnter * highlight GuihuaListDark guifg=#a23620 guibg=#323d43
+" autocmd BufEnter * highlight GuihuaListHl guifg=#fffaf0 guibg=#a23620
+" autocmd BufEnter * highlight GuihuaListHl guifg=#FFFAF0 guibg=#A23620
+hi default GuihuaTextViewDark guifg=#e0d8f4 guibg=#CD5555
+hi default GuihuaListDark guifg=#e0d8f4 guibg=#CD5555
+hi default GuihuaListSelHl guifg=#548B54 guibg=#8B3A3A
 
 
 ]])
