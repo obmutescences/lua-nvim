@@ -137,21 +137,17 @@ hi ColorColumn guibg=NONE
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " nvim-tree
-" hi NvimTreeNormal guibg=#272e33 ctermbg=NONE
+hi NvimTreeNormal guibg=#22292D guifg=#77B98B
 
 " everforest
-" hi TelescopeBorder guibg=#272e33 guifg=#272e33
-" hi TelescopeNormal guibg=#272e33 guifg=#5d6b66
+hi TelescopeBorder guibg=#22292D guifg=#22292D
+hi TelescopeNormal guibg=#22292D guifg=#5d6b66
 
 " oh-lucy
-hi TelescopeBorder guibg=#14131A guifg=#14131A
-hi TelescopeNormal guibg=#14131A guifg=#6E4D55
+" hi TelescopeBorder guibg=#14131A guifg=#14131A
+" hi TelescopeNormal guibg=#14131A guifg=#6E4D55
 
 " navigator
-" autocmd BufEnter * highlight GuihuaTextViewDark guifg=#a23620 guibg=#323d43
-" autocmd BufEnter * highlight GuihuaListDark guifg=#a23620 guibg=#323d43
-" autocmd BufEnter * highlight GuihuaListHl guifg=#fffaf0 guibg=#a23620
-" autocmd BufEnter * highlight GuihuaListHl guifg=#FFFAF0 guibg=#A23620
 hi default GuihuaTextViewDark guifg=#e0d8f4 guibg=#CD5555
 hi default GuihuaListDark guifg=#e0d8f4 guibg=#CD5555
 hi default GuihuaListSelHl guifg=#548B54 guibg=#8B3A3A
