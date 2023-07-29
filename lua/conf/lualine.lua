@@ -39,14 +39,14 @@ local config = {
 		-- Disable sections and component separators
 		component_separators = '',
 		section_separators = '',
-		theme = 'auto',
-		-- theme = {
-		--   -- We are going to use lualine_c an lualine_x as left and
-		--   -- right section. Both are highlighted by c theme .  So we
-		--   -- are just setting default looks o statusline
-		--   normal = { c = { fg = colors.fg, bg = colors.bg } },
-		--   inactive = { c = { fg = colors.fg, bg = colors.bg } },
-		-- },
+		-- theme = 'everforest',
+		theme = {
+			-- We are going to use lualine_c an lualine_x as left and
+			-- right section. Both are highlighted by c theme .  So we
+			-- are just setting default looks o statusline
+			normal = { c = { fg = colors.fg, bg = "#22292D" } },
+			-- inactive = { c = { fg = colors.fg, bg = colors.bg } },
+		},
 	},
 	sections = {
 		-- these are to remove the defaults
@@ -122,21 +122,23 @@ ins_left {
 	padding = { right = 1 },
 }
 
-ins_left {
-	-- filesize component
-	'filesize',
-	cond = conditions.buffer_not_empty,
-}
+-- ins_left {
+-- 	-- filesize component
+-- 	'filesize',
+-- 	cond = conditions.buffer_not_empty,
+-- }
 
 ins_left {
 	'filename',
+	path = 1,
+	file_status = true,
 	cond = conditions.buffer_not_empty,
-	color = { fg = colors.magenta, gui = 'bold' },
+	color = { fg = "#A7C080", gui = 'bold' },
 }
 
 ins_left { 'location' }
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_left { 'progress', color = { fg = "#77B98B", gui = 'bold' } }
 
 ins_left {
 	'diagnostics',
@@ -176,7 +178,7 @@ ins_left {
 	end,
 	-- icon = ' LSP:',
 	icon = '',
-	color = { fg = '#ffffff', gui = 'bold' },
+	color = { fg = '#A2CD5A', gui = 'bold' },
 }
 
 -- Add components to right sections
@@ -197,7 +199,7 @@ ins_left {
 ins_right {
 	'branch',
 	icon = '',
-	color = { fg = colors.violet, gui = 'bold' },
+	color = { fg = colors.red, gui = 'bold' },
 }
 
 ins_right {
@@ -216,7 +218,7 @@ ins_right {
 	function()
 		return '▊'
 	end,
-	color = { fg = colors.blue },
+	color = { fg = "#77B98B" },
 	padding = { left = 1 },
 }
 
