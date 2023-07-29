@@ -76,7 +76,7 @@ require("themer").setup({
 					VertSplit = { bg = "#22292D", fg = "#22292D" },
 					EndOfBuffer = { bg = "#22292D", fg = "#22292D" },
 					Visual = { bg = "#5C3F4F" },
-					CursorLine = { bg = '#556B2f' },
+					CursorLine = { bg = '#293135' },
 					NvimTreeFolderIcon = {
 						bg = "NONE",
 						fg = "#A2CD5A"
@@ -88,9 +88,10 @@ require("themer").setup({
 				},
 				plugins = {
 					cmp = {
-						CmpItemMenu = { fg = '#556B2f' },
-						CmpItemAbbr = { fg = '#556B2f' },
-						CmpItemAbbrMatch = { fg = "#A2CD5A" },
+						CmpItemMenu = { fg = '#A7C080' },
+						CmpItemAbbr = { fg = '#A7C080' },
+						CmpItemAbbrMatch = { fg = "#ABF50A" },
+						CmpItemAbbrMatchFuzzy = { fg = "#ABF50A" }
 					}
 				}
 			}
