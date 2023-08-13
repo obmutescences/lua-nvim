@@ -237,9 +237,9 @@ require 'navigator'.setup({
 
 		diagnostic_scrollbar_sign = { '▃', '▆', '█' }, -- experimental:  diagnostic status in scroll bar area; set to false to disable the diagnostic sign,
 		--                for other style, set to {'╍', 'ﮆ'} or {'-', '='}
-		diagnostic_virtual_text = true, -- show virtual for diagnostic message
+		diagnostic_virtual_text = false, -- show virtual for diagnostic message
 		diagnostic_update_in_insert = false, -- update diagnostic message in insert mode
-		display_diagnostic_qf = true, -- always show quickfix if there are diagnostic errors, set to false if you want to ignore it
+		display_diagnostic_qf = false, -- always show quickfix if there are diagnostic errors, set to false if you want to ignore it
 		-- tsserver = {
 		--   filetypes = {'typescript'} -- disable javascript etc,
 		--   -- set to {} to disable the lspclient for all filetypes

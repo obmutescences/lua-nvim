@@ -9,21 +9,21 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 require('go').setup({
 
-	disable_defaults = false,                    -- true|false when true set false to all boolean settings and replace all table
+	disable_defaults = false, -- true|false when true set false to all boolean settings and replace all table
 	-- settings with {}
-	go = 'go',                                   -- go command, can be go[default] or go1.18beta1
-	goimport = 'gopls',                          -- goimport command, can be gopls[default] or goimport
-	fillstruct = 'gopls',                        -- can be nil (use fillstruct, slower) and gopls
-	gofmt = 'gofmt',                             --gofmt cmd,
-	max_line_len = 128,                          -- max line length in golines format, Target maximum line length for golines
-	tag_transform = false,                       -- can be transform option("snakecase", "camelcase", etc) check gomodifytags for details and more options
-	tag_options = 'json=omitempty',              -- sets options sent to gomodifytags, i.e., json=omitempty
-	gotests_template = "",                       -- sets gotests -template parameter (check gotests for details)
-	gotests_template_dir = "",                   -- sets gotests -template_dir parameter (check gotests for details)
-	comment_placeholder = '',                    -- comment_placeholder your cool placeholder e.g. ﳑ       
+	go = 'go', -- go command, can be go[default] or go1.18beta1
+	goimport = 'goimports', -- goimport command, can be gopls[default] or goimport
+	fillstruct = 'gopls', -- can be nil (use fillstruct, slower) and gopls
+	gofmt = 'gofumpt', --gofmt cmd,
+	max_line_len = 128, -- max line length in golines format, Target maximum line length for golines
+	tag_transform = false, -- can be transform option("snakecase", "camelcase", etc) check gomodifytags for details and more options
+	tag_options = 'json=omitempty', -- sets options sent to gomodifytags, i.e., json=omitempty
+	gotests_template = "", -- sets gotests -template parameter (check gotests for details)
+	gotests_template_dir = "", -- sets gotests -template_dir parameter (check gotests for details)
+	comment_placeholder = '', -- comment_placeholder your cool placeholder e.g. ﳑ       
 	icons = { breakpoint = '🧘', currentpos = '🏃' }, -- setup to `false` to disable icons setup
-	verbose = false,                             -- output loginf in messages
-	lsp_cfg = true,                              -- true: use non-default gopls setup specified in go/lsp.lua
+	verbose = false, -- output loginf in messages
+	lsp_cfg = true, -- true: use non-default gopls setup specified in go/lsp.lua
 	-- false: do nothing
 	-- if lsp_cfg is a table, merge table with with non-default gopls setup in go/lsp.lua, e.g.
 	--   lsp_cfg = {settings={gopls={matcher='CaseInsensitive', ['local'] = 'your_local_module_path', gofumpt = true }}}
@@ -75,12 +75,12 @@ require('go').setup({
 		-- The color of the hints
 		highlight = "Comment",
 	},
-	gopls_cmd = { "/Users/zerone/go/bin/gopls" }, -- if you need to specify gopls path and cmd, e.g {"/home/user/lsp/gopls", "-logfile","/var/log/gopls.log" }
-	gopls_remote_auto = true,                  -- add -remote=auto to gopls
+	gopls_cmd = nil,       -- if you need to specify gopls path and cmd, e.g {"/home/user/lsp/gopls", "-logfile","/var/log/gopls.log" }
+	gopls_remote_auto = true, -- add -remote=auto to gopls
 	gocoverage_sign = "█",
-	sign_priority = 5,                         -- change to a higher number to override other signs
-	dap_debug = true,                          -- set to false to disable dap
-	dap_debug_keymap = true,                   -- true: use keymap for debugger defined in go/dap.lua
+	sign_priority = 5,     -- change to a higher number to override other signs
+	dap_debug = true,      -- set to false to disable dap
+	dap_debug_keymap = true, -- true: use keymap for debugger defined in go/dap.lua
 	-- false: do not use keymap in go/dap.lua.  you must define your own.
 	-- windows: use visual studio keymap
 	dap_debug_gui = {},                                         -- bool|table put your dap-ui setup here set to false to disable
