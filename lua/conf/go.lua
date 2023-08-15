@@ -41,7 +41,7 @@ require('go').setup({
 	lsp_diag_underline = true,
 	-- virtual text setup
 	lsp_diag_virtual_text = { space = 0, prefix = "" },
-	lsp_diag_signs = true,
+	lsp_diag_signs = false,
 	lsp_diag_update_in_insert = false,
 	lsp_document_formatting = true,
 	-- set to true: use gopls to format
@@ -78,7 +78,7 @@ require('go').setup({
 	gopls_cmd = nil,       -- if you need to specify gopls path and cmd, e.g {"/home/user/lsp/gopls", "-logfile","/var/log/gopls.log" }
 	gopls_remote_auto = true, -- add -remote=auto to gopls
 	gocoverage_sign = "█",
-	sign_priority = 5,     -- change to a higher number to override other signs
+	sign_priority = 0,     -- change to a higher number to override other signs
 	dap_debug = true,      -- set to false to disable dap
 	dap_debug_keymap = true, -- true: use keymap for debugger defined in go/dap.lua
 	-- false: do not use keymap in go/dap.lua.  you must define your own.

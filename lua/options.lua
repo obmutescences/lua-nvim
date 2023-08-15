@@ -60,7 +60,7 @@ vim.g.neovide_cursor_antialiasing = true
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.g.neovide_cursor_animate_command_line = true
 vim.g.neovide_hide_mouse_when_typing = true
-vim.g.neovide_scroll_animation_length = 0.25
+vim.g.neovide_scroll_animation_length = 0.35
 -- vim.g.neovide_floating_blur = 1
 -- vim.g.neovide_floating_opacity = 0.2
 -- vim.g.neovide_floating_blur_amount_x = 1.0
@@ -68,6 +68,7 @@ vim.g.neovide_scroll_animation_length = 0.25
 vim.g.neovide_scale_factor = 1.0
 -- vim.g.neovide_transparency=1
 -- vim.g.transparency = 0
+vim.g.neovide_input_ime = true
 vim.g.neovide_profiler = false
 local alpha = function()
 	return string.format("%x", math.floor(255 * 0.8))

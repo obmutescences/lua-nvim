@@ -205,7 +205,7 @@ return require('packer').startup(function(use)
 	-- use "hrsh7th/cmp-cmdline" -- cmdline completions
 	use "saadparwaiz1/cmp_luasnip" -- snippet completions
 	use "hrsh7th/cmp-nvim-lsp"
-	use 'hrsh7th/cmp-nvim-lsp-signature-help'
+	-- use 'hrsh7th/cmp-nvim-lsp-signature-help'
 	use "hrsh7th/cmp-nvim-lua"
 	use "f3fora/cmp-spell"  -- spell check
 	use "onsails/lspkind.nvim" -- cmp kind
@@ -526,6 +526,13 @@ return require('packer').startup(function(use)
 					program = "./cmd/main.go",
 				},
 			}
+		end
+	}
+	-- colors
+	use {
+		'brenoprata10/nvim-highlight-colors',
+		config = function()
+			require('nvim-highlight-colors').setup {}
 		end
 	}
 

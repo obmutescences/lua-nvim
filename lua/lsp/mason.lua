@@ -107,6 +107,7 @@ for _, server in pairs(servers) do
 			ST1003 = false,
 			QF1003 = false,
 		}
+		cfg.settings.gopls.usePlaceholders = false
 		require('lspconfig').gopls.setup(cfg)
 		goto continue
 	end
