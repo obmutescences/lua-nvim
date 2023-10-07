@@ -126,6 +126,12 @@ _G.packer_plugins = {
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["conform.nvim"] = {
+    config = { "\27LJ\2\n¥\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0005\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\21formatters_by_ft\blua\1\0\0\1\2\0\0\vstylua\19format_on_save\1\0\0\1\0\2\17lsp_fallback\2\15timeout_ms\3ô\3\nsetup\fconform\frequire\0" },
+    loaded = true,
+    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/conform.nvim",
+    url = "https://github.com/stevearc/conform.nvim"
+  },
   ["crates.nvim"] = {
     config = { "\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0" },
     loaded = true,
@@ -170,11 +176,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
-  },
-  ["lsp-format.nvim"] = {
-    loaded = true,
-    path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
-    url = "https://github.com/lukas-reineke/lsp-format.nvim"
   },
   ["lsp_signature.nvim"] = {
     loaded = true,
@@ -251,7 +252,7 @@ _G.packer_plugins = {
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-dap-go"] = {
-    config = { "\27LJ\2\n…\2\0\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0025\3\6\0004\4\0\0=\4\a\3=\3\b\2B\0\2\1K\0\1\0\ndelve\targs\1\0\5\tpath\bdlv\fprogram\18./cmd/main.go\tport\n38697\16build_flags\5\27initialize_timeout_sec\3\20\23dap_configurations\1\0\0\1\0\4\tname\18Attach remote\tmode\vremote\frequest\vattach\ttype\ago\nsetup\vdap-go\frequire\0" },
+    config = { "\27LJ\2\n…\2\0\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0025\3\6\0004\4\0\0=\4\a\3=\3\b\2B\0\2\1K\0\1\0\ndelve\targs\1\0\5\tpath\bdlv\tport\n38697\16build_flags\5\27initialize_timeout_sec\3\20\fprogram\18./cmd/main.go\23dap_configurations\1\0\0\1\0\4\tname\18Attach remote\ttype\ago\tmode\vremote\frequest\vattach\nsetup\vdap-go\frequire\0" },
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
     url = "https://github.com/leoluz/nvim-dap-go"
@@ -289,7 +290,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-context"] = {
-    config = { "\27LJ\2\n¹\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\b\15trim_scope\nouter\venable\2\24multiline_threshold\3\20\17line_numbers\2\22min_window_height\3\0\14max_lines\3\0\tmode\vcursor\vzindex\3\20\nsetup\23treesitter-context\frequire\0" },
+    config = { "\27LJ\2\n¹\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\b\tmode\vcursor\vzindex\3\20\15trim_scope\nouter\24multiline_threshold\3\20\17line_numbers\2\22min_window_height\3\0\14max_lines\3\0\venable\2\nsetup\23treesitter-context\frequire\0" },
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
@@ -388,7 +389,7 @@ _G.packer_plugins = {
     url = "https://github.com/gelguy/wilder.nvim"
   },
   ["zen-mode.nvim"] = {
-    config = { "\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\fenabled\2\fshowcmd\1\nruler\1\vwindow\1\0\0\foptions\1\0\2\17cursorcolumn\1\15signcolumn\ano\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0" },
+    config = { "\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fenabled\2\fshowcmd\1\vwindow\1\0\0\foptions\1\0\2\15signcolumn\ano\17cursorcolumn\1\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0" },
     loaded = true,
     path = "/Users/zerone/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
     url = "https://github.com/folke/zen-mode.nvim"
@@ -396,34 +397,54 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-dap-go
+time([[Config for nvim-dap-go]], true)
+try_loadstring("\27LJ\2\n…\2\0\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0025\3\6\0004\4\0\0=\4\a\3=\3\b\2B\0\2\1K\0\1\0\ndelve\targs\1\0\5\tpath\bdlv\tport\n38697\16build_flags\5\27initialize_timeout_sec\3\20\fprogram\18./cmd/main.go\23dap_configurations\1\0\0\1\0\4\tname\18Attach remote\ttype\ago\tmode\vremote\frequest\vattach\nsetup\vdap-go\frequire\0", "config", "nvim-dap-go")
+time([[Config for nvim-dap-go]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+try_loadstring("\27LJ\2\n^\0\0\3\0\5\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0=\1\3\0K\0\1\0\1\0\2\tport\n38697\ttype\vserver\16go_headless\radapters\bdap\frequire\0", "config", "nvim-dap")
+time([[Config for nvim-dap]], false)
 -- Config for: hlargs.nvim
 time([[Config for hlargs.nvim]], true)
 try_loadstring("\27LJ\2\nd\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\venable\1\0\1\ncolor\f#adcf9f\nsetup\vhlargs\frequire\0", "config", "hlargs.nvim")
 time([[Config for hlargs.nvim]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-try_loadstring("\27LJ\2\n¤\1\0\0\t\0\t\1\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0006\3\3\0009\3\4\0039\3\5\3'\5\6\0'\6\a\0'\a\b\0004\b\0\0B\3\5\0?\3\0\0B\0\2\1K\0\1\0-<cmd>lua require'hop'.hint_char1({})<cr>\6f\6n\20nvim_set_keymap\bapi\bvim\nsetup\bhop\frequire\3€€À™\4\0", "config", "hop.nvim")
-time([[Config for hop.nvim]], false)
+-- Config for: nvim-highlight-colors
+time([[Config for nvim-highlight-colors]], true)
+try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\26nvim-highlight-colors\frequire\0", "config", "nvim-highlight-colors")
+time([[Config for nvim-highlight-colors]], false)
+-- Config for: startup.nvim
+time([[Config for startup.nvim]], true)
+try_loadstring("\27LJ\2\nN\0\0\5\0\4\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0A\0\0\1K\0\1\0\17conf.startup\nsetup\fstartup\frequire\0", "config", "startup.nvim")
+time([[Config for startup.nvim]], false)
 -- Config for: murmur.lua
 time([[Config for murmur.lua]], true)
 try_loadstring("\27LJ\2\nV\0\0\3\0\5\0\t6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0+\1\1\0=\1\4\0K\0\1\0\15diag_shown\6w\26doautocmd InsertEnter\bcmd\bvimÆ\1\1\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\0\0=\3\6\0024\3\3\0003\4\a\0>\4\1\3=\3\b\2B\0\2\1K\0\1\0\14callbacks\0\22exclude_filetypes\15cursor_rgb\1\0\3\fmin_len\3\3\fmax_len\3(!cursor_rgb_always_use_config\2\1\0\1\nguibg\f#263C05\nsetup\vmurmur\frequire\0", "config", "murmur.lua")
 time([[Config for murmur.lua]], false)
 -- Config for: zen-mode.nvim
 time([[Config for zen-mode.nvim]], true)
-try_loadstring("\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\fenabled\2\fshowcmd\1\nruler\1\vwindow\1\0\0\foptions\1\0\2\17cursorcolumn\1\15signcolumn\ano\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
+try_loadstring("\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\v\0\0\1\0\0\0\1K\0\1\0®\2\1\0\5\0\19\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\t\0005\4\b\0=\4\5\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\0023\3\15\0=\3\16\0023\3\17\0=\3\18\2B\0\2\1K\0\1\0\ron_close\0\fon_open\0\fplugins\rgitsigns\1\0\1\fenabled\1\rtwilight\1\0\1\fenabled\2\1\0\0\1\0\3\nruler\1\fenabled\2\fshowcmd\1\vwindow\1\0\0\foptions\1\0\2\15signcolumn\ano\17cursorcolumn\1\1\0\3\vheight\3\1\nwidth\3P\rbackdrop\3\1\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
 time([[Config for zen-mode.nvim]], false)
--- Config for: nvim-dap-ui
-time([[Config for nvim-dap-ui]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
-time([[Config for nvim-dap-ui]], false)
+-- Config for: conform.nvim
+time([[Config for conform.nvim]], true)
+try_loadstring("\27LJ\2\n¥\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0005\4\6\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\21formatters_by_ft\blua\1\0\0\1\2\0\0\vstylua\19format_on_save\1\0\0\1\0\2\17lsp_fallback\2\15timeout_ms\3ô\3\nsetup\fconform\frequire\0", "config", "conform.nvim")
+time([[Config for conform.nvim]], false)
+-- Config for: ChatGPT.nvim
+time([[Config for ChatGPT.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fchatgpt\frequire\0", "config", "ChatGPT.nvim")
+time([[Config for ChatGPT.nvim]], false)
 -- Config for: crates.nvim
 time([[Config for crates.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
 time([[Config for crates.nvim]], false)
 -- Config for: nvim-treesitter-context
 time([[Config for nvim-treesitter-context]], true)
-try_loadstring("\27LJ\2\n¹\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\b\15trim_scope\nouter\venable\2\24multiline_threshold\3\20\17line_numbers\2\22min_window_height\3\0\14max_lines\3\0\tmode\vcursor\vzindex\3\20\nsetup\23treesitter-context\frequire\0", "config", "nvim-treesitter-context")
+try_loadstring("\27LJ\2\n¹\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\b\tmode\vcursor\vzindex\3\20\15trim_scope\nouter\24multiline_threshold\3\20\17line_numbers\2\22min_window_height\3\0\14max_lines\3\0\venable\2\nsetup\23treesitter-context\frequire\0", "config", "nvim-treesitter-context")
 time([[Config for nvim-treesitter-context]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: fidget.nvim
 time([[Config for fidget.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
@@ -432,38 +453,22 @@ time([[Config for fidget.nvim]], false)
 time([[Config for mason-nvim-dap.nvim]], true)
 try_loadstring("\27LJ\2\nm\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21ensure_installed\1\0\0\1\3\0\0\vpython\ndelve\nsetup\19mason-nvim-dap\frequire\0", "config", "mason-nvim-dap.nvim")
 time([[Config for mason-nvim-dap.nvim]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-try_loadstring("\27LJ\2\n^\0\0\3\0\5\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0=\1\3\0K\0\1\0\1\0\2\tport\n38697\ttype\vserver\16go_headless\radapters\bdap\frequire\0", "config", "nvim-dap")
-time([[Config for nvim-dap]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: startup.nvim
-time([[Config for startup.nvim]], true)
-try_loadstring("\27LJ\2\nN\0\0\5\0\4\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0A\0\0\1K\0\1\0\17conf.startup\nsetup\fstartup\frequire\0", "config", "startup.nvim")
-time([[Config for startup.nvim]], false)
--- Config for: ChatGPT.nvim
-time([[Config for ChatGPT.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fchatgpt\frequire\0", "config", "ChatGPT.nvim")
-time([[Config for ChatGPT.nvim]], false)
--- Config for: nvim-dap-go
-time([[Config for nvim-dap-go]], true)
-try_loadstring("\27LJ\2\n…\2\0\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0025\3\6\0004\4\0\0=\4\a\3=\3\b\2B\0\2\1K\0\1\0\ndelve\targs\1\0\5\tpath\bdlv\fprogram\18./cmd/main.go\tport\n38697\16build_flags\5\27initialize_timeout_sec\3\20\23dap_configurations\1\0\0\1\0\4\tname\18Attach remote\tmode\vremote\frequest\vattach\ttype\ago\nsetup\vdap-go\frequire\0", "config", "nvim-dap-go")
-time([[Config for nvim-dap-go]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
--- Config for: nvim-highlight-colors
-time([[Config for nvim-highlight-colors]], true)
-try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\26nvim-highlight-colors\frequire\0", "config", "nvim-highlight-colors")
-time([[Config for nvim-highlight-colors]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\n¤\1\0\0\t\0\t\1\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0006\3\3\0009\3\4\0039\3\5\3'\5\6\0'\6\a\0'\a\b\0004\b\0\0B\3\5\0?\3\0\0B\0\2\1K\0\1\0-<cmd>lua require'hop'.hint_char1({})<cr>\6f\6n\20nvim_set_keymap\bapi\bvim\nsetup\bhop\frequire\3€€À™\4\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-dap-ui
+time([[Config for nvim-dap-ui]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
+time([[Config for nvim-dap-ui]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")

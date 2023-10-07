@@ -440,10 +440,6 @@ return require('packer').startup(function(use)
 		}
 	})
 
-	-- lsp format
-	use "lukas-reineke/lsp-format.nvim"
-
-
 	-- treesitter context
 	use {
 		'nvim-treesitter/nvim-treesitter-context',
@@ -533,6 +529,24 @@ return require('packer').startup(function(use)
 		'brenoprata10/nvim-highlight-colors',
 		config = function()
 			require('nvim-highlight-colors').setup {}
+		end
+	}
+
+	-- lsp format
+	use {
+		'stevearc/conform.nvim',
+		config = function()
+			require('conform').setup({
+				format_on_save = {
+					-- These options will be passed to conform.format()
+					timeout_ms = 500,
+					lsp_fallback = true,
+				},
+				formatters_by_ft = {
+					lua = { "stylua" },
+					-- Conform will run multiple formatters sequentially
+				},
+			})
 		end
 	}
 
