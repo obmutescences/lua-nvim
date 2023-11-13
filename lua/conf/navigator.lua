@@ -196,7 +196,7 @@ require 'navigator'.setup({
 		code_lens_action = { enable = true, sign = true, sign_priority = 40, virtual_text = true },
 		document_highlight = true, -- LSP reference highlight,
 		-- it might already supported by you setup, e.g. LunarVim
-		format_on_save = true, -- {true|false} set to false to disasble lsp code format on save (if you are using prettier/efm/formater etc)
+		format_on_save = false, -- {true|false} set to false to disasble lsp code format on save (if you are using prettier/efm/formater etc)
 		-- table: {enable = {'lua', 'go'}, disable = {'javascript', 'typescript'}} to enable/disable specific language
 		-- enable: a whitelist of language that will be formatted on save
 		-- disable: a blacklist of language that will not be formatted on save
