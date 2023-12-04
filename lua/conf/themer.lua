@@ -74,6 +74,7 @@ require("themer").setup({
 					Normal = { bg = "#22292D" },
 					ColorColumn = { bg = "#22292D", fg = "#22292D" },
 					VertSplit = { bg = "#22292D", fg = "#22292D" },
+					WinSeparator = { bg = "#22292D", fg = "#22292D" },
 					EndOfBuffer = { bg = "#22292D", fg = "#22292D" },
 					Visual = { bg = "#5C3F4F" },
 					CursorLine = { bg = '#293135' },
@@ -92,7 +93,7 @@ require("themer").setup({
 						CmpItemAbbr = { fg = '#A7C080' },
 						CmpItemAbbrMatch = { fg = "#ABF50A" },
 						CmpItemAbbrMatchFuzzy = { fg = "#ABF50A" }
-					}
+					},
 				}
 			}
 		},

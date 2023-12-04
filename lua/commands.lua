@@ -9,10 +9,11 @@ vim.cmd([[
 " set guifont=UbuntuMono\ Nerd\ Font\ Mono:h14:#e-antialias:#h-none,SimSong
 " set guifont=Ubuntu\ Mono:h13:#e-antialias:#h-none,SimSong
 " set guifont=Gintronic:h12
-set guifont=ConsolaMono:h13
+" set guifont=ConsolaMono:h13
 " set guifont=Comic\ Shanns:h14
 " set guifont=Comic\ Code\ Ligatures:h13
 " set guifont=Rec\ Mono\ Custom:h13
+set guifont=Comic\ Code:h10:w1.1
 
 silent !mkdir -p ~/.config/nvim/tmp/backup
 silent !mkdir -p ~/.config/nvim/tmp/undo

@@ -46,7 +46,7 @@ vim.opt.linespace = 6
 
 
 -- -- neovide
--- vim.g.neovide_refresh_rate = 60
+vim.g.neovide_refresh_rate = 60
 vim.g.neovide_refresh_rate_idle = 60
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
@@ -66,6 +66,8 @@ vim.g.neovide_scroll_animation_length = 0.45
 -- vim.g.neovide_floating_blur_amount_x = 1.0
 -- vim.g.neovide_floating_blur_amount_y = 1.0
 vim.g.neovide_scale_factor = 1.0
+vim.g.neovide_floating_shadow = false
+vim.g.neovide_padding_right = 25
 -- vim.g.neovide_transparency=1
 -- vim.g.transparency = 0
 vim.g.neovide_input_ime = true
