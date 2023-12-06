@@ -13,7 +13,8 @@ vim.cmd([[
 " set guifont=Comic\ Shanns:h14
 " set guifont=Comic\ Code\ Ligatures:h13
 " set guifont=Rec\ Mono\ Custom:h13
-set guifont=Comic\ Code:h10:w1.1
+" set guifont=Comic\ Code:h10:w1.1
+set guifont=Monaspace\ Radon:h10:w1.2
 
 silent !mkdir -p ~/.config/nvim/tmp/backup
 silent !mkdir -p ~/.config/nvim/tmp/undo
@@ -69,7 +70,7 @@ endfunc
 " ===
 " === vim-rooter
 " ===
-let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod', 'Cargo.toml', 'package.json']
+let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod', 'Cargo.toml', 'package.json', 'go.work']
 
 " ===
 " === Necessary Commands to Execute
