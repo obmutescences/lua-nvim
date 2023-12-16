@@ -4,10 +4,10 @@ local fn = vim.fn
 local cmd = vim.cmd
 
 -- Boostrap Packer
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
+	packer_bootstrap = fn.system({ "git", "clone", "https://github.com/wbthomason/packer.nvim", install_path })
 	-- Load Packer
 	cmd([[packadd packer.nvim]])
 end
@@ -20,20 +20,18 @@ cmd([[
   augroup end
 ]])
 
-
-
 -- Initialize pluggins
-return require('packer').startup(function(use)
+return require("packer").startup(function(use)
 	-- Let Packer manage itself
-	use({ 'wbthomason/packer.nvim', opt = true })
+	use({ "wbthomason/packer.nvim", opt = true })
 
 	-- cursor under word colored
-	use {
-		'nyngwang/murmur.lua',
+	use({
+		"nyngwang/murmur.lua",
 		config = function()
-			require('murmur').setup {
+			require("murmur").setup({
 				cursor_rgb = {
-					guibg = '#263C05',
+					guibg = "#263C05",
 				},
 				cursor_rgb_always_use_config = true, -- if set to `true`, then always use `cursor_rgb`.
 				-- yank_blink = {
@@ -47,24 +45,24 @@ return require('packer').startup(function(use)
 					-- to trigger the close_events of vim.diagnostic.open_float.
 					function()
 						-- Close floating diag. and make it triggerable again.
-						vim.cmd('doautocmd InsertEnter')
+						vim.cmd("doautocmd InsertEnter")
 						vim.w.diag_shown = false
 					end,
-				}
-			}
-		end
-	}
+				},
+			})
+		end,
+	})
 	-- use 'pechorin/any-jump.vim'
-	use 'airblade/vim-rooter'
+	use("airblade/vim-rooter")
 
 	-- lualine
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
 
 	-- Undo Tree
-	use 'mbbill/undotree'
+	use("mbbill/undotree")
 
 	-- Git
 	-- use 'tpope/vim-fugitive'
@@ -75,21 +73,23 @@ return require('packer').startup(function(use)
 
 	-- " Go
 	-- use 'fatih/vim-go'
-	use 'ray-x/go.nvim'
-	use 'ray-x/guihua.lua'
+	use("ray-x/go.nvim")
+	use("ray-x/guihua.lua")
 
 	-- rust
 	use({
 		-- simrat39
 		-- kdarkhan
-		'simrat39/rust-tools.nvim'
+		"simrat39/rust-tools.nvim",
 	})
 
 	-- auto pairs
-	use {
+	use({
 		"windwp/nvim-autopairs",
-		config = function() require("nvim-autopairs").setup {} end
-	}
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
 
 	-- Other visual enhancement
 	-- use 'ryanoasis/vim-devicons'
@@ -101,15 +101,15 @@ return require('packer').startup(function(use)
 	-- use 'roxma/nvim-yarp'
 
 	-- comment
-	use {
-		'numToStr/Comment.nvim',
+	use({
+		"numToStr/Comment.nvim",
 		config = function()
-			require('Comment').setup()
-		end
-	}
+			require("Comment").setup()
+		end,
+	})
 
 	-- themes
-	use 'shaunsingh/nord.nvim'
+	use("shaunsingh/nord.nvim")
 	-- use({
 	-- 	"neanias/everforest-nvim",
 	-- 	-- Optional; default configuration will be used if setup isn't called.
@@ -131,22 +131,21 @@ return require('packer').startup(function(use)
 	-- 		})
 	-- 	end,
 	-- })
-	use 'Yazeed1s/oh-lucy.nvim'
-	use 'folke/tokyonight.nvim'
-	use 'marko-cerovac/material.nvim'
-	use 'sainnhe/everforest'
-	use "themercorp/themer.lua"
+	use("Yazeed1s/oh-lucy.nvim")
+	use("folke/tokyonight.nvim")
+	use("marko-cerovac/material.nvim")
+	use("sainnhe/everforest")
+	use("themercorp/themer.lua")
 
 	-- find and grep
-	use 'kyazdani42/nvim-web-devicons'
-
+	use("kyazdani42/nvim-web-devicons")
 
 	-- LSP server
-	use 'neovim/nvim-lspconfig'
-	use 'williamboman/mason.nvim' -- Helper for installing most language servers
-	use 'williamboman/mason-lspconfig.nvim'
+	use("neovim/nvim-lspconfig")
+	use("williamboman/mason.nvim") -- Helper for installing most language servers
+	use("williamboman/mason-lspconfig.nvim")
 
-	use "ray-x/lsp_signature.nvim" -- show function signature when typing
+	use("ray-x/lsp_signature.nvim") -- show function signature when typing
 	-- use({
 	-- 	'glepnir/lspsaga.nvim',
 	-- 	branch = "main",
@@ -191,7 +190,7 @@ return require('packer').startup(function(use)
 	})
 
 	-- 代码片段，用于cmp自动提示
-	use "L3MON4D3/LuaSnip" -- Snippet engine
+	use("L3MON4D3/LuaSnip") -- Snippet engine
 
 	use({
 		"hrsh7th/nvim-cmp",
@@ -200,81 +199,81 @@ return require('packer').startup(function(use)
 		-- }
 	})
 
-	use "hrsh7th/cmp-buffer"    -- buffer completions
-	use "hrsh7th/cmp-path"      -- path completions
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
 	-- use "hrsh7th/cmp-cmdline" -- cmdline completions
-	use "saadparwaiz1/cmp_luasnip" -- snippet completions
-	use "hrsh7th/cmp-nvim-lsp"
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions
+	use("hrsh7th/cmp-nvim-lsp")
 	-- use 'hrsh7th/cmp-nvim-lsp-signature-help'
-	use "hrsh7th/cmp-nvim-lua"
-	use "f3fora/cmp-spell"  -- spell check
-	use "onsails/lspkind.nvim" -- cmp kind
-	use "lukas-reineke/cmp-rg"
+	use("hrsh7th/cmp-nvim-lua")
+	use("f3fora/cmp-spell") -- spell check
+	use("onsails/lspkind.nvim") -- cmp kind
+	use("lukas-reineke/cmp-rg")
 
 	-- NvimTree
 	use({
-		'kyazdani42/nvim-tree.lua',
-		requires = 'kyazdani42/nvim-web-devicons',
+		"kyazdani42/nvim-tree.lua",
+		requires = "kyazdani42/nvim-web-devicons",
 	})
 
 	-- Treesitter
 	use({
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
 	})
 
-	use {
+	use({
 		"startup-nvim/startup.nvim",
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 		config = function()
-			require "startup".setup(require "conf.startup")
-		end
-	}
+			require("startup").setup(require("conf.startup"))
+		end,
+	})
 
 	-- find and Replace
-	use 'windwp/nvim-spectre'
+	use("windwp/nvim-spectre")
 
 	-- rainbow color ({})
-	use 'HiPhish/rainbow-delimiters.nvim'
+	use("HiPhish/rainbow-delimiters.nvim")
 
 	-- fidget lsp loading ui
 	use({
-		'j-hui/fidget.nvim',
+		"j-hui/fidget.nvim",
 		branch = "legacy",
 		config = function()
-			require('fidget').setup {}
-		end
+			require("fidget").setup({})
+		end,
 	})
 
 	-- hlargs function param color
 	use({
-		'm-demare/hlargs.nvim',
+		"m-demare/hlargs.nvim",
 		config = function()
-			require('hlargs').setup {
+			require("hlargs").setup({
 				-- color = "#698b22"
 				color = "#adcf9f",
-			}
-			require('hlargs').enable()
-		end
+			})
+			require("hlargs").enable()
+		end,
 	})
 
 	-- hop easy to move
-	use {
-		'phaazon/hop.nvim',
-		branch = 'v1', -- optional but strongly recommended
+	use({
+		"phaazon/hop.nvim",
+		branch = "v1", -- optional but strongly recommended
 		config = function()
 			-- you can configure Hop the way you like here; see :h hop-config
-			require 'hop'.setup {
-				vim.api.nvim_set_keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({})<cr>", {})
-			}
-		end
-	}
+			require("hop").setup({
+				vim.api.nvim_set_keymap("n", "f", "<cmd>lua require'hop'.hint_char1({})<cr>", {}),
+			})
+		end,
+	})
 
 	-- zen mode
-	use {
+	use({
 		"folke/zen-mode.nvim",
 		config = function()
-			require("zen-mode").setup {
+			require("zen-mode").setup({
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
 				-- refer to the configuration section below
@@ -310,58 +309,56 @@ return require('packer').startup(function(use)
 					gitsigns = { enabled = false }, -- disables git signs
 				},
 				-- callback where you can add custom code when the zen window opens
-				on_open = function(win)
-				end,
+				on_open = function(win) end,
 				-- callback where you can add custom code when the zen window closes
-				on_close = function()
-				end,
-			}
-		end
-	}
+				on_close = function() end,
+			})
+		end,
+	})
 
 	-- highlight todo
-	use {
+	use({
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
 		config = function()
-			require("todo-comments").setup {
+			require("todo-comments").setup({
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
 				-- refer to the configuration section below
-			}
-		end
-	}
+			})
+		end,
+	})
 
 	-- gitsigns
-	use {
-		'lewis6991/gitsigns.nvim',
+	use({
+		"lewis6991/gitsigns.nvim",
 		config = function()
-			require('gitsigns').setup()
-		end
-	}
+			require("gitsigns").setup()
+		end,
+	})
 
 	-- Telescope
 	use({
-		'nvim-telescope/telescope.nvim',
-		requires = { { 'nvim-lua/plenary.nvim' } }
+		"nvim-telescope/telescope.nvim",
+		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	use { 'nvim-telescope/telescope-ui-select.nvim' }
+	use({ "nvim-telescope/telescope-ui-select.nvim" })
 
-	use { "nvim-telescope/telescope-file-browser.nvim" }
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
-	use { "nvim-telescope/telescope-project.nvim" }
+	use({ "nvim-telescope/telescope-project.nvim" })
 
-	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 	-- rust crates
-	use {
-		'saecki/crates.nvim',
-		requires = { 'nvim-lua/plenary.nvim' },
+	use({
+		"saecki/crates.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require('crates').setup()
+			require("crates").setup()
 		end,
-	}
+	})
 
 	-- show nvim diagnostic using virtual lines
 	-- use({
@@ -415,15 +412,14 @@ return require('packer').startup(function(use)
 	-- 	}
 	-- })
 
-
 	-- cmdline
-	use {
+	use({
 		"gelguy/wilder.nvim",
 		-- event = 'CmdlineEnter', -- 懒加载：首次进入cmdline时载入
 		-- config = function()
 		--  require('wilder').setup({ modes = { ':', '/', '?' } })
 		-- end
-	}
+	})
 
 	-- snippets
 	-- use "rafamadriz/friendly-snippets"
@@ -436,8 +432,8 @@ return require('packer').startup(function(use)
 		requires = {
 			"MunifTanjim/nui.nvim",
 			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim"
-		}
+			"nvim-telescope/telescope.nvim",
+		},
 	})
 
 	-- treesitter context
@@ -462,33 +458,33 @@ return require('packer').startup(function(use)
 	-- }
 
 	-- dap
-	use {
+	use({
 		"rcarriga/nvim-dap-ui",
 		requires = {
 			"mfussenegger/nvim-dap",
 			config = function()
-				require 'dap'.adapters.go_headless = {
+				require("dap").adapters.go_headless = {
 					type = "server",
 					port = "38697",
 				}
-			end
+			end,
 		},
 		config = function()
-			require 'dapui'.setup()
-		end
-	}
-	use {
+			require("dapui").setup()
+		end,
+	})
+	use({
 		"jay-babu/mason-nvim-dap.nvim",
 		config = function()
 			require("mason-nvim-dap").setup({
-				ensure_installed = { "python", "delve" }
+				ensure_installed = { "python", "delve" },
 			})
-		end
-	}
-	use {
-		'leoluz/nvim-dap-go',
+		end,
+	})
+	use({
+		"leoluz/nvim-dap-go",
 		config = function()
-			require 'dap-go'.setup {
+			require("dap-go").setup({
 				dap_configurations = {
 					{
 						-- Must be "go" or it will be ignored by the plugin
@@ -521,22 +517,22 @@ return require('packer').startup(function(use)
 					build_flags = "",
 					program = "./cmd/main.go",
 				},
-			}
-		end
-	}
+			})
+		end,
+	})
 	-- colors
-	use {
-		'brenoprata10/nvim-highlight-colors',
+	use({
+		"brenoprata10/nvim-highlight-colors",
 		config = function()
-			require('nvim-highlight-colors').setup {}
-		end
-	}
+			require("nvim-highlight-colors").setup({})
+		end,
+	})
 
 	-- lsp format
-	use {
-		'stevearc/conform.nvim',
+	use({
+		"stevearc/conform.nvim",
 		config = function()
-			require('conform').setup({
+			require("conform").setup({
 				format_on_save = {
 					-- These options will be passed to conform.format()
 					timeout_ms = 500,
@@ -547,16 +543,16 @@ return require('packer').startup(function(use)
 					-- Conform will run multiple formatters sequentially
 				},
 			})
-		end
-	}
+		end,
+	})
 
 	-- pick icon
-	use "stevearc/dressing.nvim"
+	use("stevearc/dressing.nvim")
 	use({
 		"ziontee113/icon-picker.nvim",
 		config = function()
 			require("icon-picker").setup({
-				disable_legacy_commands = true
+				disable_legacy_commands = true,
 			})
 		end,
 	})

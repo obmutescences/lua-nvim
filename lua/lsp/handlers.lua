@@ -58,7 +58,6 @@ M.setup = function()
 	})
 end
 
-
 local function lsp_highlight_document(client)
 	-- if client.server_capabilities.document_highlight then
 	local status_oks, illuminate = pcall(require, "illuminate")
@@ -113,7 +112,7 @@ local function lsp_keymaps(bufnr)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", '<cmd>Lspsaga outgoing_calls<CR>', opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", '<cmd>Telescope lsp_incoming_calls<CR>', opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", '<cmd>Telescope lsp_outgoing_calls<CR>', opts)
-	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
 M.on_attach = function(client, bufnr)
@@ -121,7 +120,7 @@ M.on_attach = function(client, bufnr)
 	lsp_highlight_document(client)
 
 	-- add outline support for evey lanuage
-	require "lsp_signature".on_attach()
+	require("lsp_signature").on_attach()
 
 	-- navigator
 	require("navigator.lspclient.mapping").setup({ client = client, bufnr = bufnr }) -- setup navigator keymaps here,

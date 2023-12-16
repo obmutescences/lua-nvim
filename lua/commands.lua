@@ -1,6 +1,6 @@
-vim.cmd('syntax enable')
+vim.cmd("syntax enable")
 -- vim.cmd('syntax sync minlines=256')
-vim.cmd('autocmd BufEnter * silent! lcd %:p:h')
+vim.cmd("autocmd BufEnter * silent! lcd %:p:h")
 
 vim.cmd([[
 
@@ -9,10 +9,11 @@ vim.cmd([[
 " set guifont=UbuntuMono\ Nerd\ Font\ Mono:h14:#e-antialias:#h-none,SimSong
 " set guifont=Ubuntu\ Mono:h13:#e-antialias:#h-none,SimSong
 " set guifont=Gintronic:h12
-set guifont=ConsolaMono:h13
+" set guifont=ConsolaMono:h13:w1.2
 " set guifont=Comic\ Shanns:h14
-" set guifont=Comic\ Code\ Ligatures:h13
+set guifont=Comic\ Code\ Ligatures:h12:w1.2
 " set guifont=Rec\ Mono\ Custom:h13
+" set guifont=Monaspace\ Radon:h12:w1.1
 
 silent !mkdir -p ~/.config/nvim/tmp/backup
 silent !mkdir -p ~/.config/nvim/tmp/undo
@@ -159,7 +160,7 @@ hi default GuihuaListSelHl guifg=#548B54 guibg=#8B3A3A
 ]])
 
 if vim.g.nvui then
-	vim.cmd [[
+	vim.cmd([[
 	NvuiFullscreen 1
 	NvuiScrollAnimationDuration 0.1
 	NvuiCursorAnimationDuration 0.2
@@ -174,5 +175,5 @@ if vim.g.nvui then
 	NvuiCmdFontSize 17
 	NvuiFullscreen 1
 	NvuiCmdBg #1B5E20
-	]]
+	]])
 end
