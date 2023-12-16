@@ -1,6 +1,6 @@
 local check_backspace = function()
-	local col = vim.fn.col "." - 1
-	return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+	local col = vim.fn.col(".") - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 --require'luasnip'.filetype_extend("go", {"go"})
 --require'luasnip'.filetype_extend("python", {"python"})
@@ -138,11 +138,10 @@ end
 
 require("luasnip.loaders.from_vscode").lazy_load() -- load freindly-snippets
 require("luasnip.loaders.from_vscode").load({
-	paths = {                                      -- load custom snippets
-		vim.fn.stdpath("config") .. "/my-snippets"
-	}
+	paths = { -- load custom snippets
+		vim.fn.stdpath("config") .. "/my-snippets",
+	},
 }) -- Load snippets from my-snippets folder
-
 
 local lspkind = require("lspkind")
 
@@ -154,7 +153,7 @@ local buffer_option = {
 			bufs[vim.api.nvim_win_get_buf(win)] = true
 		end
 		return vim.tbl_keys(bufs)
-	end
+	end,
 }
 
 cmp_config = {
@@ -165,7 +164,7 @@ cmp_config = {
 	completion = {
 		---@usage The minimum length of a word to complete on.
 		keyword_length = 1,
-		completeopt = 'menu,menuone,noinsert',
+		completeopt = "menu,menuone,noinsert",
 		-- completeopt = "menu,noselect",
 	},
 	experimental = {
@@ -173,7 +172,7 @@ cmp_config = {
 		native_menu = false,
 	},
 	view = {
-		entries = "centered"
+		entries = "centered",
 	},
 	preselect = cmp.PreselectMode.None,
 	formatting = {
@@ -232,7 +231,7 @@ cmp_config = {
 				vim_item.dup = cmp_config.formatting.duplicates[entry.source.name]
 					or cmp_config.formatting.duplicates_default
 				return vim_item
-			end
+			end,
 		}),
 	},
 	sorting = {
@@ -250,7 +249,7 @@ cmp_config = {
 			-- cmp.config.compare.score,
 			-- -- cmp.config.compare.sort_text,
 			-- cmp.config.compare.length,
-		}
+		},
 	},
 	snippet = {
 		expand = function(args)
@@ -268,7 +267,7 @@ cmp_config = {
 			priority = 9,
 			entry_filter = function(entry)
 				return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-			end
+			end,
 		},
 		{
 			name = "buffer",
@@ -289,16 +288,16 @@ cmp_config = {
 		{ name = "crates" },
 		-- { name = "calc" },
 	}),
-	mapping = cmp.mapping.preset.insert {
+	mapping = cmp.mapping.preset.insert({
 		["<C-u>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
-		['<C-p>'] = cmp.config.disable,
+		["<C-p>"] = cmp.config.disable,
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif luasnip.expandable() then
-				luasnip.expand()
+			-- elseif luasnip.expandable() then
+			-- 	luasnip.expand()
 			elseif jumpable(0) then
 				luasnip.jump(1)
 			elseif check_backspace() then
@@ -326,8 +325,8 @@ cmp_config = {
 		}),
 
 		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm { select = true },
-	},
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+	}),
 }
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 -- cmp.setup.cmdline('/', {
@@ -346,7 +345,6 @@ cmp_config = {
 -- 		{ name = 'path' }
 -- 	})
 -- })
-
 
 -- disable autocompletion for guihua
 vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
