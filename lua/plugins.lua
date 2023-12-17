@@ -182,10 +182,10 @@ return require("packer").startup(function(use)
 
 	-- lsp help
 	use({
-		'ray-x/navigator.lua',
+		"ray-x/navigator.lua",
 		requires = {
-			{ 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
-			{ 'neovim/nvim-lspconfig' },
+			{ "ray-x/guihua.lua", run = "cd lua/fzy && make" },
+			{ "neovim/nvim-lspconfig" },
 		},
 	})
 
@@ -199,14 +199,14 @@ return require("packer").startup(function(use)
 		-- }
 	})
 
-	use("hrsh7th/cmp-buffer")    -- buffer completions
-	use("hrsh7th/cmp-path")      -- path completions
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
 	-- use "hrsh7th/cmp-cmdline" -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 	-- use 'hrsh7th/cmp-nvim-lsp-signature-help'
 	use("hrsh7th/cmp-nvim-lua")
-	use("f3fora/cmp-spell")  -- spell check
+	use("f3fora/cmp-spell") -- spell check
 	use("onsails/lspkind.nvim") -- cmp kind
 	use("lukas-reineke/cmp-rg")
 
@@ -349,9 +349,11 @@ return require("packer").startup(function(use)
 
 	use({ "nvim-telescope/telescope-project.nvim" })
 
-
 	-- use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
-	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	})
 
 	-- rust crates
 	use({

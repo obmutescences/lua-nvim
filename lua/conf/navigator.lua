@@ -175,6 +175,7 @@ require("navigator").setup({
 	-- setup here. if it is nil, navigator will not init signature help
 	signature_help_cfg = nil, -- if you would like to init ray-x/lsp_signature plugin in navigator, and pass in your own config to signature help
 	icons = {
+		icons = true,
 		-- Code action
 		code_action_icon = "🏏", -- note: need terminal support, for those not support unicode, might crash
 		-- Diagnostics
