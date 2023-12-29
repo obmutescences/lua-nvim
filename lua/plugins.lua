@@ -546,6 +546,8 @@ return require('packer').startup(function(use)
 				formatters_by_ft = {
 					lua = { "stylua" },
 					-- Conform will run multiple formatters sequentially
+					go = { "gofmt", "goimports" },
+
 				},
 			})
 		end

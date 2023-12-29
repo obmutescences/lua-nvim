@@ -297,8 +297,8 @@ cmp_config = {
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif luasnip.expandable() then
-				luasnip.expand()
+				-- elseif luasnip.expandable() then
+				-- 	luasnip.expand()
 			elseif jumpable(0) then
 				luasnip.jump(1)
 			elseif check_backspace() then

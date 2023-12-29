@@ -44,7 +44,12 @@ local config = {
 			-- We are going to use lualine_c an lualine_x as left and
 			-- right section. Both are highlighted by c theme .  So we
 			-- are just setting default looks o statusline
-			normal = { c = { fg = colors.fg, bg = "#22292D" } },
+
+			-- everforest
+			-- normal = { c = { fg = colors.fg, bg = "#22292D" } },
+
+			-- oh-lucy
+			normal = { c = { fg = colors.fg, bg = "#1E1D23" } },
 			-- inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		},
 	},

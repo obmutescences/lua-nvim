@@ -1,6 +1,6 @@
 -- Providers
-vim.g.python3_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3.11'
-vim.g.python_host_prog = '/opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3.11'
+vim.g.python3_host_prog = '/usr/bin/python3'
+vim.g.python_host_prog = '/usr/bin/python3'
 
 
 --system--
@@ -45,8 +45,8 @@ vim.opt.linespace                           = 6
 -- vim.opt.updatetime = 50
 
 -- -- neovide
--- vim.g.neovide_refresh_rate = 60
-vim.g.neovide_refresh_rate_idle             = 60
+vim.g.neovide_refresh_rate                  = 240
+vim.g.neovide_refresh_rate_idle             = 240
 vim.g.neovide_no_idle                       = true
 vim.g.neovide_cursor_vfx_mode               = "pixiedust"
 vim.g.neovide_cursor_vfx_opacity            = 5000
@@ -80,7 +80,6 @@ vim.g.neovide_fullscreen                    = true
 -- vim.g.neovide_remember_window_size = true
 
 if vim.g.neovide then
-	vim.g.neovide_input_use_logo = 1         -- enable use of the logo (cmd) key
 	vim.keymap.set('n', '<D-s>', ':w<CR>')   -- Save
 	vim.keymap.set('v', '<D-c>', '"+y')      -- Copy
 	vim.keymap.set('n', '<D-v>', '"+P')      -- Paste normal mode
@@ -90,7 +89,6 @@ if vim.g.neovide then
 end
 
 -- Allow clipboard copy paste in neovim
-vim.g.neovide_input_use_logo = 1
 vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })

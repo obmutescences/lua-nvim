@@ -7,14 +7,14 @@ vim.cmd([[
 " set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h15:i:#e-antialias:#h-none
 " set guifont=CodeNewRoman\ Nerd\ Font:h14:#e-antialias:#h-none,SimSong
 " set guifont=UbuntuMono\ Nerd\ Font\ Mono:h14:#e-antialias:#h-none,SimSong
-" set guifont=Ubuntu\ Mono:h13:#e-antialias:#h-none,SimSong
+" set guifont=Ubuntu\ Mono:h12:w1.2:#e-antialias:#h-none
 " set guifont=Gintronic:h12
-" set guifont=ConsolaMono:h13
+" set guifont=Consola\ Mono:h12:w1.1:#e-antialias:#h-none
 " set guifont=Comic\ Shanns:h14
 " set guifont=Comic\ Code\ Ligatures:h13
 " set guifont=Rec\ Mono\ Custom:h13
-" set guifont=Comic\ Code:h10:w1.1
-set guifont=Monaspace\ Radon:h10:w1.2
+set guifont=Comic\ Code:h11:w1.1:#e-antialias:#h-none
+" set guifont=Monaspace\ Radon:h11:w1.1:#e-antialias:#h-full
 
 silent !mkdir -p ~/.config/nvim/tmp/backup
 silent !mkdir -p ~/.config/nvim/tmp/undo
@@ -141,16 +141,17 @@ hi ColorColumn guibg=NONE
 " gitsigns
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
-" nvim-tree
-hi NvimTreeNormal guibg=#22292D guifg=#77B98B
-
-" everforest
-hi TelescopeBorder guibg=#22292D guifg=#22292D
-hi TelescopeNormal guibg=#22292D guifg=#5d6b66
+" nvim-tree everforest
+" hi NvimTreeNormal guibg=#22292D guifg=#77B98B
+" hi TelescopeBorder guibg=#22292D guifg=#22292D
+" hi TelescopeNormal guibg=#22292D guifg=#5d6b66
 
 " oh-lucy
-" hi TelescopeBorder guibg=#14131A guifg=#14131A
-" hi TelescopeNormal guibg=#14131A guifg=#6E4D55
+hi TelescopeBorder guibg=#14131A guifg=#14131A
+hi TelescopeNormal guibg=#14131A guifg=#6E4D55
+hi NvimTreeNormal guibg=#1E1D23 guifg=#77B98B
+hi WinSeparator guibg=#1E1D23 guifg=#1E1D23
+hi EndOfBuffer guibg=#1E1D23 guifg=#1E1D23
 
 " navigator
 hi default GuihuaTextViewDark guifg=#e0d8f4 guibg=#CD5555
