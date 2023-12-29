@@ -1,2 +1,3 @@
 tmp
 .nvimlog
+plugin/packer_compiled.lua
