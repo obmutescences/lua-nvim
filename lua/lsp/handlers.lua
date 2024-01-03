@@ -115,7 +115,7 @@ local function lsp_keymaps(bufnr)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
-	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", '<cmd>Lspsaga incoming_calls<CR>', opts)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", '<cmd>Lspsaga outgoing_calls<CR>', opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", '<cmd>Telescope lsp_incoming_calls<CR>', opts)
@@ -134,6 +134,8 @@ M.on_attach = function(client, bufnr)
 	require("navigator.lspclient.mapping").setup({ client = client, bufnr = bufnr }) -- setup navigator keymaps here,
 	require("navigator.dochighlight").documentHighlight(bufnr)
 	require("navigator.codeAction").code_action_prompt(bufnr)
+
+	require("lsp-inlayhints").on_attach(client, bufnr)
 end
 
 return M

@@ -51,14 +51,6 @@ for _, server in pairs(servers) do
 	}
 	server = vim.split(server, "@")[1]
 	if server == "rust_analyzer" then
-		local rust_opts = require "lsp.rust"
-		-- opts = vim.tbl_deep_extend("force", rust_opts, opts)
-		local rust_tools_status_ok, rust_tools = pcall(require, "rust-tools")
-		if not rust_tools_status_ok then
-			return
-		end
-
-		rust_tools.setup(rust_opts)
 		goto continue
 	end
 	if server == "pylsp" then
