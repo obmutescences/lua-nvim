@@ -72,7 +72,7 @@ endfunc
 " ===
 " === vim-rooter
 " ===
-let g:rooter_patterns = ['__vim_project_root', '.git/', '.gitignore', 'go.mod', 'Cargo.toml', 'package.json', 'go.work']
+let g:rooter_patterns = ['.git/', 'go.mod', 'Cargo.toml', 'package.json']
 
 " ===
 " === Necessary Commands to Execute
