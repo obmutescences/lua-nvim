@@ -6,6 +6,12 @@ vim.g.rustaceanvim = {
 	server = {
 		on_attach = function(client, bufnr)
 			-- you can also put keymaps in here
+			local opts = { noremap = true, silent = true }
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>",
+				'<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 		end,
 		settings = {
 			-- rust-analyzer language server configuration

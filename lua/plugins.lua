@@ -87,6 +87,8 @@ return require("packer").startup(function(use)
 	})
 	use({
 		'mrcjkb/rustaceanvim',
+		version = '^3', -- Recommended
+		ft = { 'rust' },
 	})
 
 	-- auto pairs
@@ -461,68 +463,76 @@ return require("packer").startup(function(use)
 	-- }
 
 	-- dap
+	use("theHamsta/nvim-dap-virtual-text")
 	use({
 		"rcarriga/nvim-dap-ui",
 		requires = {
 			"mfussenegger/nvim-dap",
 			config = function()
-				require("dap").adapters.go_headless = {
-					type = "server",
-					port = "38697",
+				local dap = require("dap")
+				-- dap.adapters.go_headless = {
+				-- 	type = "server",
+				-- 	port = "38697",
+				-- }
+				dap.adapters.codelldb = {
+					type = 'server',
+					host = '127.0.0.1',
+					port = 13000 -- 💀 Use the port printed out or specified with `--port`
 				}
 			end,
 		},
 		config = function()
 			require("dapui").setup()
+			require("nvim-dap-virtual-text").setup()
 		end,
 	})
-	use({
-		"jay-babu/mason-nvim-dap.nvim",
-		config = function()
-			require("mason-nvim-dap").setup({
-				ensure_installed = { "python", "delve" },
-			})
-		end,
-	})
-	use({
-		"leoluz/nvim-dap-go",
-		config = function()
-			require("dap-go").setup({
-				dap_configurations = {
-					{
-						-- Must be "go" or it will be ignored by the plugin
-						type = "go",
-						name = "Attach remote",
-						mode = "remote",
-						request = "attach",
-					},
-				},
-				-- delve configurations
-				delve = {
-					-- the path to the executable dlv which will be used for debugging.
-					-- by default, this is the "dlv" executable on your PATH.
-					path = "dlv",
-					-- time to wait for delve to initialize the debug session.
-					-- default to 20 seconds
-					initialize_timeout_sec = 20,
-					-- a string that defines the port to start delve debugger.
-					-- default to string "${port}" which instructs nvim-dap
-					-- to start the process in a random available port
-					port = "38697",
-					-- additional args to pass to dlv
-					args = {},
-					-- the build flags that are passed to delve.
-					-- defaults to empty string, but can be used to provide flags
-					-- such as "-tags=unit" to make sure the test suite is
-					-- compiled during debugging, for example.
-					-- passing build flags using args is ineffective, as those are
-					-- ignored by delve in dap mode.
-					build_flags = "",
-					program = "./cmd/main.go",
-				},
-			})
-		end,
-	})
+	-- use({
+	-- 	"jay-babu/mason-nvim-dap.nvim",
+	-- 	config = function()
+	-- 		require("mason-nvim-dap").setup({
+	-- 			ensure_installed = { "python", "delve" },
+	-- 		})
+	-- 	end,
+	-- })
+	-- use({
+	-- 	"leoluz/nvim-dap-go",
+	-- 	config = function()
+	-- 		require("dap-go").setup({
+	-- 			dap_configurations = {
+	-- 				{
+	-- 					-- Must be "go" or it will be ignored by the plugin
+	-- 					type = "go",
+	-- 					name = "Attach remote",
+	-- 					mode = "remote",
+	-- 					request = "attach",
+	-- 				},
+	-- 			},
+	-- 			-- delve configurations
+	-- 			delve = {
+	-- 				-- the path to the executable dlv which will be used for debugging.
+	-- 				-- by default, this is the "dlv" executable on your PATH.
+	-- 				path = "dlv",
+	-- 				-- time to wait for delve to initialize the debug session.
+	-- 				-- default to 20 seconds
+	-- 				initialize_timeout_sec = 20,
+	-- 				-- a string that defines the port to start delve debugger.
+	-- 				-- default to string "${port}" which instructs nvim-dap
+	-- 				-- to start the process in a random available port
+	-- 				port = "38697",
+	-- 				-- additional args to pass to dlv
+	-- 				args = {},
+	-- 				-- the build flags that are passed to delve.
+	-- 				-- defaults to empty string, but can be used to provide flags
+	-- 				-- such as "-tags=unit" to make sure the test suite is
+	-- 				-- compiled during debugging, for example.
+	-- 				-- passing build flags using args is ineffective, as those are
+	-- 				-- ignored by delve in dap mode.
+	-- 				build_flags = "",
+	-- 				-- program = "./cmd/main.go",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- })
 	-- colors
 	use({
 		"brenoprata10/nvim-highlight-colors",

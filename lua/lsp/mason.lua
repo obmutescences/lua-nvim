@@ -9,7 +9,7 @@ if not status_ok_1 then
 end
 
 -- pylsp pyright ruff_lsp golangci_lint_ls
-local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls", "rust_analyzer", "volar", "lua_ls", "pylsp",
+local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls", "volar", "lua_ls", "pylsp",
 	"pyright" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
@@ -50,9 +50,9 @@ for _, server in pairs(servers) do
 		capabilities = require("lsp.handlers").capabilities,
 	}
 	server = vim.split(server, "@")[1]
-	if server == "rust_analyzer" then
-		goto continue
-	end
+	-- if server == "rust_analyzer" then
+	-- 	goto continue
+	-- end
 	if server == "pylsp" then
 		opts.settings = {
 			pylsp = {
