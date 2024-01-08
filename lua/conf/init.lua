@@ -9,4 +9,5 @@ require("conf.wilder")
 require "conf.go"
 require "conf.navigator"
 require "conf.guihua"
+require "conf.dap"
 -- require "conf.themer"
