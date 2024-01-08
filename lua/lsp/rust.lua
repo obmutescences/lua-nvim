@@ -6,6 +6,7 @@ vim.g.rustaceanvim = {
 	server = {
 		on_attach = function(client, bufnr)
 			-- you can also put keymaps in here
+			vim.lsp.inlay_hint.enable(bufnr)
 			local opts = { noremap = true, silent = true }
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>",
@@ -18,6 +19,20 @@ vim.g.rustaceanvim = {
 			['rust-analyzer'] = {
 				lens = {
 					enable = true,
+					references = {
+						adt = {
+							enable = true
+						},
+						enumVariant = {
+							enable = true
+						},
+						method = {
+							enable = true
+						},
+						trait = {
+							enable = true
+						}
+					}
 				},
 				checkOnSave = {
 					enable = true,
@@ -25,6 +40,12 @@ vim.g.rustaceanvim = {
 				},
 				cargo = {
 					allFeatures = true,
+				},
+				diagnostics = {
+					enable = true,
+					-- experimental = {
+					-- 	enable = true
+					-- }
 				},
 				inlayHints = {
 					bindingModeHints = {
@@ -43,20 +64,46 @@ vim.g.rustaceanvim = {
 						minLines = 25,
 					},
 					closureReturnTypeHints = {
-						enable = "never",
+						enable = true,
+					},
+					closureCaptureHints = {
+						enable = true
 					},
 					lifetimeElisionHints = {
-						enable = "never",
+						enable = false,
 						useParameterNames = false,
 						maxLength = 25,
 					},
 					parameterHints = {
 						enable = true,
 					},
-					reborrowHints = {
-						enable = "never",
+					-- reborrowHints = {
+					-- 	enable = true,
+					-- },
+					discriminantHints = {
+						enable = true
+					},
+					-- expressionAdjustmentHints = {
+					-- 	enable = true
+					-- },
+					implicitDrops = {
+						enable = true
 					},
 					renderColons = true,
+				},
+				semanticHighlighting = {
+					operator = {
+						enable = true,
+						specialization = {
+							enable = true,
+						}
+					},
+					punctuation = {
+						enable = true,
+						specialization = {
+							enable = true
+						}
+					}
 				}
 			},
 		},
@@ -65,17 +112,3 @@ vim.g.rustaceanvim = {
 		},
 	}
 }
-
-vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
-vim.api.nvim_create_autocmd("LspAttach", {
-	group = "LspAttach_inlayhints",
-	callback = function(args)
-		if not (args.data and args.data.client_id) then
-			return
-		end
-
-		local bufnr = args.buf
-		local client = vim.lsp.get_client_by_id(args.data.client_id)
-		require("lsp-inlayhints").on_attach(client, bufnr)
-	end,
-})

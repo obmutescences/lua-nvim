@@ -134,8 +134,6 @@ M.on_attach = function(client, bufnr)
 	require("navigator.lspclient.mapping").setup({ client = client, bufnr = bufnr }) -- setup navigator keymaps here,
 	require("navigator.dochighlight").documentHighlight(bufnr)
 	require("navigator.codeAction").code_action_prompt(bufnr)
-
-	require("lsp-inlayhints").on_attach(client, bufnr)
 end
 
 return M
