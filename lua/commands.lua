@@ -15,7 +15,7 @@ vim.cmd([[
 " set guifont=Comic\ Code\ Ligatures:h12:w1.2
 " set guifont=Rec\ Mono\ Custom:h13
 " set guifont=Comic\ Code:h10:w1.0:#e-antialias:#h-none
-set guifont=Monaspace\ Radon:h9:w1.0:#e-antialias:#h-full
+" set guifont=Monaspace\ Radon:h9:w1.0:#e-antialias:#h-full
 
 
 silent !mkdir -p ~/.config/nvim/tmp/backup
