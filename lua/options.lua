@@ -95,8 +95,14 @@ vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 
--- rust-tools
--- vim.g.rustfmt_autosave = 1
-
 -- vim.o.pumblend = 40
 -- vim.o.winblend = 30
+
+-- ale
+-- 只为 Go 启用 golangci-lint
+vim.g.ale_fix_on_save = 0
+vim.g.ale_set_loclist = 0
+vim.g.ale_go_golangci_lint_package = 1
+vim.g.ale_linters = {
+	go = { 'golangci-lint', 'gofmt', 'staticcheck', 'govet' },
+}

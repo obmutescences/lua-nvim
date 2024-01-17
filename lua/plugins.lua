@@ -541,4 +541,7 @@ return require("packer").startup(function(use)
 			border = "none"
 		})
 	end }
+
+	-- lint
+	use "dense-analysis/ale"
 end)
