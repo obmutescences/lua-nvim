@@ -138,7 +138,7 @@ end
 
 require("luasnip.loaders.from_vscode").lazy_load() -- load freindly-snippets
 require("luasnip.loaders.from_vscode").load({
-	paths = { -- load custom snippets
+	paths = {                                      -- load custom snippets
 		vim.fn.stdpath("config") .. "/my-snippets",
 	},
 }) -- Load snippets from my-snippets folder
@@ -237,18 +237,18 @@ cmp_config = {
 	sorting = {
 		priority_weight = 1.0,
 		comparators = {
+			cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
 			cmp.config.compare.locality,
 			cmp.config.compare.recently_used,
-			cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
 			cmp.config.compare.offset,
 			cmp.config.compare.order,
-			-- cmp.config.compare.kind,
-			-- cmp.config.compare.exact,
+			cmp.config.compare.kind,
+			cmp.config.compare.exact,
 			-- cmp.config.compare.offset,
 			-- cmp.config.compare.order,
 			-- cmp.config.compare.score,
 			-- -- cmp.config.compare.sort_text,
-			-- cmp.config.compare.length,
+			cmp.config.compare.length,
 		},
 	},
 	snippet = {
@@ -296,8 +296,8 @@ cmp_config = {
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			-- elseif luasnip.expandable() then
-			-- 	luasnip.expand()
+				-- elseif luasnip.expandable() then
+				-- 	luasnip.expand()
 			elseif jumpable(0) then
 				luasnip.jump(1)
 			elseif check_backspace() then
