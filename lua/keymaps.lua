@@ -17,9 +17,9 @@ vim.g.maplocalleader = " "
 
 
 -- Save & quit
-nnoremap("Q", ":q<cr>")
-nnoremap("<c-q>", ":q<cr>")
-nnoremap("S", ":w<cr>")
+nnoremap("Q", "<cmd>q<cr>")
+nnoremap("<c-q>", "<cmd>q<cr>")
+nnoremap("S", "<cmd>w<cr>")
 
 
 -- undo operations
@@ -113,10 +113,15 @@ nnoremap("<C-c>", "zz")
 --Compile function
 nnoremap("r", ":call CompileRunGcc()<CR>")
 
+
+-- nvim-tree
+nmap("tt", "<cmd>NvimTreeToggle<CR>")
+
 --Telescope
 nnoremap("<C-p>", ":Telescope find_files<CR>")
 nnoremap("<C-l>", ":Telescope live_grep<CR>")
 nnoremap("<C-;>", ":Telescope file_browser<CR>")
+nnoremap("<LEADER>cc", "<cmd>Telescope commands<CR>")
 
 
 -- vim-fugitive
@@ -134,11 +139,7 @@ nnoremap("<", "<<")
 nnoremap(">", ">>")
 
 -- zen mode
-nmap('<LEADER>n', ':ZenMode<CR>')
-
-
--- nvim-tree
-nmap("tt", ":NvimTreeToggle<CR>")
+nmap('<LEADER>n', '<cmd>ZenMode<CR>')
 
 -- find and replace
 nnoremap("<LEADER>r", "<cmd>lua require('spectre').open()<CR>")

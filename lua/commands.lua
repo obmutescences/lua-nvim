@@ -105,55 +105,22 @@ hi SignColumn ctermbg=NONE guibg=NONE
 hi NonText ctermfg=gray guifg=grey10
 hi ColorColumn guibg=NONE
 
-" ===
-" === vim-go
-" ===
-" let g:go_doc_popup_window = 1
-" let g:go_def_mapping_enabled = 0
-" let g:go_template_autocreate = 0
-" let g:go_textobj_enabled = 0
-" let g:go_auto_type_info = 0
-" let g:go_def_mapping_enabled = 0
-" let g:go_highlight_array_whitespace_error = 0
-" let g:go_highlight_build_constraints = 1
-" let g:go_highlight_chan_whitespace_error = 0
-" let g:go_highlight_extra_types = 1
-" let g:go_highlight_fields = 1
-" let g:go_highlight_format_strings = 1
-" let g:go_highlight_function_calls = 1
-" let g:go_highlight_function_parameters = 1
-" let g:go_highlight_functions = 1
-" let g:go_highlight_generate_tags = 1
-" let g:go_highlight_methods = 1
-" let g:go_highlight_operators = 1
-" let g:go_highlight_space_tab_error = 0
-" let g:go_highlight_string_spellcheck = 1
-" let g:go_highlight_structs = 1
-" let g:go_highlight_trailing_whitespace_error = 0
-" let g:go_highlight_types = 1
-" let g:go_highlight_variable_assignments = 1
-" let g:go_highlight_variable_declarations = 1
-" let g:go_doc_keywordprg_enabled = 0
-" let g:go_highlight_generate_tags = 1
-" let g:go_highlight_diagnostic_errors = 1
-" let g:go_highlight_diagnostic_warnings = 1
-" let g:go_def_mode='gopls'
-" let g:go_info_mode='gopls'
-
 " gitsigns
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " nvim-tree everforest
 " hi NvimTreeNormal guibg=#22292D guifg=#77B98B
-" hi TelescopeBorder guibg=#22292D guifg=#22292D
+" hi TelescopeBorder guibg=#22292D guifg=#77B98B
 " hi TelescopeNormal guibg=#22292D guifg=#5d6b66
 
 " oh-lucy
-hi TelescopeBorder guibg=#14131A guifg=#14131A
-hi TelescopeNormal guibg=#14131A guifg=#6E4D55
+hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
+hi TelescopeBorder guibg=#22292D guifg=#7EC49D
 hi NvimTreeNormal guibg=#1E1D23 guifg=#77B98B
 hi WinSeparator guibg=#1E1D23 guifg=#1E1D23
 hi EndOfBuffer guibg=#1E1D23 guifg=#1E1D23
+hi CmpItemAbbrMatch guifg=#FF7DA3
+hi CmpItemAbbrMatchFuzzy guifg=#FF7DA3
 
 " navigator
 hi default GuihuaTextViewDark guifg=#e0d8f4 guibg=#CD5555

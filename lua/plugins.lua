@@ -348,30 +348,23 @@ return require("packer").startup(function(use)
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			"nvim-telescope/telescope-ui-select.nvim",
+			"kkharji/sqlite.lua",
+			"nvim-telescope/telescope-frecency.nvim",
+			"nvim-telescope/telescope-file-browser.nvim",
+			"nvim-telescope/telescope-project.nvim",
+			{
+
+				"nvim-telescope/telescope-fzf-native.nvim",
+				run =
+				"cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+			},
+		},
 	})
-
-	use({ "nvim-telescope/telescope-ui-select.nvim" })
-
-	use({ "nvim-telescope/telescope-file-browser.nvim" })
-
-	use({ "nvim-telescope/telescope-project.nvim" })
-
-	-- use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
-	use({
-		"nvim-telescope/telescope-fzf-native.nvim",
-		run =
-		"cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-	})
-
-
-	-- show nvim diagnostic using virtual lines
-	-- use({
-	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-	-- 	config = function()
-	-- 		require("lsp_lines").setup()
-	-- 	end,
-	-- })
 
 	-- noice
 	-- use({
@@ -544,4 +537,16 @@ return require("packer").startup(function(use)
 
 	-- lint
 	use "dense-analysis/ale"
+
+	use(
+		{
+			"ThePrimeagen/refactoring.nvim",
+			requires = {
+				{ "nvim-lua/plenary.nvim" },
+				{ "nvim-treesitter/nvim-treesitter" }
+			},
+			config = function()
+				require("refactoring").setup({})
+			end
+		})
 end)

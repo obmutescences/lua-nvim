@@ -46,100 +46,40 @@
 -- ^core go$ | rb$ | py$
 
 
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-	vim.notify("telescope not found!")
-	return
+local telescope = require("telescope")
+local actions = require("telescope.actions")
+-- local icons = require("config.icons")
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "TelescopeResults",
+	callback = function(ctx)
+		vim.api.nvim_buf_call(ctx.buf, function()
+			vim.fn.matchadd("TelescopeParent", "\t\t.*$")
+			vim.api.nvim_set_hl(0, "TelescopeParent", { link = "Comment" })
+		end)
+	end,
+})
+
+local function formattedName(_, path)
+	local tail = vim.fs.basename(path)
+	local parent = vim.fs.dirname(path)
+	if parent == "." then
+		return tail
+	end
+	return string.format("%s\t\t%s", tail, parent)
 end
 
-local actions = require "telescope.actions"
-
--- disable preview binaries
-local previewers = require("telescope.previewers")
-local Job = require("plenary.job")
-local new_maker = function(filepath, bufnr, opts)
-	filepath = vim.fn.expand(filepath)
-	Job:new({
-		command = "file",
-		args = { "--mime-type", "-b", filepath },
-		on_exit = function(j)
-			local mime_type = vim.split(j:result()[1], "/")[1]
-			if mime_type == "text" then
-				previewers.buffer_previewer_maker(filepath, bufnr, opts)
-			else
-				-- maybe we want to write something to the buffer here
-				vim.schedule(function()
-					vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
-				end)
-			end
-		end
-	}):sync()
-end
-
-local options = {
+local tel_config = {
+	file_ignore_patterns = { "%.git/.", "Cargo.lock", "target", "go.sum" },
 	defaults = {
-		buffer_previewer_maker = new_maker,
-		vimgrep_arguments = {
-			"rg",
-			"-L",
-			"--color=never",
-			"--no-heading",
-			"--with-filename",
-			"--line-number",
-			"--column",
-			"--smart-case",
-		},
-		prompt_prefix = "   ",
-		selection_caret = "  ",
-		entry_prefix = "  ",
-		initial_mode = "insert",
-		selection_strategy = "reset",
-		sorting_strategy = "ascending",
-		layout_strategy = "horizontal",
-		layout_config = {
-			horizontal = {
-				prompt_position = "top",
-				preview_width = 0.55,
-				results_width = 0.8,
-			},
-			vertical = {
-				mirror = false,
-			},
-			width = 0.95,
-			height = 0.45,
-			preview_cutoff = 120,
-		},
-		file_sorter = require("telescope.sorters").get_fuzzy_file,
-		file_ignore_patterns = { "node_modules" },
-		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-		path_display = { "truncate" },
-		winblend = 0,
-		border = {},
-		-- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-		borderchars = nil,
-		color_devicons = true,
-		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-		-- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-		-- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-		-- qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-		-- -- Developer configurations: Not meant for general override
-		-- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
-		-- mappings = {
-		--   n = { ["q"] = require("telescope.actions").close },
-		-- },
 		mappings = {
 			i = {
+				["<esc>"] = actions.close,
 				["<C-n>"] = actions.cycle_history_next,
 				["<C-k>"] = actions.cycle_history_prev,
 
 				["<C-j>"] = actions.move_selection_next,
 				["<C-p>"] = actions.move_selection_previous,
-
-				["<C-c>"] = actions.close,
-
-				["<Down>"] = actions.move_selection_next,
-				["<Up>"] = actions.move_selection_previous,
-
 				["<CR>"] = actions.select_default,
 				["<C-x>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
@@ -148,15 +88,6 @@ local options = {
 				["<C-u>"] = actions.preview_scrolling_up,
 				["<C-d>"] = actions.preview_scrolling_down,
 
-				["<PageUp>"] = actions.results_scrolling_up,
-				["<PageDown>"] = actions.results_scrolling_down,
-
-				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-				["<C-l>"] = actions.complete_tag,
-				["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
 			},
 
 			n = {
@@ -177,66 +108,170 @@ local options = {
 				["M"] = actions.move_to_middle,
 				["L"] = actions.move_to_bottom,
 
-				["<Down>"] = actions.move_selection_next,
-				["<Up>"] = actions.move_selection_previous,
-				["gg"] = actions.move_to_top,
-				["G"] = actions.move_to_bottom,
-
-				["<C-u>"] = actions.preview_scrolling_up,
-				["<C-d>"] = actions.preview_scrolling_down,
-
-				["<PageUp>"] = actions.results_scrolling_up,
-				["<PageDown>"] = actions.results_scrolling_down,
-
-				["?"] = actions.which_key,
 			},
 		},
-		pickers = {
-			find_files = {
-				hidden = true,
-			},
-			live_grep = {
-				--@usage don't include the filename in the search results
-				only_sort_text = true,
-			},
-			grep_string = {
-				only_sort_text = true,
-			},
-			planets = {
-				show_pluto = true,
-				show_moon = true,
-			},
-			git_files = {
-				hidden = true,
-				show_untracked = true,
-			},
-			colorscheme = {
-				enable_preview = true,
-			},
+		winblend = 5,
+		borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+		previewer = false,
+		prompt_prefix = "🔭  ",
+		selection_caret = "  ",
+		file_ignore_patterns = { "node_modules", "package-lock.json" },
+		initial_mode = "insert",
+		select_strategy = "reset",
+		sorting_strategy = "ascending",
+		color_devicons = true,
+		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+		layout_config = {
+			prompt_position = "top",
+			preview_cutoff = 120,
 		},
-		extensions = {
-			fzf = {
-				fuzzy = true,           -- false will only do exact matching
-				override_generic_sorter = true, -- override the generic sorter
-				override_file_sorter = true, -- override the file sorter
-				case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			},
+		vimgrep_arguments = {
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+			"--hidden",
+			"--glob=!.git/",
 		},
-
 	},
-
+	pickers = {
+		find_files = {
+			previewer = false,
+			path_display = formattedName,
+			layout_config = {
+				height = 0.5,
+				width = 0.4,
+				prompt_position = "top",
+				preview_cutoff = 120,
+			},
+		},
+		live_grep = {
+			only_sort_text = true,
+			previewer = true,
+			layout_config = {
+				height = 0.5,
+				width = 0.8,
+				prompt_position = "top",
+				preview_cutoff = 120,
+			},
+		},
+		oldfiles = {
+			previewer = false,
+			path_display = formattedName,
+			layout_config = {
+				height = 0.5,
+				width = 0.4,
+				prompt_position = "top",
+				preview_cutoff = 120,
+			},
+		},
+		commands = {
+			previewer = false,
+			path_display = formattedName,
+			layout_config = {
+				height = 0.5,
+				width = 0.6,
+				prompt_position = "top",
+				preview_cutoff = 120,
+			},
+		},
+		git_files = {
+			previewer = false,
+			path_display = formattedName,
+			layout_config = {
+				height = 0.4,
+				prompt_position = "top",
+				preview_cutoff = 120,
+			},
+		},
+		buffers = {
+			path_display = formattedName,
+			previewer = false,
+			initial_mode = "normal",
+			-- theme = "dropdown",
+			layout_config = {
+				height = 0.4,
+				width = 0.6,
+				prompt_position = "top",
+				preview_cutoff = 120,
+			},
+		},
+		current_buffer_fuzzy_find = {
+			previewer = true,
+			layout_config = {
+				prompt_position = "top",
+				preview_cutoff = 120,
+			},
+		},
+		grep_string = {
+			only_sort_text = true,
+			previewer = true,
+		},
+		lsp_references = {
+			show_line = false,
+			previewer = true,
+			layout_config = {
+				height = 0.4,
+				width = 0.6,
+				prompt_position = "top",
+				-- preview_cutoff = 120,
+			},
+		},
+		treesitter = {
+			show_line = false,
+			previewer = true,
+		},
+		colorscheme = {
+			enable_preview = true,
+		},
+	},
+	extensions = {
+		fzf = {
+			fuzzy = true,          -- false will only do exact matching
+			override_generic_sorter = true, -- override the generic sorter
+			override_file_sorter = true, -- override the file sorter
+			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+		},
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown({
+				previewer = false,
+				initial_mode = "normal",
+				sorting_strategy = "ascending",
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = {
+						width = 0.5,
+						height = 0.4,
+						preview_width = 0.6,
+					},
+				},
+			}),
+		},
+		frecency = {
+			default_workspace = "CWD",
+			show_scores = true,
+			show_unindexed = true,
+			disable_devicons = false,
+			ignore_patterns = {
+				"*.git/*",
+				"*/tmp/*",
+				"*/lua-language-server/*",
+			},
+		},
+	},
 }
 
+if vim.g.neovide then
+	tel_config.defaults.winblend = 95
+else
+	tel_config.defaults.winblend = 5
+end
 
--- if vim.g.neovide then
--- else
--- 	tel_config.defaults.winblend = 20
--- end
-telescope.setup(options)
-
--- telescope.load_extension("frecency")
-telescope.load_extension('fzf')
--- telescope.load_extension("ui-select")
-telescope.load_extension("file_browser")
-telescope.load_extension("project")
--- load project extension. see project.lua file
+telescope.setup(tel_config)
+telescope.load_extension("fzf")
+telescope.load_extension("ui-select")
+telescope.load_extension("refactoring")
+telescope.load_extension("frecency")
