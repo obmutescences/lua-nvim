@@ -367,48 +367,23 @@ return require("packer").startup(function(use)
 	})
 
 	-- noice
-	-- use({
-	-- 	"folke/noice.nvim",
-	-- 	config = function()
-	-- 		require("noice").setup({
-	-- 			-- add any options here
-	-- 			cmdline = {
-	-- 				enabled = false,
-	-- 				view = "cmdline"
-	-- 			},
-	-- 			lsp = {
-	-- 				progress = {
-	-- 					enabled = true
-	-- 				},
-	-- 				signature = {
-	-- 					enabled = false
-	-- 				},
-	-- 				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-	-- 				override = {
-	-- 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-	-- 					["vim.lsp.util.stylize_markdown"] = true,
-	-- 					["cmp.entry.get_documentation"] = true,
-	-- 				},
-	-- 			},
-	-- 			-- you can enable a preset for easier configuration
-	-- 			presets = {
-	-- 				bottom_search = true, -- use a classic bottom cmdline for search
-	-- 				command_palette = true, -- position the cmdline and popupmenu together
-	-- 				long_message_to_split = true, -- long messages will be sent to a split
-	-- 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
-	-- 				lsp_doc_border = false, -- add a border to hover docs and signature help
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- 	requires = {
-	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		-- OPTIONAL:
-	-- 		--   `nvim-notify` is only needed, if you want to use the notification view.
-	-- 		--   If not available, we use `mini` as the fallback
-	-- 		"rcarriga/nvim-notify",
-	-- 	}
-	-- })
+	use(
+		{
+			"folke/noice.nvim",
+			enabled = true,
+			opts = {
+				-- add any options here
+			},
+			requires = {
+				-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+				"MunifTanjim/nui.nvim",
+				-- OPTIONAL:
+				--   `nvim-notify` is only needed, if you want to use the notification view.
+				--   If not available, we use `mini` as the fallback
+				"rcarriga/nvim-notify",
+			},
+		}
+	)
 
 	-- cmdline
 	use({
@@ -442,53 +417,6 @@ return require("packer").startup(function(use)
 			"mfussenegger/nvim-dap",
 		}
 	})
-	-- use({
-	-- 	"jay-babu/mason-nvim-dap.nvim",
-	-- 	config = function()
-	-- 		require("mason-nvim-dap").setup({
-	-- 			ensure_installed = { "python", "delve" },
-	-- 		})
-	-- 	end,
-	-- })
-	-- use({
-	-- 	"leoluz/nvim-dap-go",
-	-- 	config = function()
-	-- 		require("dap-go").setup({
-	-- 			dap_configurations = {
-	-- 				{
-	-- 					-- Must be "go" or it will be ignored by the plugin
-	-- 					type = "go",
-	-- 					name = "Attach remote",
-	-- 					mode = "remote",
-	-- 					request = "attach",
-	-- 				},
-	-- 			},
-	-- 			-- delve configurations
-	-- 			delve = {
-	-- 				-- the path to the executable dlv which will be used for debugging.
-	-- 				-- by default, this is the "dlv" executable on your PATH.
-	-- 				path = "dlv",
-	-- 				-- time to wait for delve to initialize the debug session.
-	-- 				-- default to 20 seconds
-	-- 				initialize_timeout_sec = 20,
-	-- 				-- a string that defines the port to start delve debugger.
-	-- 				-- default to string "${port}" which instructs nvim-dap
-	-- 				-- to start the process in a random available port
-	-- 				port = "38697",
-	-- 				-- additional args to pass to dlv
-	-- 				args = {},
-	-- 				-- the build flags that are passed to delve.
-	-- 				-- defaults to empty string, but can be used to provide flags
-	-- 				-- such as "-tags=unit" to make sure the test suite is
-	-- 				-- compiled during debugging, for example.
-	-- 				-- passing build flags using args is ineffective, as those are
-	-- 				-- ignored by delve in dap mode.
-	-- 				build_flags = "",
-	-- 				-- program = "./cmd/main.go",
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- })
 	-- colors
 	use({
 		"brenoprata10/nvim-highlight-colors",

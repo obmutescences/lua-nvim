@@ -115,7 +115,7 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " oh-lucy
 hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
-hi TelescopeBorder guibg=#22292D guifg=#7EC49D
+hi TelescopeBorder guibg=none guifg=#7EC49D
 hi NvimTreeNormal guibg=#1E1D23 guifg=#77B98B
 hi WinSeparator guibg=#1E1D23 guifg=#1E1D23
 hi EndOfBuffer guibg=#1E1D23 guifg=#1E1D23
