@@ -245,13 +245,13 @@ return require("packer").startup(function(use)
 	use("HiPhish/rainbow-delimiters.nvim")
 
 	-- fidget lsp loading ui
-	use({
-		"j-hui/fidget.nvim",
-		branch = "legacy",
-		config = function()
-			require("fidget").setup({})
-		end,
-	})
+	-- use({
+	-- 	"j-hui/fidget.nvim",
+	-- 	branch = "legacy",
+	-- 	config = function()
+	-- 		require("fidget").setup({})
+	-- 	end,
+	-- })
 
 	-- hlargs function param color
 	use({
@@ -397,17 +397,17 @@ return require("packer").startup(function(use)
 	-- snippets
 	-- use "rafamadriz/friendly-snippets"
 
-	use({
-		"jackMort/ChatGPT.nvim",
-		config = function()
-			require("chatgpt").setup()
-		end,
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	})
+	-- use({
+	-- 	"jackMort/ChatGPT.nvim",
+	-- 	config = function()
+	-- 		require("chatgpt").setup()
+	-- 	end,
+	-- 	requires = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- })
 
 	-- dap
 	use("theHamsta/nvim-dap-virtual-text")
