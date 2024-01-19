@@ -318,4 +318,7 @@ require("lazy").setup({
 			require("refactoring").setup({})
 		end
 	},
+
+	-- float term
+	{ 'akinsho/toggleterm.nvim', version = "*", config = true }
 })
