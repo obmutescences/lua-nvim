@@ -31,10 +31,3 @@ vim.g.nord_disable_background = false
 vim.g.nord_italic = true
 vim.g.nord_bold = false
 vim.g.nord_uniform_diff_backgroud = true
-
-
--- GitGutter
--- vim.g.gitgutter_signs = 0
--- vim.g.gitgutter_map_keys = 0
--- vim.g.gitgutter_override_sign_column_highlight = 0
--- vim.g.gitgutter_preview_win_floating = 1

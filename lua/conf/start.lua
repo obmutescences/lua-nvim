@@ -55,7 +55,7 @@ local settings = {
 			{ " Recent Files", "Telescope oldfiles", "<leader>of" },
 			{ " File Browser", "Telescope file_browser", "<leader>fb" },
 			{ " All Project", "Telescope project", "<leader>ap" },
-			{ " Update Plugins", "PackerUpdate", "<leader>pu" },
+			{ " Update Plugins", "Lazy", "<leader>pu" },
 		},
 		highlight = "String",
 		default_color = "",

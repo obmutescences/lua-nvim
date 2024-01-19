@@ -86,14 +86,8 @@ cnoremap("<C-w>", "<S-Right>")
 nnoremap("<LEADER>w", "<C-w>w")
 -- nnoremap("<LEADER>u", "<C-w>k")
 -- nnoremap("<LEADER>e", "<C-w>j")
--- nnoremap("<LEADER>n", "<C-w>h")
+nnoremap("<LEADER>b", "<C-w>h")
 -- nnoremap("<LEADER>i", "<C-w>l")
-
---split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
--- noremap su :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
--- noremap se :set splitbelow<CR>:split<CR>
--- noremap sn :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
--- noremap si :set splitright<CR>:vsplit<CR>
 
 
 -- Resize splits with arrow keys
@@ -106,8 +100,6 @@ nnoremap("<right>", ":vertical resize+5<CR>")
 -- Press ` to change case (instead of ~)
 nnoremap("`", "~")
 nnoremap("<C-c>", "zz")
-
--- nnoremap("\\s", ":%s//g<left><left>")
 
 
 --Compile function
@@ -126,9 +118,6 @@ nnoremap("<LEADER>cc", "<cmd>Telescope commands<CR>")
 
 -- vim-fugitive
 nnoremap("gb", ":Gblame<CR>")
-
--- Undotree
-nnoremap("L", ":UndotreeToggle<CR>")
 
 -- goneovim
 nnoremap("<C-s>", ":GonvimWorkspacePrevious<CR>")

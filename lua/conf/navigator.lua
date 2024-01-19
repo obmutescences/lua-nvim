@@ -2,7 +2,7 @@ require("navigator").setup({
 	debug = false,      -- log output, set to true and log path: ~/.cache/nvim/gh.log
 	width = 0.75,       -- max width ratio (number of cols for the floating window) / (window width)
 	height = 0.6,       -- max list window height, 0.3 by default
-	preview_height = 0.45, -- max height of preview windows
+	preview_height = 0.65, -- max height of preview windows
 	-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, -- border style, can be one of 'none', 'single', 'double',
 	border = "none",
 	-- 'shadow', or a list of chars which defines the border
@@ -163,17 +163,17 @@ require("navigator").setup({
 	}, -- a list of key maps
 	-- this kepmap gK will override "gD" mapping function declaration()  in default kepmap
 	-- please check mapping.lua for all keymaps
-	treesitter_analysis = false,       -- treesitter variable context
-	treesitter_navigation = false,     -- bool|table false: use lsp to navigate between symbol ']r/[r', table: a list of
+	treesitter_analysis = true,       -- treesitter variable context
+	treesitter_navigation = true,     -- bool|table false: use lsp to navigate between symbol ']r/[r', table: a list of
 	--lang using TS navigation
 	treesitter_analysis_max_num = 100, -- how many items to run treesitter analysis
-	treesitter_analysis_condense = false, -- condense form for treesitter analysis
+	treesitter_analysis_condense = true, -- condense form for treesitter analysis
 	-- this value prevent slow in large projects, e.g. found 100000 reference in a project
-	transparency = 90,                 -- 0 ~ 100 blur the main window, 100: fully transparent, 0: opaque,  set to nil or 100 to disable it
+	transparency = 90,                -- 0 ~ 100 blur the main window, 100: fully transparent, 0: opaque,  set to nil or 100 to disable it
 
-	lsp_signature_help = false,        -- if you would like to hook ray-x/lsp_signature plugin in navigator
+	lsp_signature_help = true,        -- if you would like to hook ray-x/lsp_signature plugin in navigator
 	-- setup here. if it is nil, navigator will not init signature help
-	signature_help_cfg = nil,          -- if you would like to init ray-x/lsp_signature plugin in navigator, and pass in your own config to signature help
+	signature_help_cfg = nil,         -- if you would like to init ray-x/lsp_signature plugin in navigator, and pass in your own config to signature help
 	icons = {
 		icons = true,
 		-- Code action
@@ -236,9 +236,9 @@ require("navigator").setup({
 
 		diagnostic_scrollbar_sign = { "▃", "▆", "█" }, -- experimental:  diagnostic status in scroll bar area; set to false to disable the diagnostic sign,
 		--                for other style, set to {'╍', 'ﮆ'} or {'-', '='}
-		diagnostic_virtual_text = false, -- show virtual for diagnostic message
+		diagnostic_virtual_text = true, -- show virtual for diagnostic message
 		diagnostic_update_in_insert = false, -- update diagnostic message in insert mode
-		display_diagnostic_qf = false, -- always show quickfix if there are diagnostic errors, set to false if you want to ignore it
+		display_diagnostic_qf = true, -- always show quickfix if there are diagnostic errors, set to false if you want to ignore it
 		-- tsserver = {
 		--   filetypes = {'typescript'} -- disable javascript etc,
 		--   -- set to {} to disable the lspclient for all filetypes

@@ -1,6 +1,6 @@
 vim.cmd("syntax enable")
 -- vim.cmd('syntax sync minlines=256')
-vim.cmd("autocmd BufEnter * silent! lcd %:p:h")
+-- vim.cmd("autocmd BufEnter * silent! lcd %:p:h")
 
 vim.cmd([[
 
@@ -47,32 +47,19 @@ func! CompileRunGcc()
 	endif
 endfunc
 
-" set noexpandtab
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" GitGutter
-" autocmd BufWritePost * GitGutter
-"autocmd BufEnter * hi ColorColumn guibg=NONE ctermbg=NONE
-"autocmd BufEnter * hi LineNr guifg=#556B2F
-" autocmd BufEnter * hi LineNr guifg=#8B8386
-" Undotree
-let g:undotree_DiffAutoOpen = 1
-let g:undotree_SetFocusWhenToggle = 1
-let g:undotree_ShortIndicators = 1
-let g:undotree_WindowLayout = 2
-let g:undotree_DiffpanelHeight = 8
-let g:undotree_SplitWidth = 24
-function g:Undotree_CustomMap()
-	nmap <buffer> u <plug>UndotreeNextState
-	nmap <buffer> e <plug>UndotreePreviousState
-	nmap <buffer> U 5<plug>UndotreeNextState
-	nmap <buffer> E 5<plug>UndotreePreviousState
-endfunc
-
-" ===
-" === vim-rooter
-" ===
-let g:rooter_patterns = ['.git/', 'go.mod', 'Cargo.toml', 'package.json']
+" " Undotree
+" let g:undotree_DiffAutoOpen = 1
+" let g:undotree_SetFocusWhenToggle = 1
+" let g:undotree_ShortIndicators = 1
+" let g:undotree_WindowLayout = 2
+" let g:undotree_DiffpanelHeight = 8
+" let g:undotree_SplitWidth = 24
+" function g:Undotree_CustomMap()
+" 	nmap <buffer> u <plug>UndotreeNextState
+" 	nmap <buffer> e <plug>UndotreePreviousState
+" 	nmap <buffer> U 5<plug>UndotreeNextState
+" 	nmap <buffer> E 5<plug>UndotreePreviousState
+" endfunc
 
 " ===
 " === Necessary Commands to Execute
@@ -80,17 +67,10 @@ let g:rooter_patterns = ['.git/', 'go.mod', 'Cargo.toml', 'package.json']
 exec "nohlsearch"
 
 
-" vim-json
-
 " indentLine
 autocmd FileType json,markdown,http let g:indentLine_conceallevel = 0
 " vim-json
 autocmd FileType json,markdown,http let g:vim_json_syntax_conceal = 0
-
-if exists("g:neovide")
-	" let pumblend = 70
-	" let winblend = 70
-endif
 
 " fitgetui
 highlight FidgetTask guifg=#00EE76
@@ -131,22 +111,3 @@ hi default GuihuaListSelHl guifg=#548B54 guibg=#8B3A3A
 hi link LspInlayHint Comment
 
 ]])
-
-if vim.g.nvui then
-	vim.cmd([[
-	NvuiFullscreen 1
-	NvuiScrollAnimationDuration 0.1
-	NvuiCursorAnimationDuration 0.2
-	NvuiCmdBorderWidth 0.5
-	NvuiCmdPadding 15
-	NvuiCharspace 1
-	" NvuiOpacity 0.7
-	NvuiCmdCenterXPos 0.5
-	NvuiCmdCenterYPos 0.4
-	NvuiCmdWidth 0.2
-	NvuiCmdFontFamily Ubuntu Mono
-	NvuiCmdFontSize 17
-	NvuiFullscreen 1
-	NvuiCmdBg #1B5E20
-	]])
-end
