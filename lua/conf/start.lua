@@ -10,16 +10,16 @@ local settings = {
 		title = "Header",
 		margin = 5,
 		content = {
-			-- " ",
-			-- " ",
-			-- " ",
-			-- " ",
-			-- " ",
-			-- " ",
-			-- " ",
-			-- " ",
-			-- " ",
-			-- " ",
+			" ",
+			" ",
+			" ",
+			" ",
+			" ",
+			" ",
+			" ",
+			" ",
+			" ",
+			" ",
 			-- " ",
 			-- " ",
 			-- " ",
@@ -61,19 +61,6 @@ local settings = {
 		default_color = "",
 		oldfiles_amount = 0,
 	},
-	-- footer = {
-	--     type = "text",
-	--     oldfiles_directory = false,
-	--     align = "center",
-	--     fold_section = false,
-	--     title = "Footer",
-	--     margin = 5,
-	--     content = { "startup.nvim" },
-	--     highlight = "Number",
-	--     default_color = "",
-	--     oldfiles_amount = 0,
-	-- },
-
 	clock = {
 		type = "text",
 		content = function()
@@ -81,19 +68,6 @@ local settings = {
 			local date = " " .. os.date("%y-%m-%d")
 			return { clock, date }
 		end,
-		oldfiles_directory = false,
-		align = "center",
-		fold_section = false,
-		title = "",
-		margin = 5,
-		highlight = "TSString",
-		default_color = "#FFFFFF",
-		oldfiles_amount = 10,
-	},
-
-	footer_2 = {
-		type = "text",
-		content = require("startup.functions").packer_plugins(),
 		oldfiles_directory = false,
 		align = "center",
 		fold_section = false,
@@ -125,6 +99,6 @@ local settings = {
 		background = "#1f2227",
 		folded_section = "#56b6c2",
 	},
-	parts = { "header", "body", "clock", "footer_2" },
+	parts = { "header", "body", "clock" },
 }
 return settings
