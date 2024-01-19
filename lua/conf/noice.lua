@@ -1,7 +1,7 @@
 require("noice").setup(
 	{
 		cmdline = {
-			enabled = true, -- enables the Noice cmdline UI
+			enabled = false, -- enables the Noice cmdline UI
 			view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
 			opts = {},     -- global options for the cmdline. See section on views
 			---@type table<string, CmdlineFormat>
@@ -137,7 +137,7 @@ require("noice").setup(
 			},
 			message = {
 				-- Messages shown by lsp servers
-				enabled = true,
+				enabled = false,
 				view = "notify",
 				opts = {},
 			},
@@ -169,7 +169,7 @@ require("noice").setup(
 			},
 		},
 		health = {
-			checker = true, -- Disable if you don't want health checks to run
+			checker = false, -- Disable if you don't want health checks to run
 		},
 		smart_move = {
 			-- noice tries to move out of the way of existing floating windows.
