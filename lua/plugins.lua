@@ -59,9 +59,9 @@ require("lazy").setup({
 		end,
 	},
 	{
-		'mrcjkb/rustaceanvim',
-		version = '^3', -- Recommended
-		ft = { 'rust' },
+		"mrcjkb/rustaceanvim",
+		version = "^3", -- Recommended
+		ft = { "rust" },
 	},
 
 	-- auto pairs
@@ -101,7 +101,7 @@ require("lazy").setup({
 	{
 		"ray-x/navigator.lua",
 		dependencies = {
-			{ "ray-x/guihua.lua",     build = "cd lua/fzy && make" },
+			{ "ray-x/guihua.lua", build = "cd lua/fzy && make" },
 			{ "neovim/nvim-lspconfig" },
 		},
 	},
@@ -113,7 +113,7 @@ require("lazy").setup({
 	{
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-buffer", -- buffer completions
-		"hrsh7th/cmp-path",   -- path completions
+		"hrsh7th/cmp-path", -- path completions
 		"hrsh7th/cmp-cmdline", -- cmdline completions
 		"saadparwaiz1/cmp_luasnip", -- snippet completions
 		"hrsh7th/cmp-nvim-lsp",
@@ -122,7 +122,6 @@ require("lazy").setup({
 		"onsails/lspkind.nvim", -- cmp kind
 		"lukas-reineke/cmp-rg",
 	},
-
 
 	-- NvimTree
 	{
@@ -231,7 +230,6 @@ require("lazy").setup({
 		},
 	},
 
-
 	-- cmdline
 	"gelguy/wilder.nvim",
 
@@ -254,7 +252,7 @@ require("lazy").setup({
 		"rcarriga/nvim-dap-ui",
 		dependencies = {
 			"mfussenegger/nvim-dap",
-		}
+		},
 	},
 	-- colors
 	{
@@ -278,7 +276,6 @@ require("lazy").setup({
 					lua = { "stylua" },
 					-- Conform will run multiple formatters sequentially
 					go = { "gofmt", "goimports" },
-
 				},
 			})
 		end,
@@ -300,9 +297,9 @@ require("lazy").setup({
 		"ellisonleao/glow.nvim",
 		config = function()
 			require("glow").setup({
-				border = "none"
+				border = "none",
 			})
-		end
+		end,
 	},
 
 	-- lint
@@ -312,13 +309,13 @@ require("lazy").setup({
 		"ThePrimeagen/refactoring.nvim",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
-			{ "nvim-treesitter/nvim-treesitter" }
+			{ "nvim-treesitter/nvim-treesitter" },
 		},
 		config = function()
 			require("refactoring").setup({})
-		end
+		end,
 	},
 
 	-- float term
-	{ 'akinsho/toggleterm.nvim', version = "*", config = true }
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 })

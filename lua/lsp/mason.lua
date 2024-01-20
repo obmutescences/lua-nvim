@@ -9,13 +9,12 @@ if not status_ok_1 then
 end
 
 -- pylsp pyright ruff_lsp golangci_lint_ls
-local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls", "volar", "lua_ls", "pylsp",
-	"pyright" }
+local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls", "volar", "lua_ls", "pylsp", "pyright" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {
 	ui = {
-		border = "rounded",
+		border = "none",
 		icons = {
 			package_installed = "◍",
 			package_pending = "◍",
@@ -25,17 +24,17 @@ local settings = {
 			install_package = "I",
 			-- Keymap to reinstall/update the package under the current cursor position
 			update_package = "a",
-		}
+		},
 	},
 	log_level = vim.log.levels.INFO,
 	max_concurrent_installers = 4,
 }
 
 mason.setup(settings)
-mason_lspconfig.setup {
+mason_lspconfig.setup({
 	ensure_installed = servers,
 	automatic_installation = true,
-}
+})
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -56,10 +55,10 @@ for _, server in pairs(servers) do
 	if server == "pylsp" then
 		opts.settings = {
 			pylsp = {
-				configurationSources = { 'ruff' },
+				configurationSources = { "ruff" },
 				plugins = {
 					pycodestyle = {
-						ignore = { 'W391' },
+						ignore = { "W391" },
 						maxLineLength = 120,
 						enabled = false,
 					},
@@ -81,19 +80,18 @@ for _, server in pairs(servers) do
 					-- 	enabled = true
 					-- },
 					pyflakes = {
-						enabled = false
+						enabled = false,
 					},
 					ruff = {
 						enabled = true,
 						lineLength = 120,
-					}
-
-				}
-			}
+					},
+				},
+			},
 		}
 	end
 	if server == "gopls" then
-		local cfg = require 'go.lsp'.config()
+		local cfg = require("go.lsp").config()
 		cfg.settings.gopls.semanticTokens = false
 		cfg.settings.gopls.analyses = {
 			ST1003 = false,
@@ -101,16 +99,16 @@ for _, server in pairs(servers) do
 			SA5008 = false,
 		}
 		cfg.settings.gopls.usePlaceholders = false
-		require('lspconfig').gopls.setup(cfg)
+		require("lspconfig").gopls.setup(cfg)
 		goto continue
 	end
 
 	if server == "volar" then
-		opts.filetypes = { 'typescript', 'javascript', 'vue', 'json' }
+		opts.filetypes = { "typescript", "javascript", "vue", "json" }
 	end
 
 	lspconfig[server].setup(opts)
 	::continue::
 end
 
-require "lsp_signature".on_attach()
+require("lsp_signature").on_attach()

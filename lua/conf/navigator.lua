@@ -1,7 +1,7 @@
 require("navigator").setup({
-	debug = false,      -- log output, set to true and log path: ~/.cache/nvim/gh.log
-	width = 0.75,       -- max width ratio (number of cols for the floating window) / (window width)
-	height = 0.6,       -- max list window height, 0.3 by default
+	debug = false, -- log output, set to true and log path: ~/.cache/nvim/gh.log
+	width = 0.75, -- max width ratio (number of cols for the floating window) / (window width)
+	height = 0.6, -- max list window height, 0.3 by default
 	preview_height = 0.65, -- max height of preview windows
 	-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, -- border style, can be one of 'none', 'single', 'double',
 	border = "none",
@@ -41,8 +41,8 @@ require("navigator").setup({
 			desc = "workspace_symbol_live",
 		},
 		{ key = "<c-]>", func = require("navigator.definition").definition, desc = "definition" },
-		{ key = "gd",    func = require("navigator.definition").definition, desc = "definition" },
-		{ key = "gD",    func = vim.lsp.buf.declaration,                    desc = "declaration" },
+		{ key = "gd", func = require("navigator.definition").definition, desc = "definition" },
+		{ key = "gD", func = vim.lsp.buf.declaration, desc = "declaration" },
 
 		{
 			key = "gt",
@@ -59,9 +59,9 @@ require("navigator").setup({
 			func = require("navigator.definition").type_definition_preview,
 			desc = "type_definition_preview",
 		},
-		{ key = "<Leader>gt", func = require("navigator.treesitter").buf_ts,  desc = "buf_ts" },
+		{ key = "<Leader>gt", func = require("navigator.treesitter").buf_ts, desc = "buf_ts" },
 		{ key = "<Leader>gT", func = require("navigator.treesitter").bufs_ts, desc = "bufs_ts" },
-		{ key = "<Leader>ct", func = require("navigator.ctags").ctags,        desc = "ctags" },
+		{ key = "<Leader>ct", func = require("navigator.ctags").ctags, desc = "ctags" },
 		{
 			key = "<Space>ca",
 			mode = "n",
@@ -75,11 +75,11 @@ require("navigator").setup({
 			desc = "range_code_action",
 		},
 		-- { key = '<Leader>re', func = 'rename()' },
-		{ key = "<Space>rn",  func = require("navigator.rename").rename, desc = "rename" },
-		{ key = "<Leader>gi", func = vim.lsp.buf.incoming_calls,         desc = "incoming_calls" },
-		{ key = "<Leader>go", func = vim.lsp.buf.outgoing_calls,         desc = "outgoing_calls" },
+		{ key = "<Space>rn", func = require("navigator.rename").rename, desc = "rename" },
+		{ key = "<Leader>gi", func = vim.lsp.buf.incoming_calls, desc = "incoming_calls" },
+		{ key = "<Leader>go", func = vim.lsp.buf.outgoing_calls, desc = "outgoing_calls" },
 		-- { key = "gi",         func = vim.lsp.buf.implementation,         desc = "implementation" },
-		{ key = "<Space>D",   func = vim.lsp.buf.type_definition,        desc = "type_definition" },
+		{ key = "<Space>D", func = vim.lsp.buf.type_definition, desc = "type_definition" },
 		{
 			key = "gl",
 			func = require("navigator.diagnostics").show_diagnostics,
@@ -141,7 +141,7 @@ require("navigator").setup({
 		-- func = require('navigator.workspace').remove_workspace_folder,
 		-- desc = 'remove_workspace_folder',
 		--  },
-		{ key = "<Space>ff", func = vim.lsp.buf.format,           mode = "n", desc = "format" },
+		{ key = "<Space>ff", func = vim.lsp.buf.format, mode = "n", desc = "format" },
 		{ key = "<Space>ff", func = vim.lsp.buf.range_formatting, mode = "v", desc = "range format" },
 		{
 			key = "<Space>gm",
@@ -163,17 +163,17 @@ require("navigator").setup({
 	}, -- a list of key maps
 	-- this kepmap gK will override "gD" mapping function declaration()  in default kepmap
 	-- please check mapping.lua for all keymaps
-	treesitter_analysis = false,      -- treesitter variable context
-	treesitter_navigation = false,    -- bool|table false: use lsp to navigate between symbol ']r/[r', table: a list of
+	treesitter_analysis = false, -- treesitter variable context
+	treesitter_navigation = false, -- bool|table false: use lsp to navigate between symbol ']r/[r', table: a list of
 	--lang using TS navigation
 	treesitter_analysis_max_num = 100, -- how many items to run treesitter analysis
 	treesitter_analysis_condense = true, -- condense form for treesitter analysis
 	-- this value prevent slow in large projects, e.g. found 100000 reference in a project
-	transparency = 90,                -- 0 ~ 100 blur the main window, 100: fully transparent, 0: opaque,  set to nil or 100 to disable it
+	transparency = 90, -- 0 ~ 100 blur the main window, 100: fully transparent, 0: opaque,  set to nil or 100 to disable it
 
-	lsp_signature_help = false,       -- if you would like to hook ray-x/lsp_signature plugin in navigator
+	lsp_signature_help = false, -- if you would like to hook ray-x/lsp_signature plugin in navigator
 	-- setup here. if it is nil, navigator will not init signature help
-	signature_help_cfg = nil,         -- if you would like to init ray-x/lsp_signature plugin in navigator, and pass in your own config to signature help
+	signature_help_cfg = nil, -- if you would like to init ray-x/lsp_signature plugin in navigator, and pass in your own config to signature help
 	icons = {
 		icons = true,
 		-- Code action
@@ -200,7 +200,7 @@ require("navigator").setup({
 		-- enable: a whitelist of language that will be formatted on save
 		-- disable: a blacklist of language that will not be formatted on save
 		-- function: function(bufnr) return true end to enable/disable lsp format on save
-		format_options = { async = false },   -- async: disable by default, the option used in vim.lsp.buf.format({async={true|false}, name = 'xxx'})
+		format_options = { async = false }, -- async: disable by default, the option used in vim.lsp.buf.format({async={true|false}, name = 'xxx'})
 		disable_format_cap = { "sqlls", "lua_ls" }, -- a list of lsp disable format capacity (e.g. if you using efm or vim-codeformat etc), empty {} by default
 		-- If you using null-ls and want null-ls format your code
 		-- you should disable all other lsp and allow only null-ls.

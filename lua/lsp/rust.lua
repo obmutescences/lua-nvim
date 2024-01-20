@@ -1,51 +1,98 @@
 vim.g.rustaceanvim = {
 	-- Plugin configuration
 	tools = {
+		float_win_config = {
+
+			-- the border that is used for floating windows
+			---@see vim.api.nvim_open_win()
+			---@type string[][] | string
+			-- border = {
+			-- 	{ "╭", "FloatBorder" },
+			-- 	{ "─", "FloatBorder" },
+			-- 	{ "╮", "FloatBorder" },
+			-- 	{ "│", "FloatBorder" },
+			-- 	{ "╯", "FloatBorder" },
+			-- 	{ "─", "FloatBorder" },
+			-- 	{ "╰", "FloatBorder" },
+			-- 	{ "│", "FloatBorder" },
+			-- }, -- maybe: 'double', 'rounded', 'shadow', 'single',
+			border = nil,
+
+			--- maximal width of floating windows. Nil means no max.
+			---@type integer | nil
+			max_width = nil,
+
+			--- maximal height of floating windows. Nil means no max.
+			---@type integer | nil
+			max_height = nil,
+
+			--- whether the window gets automatically focused
+			--- default: false
+			---@type boolean
+			auto_focus = false,
+		},
 	},
 	-- LSP configuration
 	server = {
+		standalone = false,
 		on_attach = function(client, bufnr)
 			-- you can also put keymaps in here
 			vim.lsp.inlay_hint.enable(bufnr)
 			local opts = { noremap = true, silent = true }
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-			vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>",
-				'<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+			vim.api.nvim_buf_set_keymap(
+				bufnr,
+				"n",
+				"<Tab>",
+				'<cmd>lua vim.diagnostic.goto_prev({ border = "none" })<CR>',
+				opts
+			)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 		end,
 		settings = {
 			-- rust-analyzer language server configuration
-			['rust-analyzer'] = {
+			["rust-analyzer"] = {
 				lens = {
 					enable = true,
 					references = {
 						adt = {
-							enable = true
+							enable = true,
 						},
 						enumVariant = {
-							enable = true
+							enable = true,
 						},
 						method = {
-							enable = true
+							enable = true,
 						},
 						trait = {
-							enable = true
-						}
-					}
+							enable = true,
+						},
+					},
 				},
 				checkOnSave = {
 					enable = true,
 					command = "clippy",
+					extraArgs = { "--no-deps" },
 				},
 				cargo = {
 					allFeatures = true,
+					loadOutDirsFromCheck = true,
+					runBuildScripts = true,
 				},
 				diagnostics = {
 					enable = true,
-					-- experimental = {
-					-- 	enable = true
-					-- }
+					experimental = {
+						enable = true,
+					},
+				},
+				procMacro = {
+					enable = true,
+					ignored = {
+						["async-trait"] = { "async_trait" },
+						["napi-derive"] = { "napi" },
+						["async-recursion"] = { "async_recursion" },
+					},
 				},
 				inlayHints = {
 					bindingModeHints = {
@@ -67,7 +114,7 @@ vim.g.rustaceanvim = {
 						enable = true,
 					},
 					closureCaptureHints = {
-						enable = true
+						enable = true,
 					},
 					lifetimeElisionHints = {
 						enable = false,
@@ -81,13 +128,13 @@ vim.g.rustaceanvim = {
 					-- 	enable = true,
 					-- },
 					discriminantHints = {
-						enable = true
+						enable = true,
 					},
 					-- expressionAdjustmentHints = {
 					-- 	enable = true
 					-- },
 					implicitDrops = {
-						enable = true
+						enable = true,
 					},
 					renderColons = true,
 				},
@@ -96,19 +143,18 @@ vim.g.rustaceanvim = {
 						enable = true,
 						specialization = {
 							enable = true,
-						}
+						},
 					},
 					punctuation = {
 						enable = true,
 						specialization = {
-							enable = true
-						}
-					}
-				}
+							enable = true,
+						},
+					},
+				},
 			},
 		},
 		-- DAP configuration
-		dap = {
-		},
-	}
+		dap = {},
+	},
 }
