@@ -34,7 +34,7 @@ vim.g.rustaceanvim = {
 	},
 	-- LSP configuration
 	server = {
-		standalone = false,
+		standalone = true,
 		on_attach = function(client, bufnr)
 			-- you can also put keymaps in here
 			vim.lsp.inlay_hint.enable(bufnr)
@@ -70,6 +70,10 @@ vim.g.rustaceanvim = {
 						},
 					},
 				},
+				check = {
+					command = "clippy",
+					features = "all",
+				},
 				checkOnSave = {
 					enable = true,
 					command = "clippy",
@@ -77,7 +81,7 @@ vim.g.rustaceanvim = {
 				},
 				cargo = {
 					allFeatures = true,
-					loadOutDirsFromCheck = true,
+					-- loadOutDirsFromCheck = true,
 					runBuildScripts = true,
 				},
 				diagnostics = {

@@ -112,5 +112,6 @@ vim.g.ale_set_loclist = 0
 vim.g.ale_go_golangci_lint_package = 1
 vim.g.ale_linters = {
 	go = { "golangci-lint", "gofmt", "staticcheck", "govet" },
-	rust = { "analyzer" },
+	-- rust = { "analyzer" },
+	rust = {},
 }
