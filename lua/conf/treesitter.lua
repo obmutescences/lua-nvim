@@ -4,13 +4,12 @@ if not status_ok then
 	return
 end
 
-configs.setup {
+configs.setup({
 	ensure_installed = {
 		"bash",
 		"json",
 		"lua",
 		"python",
-		"yaml",
 		"go",
 		"vim",
 		"gomod",
@@ -23,18 +22,19 @@ configs.setup {
 		"markdown",
 		"markdown_inline",
 		"typescript",
-	},                    -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-	ignore_install = { "" }, -- List of parsers to ignore installing
+	ignore_install = {}, -- List of parsers to ignore installing
 	autopairs = {
 		enable = true,
 	},
+	auto_install = true,
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = false,
 		use_languagetree = true,
-		priority = 'highest',
+		priority = "highest",
 	},
 	indent = { enable = false, disable = { "yaml" } },
 	context_commentstring = {
@@ -44,7 +44,7 @@ configs.setup {
 
 	rainbow = {
 		enable = true,
-		extended_mode = false
+		extended_mode = false,
 	},
 
 	-- textobjects extension settings
@@ -84,7 +84,7 @@ configs.setup {
 		},
 		lsp_interop = {
 			enable = true,
-			border = 'none',
+			border = "none",
 			peek_definition_code = {
 				["<leader>df"] = "@function.outer",
 				["<leader>dF"] = "@class.outer",
@@ -98,4 +98,4 @@ configs.setup {
 		-- disable = { "c", "ruby" },  -- optional, list of language that will be disabled
 		-- [options]
 	},
-}
+})
