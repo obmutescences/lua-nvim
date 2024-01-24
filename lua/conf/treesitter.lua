@@ -22,13 +22,13 @@ configs.setup({
 		"markdown",
 		"markdown_inline",
 		"typescript",
-	}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+	},                -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
 	ignore_install = {}, -- List of parsers to ignore installing
 	autopairs = {
-		enable = true,
+		enable = false,
 	},
-	auto_install = true,
+	auto_install = false,
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "" }, -- list of language that will be disabled
