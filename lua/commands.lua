@@ -94,13 +94,18 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 " hi TelescopeNormal guibg=#22292D guifg=#5d6b66
 
 " oh-lucy
-hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
-hi TelescopeBorder guibg=none guifg=#7EC49D
-hi NvimTreeNormal guibg=#1E1D23 guifg=#77B98B
-hi WinSeparator guibg=#1E1D23 guifg=#1E1D23
-hi EndOfBuffer guibg=#1E1D23 guifg=#1E1D23
-hi CmpItemAbbrMatch guifg=#FF7DA3
-hi CmpItemAbbrMatchFuzzy guifg=#FF7DA3
+" hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
+" hi TelescopeBorder guibg=none guifg=#7EC49D
+" hi NvimTreeNormal guibg=#1E1D23 guifg=#77B98B
+" hi WinSeparator guibg=#1E1D23 guifg=#1E1D23
+" hi EndOfBuffer guibg=#1E1D23 guifg=#1E1D23
+" hi CmpItemAbbrMatch guifg=#FF7DA3
+" hi CmpItemAbbrMatchFuzzy guifg=#FF7DA3
+
+" tokyonight
+hi NvimTreeNormal guibg=#24283b
+hi NvimTreeNormalNC guibg=#24283b
+
 
 " navigator
 hi default GuihuaTextViewDark guifg=#e0d8f4 guibg=#CD5555

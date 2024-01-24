@@ -49,7 +49,11 @@ local config = {
 			-- normal = { c = { fg = colors.fg, bg = "#22292D" } },
 
 			-- oh-lucy
-			normal = { c = { fg = colors.fg, bg = "#1E1D23" } },
+			-- normal = { c = { fg = colors.fg, bg = "#1E1D23" } },
+
+
+			-- tokyonight
+			normal = { c = { fg = colors.fg, bg = "#24283b" } },
 			-- inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		},
 	},
@@ -135,7 +139,7 @@ ins_left {
 
 ins_left {
 	'filename',
-	path = 1,
+	path = 0,
 	file_status = true,
 	cond = conditions.buffer_not_empty,
 	color = { fg = "#A7C080", gui = 'bold' },
