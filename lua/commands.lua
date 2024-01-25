@@ -105,6 +105,7 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 " tokyonight
 hi NvimTreeNormal guibg=#24283b
 hi NvimTreeNormalNC guibg=#24283b
+hi TelescopeSelection guibg=#CD5555
 
 
 " navigator
