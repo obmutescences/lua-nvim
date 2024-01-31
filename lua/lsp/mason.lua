@@ -10,7 +10,7 @@ end
 
 -- pylsp pyright ruff_lsp golangci_lint_ls
 local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls",
-	"volar", "lua_ls", "pylsp", "pyright", "bufls", "golangci_lint_ls", "golangci_lint" }
+	"volar", "lua_ls", "pylsp", "pyright", "bufls", "golangci_lint_ls" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {
