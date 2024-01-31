@@ -10,7 +10,7 @@ end
 
 -- pylsp pyright ruff_lsp golangci_lint_ls
 local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls",
-	"volar", "lua_ls", "pylsp", "pyright", "bufls" }
+	"volar", "lua_ls", "pylsp", "pyright", "bufls", "golangci_lint_ls", "golangci_lint" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {
@@ -100,8 +100,25 @@ for _, server in pairs(servers) do
 			SA5008 = false,
 		}
 		cfg.settings.gopls.usePlaceholders = false
-		require("lspconfig").gopls.setup(cfg)
+		lspconfig.gopls.setup(cfg)
 		goto continue
+	end
+	if server == "golangci_lint_ls" then
+		local configs = require 'lspconfig/configs'
+		if not configs.golangcilsp then
+			configs.golangcilsp = {
+				default_config = {
+					cmd = { 'golangci-lint-langserver' },
+					root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
+					init_options = {
+						command = { "golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1" },
+					}
+				},
+			}
+		end
+		lspconfig.golangci_lint_ls.setup {
+			filetypes = { 'go', 'gomod' }
+		}
 	end
 
 	if server == "volar" then

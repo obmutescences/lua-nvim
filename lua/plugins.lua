@@ -101,7 +101,7 @@ require("lazy").setup({
 	{
 		"ray-x/navigator.lua",
 		dependencies = {
-			{ "ray-x/guihua.lua", build = "cd lua/fzy && make" },
+			{ "ray-x/guihua.lua",     build = "cd lua/fzy && make" },
 			{ "neovim/nvim-lspconfig" },
 		},
 	},
@@ -113,7 +113,7 @@ require("lazy").setup({
 	{
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-buffer", -- buffer completions
-		"hrsh7th/cmp-path", -- path completions
+		"hrsh7th/cmp-path",   -- path completions
 		"hrsh7th/cmp-cmdline", -- cmdline completions
 		"saadparwaiz1/cmp_luasnip", -- snippet completions
 		"hrsh7th/cmp-nvim-lsp",
@@ -302,19 +302,19 @@ require("lazy").setup({
 		end,
 	},
 
-	-- lint
-	"dense-analysis/ale",
-
-	{
-		"ThePrimeagen/refactoring.nvim",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-		config = function()
-			require("refactoring").setup({})
-		end,
-	},
+	-- -- lint
+	-- "dense-analysis/ale",
+	--
+	-- {
+	-- 	"ThePrimeagen/refactoring.nvim",
+	-- 	dependencies = {
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 		{ "nvim-treesitter/nvim-treesitter" },
+	-- 	},
+	-- 	config = function()
+	-- 		require("refactoring").setup({})
+	-- 	end,
+	-- },
 
 	-- float term
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },

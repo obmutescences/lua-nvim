@@ -42,11 +42,11 @@ vim.opt.linespace = 6
 -- vim.g.noshowmode = true
 -- vim.opt.updatetime = 50
 vim.opt.fillchars = {
-	vert = " ", -- 垂直分割线
-	horiz = " ", -- 水平分割线
+	vert = " ",   -- 垂直分割线
+	horiz = " ",  -- 水平分割线
 	horizup = " ", -- 上升的水平分割线
 	horizdown = " ", -- 下降的水平分割线
-	eob = " ", -- 空白处的 '~' 符号
+	eob = " ",    -- 空白处的 '~' 符号
 }
 
 -- -- neovide
@@ -91,11 +91,11 @@ vim.g.neovide_fullscreen = true
 if vim.g.neovide then
 	vim.o.pumblend = 80
 	vim.o.winblend = 80
-	vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
-	vim.keymap.set("v", "<D-c>", '"+y') -- Copy
-	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
-	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
-	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
+	vim.keymap.set("n", "<D-s>", ":w<CR>")   -- Save
+	vim.keymap.set("v", "<D-c>", '"+y')      -- Copy
+	vim.keymap.set("n", "<D-v>", '"+P')      -- Paste normal mode
+	vim.keymap.set("v", "<D-v>", '"+P')      -- Paste visual mode
+	vim.keymap.set("c", "<D-v>", "<C-R>+")   -- Paste command mode
 	vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
 
@@ -107,11 +107,13 @@ vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true 
 
 -- ale
 -- 只为 Go 启用 golangci-lint
-vim.g.ale_fix_on_save = 0
-vim.g.ale_set_loclist = 0
-vim.g.ale_go_golangci_lint_package = 1
-vim.g.ale_linters = {
-	go = { "golangci-lint", "gofmt", "staticcheck", "govet" },
-	-- rust = { "analyzer" },
-	rust = {},
-}
+-- vim.g.ale_fix_on_save = 0
+-- vim.g.ale_set_loclist = 0
+-- vim.g.ale_go_golangci_lint_package = 1
+-- vim.g.ale_lint_on_text_changed = 'never'
+-- vim.g.ale_lint_on_insert_leave = 0
+-- vim.g.ale_linters = {
+-- 	go = { "golangci-lint", "gofmt", "staticcheck", "govet" },
+-- 	-- rust = { "analyzer" },
+-- 	rust = {},
+-- }
