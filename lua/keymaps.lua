@@ -1,16 +1,10 @@
 local Utils = require('utils')
 
--- local exprnnoremap = Utils.exprnnoremap
 local nnoremap = Utils.nnoremap
-local vnoremap = Utils.vnoremap
--- local xnoremap = Utils.xnoremap
 local inoremap = Utils.inoremap
-local cnoremap = Utils.cnoremap
 local vnoremap = Utils.vnoremap
 local cnoremap = Utils.cnoremap
--- local tnoremap = Utils.tnoremap
 local nmap = Utils.nmap
--- local xmap = Utils.xmap
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -25,9 +19,6 @@ nnoremap("S", "<cmd>w<cr>")
 -- undo operations
 nnoremap("l", "u")
 
---insert key
-nnoremap("k", "i")
-
 -- make y to copy till the end of the line
 nnoremap("y", "y$")
 
@@ -39,8 +30,6 @@ nnoremap("u", "k")
 nnoremap("n", "h")
 nnoremap("e", "j")
 nnoremap("i", "l")
-nnoremap("gu", "gk")
-nnoremap("ge", "gj")
 nnoremap("U", "5k")
 nnoremap("E", "5j")
 vnoremap("i", "l")
@@ -95,16 +84,6 @@ nnoremap("<up>", ":res +5<CR>")
 nnoremap("<down>", ":res -5<CR>")
 nnoremap("<left>", ":vertical resize-5<CR>")
 nnoremap("<right>", ":vertical resize+5<CR>")
-
-
--- Press ` to change case (instead of ~)
-nnoremap("`", "~")
-nnoremap("<C-c>", "zz")
-
-
---Compile function
-nnoremap("r", ":call CompileRunGcc()<CR>")
-
 
 -- nvim-tree
 nmap("tt", "<cmd>NvimTreeToggle<CR>")

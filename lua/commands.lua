@@ -1,7 +1,4 @@
 vim.cmd("syntax enable")
--- vim.cmd('syntax sync minlines=256')
--- vim.cmd("autocmd BufEnter * silent! lcd %:p:h")
-
 vim.cmd([[
 
 " set guifont=CodeNewRoman\ Nerd\ Font\ Mono:h15:i:#e-antialias:#h-none
@@ -16,50 +13,6 @@ vim.cmd([[
 " set guifont=Rec\ Mono\ Custom:h13
 " set guifont=Comic\ Code:h10:w1.0:#e-antialias:#h-none
 " set guifont=Monaspace\ Radon:h9:w1.0:#e-antialias:#h-full
-
-
-silent !mkdir -p ~/.config/nvim/tmp/backup
-silent !mkdir -p ~/.config/nvim/tmp/undo
-set backupdir=~/.config/nvim/tmp/backup,.
-set directory=~/.config/nvim/tmp/backup,.
-if has('persistent_undo')
-	set undofile
-	set undodir=~/.config/nvim/tmp/undo,.
-endif
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" |
-
-
-func! CompileRunGcc()
-	exec "w"
-	if &filetype == 'sh'
-		:!time bash %
-	elseif &filetype == 'python'
-		set splitbelow
-		:sp
-		:term python3 %
-	elseif &filetype == 'go'
-		set splitbelow
-		:sp
-		:term go run .
-	elseif &filetype == 'http'
-		:sp
-		:lua require('rest-nvim').run()
-	endif
-endfunc
-
-" " Undotree
-" let g:undotree_DiffAutoOpen = 1
-" let g:undotree_SetFocusWhenToggle = 1
-" let g:undotree_ShortIndicators = 1
-" let g:undotree_WindowLayout = 2
-" let g:undotree_DiffpanelHeight = 8
-" let g:undotree_SplitWidth = 24
-" function g:Undotree_CustomMap()
-" 	nmap <buffer> u <plug>UndotreeNextState
-" 	nmap <buffer> e <plug>UndotreePreviousState
-" 	nmap <buffer> U 5<plug>UndotreeNextState
-" 	nmap <buffer> E 5<plug>UndotreePreviousState
-" endfunc
 
 " ===
 " === Necessary Commands to Execute

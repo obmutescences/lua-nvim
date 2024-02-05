@@ -12,7 +12,7 @@ dap.adapters.go = {
 	-- }
 }
 -- 先dlv debug -l 127.0.0.1:38697 --headless ./xxx.go
--- 再 :lua require('dap').contiune() 启动远程调试 再执行程序
+-- 再 :lua require('dap').continue() 启动远程调试 再执行程序
 dap.configurations.go = {
 	{
 		type = "go",
@@ -57,7 +57,7 @@ require("dapui").setup({
 	} },
 })
 require("nvim-dap-virtual-text").setup()
-local dap, dapui = require("dap"), require("dapui")
+local dapui = require("dapui")
 dap.listeners.before.attach.dapui_config = function()
 	dapui.open()
 end
