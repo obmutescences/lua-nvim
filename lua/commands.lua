@@ -42,9 +42,10 @@ hi ColorColumn guibg=NONE
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " nvim-tree everforest
-" hi NvimTreeNormal guibg=#22292D guifg=#77B98B
-" hi TelescopeBorder guibg=#22292D guifg=#77B98B
-" hi TelescopeNormal guibg=#22292D guifg=#5d6b66
+hi NvimTreeNormal guibg=#22292D guifg=#77B98B
+hi TelescopeBorder guibg=#22292D guifg=#77B98B
+hi TelescopeNormal guibg=#22292D guifg=#5d6b66
+hi TelescopeSelection guibg=#00EE76
 
 " oh-lucy
 " hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
@@ -56,9 +57,9 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 " hi CmpItemAbbrMatchFuzzy guifg=#FF7DA3
 
 " tokyonight
-hi NvimTreeNormal guibg=#24283b
-hi NvimTreeNormalNC guibg=#24283b
-hi TelescopeSelection guibg=#CD5555
+" hi NvimTreeNormal guibg=#24283b
+" hi NvimTreeNormalNC guibg=#24283b
+" hi TelescopeSelection guibg=#CD5555
 
 
 " navigator

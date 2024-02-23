@@ -64,7 +64,7 @@ vim.g.neovide_cursor_antialiasing = true
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.g.neovide_cursor_animate_command_line = true
 vim.g.neovide_hide_mouse_when_typing = true
-vim.g.neovide_scroll_animation_length = 0.70
+vim.g.neovide_scroll_animation_length = 0.40
 
 vim.g.neovide_floating_blur = 1
 vim.g.neovide_floating_opacity = 1.0

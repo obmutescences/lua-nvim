@@ -16,4 +16,4 @@ require("conf.zen-mode")
 require("conf.undotree")
 require("conf.toggleterm")
 -- require "conf.tokyonight"
--- require "conf.themer"
+require "conf.themer"
