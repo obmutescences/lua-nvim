@@ -165,7 +165,7 @@ require("lazy").setup({
 	-- hop easy to move
 	{
 		"phaazon/hop.nvim",
-		branch = "v1", -- optional but strongly recommended
+		branch = "v2", -- optional but strongly recommended
 		config = function()
 			-- you can configure Hop the way you like here; see :h hop-config
 			require("hop").setup({
@@ -300,6 +300,12 @@ require("lazy").setup({
 				border = "none",
 			})
 		end,
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function() vim.fn["mkdp#util#install"]() end,
 	},
 
 	-- -- lint
