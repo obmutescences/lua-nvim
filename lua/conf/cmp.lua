@@ -225,6 +225,8 @@ cmp_config = {
 		},
 		duplicates_default = 0,
 		format = lspkind.cmp_format({
+			maxwidth = 30,
+			ellipsis_char = "...",
 			mode = "symbol_text",
 			before = function(entry, vim_item)
 				vim_item.menu = cmp_config.formatting.source_names[entry.source.name]

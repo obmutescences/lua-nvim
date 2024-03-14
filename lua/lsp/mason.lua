@@ -125,6 +125,26 @@ for _, server in pairs(servers) do
 		opts.filetypes = { "typescript", "javascript", "vue", "json" }
 	end
 
+	if server == "tsserver" then
+		lspconfig.tsserver.setup {
+			init_options = {
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = "/usr/lib/node_modules/@vue/typescript-plugin",
+						languages = { "javascript", "typescript", "vue" },
+					},
+				},
+			},
+			filetypes = {
+				"javascript",
+				"typescript",
+				"vue",
+			},
+		}
+		goto continue
+	end
+
 	lspconfig[server].setup(opts)
 	::continue::
 end

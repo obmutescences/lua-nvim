@@ -60,7 +60,7 @@ require("lazy").setup({
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^3", -- Recommended
+		version = "^4", -- Recommended
 		ft = { "rust" },
 	},
 
@@ -276,6 +276,22 @@ require("lazy").setup({
 					lua = { "stylua" },
 					-- Conform will run multiple formatters sequentially
 					go = { "gofumpt", "goimports" },
+					["javascript"] = { "prettier" },
+					["javascriptreact"] = { "prettier" },
+					["typescript"] = { "prettier" },
+					["typescriptreact"] = { "prettier" },
+					["vue"] = { "prettier" },
+					["css"] = { "prettier" },
+					["scss"] = { "prettier" },
+					["less"] = { "prettier" },
+					["html"] = { "prettier" },
+					["json"] = { "prettier" },
+					["jsonc"] = { "prettier" },
+					["yaml"] = { "prettier" },
+					["markdown"] = { "prettier" },
+					["markdown.mdx"] = { "prettier" },
+					["graphql"] = { "prettier" },
+					["handlebars"] = { "prettier" },
 				},
 			})
 		end,
