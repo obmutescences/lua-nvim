@@ -10,12 +10,12 @@ require("go").setup({
 	disable_defaults = false, -- true|false when true set false to all boolean settings and replace all table
 	-- settings with {}
 	go = 'go', -- go command, can be go[default] or go1.18beta1
-	goimport = 'goimports', -- goimport command, can be gopls[default] or goimport
+	goimports = 'goimports', -- goimport command, can be gopls[default] or goimport
 	-- goimport = nil, -- goimport command, can be gopls[default] or goimport
 	fillstruct = 'gopls', -- can be nil (use fillstruct, slower) and gopls
 	gofmt = 'gofumpt', --gofmt cmd,
 	-- gofmt = nil, --gofmt cmd,
-	max_line_len = 128, -- max line length in golines format, Target maximum line length for golines
+	-- max_line_len = 128, -- max line length in golines format, Target maximum line length for golines
 	tag_transform = false, -- can be transform option("snakecase", "camelcase", etc) check gomodifytags for details and more options
 	tag_options = "json=omitempty", -- sets options sent to gomodifytags, i.e., json=omitempty
 	gotests_template = "", -- sets gotests -template parameter (check gotests for details)
