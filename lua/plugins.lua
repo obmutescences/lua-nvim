@@ -326,18 +326,18 @@ require("lazy").setup({
 	},
 
 	-- -- lint
-	-- "dense-analysis/ale",
-	--
-	-- {
-	-- 	"ThePrimeagen/refactoring.nvim",
-	-- 	dependencies = {
-	-- 		{ "nvim-lua/plenary.nvim" },
-	-- 		{ "nvim-treesitter/nvim-treesitter" },
-	-- 	},
-	-- 	config = function()
-	-- 		require("refactoring").setup({})
-	-- 	end,
-	-- },
+	"dense-analysis/ale",
+
+	{
+		"ThePrimeagen/refactoring.nvim",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+		config = function()
+			require("refactoring").setup({})
+		end,
+	},
 
 	-- float term
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
