@@ -72,10 +72,12 @@ require("themer").setup({
 			everforest = {
 				base = {
 					Normal = { bg = "#22292D" },
+					-- Normal = { bg = "NONE", fg = "NONE" },
 					ColorColumn = { bg = "#22292D", fg = "#22292D" },
 					VertSplit = { bg = "#22292D", fg = "#22292D" },
 					WinSeparator = { bg = "#22292D", fg = "#22292D" },
 					EndOfBuffer = { bg = "#22292D", fg = "#22292D" },
+					-- EndOfBuffer = { bg = "NONE", fg = "NONE" },
 					Visual = { bg = "#5C3F4F" },
 					CursorLine = { bg = '#293135' },
 					NvimTreeFolderIcon = {

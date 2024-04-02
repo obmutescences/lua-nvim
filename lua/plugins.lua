@@ -343,5 +343,5 @@ require("lazy").setup({
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 
 	-- git diffent view
-	"sindrets/diffview.nvim"
+	"sindrets/diffview.nvim",
 })
