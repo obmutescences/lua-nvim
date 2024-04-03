@@ -269,7 +269,7 @@ local tel_config = {
 if vim.g.neovide then
 	tel_config.defaults.winblend = 95
 else
-	tel_config.defaults.winblend = 10
+	tel_config.defaults.winblend = 5
 end
 
 telescope.setup(tel_config)

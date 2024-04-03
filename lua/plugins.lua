@@ -344,4 +344,17 @@ require("lazy").setup({
 
 	-- git diffent view
 	"sindrets/diffview.nvim",
+
+	{
+		"xiyaowong/transparent.nvim",
+		config = function()
+			if vim.g.neovide then
+				vim.g.transparent_enabled = false
+			else
+				vim.g.transparent_enabled = true
+				require('transparent').clear_prefix('lualine')
+				require('transparent').clear_prefix('NvimTree')
+			end
+		end,
+	}
 })

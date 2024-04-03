@@ -45,7 +45,9 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 hi NvimTreeNormal guibg=#22292D guifg=#77B98B
 hi TelescopeBorder guibg=#22292D guifg=#77B98B
 hi TelescopeNormal guibg=#22292D guifg=#5d6b66
-hi TelescopeSelection guibg=#00EE76
+hi TelescopeSelection guibg=#FF165D
+hi TelescopePreviewLine guibg=#F50800
+hi TelescopeMatching guifg=#01F5F3
 
 " oh-lucy
 " hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
