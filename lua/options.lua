@@ -69,14 +69,14 @@ vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_scroll_animation_length = 0.40
 
 vim.g.neovide_floating_blur = 1
-vim.g.neovide_floating_opacity = 1.0
-vim.g.neovide_floating_blur_amount_x = 2.0
-vim.g.neovide_floating_blur_amount_y = 2.0
+vim.g.neovide_floating_opacity = 1
+vim.g.neovide_floating_blur_amount_x = 3.0
+vim.g.neovide_floating_blur_amount_y = 3.0
 
 vim.g.neovide_scale_factor = 1.0
 vim.g.neovide_floating_shadow = false
 vim.g.neovide_padding_left = 10
-vim.g.neovide_transparency = 0.85
+vim.g.neovide_transparency = 0.80
 vim.g.neovide_window_blurred = true
 -- vim.g.transparency = 0
 vim.g.neovide_input_ime = true
