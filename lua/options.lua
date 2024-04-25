@@ -88,7 +88,7 @@ end
 -- vim.g.neovide_background_color = "#0f1117" .. alpha()
 -- vim.g.neovide_background_color = "#343F44" .. alpha()
 
-vim.g.neovide_fullscreen = true
+vim.g.neovide_fullscreen = false
 -- vim.g.neovide_remember_window_size          = true
 
 if vim.g.neovide then

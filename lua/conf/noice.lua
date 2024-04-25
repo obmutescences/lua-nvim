@@ -326,7 +326,8 @@ require("noice").setup(
 			},
 		}, ---@see section on views
 		---@type NoiceRouteConfig[]
-		routes = {}, --- @see section on routes
+		routes = {
+		},     --- @see section on routes
 		---@type table<string, NoiceFilter>
 		status = {}, --- @see section on statusline components
 		---@type NoiceFormatOptions
