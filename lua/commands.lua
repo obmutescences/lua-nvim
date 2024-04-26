@@ -14,6 +14,16 @@ vim.cmd([[
 " set guifont=Comic\ Code:h10:w1.0:#e-antialias:#h-none
 " set guifont=Monaspace\ Radon:h9:w1.0:#e-antialias:#h-full
 
+" undo setting
+silent !mkdir -p $HOME/.config/nvim/tmp/backup
+silent !mkdir -p $HOME/.config/nvim/tmp/undo
+set backupdir=$HOME/.config/nvim/tmp/backup,.
+set directory=$HOME/.config/nvim/tmp/backup,.
+if has('persistent_undo')
+	set undofile
+	set undodir=$HOME/.config/nvim/tmp/undo,.
+endif
+
 " ===
 " === Necessary Commands to Execute
 " ===
