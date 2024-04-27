@@ -37,7 +37,8 @@ vim.g.rustaceanvim = {
 		standalone = true,
 		on_attach = function(client, bufnr)
 			-- you can also put keymaps in here
-			vim.lsp.inlay_hint.enable(bufnr)
+			-- vim.lsp.inlay_hint.enable(bufnr, true)
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 			local opts = { noremap = true, silent = true }
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 			vim.api.nvim_buf_set_keymap(
