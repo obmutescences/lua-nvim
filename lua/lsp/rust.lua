@@ -45,11 +45,20 @@ vim.g.rustaceanvim = {
 				bufnr,
 				"n",
 				"<Tab>",
-				'<cmd>lua vim.diagnostic.goto_prev({ border = "none" })<CR>',
+				'<cmd>lua vim.diagnostic.goto_next({ border = "none" })<CR>',
+				opts
+			)
+			vim.api.nvim_buf_set_keymap(
+				bufnr,
+				"n",
+				"<C-n>",
+				'<cmd>lua vim.diagnostic.goto_next({ border = "none" })<CR>',
 				opts
 			)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "<Space>ca", "<Cmd>RustLsp codeAction<CR>", opts)
 		end,
 		settings = {
 			-- rust-analyzer language server configuration
