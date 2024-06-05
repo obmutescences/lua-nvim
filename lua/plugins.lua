@@ -356,5 +356,13 @@ require("lazy").setup({
 				require('transparent').clear_prefix('NvimTree')
 			end
 		end,
-	}
+	},
+
+	-- trouble
+	{
+		"folke/trouble.nvim",
+		config = function()
+			require("trouble").setup({})
+		end,
+	},
 })
