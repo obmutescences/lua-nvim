@@ -42,14 +42,14 @@ vim.opt.linespace = 6
 -- vim.g.noshowmode = true
 -- vim.opt.updatetime = 50
 vim.opt.fillchars = {
-	vert = " ",   -- 垂直分割线
-	horiz = " ",  -- 水平分割线
+	vert = " ", -- 垂直分割线
+	horiz = " ", -- 水平分割线
 	horizup = " ", -- 上升的水平分割线
 	horizdown = " ", -- 下降的水平分割线
-	eob = " ",    -- 空白处的 '~' 符号
+	eob = " ", -- 空白处的 '~' 符号
 }
 vim.o.guicursor =
-"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 
 -- -- neovide
 vim.g.neovide_refresh_rate = 240
@@ -84,6 +84,7 @@ vim.g.neovide_profiler = false
 -- vim.g.neovide_cursor_smooth_blink = true
 vim.g.neovide_text_gamma = 0
 vim.g.neovide_text_contrast = 20
+vim.g.neovide_position_animation_length = 0.45
 
 local alpha = function()
 	return string.format("%x", math.floor(255 * 1))
@@ -98,10 +99,10 @@ if vim.g.neovide then
 	vim.o.pumblend = 80
 	vim.o.winblend = 80
 	-- vim.keymap.set("n", "<D-s>", ":w<CR>")   -- Save
-	vim.keymap.set("v", "<D-c>", '"+y')      -- Copy
-	vim.keymap.set("n", "<D-v>", '"+P')      -- Paste normal mode
-	vim.keymap.set("v", "<D-v>", '"+P')      -- Paste visual mode
-	vim.keymap.set("c", "<D-v>", "<C-R>+")   -- Paste command mode
+	vim.keymap.set("v", "<D-c>", '"+y') -- Copy
+	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
+	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
+	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
 	vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
 
