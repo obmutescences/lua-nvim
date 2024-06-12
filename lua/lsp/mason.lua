@@ -10,7 +10,7 @@ end
 
 -- pylsp pyright ruff_lsp
 local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls",
-	"volar", "lua_ls", "pylsp", "pyright", "bufls", "tsserver" }
+	"volar", "lua_ls", "pylsp", "bufls", "pylyzer" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {
