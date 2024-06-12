@@ -10,7 +10,7 @@ end
 
 -- pylsp pyright ruff_lsp
 local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls",
-	"volar", "lua_ls", "pylsp", "bufls", "pylyzer" }
+	"volar", "lua_ls", "pylsp", "bufls", "basedpyright" }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {
@@ -53,6 +53,19 @@ for _, server in pairs(servers) do
 	-- if server == "rust_analyzer" then
 	-- 	goto continue
 	-- end
+	if server == "basedpyright" then
+		opts.settings = {
+			basedpyright = {
+				typeCheckingMode = "all",
+				analysis = {
+					diagnosticSeverityOverrides = {
+						reportMissingParameterType = false,
+						reportUnknownParameterType = false,
+					},
+				},
+			},
+		}
+	end
 	if server == "pylsp" then
 		opts.settings = {
 			pylsp = {
