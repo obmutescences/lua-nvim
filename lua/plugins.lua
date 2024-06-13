@@ -101,7 +101,7 @@ require("lazy").setup({
 	{
 		"ray-x/navigator.lua",
 		dependencies = {
-			{ "ray-x/guihua.lua",     build = "cd lua/fzy && make" },
+			{ "ray-x/guihua.lua", build = "cd lua/fzy && make" },
 			{ "neovim/nvim-lspconfig" },
 		},
 	},
@@ -113,7 +113,7 @@ require("lazy").setup({
 	{
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-buffer", -- buffer completions
-		"hrsh7th/cmp-path",   -- path completions
+		"hrsh7th/cmp-path", -- path completions
 		"hrsh7th/cmp-cmdline", -- cmdline completions
 		"saadparwaiz1/cmp_luasnip", -- snippet completions
 		"hrsh7th/cmp-nvim-lsp",
@@ -164,12 +164,15 @@ require("lazy").setup({
 
 	-- hop easy to move
 	{
-		"phaazon/hop.nvim",
-		branch = "v2", -- optional but strongly recommended
+		"smoka7/hop.nvim",
+		version = "*",
+		opts = {
+			keys = "etovxqpdygfblzhckisuran",
+		},
 		config = function()
 			-- you can configure Hop the way you like here; see :h hop-config
 			require("hop").setup({
-				vim.api.nvim_set_keymap("n", "f", "<cmd>lua require'hop'.hint_char1({})<cr>", {}),
+				vim.api.nvim_set_keymap("n", "f", "<cmd>HopChar1<cr>", {}),
 			})
 		end,
 	},
@@ -203,7 +206,7 @@ require("lazy").setup({
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
+			"kyazdani42/nvim-web-devicons",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 			"nvim-telescope/telescope-ui-select.nvim",
 			"kkharji/sqlite.lua",
@@ -266,36 +269,6 @@ require("lazy").setup({
 	-- lsp format
 	{
 		"stevearc/conform.nvim",
-		config = function()
-			require("conform").setup({
-				format_on_save = {
-					-- These options will be passed to conform.format()
-					timeout_ms = 500,
-					lsp_fallback = true,
-				},
-				formatters_by_ft = {
-					lua = { "stylua" },
-					-- Conform will run multiple formatters sequentially
-					go = { "gofumpt", "goimports" },
-					["javascript"] = { "prettier" },
-					["javascriptreact"] = { "prettier" },
-					["typescript"] = { "prettier" },
-					["typescriptreact"] = { "prettier" },
-					["vue"] = { "prettier" },
-					["css"] = { "prettier" },
-					["scss"] = { "prettier" },
-					["less"] = { "prettier" },
-					["html"] = { "prettier" },
-					["json"] = { "prettier" },
-					["jsonc"] = { "prettier" },
-					["yaml"] = { "prettier" },
-					["markdown"] = { "prettier" },
-					["markdown.mdx"] = { "prettier" },
-					["graphql"] = { "prettier" },
-					["handlebars"] = { "prettier" },
-				},
-			})
-		end,
 	},
 
 	-- pick icon
@@ -322,7 +295,9 @@ require("lazy").setup({
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
-		build = function() vim.fn["mkdp#util#install"]() end,
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
 	},
 
 	-- -- lint
@@ -352,8 +327,8 @@ require("lazy").setup({
 				vim.g.transparent_enabled = false
 			else
 				vim.g.transparent_enabled = true
-				require('transparent').clear_prefix('lualine')
-				require('transparent').clear_prefix('NvimTree')
+				require("transparent").clear_prefix("lualine")
+				require("transparent").clear_prefix("NvimTree")
 			end
 		end,
 	},

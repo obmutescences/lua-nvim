@@ -1,6 +1,4 @@
 -- Themes
-local colorscheme = "everforest"
-
 vim.opt.termguicolors = true
 vim.g.t_Co = 256
 vim.g.background = "dark"
