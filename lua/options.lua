@@ -1,6 +1,6 @@
 -- Providers
-vim.g.python3_host_prog = "/opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3.11"
-vim.g.python_host_prog = "/opt/homebrew/Cellar/python@3.11/3.11.3/bin/python3.11"
+-- vim.g.python3_host_prog = "/home/zerone/projects/shuiyun/admin-backend/.venv/bin/python3"
+-- vim.g.python_host_prog = "/home/zerone/projects/shuiyun/admin-backend/.venv/bin/python3"
 
 --system--
 vim.o.autochdir = true

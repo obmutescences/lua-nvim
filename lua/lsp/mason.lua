@@ -9,8 +9,20 @@ if not status_ok_1 then
 end
 
 -- pylsp pyright ruff_lsp
-local servers = { "bashls", "jsonls", "dockerls", "gopls", "yamlls",
-	"volar", "lua_ls", "pylsp", "bufls", "basedpyright", "tsserver" }
+local servers = {
+	"bashls",
+	"jsonls",
+	"dockerls",
+	"gopls",
+	"yamlls",
+	"volar",
+	"lua_ls",
+	"bufls",
+	-- "basedpyright",
+	"tsserver",
+	"pylsp",
+	"pyright",
+}
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
 local settings = {
@@ -117,21 +129,21 @@ for _, server in pairs(servers) do
 		-- goto continue
 	end
 	if server == "golangci_lint_ls" then
-		local configs = require 'lspconfig/configs'
+		local configs = require("lspconfig/configs")
 		if not configs.golangcilsp then
 			configs.golangcilsp = {
 				default_config = {
-					cmd = { 'golangci-lint-langserver' },
-					root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
+					cmd = { "golangci-lint-langserver" },
+					root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
 					init_options = {
 						command = { "golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1" },
-					}
+					},
 				},
 			}
 		end
-		lspconfig.golangci_lint_ls.setup {
-			filetypes = { 'go', 'gomod' }
-		}
+		lspconfig.golangci_lint_ls.setup({
+			filetypes = { "go", "gomod" },
+		})
 	end
 
 	if server == "volar" then
@@ -139,12 +151,12 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "tsserver" then
-		lspconfig.tsserver.setup {
+		lspconfig.tsserver.setup({
 			init_options = {
 				plugins = {
 					{
 						name = "@vue/typescript-plugin",
-						location = "/usr/lib/node_modules/@vue/typescript-plugin",
+						location = "/home/zerone/.nvm/versions/node/v17.9.1/lib/node_modules/@vue/typescript-plugin",
 						languages = { "javascript", "typescript", "vue" },
 					},
 				},
@@ -154,7 +166,7 @@ for _, server in pairs(servers) do
 				"typescript",
 				"vue",
 			},
-		}
+		})
 		goto continue
 	end
 
