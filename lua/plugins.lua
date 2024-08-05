@@ -19,7 +19,9 @@ require("lazy").setup({
 	"nyngwang/murmur.lua",
 
 	-- root dir change
-	"ahmedkhalf/project.nvim",
+	-- orgin repo
+	-- "ahmedkhalf/project.nvim",
+	"TheLeoP/project.nvim",
 
 	-- lualine
 	{
