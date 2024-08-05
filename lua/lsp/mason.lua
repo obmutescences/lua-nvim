@@ -18,10 +18,11 @@ local servers = {
 	"volar",
 	"lua_ls",
 	"bufls",
-	-- "basedpyright",
 	"tsserver",
 	"pylsp",
-	"pyright",
+	"ruff_lsp",
+	-- "basedpyright",
+	-- "pyright",
 }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.

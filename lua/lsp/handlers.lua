@@ -8,7 +8,7 @@ end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 M.capabilities = capabilities
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- TODO: backfill this to template
 M.setup = function()

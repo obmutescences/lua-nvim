@@ -1,3 +1,11 @@
+local remap = function(fn, key)
+	return function(...)
+		if fn(...) ~= true and key then -- the function failed fallback to key
+			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, false, true), "n", true)
+		end
+	end
+end
+
 require("navigator").setup({
 	debug = false, -- log output, set to true and log path: ~/.cache/nvim/gh.log
 	width = 0.75, -- max width ratio (number of cols for the floating window) / (window width)
@@ -41,7 +49,7 @@ require("navigator").setup({
 			desc = "workspace_symbol_live",
 		},
 		{ key = "<c-]>", func = require("navigator.definition").definition, desc = "definition" },
-		{ key = "gd", func = require("navigator.definition").definition, desc = "definition" },
+		{ key = "gd", func = remap(require("navigator.definition").definition, "gd"), desc = "definition" },
 		{ key = "gD", func = vim.lsp.buf.declaration, desc = "declaration" },
 
 		{
@@ -51,12 +59,12 @@ require("navigator").setup({
 		},
 		{
 			key = "gp",
-			func = require("navigator.definition").definition_preview,
+			func = remap(require("navigator.definition").definition_preview, "gp"),
 			desc = "definition_preview",
 		},
 		{
 			key = "gP",
-			func = require("navigator.definition").type_definition_preview,
+			func = remap(require("navigator.definition").type_definition_preview, "gP"),
 			desc = "type_definition_preview",
 		},
 		{ key = "<Leader>gt", func = require("navigator.treesitter").buf_ts, desc = "buf_ts" },
@@ -163,8 +171,8 @@ require("navigator").setup({
 	}, -- a list of key maps
 	-- this kepmap gK will override "gD" mapping function declaration()  in default kepmap
 	-- please check mapping.lua for all keymaps
-	treesitter_analysis = false, -- treesitter variable context
-	treesitter_navigation = false, -- bool|table false: use lsp to navigate between symbol ']r/[r', table: a list of
+	treesitter_analysis = true, -- treesitter variable context
+	treesitter_navigation = true, -- bool|table false: use lsp to navigate between symbol ']r/[r', table: a list of
 	--lang using TS navigation
 	treesitter_analysis_max_num = 100, -- how many items to run treesitter analysis
 	treesitter_analysis_condense = true, -- condense form for treesitter analysis
@@ -177,9 +185,9 @@ require("navigator").setup({
 	icons = {
 		icons = true,
 		-- Code action
-		code_action_icon = "🏏", -- note: need terminal support, for those not support unicode, might crash
+		code_action_icon = " ", -- note: need terminal support, for those not support unicode, might crash
 		-- Diagnostics
-		diagnostic_head = "🐛",
+		diagnostic_head = "󱍞 ",
 		diagnostic_head_severity_1 = "🈲",
 		-- refer to lua/navigator.lua for more icons setups
 	},
@@ -220,24 +228,12 @@ require("navigator").setup({
 
 		hover = {
 			enable = true,
-			keymap = {
-				["<C-k>"] = {
-					go = function()
-						local w = vim.fn.expand("<cWORD>")
-						vim.cmd("GoDoc " .. w)
-					end,
-					-- default = function(
-					--   local w = vim.fn.expand("<cWORD>")
-					--   vim.lsp.buf.workspace_symbol(w)
-					-- end,
-				},
-			},
 		},
 
 		diagnostic_scrollbar_sign = { "▃", "▆", "█" }, -- experimental:  diagnostic status in scroll bar area; set to false to disable the diagnostic sign,
 		--                for other style, set to {'╍', 'ﮆ'} or {'-', '='}
 		diagnostic_virtual_text = true, -- show virtual for diagnostic message
-		diagnostic_update_in_insert = false, -- update diagnostic message in insert mode
+		diagnostic_update_in_insert = true, -- update diagnostic message in insert mode
 		display_diagnostic_qf = false, -- always show quickfix if there are diagnostic errors, set to false if you want to ignore it
 		-- tsserver = {
 		--   filetypes = {'typescript'} -- disable javascript etc,
