@@ -75,23 +75,17 @@ vim.g.neovide_floating_blur_amount_y = 3.0
 
 vim.g.neovide_scale_factor = 1.0
 vim.g.neovide_floating_shadow = false
-vim.g.neovide_padding_left = 10
+vim.g.neovide_padding_left = 30
+vim.g.neovide_padding_top = 20
 vim.g.neovide_transparency = 0.80
 vim.g.neovide_window_blurred = true
 -- vim.g.transparency = 0
 vim.g.neovide_input_ime = true
 vim.g.neovide_profiler = false
--- vim.g.neovide_cursor_smooth_blink = true
+vim.g.neovide_cursor_smooth_blink = true
 vim.g.neovide_text_gamma = 0
 vim.g.neovide_text_contrast = 20
 vim.g.neovide_position_animation_length = 0.45
-
-local alpha = function()
-	return string.format("%x", math.floor(255 * 1))
-end
--- vim.g.neovide_background_color = "#0f1117" .. alpha()
--- vim.g.neovide_background_color = "#343F44" .. alpha()
-
 vim.g.neovide_fullscreen = false
 -- vim.g.neovide_remember_window_size          = true
 

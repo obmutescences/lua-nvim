@@ -63,9 +63,16 @@ for _, server in pairs(servers) do
 		capabilities = require("lsp.handlers").capabilities,
 	}
 	server = vim.split(server, "@")[1]
-	-- if server == "rust_analyzer" then
-	-- 	goto continue
-	-- end
+	if server == "lua_ls" then
+		opts.settings = {
+			Lua = {
+				diagnostics = {
+					-- Get the language server to recognize the `vim` global
+					globals = { "vim" },
+				},
+			},
+		}
+	end
 	if server == "basedpyright" then
 		opts.settings = {
 			basedpyright = {
