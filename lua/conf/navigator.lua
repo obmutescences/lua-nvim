@@ -49,7 +49,7 @@ require("navigator").setup({
 			desc = "workspace_symbol_live",
 		},
 		{ key = "<c-]>", func = require("navigator.definition").definition, desc = "definition" },
-		{ key = "gd", func = remap(require("navigator.definition").definition, "gd"), desc = "definition" },
+		-- { key = "gd", func = remap(require("navigator.definition").definition, "gd"), desc = "definition" },
 		{ key = "gD", func = vim.lsp.buf.declaration, desc = "declaration" },
 
 		{
