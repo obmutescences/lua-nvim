@@ -1,4 +1,4 @@
-local Utils = require('utils')
+local Utils = require("utils")
 
 local nnoremap = Utils.nnoremap
 local inoremap = Utils.inoremap
@@ -9,12 +9,10 @@ local nmap = Utils.nmap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
 -- Save & quit
 nnoremap("Q", "<cmd>q<cr>")
 nnoremap("<c-q>", "<cmd>q<cr>")
 nnoremap("S", "<cmd>w<cr>")
-
 
 -- undo operations
 nnoremap("l", "u")
@@ -39,7 +37,6 @@ vnoremap("u", "k")
 -- delete a word
 nnoremap("dw", "daw")
 
-
 -- N key: go to the start of the line
 nnoremap("N", "0")
 -- I key: go to the end of the line
@@ -47,7 +44,6 @@ nnoremap("I", "$")
 
 -- set h (same as n, cursor left) to 'end of word'
 nnoremap("h", "e")
-
 
 --Ctrl + U or E will move up/down the view port without moving the cursor
 nnoremap("<C-U>", "5<C-y>")
@@ -59,7 +55,6 @@ inoremap("<C-f>", "<Right>")
 inoremap("<C-j>", "<Down>")
 inoremap("<C-p>", "<Up>")
 inoremap("<C-b>", "<Left>")
-
 
 --Command Mode Cursor Movement
 cnoremap("<C-a>", "<Home>")
@@ -78,7 +73,6 @@ nnoremap("<LEADER>w", "<C-w>w")
 nnoremap("<LEADER>b", "<C-w>h")
 -- nnoremap("<LEADER>i", "<C-w>l")
 
-
 -- Resize splits with arrow keys
 nnoremap("<up>", ":res +5<CR>")
 nnoremap("<down>", ":res -5<CR>")
@@ -94,7 +88,6 @@ nnoremap("<C-l>", ":Telescope current_buffer_fuzzy_find<CR>")
 nnoremap("<C-;>", ":Telescope file_browser<CR>")
 nnoremap("<LEADER>cc", "<cmd>Telescope commands<CR>")
 
-
 -- vim-fugitive
 nnoremap("gb", ":Gblame<CR>")
 
@@ -107,7 +100,7 @@ nnoremap("<", "<<")
 nnoremap(">", ">>")
 
 -- zen mode
-nmap('<LEADER>n', '<cmd>ZenMode<CR>')
+nmap("<LEADER>n", "<cmd>ZenMode<CR>")
 
 -- find and replace
 nnoremap("<LEADER>r", "<cmd>lua require('spectre').open()<CR>")

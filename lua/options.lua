@@ -89,22 +89,30 @@ vim.g.neovide_position_animation_length = 0.45
 vim.g.neovide_fullscreen = false
 -- vim.g.neovide_remember_window_size          = true
 
+local uname = vim.loop.os_uname().sysname
+local shortv = "<C-v>"
+local shortc = "<C-c>"
+if uname == "Darwin" then
+	shortv = "<D-v>"
+	shortc = "<D-c>"
+end
+
 if vim.g.neovide then
 	vim.o.pumblend = 80
 	vim.o.winblend = 80
 	-- vim.keymap.set("n", "<D-s>", ":w<CR>")   -- Save
-	vim.keymap.set("v", "<D-c>", '"+y') -- Copy
-	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
-	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
-	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
-	vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
+	vim.keymap.set("v", shortc, '"+y') -- Copy
+	vim.keymap.set("n", shortv, '"+P') -- Paste normal mode
+	vim.keymap.set("v", shortv, '"+P') -- Paste visual mode
+	vim.keymap.set("c", shortv, "<C-R>+") -- Paste command mode
+	vim.keymap.set("i", shortv, '<ESC>l"+Pli') -- Paste insert mode
 end
 
 -- Allow clipboard copy paste in neovim
-vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("", shortv, "+p<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("!", shortv, "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", shortv, "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", shortv, "<C-R>+", { noremap = true, silent = true })
 
 -- ale
 -- 只为 Go 启用 golangci-lint
