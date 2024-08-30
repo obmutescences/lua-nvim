@@ -19,9 +19,9 @@ local servers = {
 	"lua_ls",
 	"bufls",
 	"tsserver",
-	"pylsp",
+	-- "pylsp",
 	"ruff_lsp",
-	-- "basedpyright",
+	"basedpyright",
 	-- "pyright",
 }
 
@@ -79,8 +79,8 @@ for _, server in pairs(servers) do
 				typeCheckingMode = "all",
 				analysis = {
 					diagnosticSeverityOverrides = {
-						reportMissingParameterType = false,
-						reportUnknownParameterType = false,
+						-- reportMissingParameterType = false,
+						-- reportUnknownParameterType = false,
 					},
 				},
 			},

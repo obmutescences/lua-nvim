@@ -72,14 +72,21 @@ local function lsp_keymaps(bufnr)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>u", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-n>", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-i>", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", '<cmd>Telescope lsp_incoming_calls<CR>', opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", '<cmd>Telescope lsp_outgoing_calls<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", "<cmd>Lspsaga incoming_calls<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", "<cmd>Lspsaga outgoing_calls<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-n>", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-i>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
@@ -91,9 +98,9 @@ M.on_attach = function(client, bufnr)
 	require("lsp_signature").on_attach()
 
 	-- navigator
-	require("navigator.lspclient.mapping").setup({ client = client, bufnr = bufnr }) -- setup navigator keymaps here,
-	require("navigator.dochighlight").documentHighlight(bufnr)
-	require("navigator.codeAction").code_action_prompt(bufnr)
+	-- require("navigator.lspclient.mapping").setup({ client = client, bufnr = bufnr }) -- setup navigator keymaps here,
+	-- require("navigator.dochighlight").documentHighlight(bufnr)
+	-- require("navigator.codeAction").code_action_prompt(bufnr)
 end
 
 return M

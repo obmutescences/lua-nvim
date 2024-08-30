@@ -305,6 +305,14 @@ require("lazy").setup({
 	-- -- lint
 	"dense-analysis/ale",
 
+	-- {
+	-- 	"mfussenegger/nvim-lint",
+	-- 	event = {
+	-- 		"BufReadPre",
+	-- 		"BufNewFile",
+	-- 	},
+	-- },
+
 	{
 		"ThePrimeagen/refactoring.nvim",
 		dependencies = {
@@ -342,4 +350,7 @@ require("lazy").setup({
 			require("trouble").setup({})
 		end,
 	},
+
+	-- lspsaga.nvim
+	"nvimdev/lspsaga.nvim",
 })

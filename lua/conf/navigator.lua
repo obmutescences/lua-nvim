@@ -14,9 +14,9 @@ require("navigator").setup({
 	-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, -- border style, can be one of 'none', 'single', 'double',
 	border = "none",
 	-- 'shadow', or a list of chars which defines the border
-	on_attach = function(client, bufnr)
-		-- your hook
-	end,
+	-- on_attach = function(client, bufnr)
+	-- your hook
+	-- end,
 	-- put a on_attach of your own here, e.g
 	-- function(client, bufnr)
 	--   -- the on_attach will be called at end of navigator on_attach
