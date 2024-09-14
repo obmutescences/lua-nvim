@@ -22,7 +22,7 @@ M.setup = function()
 			-- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
 			-- prefix = "icons",
 		},
-		update_in_insert = true,
+		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
 		float = {
