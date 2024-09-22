@@ -85,12 +85,6 @@ for _, server in pairs(servers) do
 				},
 			},
 		}
-		opts.on_attach = function(client, bufnr)
-			client.handlers["textDocument/publishDiagnostics"] =
-				vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-					update_in_insert = false,
-				})
-		end
 	end
 	if server == "pylsp" then
 		opts.settings = {
