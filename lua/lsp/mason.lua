@@ -76,7 +76,10 @@ for _, server in pairs(servers) do
 	if server == "basedpyright" then
 		opts.settings = {
 			basedpyright = {
-				typeCheckingMode = "all",
+				typeCheckingMode = "strict",
+				autoSearchPaths = true,
+				useLibraryCodeForTypes = true,
+				autoImportCompletions = true,
 				analysis = {
 					diagnosticSeverityOverrides = {
 						-- reportMissingParameterType = false,
@@ -164,7 +167,7 @@ for _, server in pairs(servers) do
 		opts.filetypes = { "typescript", "javascript", "vue", "json" }
 	end
 
-	if server == "tsserver" then
+	if server == "ts_ls" then
 		lspconfig.tsserver.setup({
 			init_options = {
 				plugins = {
