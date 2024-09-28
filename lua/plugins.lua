@@ -52,7 +52,7 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("crates").setup({
-				src = {
+				completion = {
 					cmp = {
 						enabled = true,
 					},
@@ -62,7 +62,7 @@ require("lazy").setup({
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^4", -- Recommended
+		version = "^5", -- Recommended
 		ft = { "rust" },
 	},
 
