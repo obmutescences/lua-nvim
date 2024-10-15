@@ -16,6 +16,7 @@ configs.setup({
 		"toml",
 		"yaml",
 		"vue",
+		"html",
 		"http",
 		"javascript",
 		"rust",
@@ -24,8 +25,8 @@ configs.setup({
 		"typescript",
 		"proto",
 		"sql",
-		"regex"
-	},                -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+		"regex",
+	}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 	sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
 	ignore_install = {}, -- List of parsers to ignore installing
 	autopairs = {

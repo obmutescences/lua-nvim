@@ -19,10 +19,11 @@ local servers = {
 	"lua_ls",
 	"bufls",
 	"ts_ls",
-	-- "pylsp",
-	"ruff_lsp",
+	"pylsp",
+	-- "ruff_lsp",
 	"basedpyright",
 	-- "pyright",
+	"ruff",
 }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
@@ -92,7 +93,7 @@ for _, server in pairs(servers) do
 	if server == "pylsp" then
 		opts.settings = {
 			pylsp = {
-				configurationSources = { "ruff" },
+				-- configurationSources = { "ruff" },
 				plugins = {
 					pycodestyle = {
 						ignore = { "W391" },
@@ -106,23 +107,34 @@ for _, server in pairs(servers) do
 						enabled = false,
 						maxLineLength = 120,
 					},
-					mccabe = {
-						enabled = false,
-					},
-					-- rope_autoimport = {
-					-- 	enabled = true,
-					-- 	memory = true,
-					-- },
-					-- rope_completion = {
-					-- 	enabled = true
-					-- },
-					pyflakes = {
-						enabled = false,
-					},
 					ruff = {
 						enabled = true,
 						lineLength = 120,
 					},
+					jedi_completion = { enabled = true },
+					jedi_definition = { enabled = false },
+					jedi_hover = { enabled = false },
+					jedi_references = { enabled = false },
+					jedi_signature_help = { enabled = false },
+					jedi_symbols = { enabled = false },
+					mccabe = { enabled = false },
+					preload = { enabled = false },
+					pydocstyle = { enabled = false },
+					pyflakes = { enabled = false },
+					pylint = { enabled = false },
+					rope_autoimport = {
+						enabled = false,
+						completions = {
+							enabled = false,
+						},
+						code_actions = {
+							enabled = false,
+						},
+					},
+					rope_completion = { enabled = false },
+					yapf = { enabled = false },
+					-- -- import sorting
+					isort = { enabled = false },
 				},
 			},
 		}
@@ -162,7 +174,7 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "ts_ls" then
-		lspconfig.tsserver.setup({
+		lspconfig.ts_ls.setup({
 			init_options = {
 				plugins = {
 					{
