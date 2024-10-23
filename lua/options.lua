@@ -87,6 +87,7 @@ vim.g.neovide_text_gamma = 0
 vim.g.neovide_text_contrast = 20
 vim.g.neovide_position_animation_length = 0.45
 vim.g.neovide_fullscreen = false
+vim.g.neovide_floating_corner_radius = 0.6
 -- vim.g.neovide_remember_window_size          = true
 
 local uname = vim.loop.os_uname().sysname

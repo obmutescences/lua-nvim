@@ -123,12 +123,12 @@ for _, server in pairs(servers) do
 					pyflakes = { enabled = false },
 					pylint = { enabled = false },
 					rope_autoimport = {
-						enabled = false,
+						enabled = true,
 						completions = {
 							enabled = false,
 						},
 						code_actions = {
-							enabled = false,
+							enabled = true,
 						},
 					},
 					rope_completion = { enabled = false },
@@ -196,5 +196,3 @@ for _, server in pairs(servers) do
 	lspconfig[server].setup(opts)
 	::continue::
 end
-
-require("lsp_signature").on_attach()
