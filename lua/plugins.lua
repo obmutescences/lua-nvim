@@ -347,4 +347,20 @@ require("lazy").setup({
 
 	-- lspsaga.nvim
 	"nvimdev/lspsaga.nvim",
+
+	-- show indent
+	{
+		"echasnovski/mini.indentscope",
+		version = false,
+		config = function()
+			require("mini.indentscope").setup({
+				symbol = "",
+				mappings = {
+					-- Textobjects
+					object_scope = "",
+					object_scope_with_border = "",
+				},
+			})
+		end,
+	},
 })
