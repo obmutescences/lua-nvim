@@ -363,4 +363,27 @@ require("lazy").setup({
 			})
 		end,
 	},
+
+	-- select move
+	{
+		"echasnovski/mini.move",
+		version = false,
+		config = function()
+			require("mini.move").setup({
+				mappings = {
+					-- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+					left = "<M-b>",
+					right = "<M-i>",
+					down = "<M-j>",
+					up = "<M-u>",
+
+					-- Move current line in Normal mode
+					line_left = "<M-b>",
+					line_right = "<M-i>",
+					line_down = "<M-j>",
+					line_up = "<M-u>",
+				},
+			})
+		end,
+	},
 })
