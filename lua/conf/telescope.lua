@@ -45,7 +45,6 @@
 -- For example, the following query matches entries that start with core and end with either go, rb, or py.
 -- ^core go$ | rb$ | py$
 
-
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 -- local icons = require("config.icons")
@@ -70,7 +69,6 @@ local function formattedName(_, path)
 end
 
 local tel_config = {
-	file_ignore_patterns = { "%.git/.", "Cargo.lock", "target", "go.sum" },
 	defaults = {
 		mappings = {
 			i = {
@@ -87,7 +85,6 @@ local tel_config = {
 
 				["<C-u>"] = actions.preview_scrolling_up,
 				["<C-d>"] = actions.preview_scrolling_down,
-
 			},
 
 			n = {
@@ -109,7 +106,6 @@ local tel_config = {
 				["H"] = actions.move_to_top,
 				["M"] = actions.move_to_middle,
 				["L"] = actions.move_to_bottom,
-
 			},
 		},
 		winblend = 5,
@@ -117,7 +113,7 @@ local tel_config = {
 		previewer = false,
 		prompt_prefix = "  ",
 		selection_caret = "  ",
-		file_ignore_patterns = { "node_modules", "package-lock.json" },
+		file_ignore_patterns = { "node_modules", "package-lock.json", "%.git/.", "Cargo.lock", "target", "go.sum" },
 		initial_mode = "insert",
 		select_strategy = "reset",
 		sorting_strategy = "ascending",
@@ -232,9 +228,9 @@ local tel_config = {
 	},
 	extensions = {
 		fzf = {
-			fuzzy = true,          -- false will only do exact matching
-			override_generic_sorter = true, -- override the generic sorter
-			override_file_sorter = true, -- override the file sorter
+			fuzzy = true, -- false will only do exact matching
+			-- override_generic_sorter = true, -- override the generic sorter
+			-- override_file_sorter = true, -- override the file sorter
 			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 		},
 		["ui-select"] = {
