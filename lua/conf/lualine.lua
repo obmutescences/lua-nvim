@@ -46,7 +46,7 @@ local config = {
 			-- are just setting default looks o statusline
 
 			-- everforest
-			normal = { c = { fg = colors.fg, bg = "#22292D" } },
+			-- normal = { c = { fg = colors.fg, bg = "#22292D" } },
 
 			-- oh-lucy
 			-- normal = { c = { fg = colors.fg, bg = "#1E1D23" } },
@@ -54,6 +54,9 @@ local config = {
 			-- tokyonight
 			-- normal = { c = { fg = colors.fg, bg = "#24283b" } },
 			-- inactive = { c = { fg = colors.fg, bg = colors.bg } },
+
+			-- hack
+			normal = { c = { fg = colors.fg, bg = "#282433" } },
 		},
 	},
 	sections = {

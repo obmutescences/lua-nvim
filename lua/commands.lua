@@ -52,12 +52,18 @@ hi ColorColumn guibg=NONE
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " nvim-tree everforest
-hi NvimTreeNormal guibg=#22292D guifg=#77B98B
-hi TelescopeBorder guibg=#22292D guifg=#77B98B
-hi TelescopeNormal guibg=#22292D guifg=#5d6b66
+" hi NvimTreeNormal guibg=#22292D guifg=#77B98B
+" hi TelescopeBorder guibg=#22292D guifg=#77B98B
+" hi TelescopeNormal guibg=#22292D guifg=#5d6b66
 hi TelescopeSelection guibg=#FF165D
 hi TelescopePreviewLine guibg=#F50800
 hi TelescopeMatching guifg=#01F5F3
+
+" hardhecker
+" other use everforest setting
+hi TelescopeNormal guibg=#282433 guifg=#5d6b66
+hi TelescopeBorder guibg=#282433 guifg=#282433
+
 
 " oh-lucy
 " hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3

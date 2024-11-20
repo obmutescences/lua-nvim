@@ -89,6 +89,13 @@ require("lazy").setup({
 	"marko-cerovac/material.nvim",
 	"sainnhe/everforest",
 	"themercorp/themer.lua",
+	-- init.lua:
+	{
+		"hardhackerlabs/theme-vim",
+		config = function()
+			vim.cmd.colorscheme("hardhacker")
+		end,
+	},
 
 	-- find and grep
 	"kyazdani42/nvim-web-devicons",
