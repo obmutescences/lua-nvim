@@ -52,8 +52,8 @@ vim.o.guicursor =
 	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 
 -- -- neovide
-vim.g.neovide_refresh_rate = 240
-vim.g.neovide_refresh_rate_idle = 240
+vim.g.neovide_refresh_rate = 180
+vim.g.neovide_refresh_rate_idle = 180
 vim.g.neovide_no_idle = true
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
 vim.g.neovide_cursor_vfx_opacity = 5000
@@ -88,6 +88,9 @@ vim.g.neovide_text_contrast = 20
 vim.g.neovide_position_animation_length = 0.45
 vim.g.neovide_fullscreen = false
 vim.g.neovide_floating_corner_radius = 0.6
+vim.g.neovide_text_gamma = 1.5
+vim.g.neovide_text_contrast = 0.0
+vim.g.neovide_underline_stroke_scale = 0.5
 -- vim.g.neovide_remember_window_size          = true
 
 local uname = vim.loop.os_uname().sysname
