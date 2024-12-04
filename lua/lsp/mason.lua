@@ -84,7 +84,9 @@ for _, server in pairs(servers) do
 				analysis = {
 					diagnosticSeverityOverrides = {
 						-- reportMissingParameterType = false,
-						-- reportUnknownParameterType = false,
+						reportUnknownParameterType = false,
+						strictDictionaryInference = false,
+						reportExplicitAny = false,
 					},
 				},
 			},

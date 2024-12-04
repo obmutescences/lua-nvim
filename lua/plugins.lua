@@ -89,11 +89,18 @@ require("lazy").setup({
 	"marko-cerovac/material.nvim",
 	"sainnhe/everforest",
 	"themercorp/themer.lua",
-	-- init.lua:
 	{
 		"hardhackerlabs/theme-vim",
 		config = function()
 			vim.cmd.colorscheme("hardhacker")
+		end,
+	},
+	{
+		"AlexvZyl/nordic.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- require('nordic').load()
 		end,
 	},
 
@@ -247,10 +254,10 @@ require("lazy").setup({
 
 	{
 		"jackMort/ChatGPT.nvim",
-		enabled = false,
-		config = function()
-			require("chatgpt").setup()
-		end,
+		event = "VeryLazy",
+		-- config = function()
+		-- 	require("chatgpt").setup()
+		-- end,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"nvim-lua/plenary.nvim",

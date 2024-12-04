@@ -37,8 +37,9 @@ local settings = {
 			" ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
 			" ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
 		},
-		highlight = "TSString",
-		default_color = "#4EEE94",
+		highlight = "",
+		-- default_color = "#4EEE94",
+		default_color = "#b3f4f3",
 		oldfiles_amount = 0,
 	},
 	-- name which will be displayed and command
@@ -57,8 +58,14 @@ local settings = {
 			{ " All Project", "Telescope project", "<leader>ap" },
 			{ " Update Plugins", "Lazy", "<leader>pu" },
 		},
-		highlight = "String",
-		default_color = "",
+		-- everforest
+		-- default_color = "",
+		-- highlight = "String",
+
+		-- hardhacker
+		default_color = "#e965a5",
+		highlight = "",
+
 		oldfiles_amount = 0,
 	},
 	clock = {
@@ -73,8 +80,10 @@ local settings = {
 		fold_section = false,
 		title = "",
 		margin = 5,
-		highlight = "TSString",
-		default_color = "#FFFFFF",
+		-- highlight = "TSString",
+		highlight = "",
+		-- default_color = "#FFFFFF",
+		default_color = "#e965a5",
 		oldfiles_amount = 10,
 	},
 
@@ -96,7 +105,8 @@ local settings = {
 		open_help = "?",
 	},
 	colors = {
-		background = "#1f2227",
+		-- background = "#1f2227",
+		background = "none",
 		folded_section = "#56b6c2",
 	},
 	parts = { "header", "body", "clock" },
