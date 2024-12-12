@@ -12,7 +12,7 @@ end
 local function jumpable(dir)
 	local luasnip_ok, luasnip = pcall(require, "luasnip")
 	if not luasnip_ok then
-		return
+		return false
 	end
 
 	local win_get_cursor = vim.api.nvim_win_get_cursor
@@ -156,7 +156,7 @@ local buffer_option = {
 	end,
 }
 
-cmp_config = {
+local cmp_config = {
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = true,
@@ -239,17 +239,13 @@ cmp_config = {
 	sorting = {
 		priority_weight = 1.0,
 		comparators = {
+			cmp.config.compare.offset,
+			cmp.config.compare.exact,
+			cmp.config.compare.recently_used,
 			cmp.config.compare.score, -- based on :  score = score + ((#sources - (source_index - 1)) * sorting.priority_weight)
 			cmp.config.compare.locality,
-			cmp.config.compare.recently_used,
-			cmp.config.compare.offset,
-			cmp.config.compare.order,
 			cmp.config.compare.kind,
-			cmp.config.compare.exact,
-			-- cmp.config.compare.offset,
-			-- cmp.config.compare.order,
-			-- cmp.config.compare.score,
-			-- -- cmp.config.compare.sort_text,
+			cmp.config.compare.order,
 			cmp.config.compare.length,
 		},
 	},

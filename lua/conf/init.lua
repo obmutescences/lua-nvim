@@ -19,4 +19,4 @@ require("conf.conform")
 require("conf.lspsaga")
 -- require("conf.navigator")
 -- require "conf.tokyonight"
-require("conf.chatGPT")
+-- require("conf.chatGPT")
