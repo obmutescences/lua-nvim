@@ -221,9 +221,9 @@ require("navigator").setup({
 		-- for e.g. denols and tsserver you may want to enable one lsp server at a time.
 		-- default value: {}
 		diagnostic = {
-			underline = true,
-			virtual_text = true, -- show virtual for diagnostic message
-			update_in_insert = true, -- update diagnostic message in insert mode
+			underline = false,
+			virtual_text = false, -- show virtual for diagnostic message
+			update_in_insert = false, -- update diagnostic message in insert mode
 		},
 
 		hover = {
@@ -232,8 +232,8 @@ require("navigator").setup({
 
 		diagnostic_scrollbar_sign = { "▃", "▆", "█" }, -- experimental:  diagnostic status in scroll bar area; set to false to disable the diagnostic sign,
 		--                for other style, set to {'╍', 'ﮆ'} or {'-', '='}
-		diagnostic_virtual_text = true, -- show virtual for diagnostic message
-		diagnostic_update_in_insert = true, -- update diagnostic message in insert mode
+		diagnostic_virtual_text = false, -- show virtual for diagnostic message
+		diagnostic_update_in_insert = false, -- update diagnostic message in insert mode
 		display_diagnostic_qf = false, -- always show quickfix if there are diagnostic errors, set to false if you want to ignore it
 		-- tsserver = {
 		--   filetypes = {'typescript'} -- disable javascript etc,

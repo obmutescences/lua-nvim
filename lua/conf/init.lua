@@ -20,3 +20,4 @@ require("conf.lspsaga")
 -- require("conf.navigator")
 -- require "conf.tokyonight"
 -- require("conf.chatGPT")
+require("conf.line-diagnostic")

@@ -156,7 +156,7 @@ local buffer_option = {
 	end,
 }
 
-local cmp_config = {
+cmp_config = {
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = true,

@@ -14,17 +14,18 @@ M.capabilities = capabilities
 M.setup = function()
 	local config = {
 		-- disable virtual text
-		virtual_text = {
-			spacing = 4,
-			source = "if_many",
-			prefix = "●",
-			-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-			-- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
-			-- prefix = "icons",
-		},
+		virtual_text = false,
+		-- virtual_text = {
+		-- 	spacing = 4,
+		-- 	source = "if_many",
+		-- 	prefix = "●",
+		-- 	-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
+		-- 	-- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
+		-- 	-- prefix = "icons",
+		-- },
 		update_in_insert = true,
-		underline = true,
-		severity_sort = true,
+		underline = false,
+		severity_sort = false,
 		float = {
 			focusable = false,
 			-- close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
