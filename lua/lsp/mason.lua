@@ -17,7 +17,7 @@ local servers = {
 	"yamlls",
 	"volar",
 	"lua_ls",
-	"bufls",
+	-- "buf",
 	"ts_ls",
 	"pylsp",
 	-- "ruff_lsp",
