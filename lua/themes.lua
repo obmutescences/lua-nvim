@@ -2,7 +2,7 @@
 vim.opt.termguicolors = true
 vim.g.t_Co = 256
 vim.g.background = "dark"
-vim.g.everforest_background = 'soft'
+vim.g.everforest_background = "soft"
 vim.g.everforest_better_performance = 0
 vim.g.everforest_enable_italic = true
 vim.g.everforest_disable_italic_comment = 0
@@ -21,6 +21,7 @@ vim.g.oh_lucy_evening_italic_comments = true
 -- vim.cmd [[colorscheme tokyonight-storm]]
 -- vim.cmd [[colorscheme oh-lucy-evening]]
 -- vim.cmd [[colorscheme everforest]]
+vim.cmd([[colorscheme dracula]])
 
 -- nord
 vim.g.nord_contrast = true

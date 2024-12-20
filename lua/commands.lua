@@ -61,8 +61,8 @@ hi TelescopeMatching guifg=#01F5F3
 
 " hardhecker
 " other use everforest setting
-hi TelescopeNormal guibg=#282433 guifg=#5d6b66
-hi TelescopeBorder guibg=#282433 guifg=#282433
+" hi TelescopeNormal guibg=#282433 guifg=#5d6b66
+" hi TelescopeBorder guibg=#282433 guifg=#282433
 
 
 " oh-lucy
@@ -78,6 +78,12 @@ hi TelescopeBorder guibg=#282433 guifg=#282433
 " hi NvimTreeNormal guibg=#24283b
 " hi NvimTreeNormalNC guibg=#24283b
 " hi TelescopeSelection guibg=#CD5555
+
+" dracula
+hi TelescopeNormal guibg=none guifg=#F8F8F2
+hi TelescopeBorder guibg=none guifg=#282A36
+hi NvimTreeNormal guibg=#282A36 guifg=#50fa7b
+
 
 
 " navigator

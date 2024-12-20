@@ -92,7 +92,7 @@ require("lazy").setup({
 	{
 		"hardhackerlabs/theme-vim",
 		config = function()
-			vim.cmd.colorscheme("hardhacker")
+			-- vim.cmd.colorscheme("hardhacker")
 		end,
 	},
 	{
@@ -103,6 +103,7 @@ require("lazy").setup({
 			-- require('nordic').load()
 		end,
 	},
+	{ "Mofiqul/dracula.nvim" },
 
 	-- find and grep
 	"kyazdani42/nvim-web-devicons",

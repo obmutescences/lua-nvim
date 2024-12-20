@@ -56,7 +56,10 @@ local config = {
 			-- inactive = { c = { fg = colors.fg, bg = colors.bg } },
 
 			-- hack
-			normal = { c = { fg = colors.fg, bg = "#282433" } },
+			-- normal = { c = { fg = colors.fg, bg = "#282433" } },
+
+			-- dracula
+			normal = { c = { fg = colors.fg, bg = "#282A36" } },
 		},
 	},
 	sections = {
