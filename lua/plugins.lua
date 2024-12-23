@@ -84,7 +84,7 @@ require("lazy").setup({
 
 	-- themes
 	"shaunsingh/nord.nvim",
-	"dealuhguurl/oh-lucy.nvim",
+	"yazeed1s/oh-lucy.nvim",
 	"folke/tokyonight.nvim",
 	"marko-cerovac/material.nvim",
 	"sainnhe/everforest",
