@@ -8,4 +8,7 @@ require("lspsaga").setup({
 			quit = { "q", "<ESC>" },
 		},
 	},
+	symbol_in_winbar = {
+		enable = false,
+	},
 })
