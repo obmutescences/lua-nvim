@@ -19,7 +19,7 @@ local servers = {
 	"lua_ls",
 	-- "buf",
 	"ts_ls",
-	"pylsp",
+	-- "pylsp",
 	-- "ruff_lsp",
 	"basedpyright",
 	-- "pyright",

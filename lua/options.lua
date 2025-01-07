@@ -78,6 +78,7 @@ vim.g.neovide_floating_shadow = false
 vim.g.neovide_padding_left = 30
 vim.g.neovide_padding_top = 20
 vim.g.neovide_transparency = 0.80
+vim.g.neovide_normal_opacity = 0.55
 vim.g.neovide_window_blurred = true
 -- vim.g.transparency = 0
 vim.g.neovide_input_ime = true
