@@ -196,6 +196,7 @@ require("lazy").setup({
 
 	-- zen mode
 	"folke/zen-mode.nvim",
+	"obmutescences/true-zen.nvim",
 
 	-- highlight todo
 	{
