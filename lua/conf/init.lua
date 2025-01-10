@@ -16,7 +16,7 @@ require("conf.true-zen")
 require("conf.undotree")
 require("conf.toggleterm")
 require("conf.conform")
--- require("conf.themer")
+require("conf.themer")
 require("conf.lspsaga")
 -- require("conf.navigator")
 -- require "conf.tokyonight"

@@ -59,12 +59,12 @@ local settings = {
 			{ " Update Plugins", "Lazy", "<leader>pu" },
 		},
 		-- everforest
-		-- default_color = "",
-		-- highlight = "String",
+		default_color = "",
+		highlight = "String",
 
 		-- hardhacker
-		default_color = "#e965a5",
-		highlight = "",
+		-- default_color = "#e965a5",
+		-- highlight = "",
 
 		oldfiles_amount = 0,
 	},
