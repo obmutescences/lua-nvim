@@ -88,6 +88,12 @@ nnoremap("<C-l>", ":Telescope current_buffer_fuzzy_find<CR>")
 nnoremap("<LEADER>lv", ":Telescope live_grep<CR>")
 nnoremap("<C-;>", ":Telescope file_browser<CR>")
 nnoremap("<LEADER>cc", "<cmd>Telescope commands<CR>")
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader><Leader>",
+	[[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]],
+	{ noremap = true, silent = true }
+)
 
 -- vim-fugitive
 nnoremap("gb", ":Gblame<CR>")
