@@ -63,7 +63,7 @@ require("lazy").setup({
 	{
 		"mrcjkb/rustaceanvim",
 		version = "^5", -- Recommended
-		ft = { "rust" },
+		lazy = false,
 	},
 
 	-- auto pairs

@@ -104,9 +104,9 @@ vim.g.rustaceanvim = {
 				procMacro = {
 					enable = true,
 					ignored = {
-						["async-trait"] = { "async_trait" },
-						["napi-derive"] = { "napi" },
-						["async-recursion"] = { "async_recursion" },
+						-- ["async-trait"] = { "async_trait" },
+						-- ["napi-derive"] = { "napi" },
+						-- ["async-recursion"] = { "async_recursion" },
 					},
 				},
 				inlayHints = {
