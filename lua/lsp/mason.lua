@@ -175,26 +175,26 @@ for _, server in pairs(servers) do
 		opts.filetypes = { "typescript", "javascript", "vue", "json" }
 	end
 
-	if server == "ts_ls" then
-		lspconfig.ts_ls.setup({
-			init_options = {
-				plugins = {
-					{
-						name = "@vue/typescript-plugin",
-						location = "/home/zerone/.nvm/versions/node/v17.9.1/lib/node_modules/@vue/typescript-plugin",
-						languages = { "javascript", "typescript", "vue" },
-					},
-				},
-			},
-			filetypes = {
-				"javascript",
-				"typescript",
-				"vue",
-			},
-		})
-		goto continue
-	end
+	-- if server == "ts_ls" then
+	-- 	lspconfig.ts_ls.setup({
+	-- 		init_options = {
+	-- 			plugins = {
+	-- 				{
+	-- 					name = "@vue/typescript-plugin",
+	-- 					location = "/home/zerone/.nvm/versions/node/v17.9.1/lib/node_modules/@vue/typescript-plugin",
+	-- 					languages = { "javascript", "typescript", "vue" },
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 		filetypes = {
+	-- 			"javascript",
+	-- 			"typescript",
+	-- 			"vue",
+	-- 		},
+	-- 	})
+	-- 	goto continue
+	-- end
 
 	lspconfig[server].setup(opts)
-	::continue::
+	-- ::continue::
 end
