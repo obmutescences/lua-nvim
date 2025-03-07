@@ -1,6 +1,6 @@
 require("avante").setup({
 	---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-	provider = "deepseek", -- Recommend using Claude
+	provider = "openai", -- Recommend using Claude
 	auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
 	claude = {
 		endpoint = "https://api.anthropic.com",
@@ -10,7 +10,7 @@ require("avante").setup({
 	},
 	openai = {
 		endpoint = "https://api.openai.com/v1",
-		model = "gpt-4o",
+		model = "gpt-4.5-preview",
 		timeout = 30000, -- Timeout in milliseconds
 		temperature = 0,
 		max_tokens = 4096,
@@ -40,7 +40,7 @@ require("avante").setup({
 	--- When dual_boost is enabled, avante will generate two responses from the first_provider and second_provider respectively. Then use the response from the first_provider as provider1_output and the response from the second_provider as provider2_output. Finally, avante will generate a response based on the prompt and the two reference outputs, with the default Provider as normal.
 	---Note: This is an experimental feature and may not work as expected.
 	dual_boost = {
-		enabled = true,
+		enabled = false,
 		first_provider = "openai",
 		second_provider = "claude",
 		prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
@@ -48,7 +48,7 @@ require("avante").setup({
 	},
 	behaviour = {
 		auto_suggestions = false, -- Experimental stage
-		auto_set_highlight_group = true,
+		auto_set_highlight_group = false,
 		auto_set_keymaps = true,
 		auto_apply_diff_after_generation = false,
 		support_paste_from_clipboard = false,
@@ -107,27 +107,27 @@ require("avante").setup({
 		},
 		ask = {
 			floating = false, -- Open the 'AvanteAsk' prompt in a floating window
-			start_insert = true, -- Start insert mode when opening the ask window
+			start_insert = false, -- Start insert mode when opening the ask window
 			border = "rounded",
 			---@type "ours" | "theirs"
 			focus_on_apply = "ours", -- which diff to focus after applying
 		},
 	},
-	highlights = {
-		---@type AvanteConflictHighlights
-		diff = {
-			current = "DiffText",
-			incoming = "DiffAdd",
-		},
-	},
-	--- @class AvanteConflictUserConfig
-	diff = {
-		autojump = true,
-		---@type string | fun(): any
-		list_opener = "copen",
-		--- Override the 'timeoutlen' setting while hovering over a diff (see :help timeoutlen).
-		--- Helps to avoid entering operator-pending mode with diff mappings starting with `c`.
-		--- Disable by setting to -1.
-		override_timeoutlen = 500,
-	},
+	-- highlights = {
+	-- 	---@type AvanteConflictHighlights
+	-- 	diff = {
+	-- 		current = "DiffText",
+	-- 		incoming = "DiffAdd",
+	-- 	},
+	-- },
+	-- --- @class AvanteConflictUserConfig
+	-- diff = {
+	-- 	autojump = true,
+	-- 	---@type string | fun(): any
+	-- 	list_opener = "copen",
+	-- 	--- Override the 'timeoutlen' setting while hovering over a diff (see :help timeoutlen).
+	-- 	--- Helps to avoid entering operator-pending mode with diff mappings starting with `c`.
+	-- 	--- Disable by setting to -1.
+	-- 	override_timeoutlen = 500,
+	-- },
 })
