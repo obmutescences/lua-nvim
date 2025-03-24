@@ -189,7 +189,7 @@ require("lazy").setup({
 		config = function()
 			-- you can configure Hop the way you like here; see :h hop-config
 			require("hop").setup({
-				vim.api.nvim_set_keymap("n", "f", "<cmd>HopChar1<cr>", {}),
+				vim.api.nvim_set_keymap("n", "f", "<cmd>HopChar2<cr>", {}),
 			})
 		end,
 	},

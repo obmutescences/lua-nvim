@@ -47,6 +47,7 @@ hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 hi NonText ctermfg=gray guifg=grey10
 hi ColorColumn guibg=NONE
+hi Cursor guifg=NONE guibg=#CD5555
 
 " gitsigns
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
