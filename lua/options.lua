@@ -62,13 +62,13 @@ vim.g.neovide_cursor_vfx_opacity = 200
 vim.g.neovide_cursor_vfx_particle_lifetime = 3.5
 vim.g.neovide_cursor_vfx_particle_density = 50.0
 vim.g.neovide_cursor_vfx_particle_speed = 15.0
-vim.g.neovide_cursor_animation_length = 0.07
+vim.g.neovide_cursor_animation_length = 0.1
 vim.g.neovide_cursor_trail_size = 0.1
 vim.g.neovide_cursor_antialiasing = true
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.g.neovide_cursor_animate_command_line = true
 vim.g.neovide_hide_mouse_when_typing = true
-vim.g.neovide_scroll_animation_length = 0.40
+vim.g.neovide_scroll_animation_length = 0.3
 
 vim.g.neovide_floating_blur = 1
 vim.g.neovide_floating_opacity = 1
