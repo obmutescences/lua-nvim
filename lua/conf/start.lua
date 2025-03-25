@@ -52,7 +52,7 @@ local settings = {
 		margin = 5,
 		content = {
 			{ " Find File", "Telescope find_files", "<leader>ff" },
-			{ " Find Word", "Telescope live_grep", "<leader>lg" },
+			{ "󰬶 Find Word", "Telescope live_grep", "<leader>lg" },
 			{ " Recent Files", "Telescope oldfiles", "<leader>of" },
 			{ " File Browser", "Telescope file_browser", "<leader>fb" },
 			{ " All Project", "Telescope project", "<leader>ap" },
