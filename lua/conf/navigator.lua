@@ -135,7 +135,7 @@ require("navigator").setup({
 		-- desc = 'implementation',
 		--  },
 		{
-			key = "<Leader>k",
+			key = "<Space>k",
 			func = require("navigator.dochighlight").hi_symbol,
 			desc = "hi_symbol",
 		},

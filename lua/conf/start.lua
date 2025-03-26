@@ -51,9 +51,9 @@ local settings = {
 		title = "Basic Commands",
 		margin = 5,
 		content = {
+			{ " Recent Files", "Telescope oldfiles", "<leader>of" },
 			{ " Find File", "Telescope find_files", "<leader>ff" },
 			{ "󰬶 Find Word", "Telescope live_grep", "<leader>lg" },
-			{ " Recent Files", "Telescope oldfiles", "<leader>of" },
 			{ " File Browser", "Telescope file_browser", "<leader>fb" },
 			{ " All Project", "Telescope project", "<leader>ap" },
 			{ " Update Plugins", "Lazy", "<leader>pu" },
