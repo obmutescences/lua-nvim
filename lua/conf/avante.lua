@@ -1,7 +1,7 @@
 require("avante").setup({
 	---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
 	provider = "deepseek", -- Recommend using Claude
-	auto_suggestions_provider = "deepseek", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+	auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
 	claude = {
 		endpoint = "https://api.anthropic.com",
 		model = "claude-3-5-sonnet-20241022",

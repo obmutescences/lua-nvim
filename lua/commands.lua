@@ -95,4 +95,5 @@ hi default GuihuaListSelHl guifg=#548B54 guibg=#8B3A3A
 " lsp hints
 hi link LspInlayHint Comment
 
+autocmd FocusGained,BufEnter,CursorHold * checktime  " 触发重新加载
 ]])
