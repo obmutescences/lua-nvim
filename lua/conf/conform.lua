@@ -7,7 +7,7 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		-- Conform will run multiple formatters sequentially
-		go = {},
+		go = { "goimports" },
 		python = {
 			-- To fix lint errors.
 			"ruff_fix",
