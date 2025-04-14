@@ -65,6 +65,7 @@ vim.g.neovide_cursor_vfx_particle_highlight_lifetime = 0.4
 vim.g.neovide_cursor_vfx_particle_density = 50.0
 vim.g.neovide_cursor_vfx_particle_speed = 15.0
 vim.g.neovide_cursor_animation_length = 0.2
+vim.g.neovide_cursor_short_animation_length = 0.1
 vim.g.neovide_cursor_trail_size = 0.5
 vim.g.neovide_cursor_antialiasing = true
 vim.g.neovide_cursor_animate_in_insert_mode = true
