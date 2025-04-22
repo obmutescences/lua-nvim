@@ -107,7 +107,7 @@ nnoremap("<", "<<")
 nnoremap(">", ">>")
 
 -- zen mode
-nmap("<LEADER>n", "<cmd>TZMinimalist<CR>")
+nmap("<LEADER>nn", "<cmd>TZMinimalist<CR>")
 
 -- find and replace
 nnoremap("<LEADER>r", "<cmd>lua require('spectre').open()<CR>")
