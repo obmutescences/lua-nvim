@@ -21,7 +21,7 @@ vim.g.oh_lucy_evening_italic_comments = true
 -- vim.cmd [[colorscheme tokyonight-storm]]
 -- vim.cmd [[colorscheme oh-lucy-evening]]
 -- vim.cmd [[colorscheme everforest]]
--- vim.cmd([[colorscheme dracula]])
+vim.cmd([[colorscheme dracula]])
 
 -- nord
 vim.g.nord_contrast = true

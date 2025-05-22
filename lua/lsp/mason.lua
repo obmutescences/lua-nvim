@@ -16,7 +16,7 @@ local servers = {
 	"gopls",
 	"golangci_lint_ls",
 	"yamlls",
-	"volar",
+	-- "vue_ls",
 	"lua_ls",
 	-- "buf",
 	"ts_ls",
@@ -142,18 +142,6 @@ for _, server in pairs(servers) do
 			},
 		}
 	end
-	if server == "gopls" then
-		-- local cfg = require("go.lsp").config()
-		-- cfg.settings.gopls.semanticTokens = false
-		-- cfg.settings.gopls.analyses = {
-		-- 	ST1003 = false,
-		-- 	QF1003 = false,
-		-- 	SA5008 = false,
-		-- }
-		-- cfg.settings.gopls.usePlaceholders = false
-		-- lspconfig.gopls.setup(cfg)
-		-- goto continue
-	end
 	if server == "golangci_lint_ls" then
 		local configs = require("lspconfig/configs")
 		if not configs.golangcilsp then
@@ -179,30 +167,18 @@ for _, server in pairs(servers) do
 		})
 	end
 
-	if server == "volar" then
-		opts.filetypes = { "typescript", "javascript", "vue", "json" }
-	end
-
-	-- if server == "ts_ls" then
-	-- 	lspconfig.ts_ls.setup({
-	-- 		init_options = {
-	-- 			plugins = {
-	-- 				{
-	-- 					name = "@vue/typescript-plugin",
-	-- 					location = "/home/zerone/.nvm/versions/node/v17.9.1/lib/node_modules/@vue/typescript-plugin",
-	-- 					languages = { "javascript", "typescript", "vue" },
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 		filetypes = {
-	-- 			"javascript",
-	-- 			"typescript",
-	-- 			"vue",
-	-- 		},
-	-- 	})
-	-- 	goto continue
-	-- end
-
 	lspconfig[server].setup(opts)
 	-- ::continue::
 end
+
+lspconfig.volar.setup({
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+	init_options = {
+		vue = {
+			hybridMode = false,
+		},
+		typescript = {
+			tsdk = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+		},
+	},
+})

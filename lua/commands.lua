@@ -53,12 +53,12 @@ hi Cursor guifg=NONE guibg=#CD5555
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " nvim-tree everforest
-hi NvimTreeNormal guibg=#22292D guifg=#77B98B
-hi TelescopeBorder guibg=#22292D guifg=#77B98B
-hi TelescopeNormal guibg=#22292D guifg=#5d6b66
-hi TelescopeSelection guibg=#FF165D
-hi TelescopePreviewLine guibg=#F50800
-hi TelescopeMatching guifg=#01F5F3
+" hi NvimTreeNormal guibg=#22292D guifg=#77B98B
+" hi TelescopeBorder guibg=#22292D guifg=#77B98B
+" hi TelescopeNormal guibg=#22292D guifg=#5d6b66
+" hi TelescopeSelection guibg=#FF165D
+" hi TelescopePreviewLine guibg=#F50800
+" hi TelescopeMatching guifg=#01F5F3
 
 " hardhecker
 " other use everforest setting
@@ -81,9 +81,11 @@ hi TelescopeMatching guifg=#01F5F3
 " hi TelescopeSelection guibg=#CD5555
 
 " dracula
-" hi TelescopeNormal guibg=none guifg=#F8F8F2
-" hi TelescopeBorder guibg=none guifg=#282A36
-" hi NvimTreeNormal guibg=#282A36 guifg=#50fa7b
+hi TelescopeNormal guibg=none guifg=#F8F8F2
+hi TelescopeBorder guibg=none guifg=#282A36
+hi TelescopeMatching guifg=#F50800
+hi NvimTreeNormal guibg=#282A36 guifg=#50fa7b
+hi LspInlayHint guifg=none guibg=none
 
 
 

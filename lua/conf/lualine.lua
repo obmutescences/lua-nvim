@@ -46,7 +46,7 @@ local config = {
 			-- are just setting default looks o statusline
 
 			-- everforest
-			normal = { c = { fg = colors.fg, bg = "#22292D" } },
+			-- normal = { c = { fg = colors.fg, bg = "#22292D" } },
 
 			-- oh-lucy
 			-- normal = { c = { fg = colors.fg, bg = "#1E1D23" } },
@@ -59,7 +59,7 @@ local config = {
 			-- normal = { c = { fg = colors.fg, bg = "#282433" } },
 
 			-- dracula
-			-- normal = { c = { fg = colors.fg, bg = "#282A36" } },
+			normal = { c = { fg = colors.fg, bg = "#282A36" } },
 		},
 	},
 	sections = {
