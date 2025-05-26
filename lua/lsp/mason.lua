@@ -20,6 +20,7 @@ local servers = {
 	"lua_ls",
 	-- "buf",
 	"ts_ls",
+	"vue_ls",
 	-- "pylsp",
 	-- "ruff_lsp",
 	"basedpyright",
@@ -166,19 +167,20 @@ for _, server in pairs(servers) do
 			filetypes = { "go", "gomod" },
 		})
 	end
+	if server == "vue_ls" then
+		lspconfig.vue_ls.setup({
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+			init_options = {
+				vue = {
+					hybridMode = false,
+				},
+				typescript = {
+					tsdk = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+				},
+			},
+		})
+	end
 
 	lspconfig[server].setup(opts)
 	-- ::continue::
 end
-
-lspconfig.volar.setup({
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-	init_options = {
-		vue = {
-			hybridMode = false,
-		},
-		typescript = {
-			tsdk = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
-		},
-	},
-})
