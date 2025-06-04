@@ -114,6 +114,9 @@ require("lazy").setup({
 	"williamboman/mason-lspconfig.nvim",
 	"ray-x/lsp_signature.nvim", -- show function signature when typing
 
+	-- vue
+	"yioneko/nvim-vtsls",
+
 	-- lsp help
 	{
 		"ray-x/navigator.lua",

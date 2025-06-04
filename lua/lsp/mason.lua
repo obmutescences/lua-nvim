@@ -16,16 +16,12 @@ local servers = {
 	"gopls",
 	"golangci_lint_ls",
 	"yamlls",
-	-- "vue_ls",
 	"lua_ls",
-	-- "buf",
-	"ts_ls",
-	"vue_ls",
-	-- "pylsp",
-	-- "ruff_lsp",
-	"basedpyright",
-	-- "pyright",
+	"vtsls",
+	-- "basedpyright",
 	"ruff",
+	"ty",
+	"pylsp",
 }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
@@ -47,10 +43,19 @@ local settings = {
 	max_concurrent_installers = 4,
 }
 
-mason.setup(settings)
-mason_lspconfig.setup({
-	ensure_installed = servers,
-	automatic_installation = true,
+local handlers = {
+	["textDocument/hover"] = function()
+		vim.lsp.buf.hover({ border = "none" })
+	end,
+	["textDocument/signatureHelp"] = function()
+		vim.lsp.buf.signature_help({ border = "none" })
+	end,
+}
+
+vim.lsp.config("*", {
+	on_attach = require("lsp.handlers").on_attach,
+	capabilities = require("lsp.handlers").capabilities,
+	handlers = handlers,
 })
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
@@ -64,6 +69,7 @@ for _, server in pairs(servers) do
 	opts = {
 		on_attach = require("lsp.handlers").on_attach,
 		capabilities = require("lsp.handlers").capabilities,
+		handlers = handlers,
 	}
 	server = vim.split(server, "@")[1]
 	if server == "lua_ls" then
@@ -112,15 +118,15 @@ for _, server in pairs(servers) do
 						maxLineLength = 120,
 					},
 					ruff = {
-						enabled = true,
+						enabled = false,
 						lineLength = 120,
 					},
 					jedi_completion = { enabled = true },
-					jedi_definition = { enabled = false },
-					jedi_hover = { enabled = false },
-					jedi_references = { enabled = false },
-					jedi_signature_help = { enabled = false },
-					jedi_symbols = { enabled = false },
+					jedi_definition = { enabled = true },
+					jedi_hover = { enabled = true },
+					jedi_references = { enabled = true },
+					jedi_signature_help = { enabled = true },
+					jedi_symbols = { enabled = true },
 					mccabe = { enabled = false },
 					preload = { enabled = false },
 					pydocstyle = { enabled = false },
@@ -138,7 +144,7 @@ for _, server in pairs(servers) do
 					rope_completion = { enabled = false },
 					yapf = { enabled = false },
 					-- -- import sorting
-					isort = { enabled = false },
+					isort = { enabled = true },
 				},
 			},
 		}
@@ -163,24 +169,54 @@ for _, server in pairs(servers) do
 				},
 			}
 		end
-		lspconfig.golangci_lint_ls.setup({
-			filetypes = { "go", "gomod" },
-		})
-	end
-	if server == "vue_ls" then
-		lspconfig.vue_ls.setup({
-			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-			init_options = {
-				vue = {
-					hybridMode = false,
-				},
-				typescript = {
-					tsdk = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
-				},
+		-- lspconfig.golangci_lint_ls.setup({
+		-- 	filetypes = { "go", "gomod" },
+		-- })
+		opts.settings = {
+			golangci_lint_ls = {
+				filetypes = { "go", "gomod" },
 			},
-		})
+		}
 	end
 
-	lspconfig[server].setup(opts)
+	vim.lsp.config(server, opts)
+	vim.lsp.enable(server)
+	-- lspconfig[server].setup(opts)
 	-- ::continue::
 end
+
+vim.lsp.config("vtsls", {
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+	settings = {
+		vtsls = { tsserver = { globalPlugins = {} } },
+		typescript = {
+			inlayHints = {
+				parameterNames = { enabled = "literals" },
+				parameterTypes = { enabled = true },
+				variableTypes = { enabled = true },
+				propertyDeclarationTypes = { enabled = true },
+				functionLikeReturnTypes = { enabled = true },
+				enumMemberValues = { enabled = true },
+			},
+		},
+	},
+	before_init = function(_, config)
+		table.insert(config.settings.vtsls.tsserver.globalPlugins, {
+			name = "@vue/typescript-plugin",
+			location = vim.fn.expand("$MASON/packages/vue-language-server/node_modules/@vue/language-server"),
+			languages = { "vue" },
+			configNamespace = "typescript",
+			enableForWorkspaceTypeScriptVersions = true,
+		})
+	end,
+	on_attach = require("lsp.handlers").on_attach,
+	capabilities = require("lsp.handlers").capabilities,
+	handlers = handlers,
+})
+
+mason.setup(settings)
+mason_lspconfig.setup({
+	ensure_installed = servers,
+	automatic_installation = true,
+	automatic_enable = false,
+})
