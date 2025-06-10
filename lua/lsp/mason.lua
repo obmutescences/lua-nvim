@@ -17,6 +17,7 @@ local servers = {
 	"golangci_lint_ls",
 	"yamlls",
 	"lua_ls",
+	"vue_ls",
 	"vtsls",
 	-- "basedpyright",
 	"ruff",
@@ -29,9 +30,9 @@ local settings = {
 	ui = {
 		border = "none",
 		icons = {
-			package_installed = "◍",
+			package_installed = "",
 			package_pending = "◍",
-			package_uninstalled = "◍",
+			package_uninstalled = "",
 		},
 		keymaps = {
 			install_package = "I",
@@ -47,9 +48,9 @@ local handlers = {
 	["textDocument/hover"] = function()
 		vim.lsp.buf.hover({ border = "none" })
 	end,
-	["textDocument/signatureHelp"] = function()
-		vim.lsp.buf.signature_help({ border = "none" })
-	end,
+	-- ["textDocument/signatureHelp"] = function()
+	-- 	vim.lsp.buf.signature_help({ border = "none" })
+	-- end,
 }
 
 vim.lsp.config("*", {
@@ -185,34 +186,52 @@ for _, server in pairs(servers) do
 	-- ::continue::
 end
 
-vim.lsp.config("vtsls", {
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-	settings = {
-		vtsls = { tsserver = { globalPlugins = {} } },
-		typescript = {
-			inlayHints = {
-				parameterNames = { enabled = "literals" },
-				parameterTypes = { enabled = true },
-				variableTypes = { enabled = true },
-				propertyDeclarationTypes = { enabled = true },
-				functionLikeReturnTypes = { enabled = true },
-				enumMemberValues = { enabled = true },
-			},
+local vue_language_server_path =
+	"~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server"
+local vue_plugin = {
+	name = "@vue/typescript-plugin",
+	location = vue_language_server_path,
+	languages = { "vue" },
+	configNamespace = "typescript",
+}
+local vtsls_config = {
+	init_options = {
+		plugins = {
+			vue_plugin,
 		},
 	},
-	before_init = function(_, config)
-		table.insert(config.settings.vtsls.tsserver.globalPlugins, {
-			name = "@vue/typescript-plugin",
-			location = vim.fn.expand("$MASON/packages/vue-language-server/node_modules/@vue/language-server"),
-			languages = { "vue" },
-			configNamespace = "typescript",
-			enableForWorkspaceTypeScriptVersions = true,
-		})
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+}
+local vue_ls_config = {
+	on_init = function(client)
+		client.handlers["tsserver/request"] = function(_, result, context)
+			local clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "vtsls" })
+			if #clients == 0 then
+				vim.notify("Could not found `vtsls` lsp client, vue_lsp would not work with it.", vim.log.levels.ERROR)
+				return
+			end
+			local ts_client = clients[1]
+
+			local param = unpack(result)
+			local id, command, payload = unpack(param)
+			ts_client:exec_cmd({
+				command = "typescript.tsserverRequest",
+				arguments = {
+					command,
+					payload,
+				},
+			}, { bufnr = context.bufnr }, function(_, r)
+				local response_data = { { id, r.body } }
+				---@diagnostic disable-next-line: param-type-mismatch
+				client:notify("tsserver/response", response_data)
+			end)
+		end
 	end,
-	on_attach = require("lsp.handlers").on_attach,
-	capabilities = require("lsp.handlers").capabilities,
-	handlers = handlers,
-})
+}
+-- nvim 0.11 or above
+vim.lsp.config("vtsls", vtsls_config)
+vim.lsp.config("vue_ls", vue_ls_config)
+vim.lsp.enable({ "vtsls", "vue_ls" })
 
 mason.setup(settings)
 mason_lspconfig.setup({

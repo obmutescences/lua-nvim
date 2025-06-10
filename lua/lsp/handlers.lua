@@ -89,7 +89,7 @@ M.on_attach = function(client, bufnr)
 	lsp_highlight_document(client)
 
 	-- add outline support for evey lanuage
-	require("lsp_signature").on_attach()
+	-- require("lsp_signature").on_attach()
 
 	-- navigator
 	-- require("navigator.lspclient.mapping").setup({ client = client, bufnr = bufnr }) -- setup navigator keymaps here,
