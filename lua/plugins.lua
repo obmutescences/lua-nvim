@@ -104,6 +104,14 @@ require("lazy").setup({
 		end,
 	},
 	{ "Mofiqul/dracula.nvim" },
+	{
+		"0xstepit/flow.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			-- Your configuration options here.
+		},
+	},
 
 	-- find and grep
 	"kyazdani42/nvim-web-devicons",
