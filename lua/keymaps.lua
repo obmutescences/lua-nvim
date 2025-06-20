@@ -110,7 +110,7 @@ nnoremap(">", ">>")
 nmap("<LEADER>nn", "<cmd>TZMinimalist<CR>")
 
 -- find and replace
-nnoremap("<LEADER>r", "<cmd>lua require('spectre').open()<CR>")
+nnoremap("<LEADER>rr", "<cmd>GrugFar<CR>")
 
 -- neovide change scale
 local change_scale_factor_add = function(delta)
