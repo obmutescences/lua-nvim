@@ -83,7 +83,9 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 " dracula
 hi TelescopeNormal guibg=none guifg=#F8F8F2
 hi TelescopeBorder guibg=none guifg=#282A36
+hi TelescopeSelection guibg=#FF165D
 hi TelescopeMatching guifg=#F50800
+hi TelescopePreviewLine guibg=#F50800
 hi NvimTreeNormal guibg=#282A36 guifg=#50fa7b
 hi LspInlayHint guifg=none guibg=none
 
