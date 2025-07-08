@@ -59,7 +59,10 @@ local config = {
 			-- normal = { c = { fg = colors.fg, bg = "#282433" } },
 
 			-- dracula
-			normal = { c = { fg = colors.fg, bg = "#282A36" } },
+			-- normal = { c = { fg = colors.fg, bg = "#282A36" } },
+
+			-- catppuccin
+			normal = { c = { fg = colors.fg, bg = "#1d2021" } },
 		},
 	},
 	sections = {
@@ -176,7 +179,8 @@ ins_left({
 	-- Lsp server name .
 	function()
 		local msg = "No Active Lsp"
-		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+		-- local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+		local buf_ft = vim.bo.filetype
 		local clients = vim.lsp.get_clients()
 		if next(clients) == nil then
 			return msg
@@ -218,7 +222,7 @@ ins_right({
 ins_right({
 	"diff",
 	-- Is it me or the symbol for modified us really weird
-	symbols = { added = " ", modified = "柳 ", removed = " " },
+	symbols = { added = " ", modified = "  ", removed = " " },
 	diff_color = {
 		added = { fg = colors.green },
 		modified = { fg = colors.orange },

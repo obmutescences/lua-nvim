@@ -86,9 +86,12 @@ hi TelescopeBorder guibg=none guifg=#282A36
 hi TelescopeSelection guibg=#FF165D
 hi TelescopeMatching guifg=#F50800
 hi TelescopePreviewLine guibg=#F50800
-hi NvimTreeNormal guibg=#282A36 guifg=#50fa7b
+" hi NvimTreeNormal guibg=#282A36 guifg=#50fa7b
 hi LspInlayHint guifg=none guibg=none
 
+
+" catppuccin
+hi NvimTreeNormal guibg=#1d2021 guifg=#a9b665
 
 
 " navigator

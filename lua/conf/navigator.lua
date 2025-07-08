@@ -105,12 +105,16 @@ require("navigator").setup({
 		},
 		{
 			key = "<C-n>",
-			func = vim.diagnostic.goto_next,
+			func = function()
+				vim.diagnostic.jump({ count = 1, float = true })
+			end,
 			desc = "next diagnostics",
 		},
 		{
 			key = "<C-i>",
-			func = vim.diagnostic.goto_prev,
+			func = function()
+				vim.diagnostic.jump({ count = -1, float = true })
+			end,
 			desc = "prev diagnostics",
 		},
 		--  {

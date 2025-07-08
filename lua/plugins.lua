@@ -112,6 +112,12 @@ require("lazy").setup({
 			-- Your configuration options here.
 		},
 	},
+	{
+		"dgox16/oldworld.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
 	-- find and grep
 	"kyazdani42/nvim-web-devicons",

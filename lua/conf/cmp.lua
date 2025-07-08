@@ -156,7 +156,7 @@ local buffer_option = {
 	end,
 }
 
-cmp_config = {
+Cmp_config = {
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = true,
@@ -229,9 +229,9 @@ cmp_config = {
 			ellipsis_char = "...",
 			mode = "symbol_text",
 			before = function(entry, vim_item)
-				vim_item.menu = cmp_config.formatting.source_names[entry.source.name]
-				vim_item.dup = cmp_config.formatting.duplicates[entry.source.name]
-					or cmp_config.formatting.duplicates_default
+				vim_item.menu = Cmp_config.formatting.source_names[entry.source.name]
+				vim_item.dup = Cmp_config.formatting.duplicates[entry.source.name]
+					or Cmp_config.formatting.duplicates_default
 				return vim_item
 			end,
 		}),
@@ -348,4 +348,4 @@ cmp_config = {
 vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
 vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
 
-cmp.setup(cmp_config)
+cmp.setup(Cmp_config)

@@ -220,6 +220,7 @@ local vue_ls_config = {
 					command,
 					payload,
 				},
+				title = "",
 			}, { bufnr = context.bufnr }, function(_, r)
 				local response_data = { { id, r.body } }
 				---@diagnostic disable-next-line: param-type-mismatch
