@@ -36,29 +36,24 @@ vim.g.rustaceanvim = {
 	server = {
 		standalone = true,
 		capabilities = vim.lsp.protocol.make_client_capabilities(),
-		on_attach = function(client, bufnr)
+		on_attach = function(_, bufnr)
 			-- you can also put keymaps in here
 			-- vim.lsp.inlay_hint.enable(bufnr, true)
 			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 			local opts = { noremap = true, silent = true }
-			vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 			vim.api.nvim_buf_set_keymap(
 				bufnr,
 				"n",
-				"<Tab>",
-				'<cmd>lua vim.diagnostic.goto_next({ border = "none" })<CR>',
+				"gd",
+				"<Cmd>lua require('telescope.builtin').lsp_definitions()<CR>",
 				opts
 			)
-			vim.api.nvim_buf_set_keymap(
-				bufnr,
-				"n",
-				"<C-n>",
-				'<cmd>lua vim.diagnostic.goto_next({ border = "none" })<CR>',
-				opts
-			)
-			vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-n>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>Telescope lsp_implementations<CR>", opts)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
-			vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "rn", "<cmd>Lspsaga rename<CR>", opts)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "<Space>ca", "<Cmd>RustLsp codeAction<CR>", opts)
 		end,
 		settings = {
