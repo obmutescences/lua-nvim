@@ -27,12 +27,13 @@ require("blink.cmp").setup({
 		-- disable a keymap from the preset
 		["<C-e>"] = { "hide", "fallback" },
 		["<CR>"] = { "select_and_accept", "fallback" },
+		["<C-f>"] = { "select_and_accept", "fallback" },
 
-		["<C-u>"] = { "select_prev", "fallback_to_mappings" },
-		["<C-j>"] = { "select_next", "fallback_to_mappings" },
+		-- ["<C-u>"] = { "select_prev", "fallback_to_mappings" },
+		-- ["<C-j>"] = { "select_next", "fallback_to_mappings" },
 
-		["<C-b>"] = { "scroll_documentation_up", "fallback" },
-		["<C-f>"] = { "scroll_documentation_down", "fallback" },
+		["<C-u>"] = { "scroll_documentation_up", "fallback" },
+		["<C-j>"] = { "scroll_documentation_down", "fallback" },
 
 		["<Tab>"] = { "select_next", "fallback" },
 		["<S-Tab>"] = { "select_prev", "fallback" },
@@ -49,7 +50,7 @@ require("blink.cmp").setup({
 	-- (Default) Only show the documentation popup when manually triggered
 	completion = {
 		ghost_text = {
-			enabled = true,
+			enabled = false,
 		},
 		documentation = { auto_show = true, auto_show_delay_ms = 700 },
 		list = {

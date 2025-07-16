@@ -53,10 +53,10 @@ local settings = {
 		content = {
 			{ " Recent Files", "Telescope oldfiles", "<leader>of" },
 			{ " Find File", "Telescope find_files", "<leader>ff" },
-			{ "󰬶 Find Word", "Telescope live_grep", "<leader>lg" },
 			{ " File Browser", "Telescope file_browser", "<leader>fb" },
 			{ " All Project", "Telescope project", "<leader>ap" },
 			{ " Update Plugins", "Lazy", "<leader>pu" },
+			{ "󰬶 Find Word", "Telescope live_grep", "<leader>lg" },
 		},
 		-- everforest
 		default_color = "",
