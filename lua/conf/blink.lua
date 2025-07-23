@@ -27,7 +27,7 @@ require("blink.cmp").setup({
 		-- disable a keymap from the preset
 		["<C-e>"] = { "hide", "fallback" },
 		["<CR>"] = { "select_and_accept", "fallback" },
-		["<C-f>"] = { "select_and_accept", "fallback" },
+		-- ["<C-f>"] = { "select_and_accept", "fallback" },
 
 		-- ["<C-u>"] = { "select_prev", "fallback_to_mappings" },
 		-- ["<C-j>"] = { "select_next", "fallback_to_mappings" },
@@ -82,6 +82,10 @@ require("blink.cmp").setup({
 	-- elsewhere in your config, without redefining it, due to `opts_extend`
 	sources = {
 		default = { "lsp", "buffer", "snippets", "path" },
+	},
+
+	cmdline = {
+		enabled = false,
 	},
 
 	-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
