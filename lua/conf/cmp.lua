@@ -255,8 +255,8 @@ Cmp_config = {
 		end,
 	},
 	window = {
-		completion = cmp.config.window.bordered({ border = "none" }),
-		documentation = cmp.config.window.bordered({ border = "none" }),
+		completion = cmp.config.window.bordered({ border = "none", scrollbar = false }),
+		documentation = cmp.config.window.bordered({ border = "none", scrollbar = false }),
 	},
 	sources = cmp.config.sources({
 		-- { name = "cmp_tabnine", priority = 10 },
