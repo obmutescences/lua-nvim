@@ -92,6 +92,7 @@ hi LspInlayHint guifg=none guibg=none
 
 " catppuccin
 hi NvimTreeNormal guibg=#1d2021 guifg=#a9b665
+hi StatusLine guibg=nocombine
 
 
 " navigator
