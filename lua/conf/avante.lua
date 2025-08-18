@@ -1,6 +1,6 @@
 require("avante").setup({
 	---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-	provider = "deepseek", -- Recommend using Claude
+	provider = "xapi", -- Recommend using Claude
 	auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
 	providers = {
 		claude = {
@@ -23,6 +23,12 @@ require("avante").setup({
 			api_key_name = "DEEPSEEK_API_KEY",
 			endpoint = "https://api.deepseek.com",
 			model = "deepseek-chat",
+		},
+		xapi = {
+			__inherited_from = "openai",
+			api_key_name = "XAPI_API_KEY",
+			endpoint = "https://api.xlap.top/v1",
+			model = "claude-sonnet-4-20250514",
 		},
 	},
 	-- openai = {
