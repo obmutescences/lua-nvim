@@ -52,10 +52,18 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("crates").setup({
-				completion = {
-					cmp = {
-						enabled = true,
-					},
+				-- completion = {
+				-- 	cmp = {
+				-- 		enabled = true,
+				-- 	},
+				-- },
+				lsp = {
+					enabled = true,
+					-- on_attach = function(_, _)
+					-- end,
+					actions = true,
+					completion = true,
+					hover = true,
 				},
 			})
 		end,
