@@ -56,7 +56,7 @@ vim.opt.laststatus = 3
 
 -- -- neovide
 vim.g.neovide_refresh_rate = 180
-vim.g.neovide_refresh_rate_idle = 180
+-- vim.g.neovide_refresh_rate_idle = 180
 vim.g.neovide_no_idle = true
 -- vim.g.neovide_cursor_vfx_mode = { "pixiedust", "sonicboom" }
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
@@ -83,7 +83,7 @@ vim.g.neovide_scale_factor = 1.0
 vim.g.neovide_floating_shadow = false
 vim.g.neovide_padding_left = 30
 vim.g.neovide_padding_top = 20
-vim.g.neovide_opacity = 0.70
+vim.g.neovide_opacity = 0.80
 vim.g.neovide_normal_opacity = 1
 vim.g.neovide_window_blurred = true
 -- vim.g.transparency = 1
