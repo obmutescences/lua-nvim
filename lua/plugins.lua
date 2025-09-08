@@ -223,6 +223,8 @@ require("lazy").setup({
 			require("hlargs").enable()
 		end,
 	},
+	-- highlight cursor word
+	"RRethy/vim-illuminate",
 
 	-- hop easy to move
 	{
