@@ -125,7 +125,7 @@ for _, server in pairs(servers) do
 					jedi_completion = { enabled = true },
 					jedi_definition = { enabled = true },
 					jedi_hover = { enabled = true },
-					jedi_references = { enabled = true },
+					jedi_references = { enabled = false },
 					jedi_signature_help = { enabled = true },
 					jedi_symbols = { enabled = true },
 					mccabe = { enabled = false },
