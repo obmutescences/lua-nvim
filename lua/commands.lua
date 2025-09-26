@@ -83,16 +83,25 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 " dracula
 hi TelescopeNormal guibg=none guifg=#F8F8F2
 hi TelescopeBorder guibg=none guifg=#282A36
-hi TelescopeSelection guibg=#FF165D
-hi TelescopeMatching guifg=#F50800
-hi TelescopePreviewLine guibg=#F50800
+" hi TelescopeSelection guibg=#FF165D
+" hi TelescopeMatching guifg=#F50800
+" hi TelescopePreviewLine guibg=#F50800
 " hi NvimTreeNormal guibg=#282A36 guifg=#50fa7b
 hi LspInlayHint guifg=none guibg=none
 
 
 " catppuccin
-hi NvimTreeNormal guibg=#1d2021 guifg=#a9b665
+" hi NvimTreeNormal guibg=#1d2021 guifg=#a9b665
+" hi StatusLine guibg=nocombine
+
+" nord 
+hi NvimTreeNormal guibg=#2E3440 guifg=#81A1C1
 hi StatusLine guibg=nocombine
+hi TelescopeSelection guibg=#88C0D0
+hi TelescopeMatching guifg=#bf616a
+hi TelescopePreviewLine guibg=#88C0D0 guifg=#8B3A3A
+hi Cursor guifg=NONE guibg=#81A1C1
+
 
 
 " navigator
@@ -105,3 +114,32 @@ hi link LspInlayHint Comment
 
 autocmd FocusGained,BufEnter,CursorHold * checktime  " 触发重新加载
 ]])
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "nord",
+	callback = function()
+		vim.api.nvim_set_hl(0, "@function", { bold = true })
+		vim.api.nvim_set_hl(0, "@function.call", { bold = true })
+		vim.api.nvim_set_hl(0, "@method", { bold = true })
+	end,
+})
+
+-- 自定义 highlight（放在 colorscheme 命令之后）
+-- 禁用变量粗体（函数内变量通常是 @variable）
+local var_hl = vim.api.nvim_get_hl(0, { name = "@variable" })
+var_hl.bold = false
+vim.api.nvim_set_hl(0, "@variable", var_hl)
+
+-- 启用函数定义粗体（@function 通常覆盖函数体/定义名）
+local func_hl = vim.api.nvim_get_hl(0, { name = "@function" })
+func_hl.bold = true
+vim.api.nvim_set_hl(0, "@function", func_hl)
+
+-- 启用函数调用粗体（调用的函数名通常是 @function.call）
+local call_hl = vim.api.nvim_get_hl(0, { name = "@function.call" })
+call_hl.bold = true
+vim.api.nvim_set_hl(0, "@function.call", call_hl)
+
+local meth_hl = vim.api.nvim_get_hl(0, { name = "@method" })
+meth_hl.bold = true
+vim.api.nvim_set_hl(0, "@method", meth_hl)

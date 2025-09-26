@@ -27,8 +27,8 @@ require("avante").setup({
 		xapi = {
 			__inherited_from = "openai",
 			api_key_name = "XAPI_API_KEY",
-			endpoint = "https://api.xlap.top/v1",
-			model = "claude-sonnet-4-20250514",
+			endpoint = "https://api.linkapi.org/v1",
+			model = "grok-code-fast-1",
 		},
 	},
 	-- openai = {
