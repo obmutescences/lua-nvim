@@ -23,6 +23,7 @@ local servers = {
 	"ruff",
 	"ty",
 	"pylsp",
+	"pyrefly",
 }
 
 -- Here we declare which settings to pass to the mason, and also ensure servers are installed. If not, they will be installed automatically.
@@ -176,6 +177,14 @@ for _, server in pairs(servers) do
 		opts.settings = {
 			golangci_lint_ls = {
 				filetypes = { "go", "gomod" },
+			},
+		}
+	end
+
+	if server == "pyrefly" then
+		opts.settings = {
+			pyrefly = {
+				cmd = { "uv", "pyrefly", "lsp" },
 			},
 		}
 	end
