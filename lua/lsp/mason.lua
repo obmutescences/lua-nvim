@@ -21,7 +21,7 @@ local servers = {
 	"vtsls",
 	-- "basedpyright",
 	"ruff",
-	"ty",
+	-- "ty",
 	"pylsp",
 	"pyrefly",
 }
@@ -187,7 +187,7 @@ for _, server in pairs(servers) do
 				cmd = { "uv", "pyrefly" },
 			},
 		}
-		opts.on_attach = function(client, bufnr)
+		opts.on_attach = function(client, _)
 			-- 如果是 pyrefly，就禁用它的这些能力
 			if client.name == "pyrefly" then
 				client.server_capabilities.definitionProvider = false
