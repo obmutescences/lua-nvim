@@ -124,11 +124,11 @@ for _, server in pairs(servers) do
 						lineLength = 120,
 					},
 					jedi_completion = { enabled = true },
-					jedi_definition = { enabled = true },
-					jedi_hover = { enabled = true },
-					jedi_references = { enabled = true },
-					jedi_signature_help = { enabled = true },
-					jedi_symbols = { enabled = true },
+					jedi_definition = { enabled = false },
+					jedi_hover = { enabled = false },
+					jedi_references = { enabled = false },
+					jedi_signature_help = { enabled = false },
+					jedi_symbols = { enabled = false },
 					mccabe = { enabled = false },
 					preload = { enabled = false },
 					pydocstyle = { enabled = false },
@@ -187,17 +187,17 @@ for _, server in pairs(servers) do
 				cmd = { "uv", "pyrefly" },
 			},
 		}
-		opts.on_attach = function(client, _)
-			-- 如果是 pyrefly，就禁用它的这些能力
-			if client.name == "pyrefly" then
-				client.server_capabilities.definitionProvider = false
-				client.server_capabilities.referencesProvider = false
-				client.server_capabilities.documentSymbolProvider = true
-				client.server_capabilities.workspaceSymbolProvider = false
-				client.server_capabilities.hoverProvider = true
-				-- 这样之后，pyrefly 就不会响应这些请求了
-			end
-		end
+		-- opts.on_attach = function(client, _)
+		-- 	-- 如果是 pyrefly，就禁用它的这些能力
+		-- 	if client.name == "pyrefly" then
+		-- 		client.server_capabilities.definitionProvider = false
+		-- 		client.server_capabilities.referencesProvider = false
+		-- 		client.server_capabilities.documentSymbolProvider = true
+		-- 		client.server_capabilities.workspaceSymbolProvider = false
+		-- 		client.server_capabilities.hoverProvider = true
+		-- 		-- 这样之后，pyrefly 就不会响应这些请求了
+		-- 	end
+		-- end
 	end
 
 	vim.lsp.config(server, opts)

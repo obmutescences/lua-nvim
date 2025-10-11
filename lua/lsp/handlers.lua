@@ -60,7 +60,7 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua require('telescope.builtin').lsp_definitions()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>Lspsaga goto_definition<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>Telescope lsp_definitions<CR>", opts)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<Cmd>Telescope lsp_implementations<CR>", opts)
 	-- -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
