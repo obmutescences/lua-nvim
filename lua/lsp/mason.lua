@@ -21,7 +21,7 @@ local servers = {
 	"vtsls",
 	-- "basedpyright",
 	"ruff",
-	-- "ty",
+	"ty",
 	"pylsp",
 	"pyrefly",
 }
