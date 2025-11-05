@@ -19,9 +19,10 @@ local servers = {
 	"lua_ls",
 	"vue_ls",
 	"vtsls",
+	"ts_ls",
 	-- "basedpyright",
 	"ruff",
-	"ty",
+	-- "ty",
 	"pylsp",
 	"pyrefly",
 }
@@ -187,17 +188,17 @@ for _, server in pairs(servers) do
 				cmd = { "uv", "pyrefly" },
 			},
 		}
-		opts.on_attach = function(client, _)
-			-- 如果是 pyrefly，就禁用它的这些能力
-			if client.name == "pyrefly" then
-				client.server_capabilities.definitionProvider = false
-				client.server_capabilities.referencesProvider = false
-				client.server_capabilities.documentSymbolProvider = true
-				client.server_capabilities.workspaceSymbolProvider = false
-				client.server_capabilities.hoverProvider = true
-				-- 这样之后，pyrefly 就不会响应这些请求了
-			end
-		end
+		-- opts.on_attach = function(client, _)
+		-- 	-- 如果是 pyrefly，就禁用它的这些能力
+		-- 	if client.name == "pyrefly" then
+		-- 		client.server_capabilities.definitionProvider = false
+		-- 		client.server_capabilities.referencesProvider = false
+		-- 		client.server_capabilities.documentSymbolProvider = true
+		-- 		client.server_capabilities.workspaceSymbolProvider = false
+		-- 		client.server_capabilities.hoverProvider = true
+		-- 		-- 这样之后，pyrefly 就不会响应这些请求了
+		-- 	end
+		-- end
 	end
 
 	vim.lsp.config(server, opts)
@@ -206,8 +207,9 @@ for _, server in pairs(servers) do
 	-- ::continue::
 end
 
-local vue_language_server_path =
-	"~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server"
+local vue_language_server_path = vim.fn.stdpath("data")
+	.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
 local vue_plugin = {
 	name = "@vue/typescript-plugin",
 	location = vue_language_server_path,
@@ -215,17 +217,33 @@ local vue_plugin = {
 	configNamespace = "typescript",
 }
 local vtsls_config = {
+	settings = {
+		vtsls = {
+			tsserver = {
+				globalPlugins = {
+					vue_plugin,
+				},
+			},
+		},
+	},
+	filetypes = tsserver_filetypes,
+}
+local ts_ls_config = {
 	init_options = {
 		plugins = {
 			vue_plugin,
 		},
 	},
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+	filetypes = tsserver_filetypes,
 }
 local vue_ls_config = {
 	on_init = function(client)
 		client.handlers["tsserver/request"] = function(_, result, context)
-			local clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "vtsls" })
+			local ts_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "ts_ls" })
+			local vtsls_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "vtsls" })
+			local clients = {}
+			vim.list_extend(clients, ts_clients)
+			vim.list_extend(clients, vtsls_clients)
 			if #clients == 0 then
 				vim.notify("Could not found `vtsls` lsp client, vue_lsp would not work with it.", vim.log.levels.ERROR)
 				return
@@ -253,6 +271,7 @@ local vue_ls_config = {
 -- nvim 0.11 or above
 vim.lsp.config("vtsls", vtsls_config)
 vim.lsp.config("vue_ls", vue_ls_config)
+-- vim.lsp.config("ts_ls", ts_ls_config)
 vim.lsp.enable({ "vtsls", "vue_ls" })
 
 mason.setup(settings)
