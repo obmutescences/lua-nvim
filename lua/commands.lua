@@ -67,13 +67,16 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 
 " oh-lucy
-" hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
-" hi TelescopeBorder guibg=none guifg=#7EC49D
-" hi NvimTreeNormal guibg=#1E1D23 guifg=#77B98B
-" hi WinSeparator guibg=#1E1D23 guifg=#1E1D23
-" hi EndOfBuffer guibg=#1E1D23 guifg=#1E1D23
-" hi CmpItemAbbrMatch guifg=#FF7DA3
-" hi CmpItemAbbrMatchFuzzy guifg=#FF7DA3
+hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
+hi TelescopeBorder guibg=none guifg=#7EC49D
+hi TelescopeSelection guifg=#FF165D
+hi TelescopeMatching guifg=#7EC49D
+hi TelescopePreviewLine guibg=#F50800
+hi NvimTreeNormal guibg=#1E1D23 guifg=#77B98B
+hi WinSeparator guibg=#1E1D23 guifg=#1E1D23
+hi EndOfBuffer guibg=#1E1D23 guifg=#1E1D23
+hi CmpItemAbbrMatch guifg=#FF7DA3
+hi CmpItemAbbrMatchFuzzy guifg=#FF7DA3
 
 " tokyonight
 " hi NvimTreeNormal guibg=#24283b
@@ -81,8 +84,8 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 " hi TelescopeSelection guibg=#CD5555
 
 " dracula
-hi TelescopeNormal guibg=none guifg=#F8F8F2
-hi TelescopeBorder guibg=none guifg=#282A36
+" hi TelescopeNormal guibg=none guifg=#F8F8F2
+" hi TelescopeBorder guibg=none guifg=#282A36
 " hi TelescopeSelection guibg=#FF165D
 " hi TelescopeMatching guifg=#F50800
 " hi TelescopePreviewLine guibg=#F50800
@@ -95,12 +98,12 @@ hi LspInlayHint guifg=none guibg=none
 " hi StatusLine guibg=nocombine
 
 " nord 
-hi NvimTreeNormal guibg=#2E3440 guifg=#81A1C1
-hi StatusLine guibg=nocombine
-hi TelescopeSelection guibg=#88C0D0
-hi TelescopeMatching guifg=#bf616a
-hi TelescopePreviewLine guibg=#88C0D0 guifg=#8B3A3A
-hi Cursor guifg=NONE guibg=#81A1C1
+" hi NvimTreeNormal guibg=#2E3440 guifg=#81A1C1
+" hi StatusLine guibg=nocombine
+" hi TelescopeSelection guibg=#88C0D0
+" hi TelescopeMatching guifg=#bf616a
+" hi TelescopePreviewLine guibg=#88C0D0 guifg=#8B3A3A
+" hi Cursor guifg=NONE guibg=#81A1C1
 
 
 

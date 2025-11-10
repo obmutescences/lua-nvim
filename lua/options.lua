@@ -98,6 +98,10 @@ vim.g.neovide_floating_corner_radius = 0.6
 vim.g.neovide_text_gamma = 1.5
 vim.g.neovide_text_contrast = 0.0
 vim.g.neovide_underline_stroke_scale = 0.5
+vim.g.neovide_progress_bar_enabled = true
+vim.g.neovide_progress_bar_height = 5.0
+vim.g.neovide_progress_bar_animation_speed = 200.0
+vim.g.neovide_progress_bar_hide_delay = 0.2
 -- vim.g.neovide_remember_window_size          = true
 local alpha = function()
 	return string.format("%x", math.floor(255 * 0.8))

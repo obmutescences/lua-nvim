@@ -18,12 +18,12 @@ vim.g.oh_lucy_evening_italic_functions = true
 vim.g.oh_lucy_evening_italic_comments = true
 
 -- vim.g.material_style = "deep ocean"
--- vim.cmd [[colorscheme tokyonight-storm]]
--- vim.cmd [[colorscheme oh-lucy-evening]]
+-- vim.cmd([[colorscheme tokyonight-storm]])
+vim.cmd([[colorscheme oh-lucy-evening]])
 -- vim.cmd [[colorscheme everforest]]
 -- vim.cmd([[colorscheme dracula]])
 -- vim.cmd([[colorscheme catppuccin-mocha]])
-vim.cmd([[colorscheme nord]])
+-- vim.cmd([[colorscheme nord]])
 
 -- nord
 vim.g.nord_contrast = true
