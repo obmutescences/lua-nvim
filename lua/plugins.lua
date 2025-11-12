@@ -126,6 +126,7 @@ require("lazy").setup({
 		priority = 1000,
 	},
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	"frenzyexists/aquarium-vim",
 
 	-- find and grep
 	"kyazdani42/nvim-web-devicons",
