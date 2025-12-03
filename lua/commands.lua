@@ -53,12 +53,12 @@ hi Cursor guifg=NONE guibg=#CD5555
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " nvim-tree everforest
-" hi NvimTreeNormal guibg=#22292D guifg=#77B98B
-" hi TelescopeBorder guibg=#22292D guifg=#77B98B
-" hi TelescopeNormal guibg=#22292D guifg=#5d6b66
-" hi TelescopeSelection guibg=#FF165D
-" hi TelescopePreviewLine guibg=#F50800
-" hi TelescopeMatching guifg=#01F5F3
+hi NvimTreeNormal guibg=#22292D guifg=#77B98B
+hi TelescopeBorder guibg=#22292D guifg=#77B98B
+hi TelescopeNormal guibg=#22292D guifg=#5d6b66
+hi TelescopeSelection guibg=#FF165D
+hi TelescopePreviewLine guibg=#F50800
+hi TelescopeMatching guifg=#01F5F3
 
 " hardhecker
 " other use everforest setting
@@ -67,16 +67,16 @@ autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 
 " oh-lucy
-hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
-hi TelescopeBorder guibg=none guifg=#7EC49D
-hi TelescopeSelection guifg=#FF165D
-hi TelescopeMatching guifg=#7EC49D
-hi TelescopePreviewLine guibg=#F50800
-hi NvimTreeNormal guibg=#1E1D23 guifg=#77B98B
-hi WinSeparator guibg=#1E1D23 guifg=#1E1D23
-hi EndOfBuffer guibg=#1E1D23 guifg=#1E1D23
-hi CmpItemAbbrMatch guifg=#FF7DA3
-hi CmpItemAbbrMatchFuzzy guifg=#FF7DA3
+" hi TelescopeNormal guibg=#1E1D23 guifg=#FF7DA3
+" hi TelescopeBorder guibg=none guifg=#7EC49D
+" hi TelescopeSelection guifg=#FF165D
+" hi TelescopeMatching guifg=#7EC49D
+" hi TelescopePreviewLine guibg=#F50800
+" hi NvimTreeNormal guibg=#1E1D23 guifg=#77B98B
+" hi WinSeparator guibg=#1E1D23 guifg=#1E1D23
+" hi EndOfBuffer guibg=#1E1D23 guifg=#1E1D23
+" hi CmpItemAbbrMatch guifg=#FF7DA3
+" hi CmpItemAbbrMatchFuzzy guifg=#FF7DA3
 
 " tokyonight
 " hi NvimTreeNormal guibg=#24283b
@@ -94,8 +94,8 @@ hi LspInlayHint guifg=none guibg=none
 
 
 " catppuccin
-" hi NvimTreeNormal guibg=#1d2021 guifg=#a9b665
-" hi StatusLine guibg=nocombine
+hi NvimTreeNormal guibg=#1d2021 guifg=#a9b665
+hi StatusLine guibg=nocombine
 
 " nord 
 " hi NvimTreeNormal guibg=#2E3440 guifg=#81A1C1

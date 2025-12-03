@@ -49,7 +49,7 @@ local config = {
 			-- normal = { c = { fg = colors.fg, bg = "#22292D" } },
 
 			-- oh-lucy
-			normal = { c = { fg = colors.fg, bg = "#1E1D23" } },
+			-- normal = { c = { fg = colors.fg, bg = "#1E1D23" } },
 
 			-- tokyonight
 			-- normal = { c = { fg = colors.fg, bg = "#24283b" } },
@@ -62,7 +62,7 @@ local config = {
 			-- normal = { c = { fg = colors.fg, bg = "#282A36" } },
 
 			-- catppuccin
-			-- normal = { c = { fg = colors.fg, bg = "#1d2021" } },
+			normal = { c = { fg = colors.fg, bg = "#1d2021" } },
 
 			-- nord
 			-- normal = { c = { fg = colors.fg, bg = "#2E3440" } },
