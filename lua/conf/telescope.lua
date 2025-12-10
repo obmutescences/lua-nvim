@@ -259,6 +259,25 @@ local tel_config = {
 				"*/lua-language-server/*",
 			},
 		},
+		cmdline = {
+			-- Adjust telescope picker size and layout
+			picker = {
+				layout_config = {
+					width = 40,
+					height = 25,
+				},
+			},
+			-- Adjust your mappings
+			mappings = {
+				complete = "<Tab>",
+				run_selection = "<C-CR>",
+				run_input = "<CR>",
+			},
+			-- Triggers any shell command using overseer.nvim (`:!`)
+			overseer = {
+				enabled = true,
+			},
+		},
 	},
 }
 
@@ -276,3 +295,4 @@ telescope.load_extension("frecency")
 telescope.load_extension("file_browser")
 telescope.load_extension("project")
 telescope.load_extension("recent_files")
+telescope.load_extension("cmdline")

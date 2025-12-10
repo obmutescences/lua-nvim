@@ -94,6 +94,7 @@ vim.api.nvim_set_keymap(
 	[[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]],
 	{ noremap = true, silent = true }
 )
+nnoremap(":", ":Telescope cmdline<CR>")
 
 -- vim-fugitive
 nnoremap("gb", ":Gblame<CR>")

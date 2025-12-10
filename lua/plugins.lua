@@ -280,6 +280,7 @@ require("lazy").setup({
 			"nvim-telescope/telescope-file-browser.nvim",
 			"nvim-telescope/telescope-project.nvim",
 			"smartpde/telescope-recent-files",
+			"jonarrien/telescope-cmdline.nvim",
 		},
 	},
 
@@ -301,7 +302,7 @@ require("lazy").setup({
 	},
 
 	-- cmdline
-	"gelguy/wilder.nvim",
+	-- "gelguy/wilder.nvim",
 
 	{
 		"jackMort/ChatGPT.nvim",
