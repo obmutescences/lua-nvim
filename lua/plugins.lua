@@ -302,7 +302,7 @@ require("lazy").setup({
 	},
 
 	-- cmdline
-	-- "gelguy/wilder.nvim",
+	"gelguy/wilder.nvim",
 
 	{
 		"jackMort/ChatGPT.nvim",
