@@ -23,7 +23,7 @@ local servers = {
 	-- "basedpyright",
 	"ruff",
 	-- "ty",
-	"pylsp",
+	-- "pylsp",
 	"pyrefly",
 }
 

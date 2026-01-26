@@ -34,7 +34,7 @@ require("lazy").setup({
 	{
 		"jiaoshijie/undotree",
 		dependencies = "nvim-lua/plenary.nvim",
-		config = true,
+		-- config = true,
 		keys = { -- load the plugin only when using it's keybinding:
 			{ "L", "<cmd>lua require('undotree').toggle()<cr>" },
 		},
