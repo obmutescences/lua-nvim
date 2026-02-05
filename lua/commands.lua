@@ -116,6 +116,8 @@ hi default GuihuaListSelHl guifg=#548B54 guibg=#8B3A3A
 hi link LspInlayHint Comment
 
 autocmd FocusGained,BufEnter,CursorHold * checktime  " 触发重新加载
+
+set mouse =
 ]])
 
 vim.api.nvim_create_autocmd("ColorScheme", {
