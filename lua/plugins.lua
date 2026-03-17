@@ -211,7 +211,8 @@ require("lazy").setup({
 	},
 
 	-- rainbow color ({})
-	"HiPhish/rainbow-delimiters.nvim",
+	-- orgin HiPhish, use this fixed error
+	"nicholasxjy/rainbow-delimiters.nvim",
 
 	-- hlargs function param color
 	{

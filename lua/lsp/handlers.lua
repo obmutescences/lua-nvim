@@ -46,15 +46,15 @@ M.setup = function()
 	vim.diagnostic.config(config)
 end
 
-local function lsp_highlight_document(client)
-	-- if client.server_capabilities.document_highlight then
-	local status_oks, illuminate = pcall(require, "illuminate")
-	if not status_oks then
-		return
-	end
-	illuminate.on_attach(client)
-	-- end
-end
+-- local function lsp_highlight_document(client)
+-- 	-- if client.server_capabilities.document_highlight then
+-- 	local status_oks, illuminate = pcall(require, "illuminate")
+-- 	if not status_oks then
+-- 		return
+-- 	end
+-- 	illuminate.on_attach(client)
+-- 	-- end
+-- end
 
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
@@ -84,9 +84,9 @@ local function lsp_keymaps(bufnr)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
-M.on_attach = function(client, bufnr)
+M.on_attach = function(_, bufnr)
 	lsp_keymaps(bufnr)
-	lsp_highlight_document(client)
+	-- lsp_highlight_document(client)
 
 	-- add outline support for evey lanuage
 	-- require("lsp_signature").on_attach()
