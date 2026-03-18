@@ -94,7 +94,10 @@ nvim_tree.setup({
 			"Cargo.lock",
 			"package-lock.json",
 		},
-		exclude = {},
+		exclude = {
+			".gitignore",
+			"cache/",
+		},
 	},
 	actions = {
 		open_file = {
