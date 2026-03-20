@@ -219,8 +219,7 @@ require("lazy").setup({
 		"m-demare/hlargs.nvim",
 		config = function()
 			require("hlargs").setup({
-				-- color = "#698b22"
-				color = "#adcf9f",
+				color = "#DDFFBB",
 			})
 			require("hlargs").enable()
 		end,

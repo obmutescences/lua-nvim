@@ -53,11 +53,11 @@ hi Cursor guifg=NONE guibg=#CD5555
 autocmd VimEnter * silent! Gitsigns toggle_current_line_blame
 
 " nvim-tree everforest
-hi NvimTreeNormal guibg=#22292D guifg=#77B98B
-hi TelescopeBorder guibg=#22292D guifg=#77B98B
-hi TelescopeNormal guibg=#22292D guifg=#5d6b66
-hi TelescopeSelection guibg=#FF165D
-hi TelescopePreviewLine guibg=#F50800
+hi NvimTreeNormal guibg=#2a322a guifg=#77B98B
+hi TelescopeBorder guibg=#2a322a guifg=#77B98B
+hi TelescopeNormal guibg=#2a322a guifg=#5d6b66
+hi TelescopeSelection guifg=#F50800 guibg=#F50800
+hi TelescopePreviewLine guifg=#F50800 guibg=#F50800
 hi TelescopeMatching guifg=#01F5F3
 
 " hardhecker
@@ -94,7 +94,7 @@ hi LspInlayHint guifg=none guibg=none
 
 
 " catppuccin
-hi NvimTreeNormal guibg=#1d2021 guifg=#a9b665
+hi NvimTreeNormal guibg=#2a322a guifg=#a9b665
 hi StatusLine guibg=nocombine
 
 " nord 

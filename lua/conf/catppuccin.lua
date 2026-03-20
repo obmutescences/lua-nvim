@@ -32,33 +32,83 @@ require("catppuccin").setup({
 			mantle = "#f0ebce",
 			crust = "#e8e3c8",
 		},
+		-- mocha = {
+		-- 	rosewater = "#ea6962",
+		-- 	flamingo = "#ea6962",
+		-- 	red = "#ea6962",
+		-- 	maroon = "#ea6962",
+		-- 	pink = "#d3869b",
+		-- 	mauve = "#d3869b",
+		-- 	peach = "#e78a4e",
+		-- 	yellow = "#E6B325",
+		-- 	-- green = "#A2CD5A",
+		-- 	green = "#C9F658",
+		-- 	teal = "#678C40",
+		-- 	sky = "#89b482",
+		-- 	sapphire = "#89b482",
+		-- 	blue = "#7daea3",
+		-- 	lavender = "#7daea3",
+		-- 	text = "#8FA31E",
+		-- 	subtext1 = "#d5c4a1",
+		-- 	subtext0 = "#bdae93",
+		-- 	overlay2 = "#a89984",
+		-- 	overlay1 = "#928374",
+		-- 	overlay0 = "#595959",
+		-- 	surface2 = "#4d4d4d",
+		-- 	surface1 = "#404040",
+		-- 	surface0 = "#292929",
+		-- 	base = "#1d2021",
+		-- 	mantle = "#191b1c",
+		-- 	crust = "#141617",
+		-- },
+
 		mocha = {
-			rosewater = "#ea6962",
-			flamingo = "#ea6962",
-			red = "#ea6962",
-			maroon = "#ea6962",
-			pink = "#d3869b",
-			mauve = "#d3869b",
-			peach = "#e78a4e",
-			yellow = "#d8a657",
-			green = "#A2CD5A",
-			teal = "#89b482",
-			sky = "#89b482",
-			sapphire = "#89b482",
-			blue = "#7daea3",
-			lavender = "#7daea3",
+			-- 背景色调：调浅的深灰绿色 (护眼背景)
+			base = "#2a322a", -- 主背景
+			mantle = "#232a23", -- 侧边栏/浮窗背景
+			crust = "#1c221c", -- 边框底色
+
+			-- 表面色与覆盖层（用于高亮行、侧边行号、注释等暗色调）
+			surface0 = "#364036",
+			surface1 = "#434f43",
+			surface2 = "#505e50",
+			overlay0 = "#647864", -- 暗绿灰色，用于注释底色等
+			overlay1 = "#7b917b",
+			overlay2 = "#92a892",
+
+			-- 文本颜色：带一点点绿意的米白色，保证基础代码阅读清晰
 			text = "#A7C080",
-			subtext1 = "#d5c4a1",
-			subtext0 = "#bdae93",
-			overlay2 = "#a89984",
-			overlay1 = "#928374",
-			overlay0 = "#595959",
-			surface2 = "#4d4d4d",
-			surface1 = "#404040",
-			surface0 = "#292929",
-			base = "#1d2021",
-			mantle = "#191b1c",
-			crust = "#141617",
+			subtext1 = "#c4d6c4",
+			subtext0 = "#abc0ab",
+
+			-- [高亮区] 关键字、条件、循环 (原 red) -> 极亮夺目的荧光黄绿
+			red = "#7FFF00",
+			rosewater = "#7FFF00",
+			flamingo = "#7FFF00",
+			maroon = "#7FFF00",
+
+			-- [高亮区] 函数名、方法 (原 green) -> 极亮的纯正高配绿
+			green = "#00CC6A",
+
+			-- [高亮区] 类型、类名、特殊符号 (原 yellow) -> 偏亮的柠檬黄绿
+			yellow = "#D4F029",
+
+			-- 操作符、标签、存储类 (原 peach) -> 柔和的草绿色
+			-- peach = "#9EBD6A",
+			peach = "#4F6F52",
+
+			-- 数字、布尔值、预处理 (原 mauve/pink) -> 极浅的薄荷白绿 (提供反差，防止全屏瞎眼)
+			mauve = "#FFB74D",
+			pink = "#FFB74D",
+
+			-- 宏、字符串 (原 teal) -> 饱满的鲜亮深绿/翡翠绿 (无蓝调)
+			teal = "#4F6F52",
+
+			-- 字段、属性、标点 (原 blue/sky 等) -> 柔和的春绿色，完全去蓝
+			blue = "#6ECCAF",
+			sky = "#6ECCAF",
+			sapphire = "#81D998",
+			lavender = "#81D998",
 		},
 	},
 	transparent_background = false,
@@ -148,7 +198,7 @@ require("catppuccin").setup({
 				TSBoolean = { fg = colors.mauve },
 				TSCharacter = { fg = colors.teal },
 				TSCharacterSpecial = { link = "SpecialChar" },
-				TSComment = { fg = "#556B2F", style = { "italic" } },
+				TSComment = { fg = "#4C4B16", style = { "italic" } },
 				TSConditional = { fg = colors.red },
 				TSConstBuiltin = { fg = colors.mauve },
 				TSConstMacro = { fg = colors.mauve },

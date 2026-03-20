@@ -62,7 +62,7 @@ local config = {
 			-- normal = { c = { fg = colors.fg, bg = "#282A36" } },
 
 			-- catppuccin
-			normal = { c = { fg = colors.fg, bg = "#1d2021" } },
+			normal = { c = { fg = colors.fg, bg = "#2a322a" } },
 
 			-- nord
 			-- normal = { c = { fg = colors.fg, bg = "#2E3440" } },
