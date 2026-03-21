@@ -183,6 +183,7 @@ require("lazy").setup({
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
 		build = ":TSUpdate",
 	},
 
@@ -302,7 +303,7 @@ require("lazy").setup({
 	},
 
 	-- cmdline
-	"gelguy/wilder.nvim",
+	"wookayin/wilder.nvim",
 
 	{
 		"jackMort/ChatGPT.nvim",
