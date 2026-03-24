@@ -95,8 +95,8 @@ require("catppuccin").setup({
 			yellow = "#D4F029",
 
 			-- 操作符、标签、存储类 (原 peach) -> 柔和的草绿色
-			-- peach = "#9EBD6A",
-			peach = "#4F6F52",
+			-- peach = "#4F6F52",
+			peach = "#7FFF00",
 
 			-- 数字、布尔值、预处理 (原 mauve/pink) -> 极浅的薄荷白绿 (提供反差，防止全屏瞎眼)
 			mauve = "#FFB74D",
