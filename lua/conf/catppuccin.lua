@@ -82,6 +82,7 @@ require("catppuccin").setup({
 			subtext0 = "#abc0ab",
 
 			-- [高亮区] 关键字、条件、循环 (原 red) -> 极亮夺目的荧光黄绿
+			error = "#ea6962",
 			red = "#7FFF00",
 			rosewater = "#7FFF00",
 			flamingo = "#7FFF00",
@@ -169,7 +170,7 @@ require("catppuccin").setup({
 
 				PreProc = { fg = colors.mauve },
 				PreCondit = { fg = colors.mauve },
-				Include = { fg = colors.mauve },
+				Include = { fg = colors.red },
 				Define = { fg = colors.mauve },
 				Conditional = { fg = colors.red },
 				Repeat = { fg = colors.red },
@@ -178,7 +179,7 @@ require("catppuccin").setup({
 				Exception = { fg = colors.red },
 				Statement = { fg = colors.red },
 
-				Error = { fg = colors.red },
+				Error = { fg = colors.error },
 				StorageClass = { fg = colors.peach },
 				Tag = { fg = colors.peach },
 				Label = { fg = colors.peach },
