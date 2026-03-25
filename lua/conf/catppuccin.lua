@@ -199,7 +199,7 @@ require("catppuccin").setup({
 				TSBoolean = { fg = colors.mauve },
 				TSCharacter = { fg = colors.teal },
 				TSCharacterSpecial = { link = "SpecialChar" },
-				TSComment = { fg = "#4C4B16", style = { "italic" } },
+				TSComment = { fg = "#4C763B", style = { "italic" } },
 				TSConditional = { fg = colors.red },
 				TSConstBuiltin = { fg = colors.mauve },
 				TSConstMacro = { fg = colors.mauve },
