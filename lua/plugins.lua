@@ -15,9 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Initialize pluggins
 require("lazy").setup({
-	-- cursor under word colored
-	"nyngwang/murmur.lua",
-
 	-- root dir change
 	-- orgin repo
 	-- "ahmedkhalf/project.nvim",
@@ -70,7 +67,7 @@ require("lazy").setup({
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^6", -- Recommended
+		version = "*", -- Recommended
 		lazy = false,
 	},
 
@@ -94,39 +91,39 @@ require("lazy").setup({
 	"shaunsingh/nord.nvim",
 	"yazeed1s/oh-lucy.nvim",
 	"folke/tokyonight.nvim",
-	"marko-cerovac/material.nvim",
+	-- "marko-cerovac/material.nvim",
 	"sainnhe/everforest",
-	"themercorp/themer.lua",
-	{
-		"hardhackerlabs/theme-vim",
-		config = function()
-			-- vim.cmd.colorscheme("hardhacker")
-		end,
-	},
-	{
-		"AlexvZyl/nordic.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			-- require('nordic').load()
-		end,
-	},
-	{ "Mofiqul/dracula.nvim" },
-	{
-		"0xstepit/flow.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			-- Your configuration options here.
-		},
-	},
-	{
-		"dgox16/oldworld.nvim",
-		lazy = false,
-		priority = 1000,
-	},
+	-- "themercorp/themer.lua",
+	-- {
+	-- 	"hardhackerlabs/theme-vim",
+	-- 	config = function()
+	-- 		-- vim.cmd.colorscheme("hardhacker")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"AlexvZyl/nordic.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- require('nordic').load()
+	-- 	end,
+	-- },
+	-- { "Mofiqul/dracula.nvim" },
+	-- {
+	-- 	"0xstepit/flow.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {
+	-- 		-- Your configuration options here.
+	-- 	},
+	-- },
+	-- {
+	-- 	"dgox16/oldworld.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	"frenzyexists/aquarium-vim",
+	-- "frenzyexists/aquarium-vim",
 
 	-- find and grep
 	"kyazdani42/nvim-web-devicons",
@@ -150,7 +147,7 @@ require("lazy").setup({
 	},
 
 	-- 代码片段，用于cmp自动提示
-	"L3MON4D3/LuaSnip", -- Snippet engine
+	-- "L3MON4D3/LuaSnip", -- Snippet engine
 
 	-- cmp
 	{
@@ -317,18 +314,18 @@ require("lazy").setup({
 	-- cmdline
 	"wookayin/wilder.nvim",
 
-	{
-		"jackMort/ChatGPT.nvim",
-		event = "VeryLazy",
-		-- config = function()
-		-- 	require("chatgpt").setup()
-		-- end,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	},
+	-- {
+	-- 	"jackMort/ChatGPT.nvim",
+	-- 	event = "VeryLazy",
+	-- 	-- config = function()
+	-- 	-- 	require("chatgpt").setup()
+	-- 	-- end,
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- },
 
 	-- dap
 	"theHamsta/nvim-dap-virtual-text",
@@ -363,19 +360,20 @@ require("lazy").setup({
 		end,
 	},
 
-	{
-		"ThePrimeagen/refactoring.nvim",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-		config = function()
-			require("refactoring").setup({})
-		end,
-	},
+	-- {
+	-- 	"ThePrimeagen/refactoring.nvim",
+	-- 	dependencies = {
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 		{ "nvim-treesitter/nvim-treesitter" },
+	-- 		"lewis6991/async.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require("refactoring").setup({})
+	-- 	end,
+	-- },
 
 	-- float term
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	-- { "akinsho/toggleterm.nvim", version = "*", config = true },
 
 	-- git diffent view
 	"sindrets/diffview.nvim",
