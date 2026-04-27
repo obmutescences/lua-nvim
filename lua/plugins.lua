@@ -18,7 +18,7 @@ require("lazy").setup({
 	-- root dir change
 	-- orgin repo
 	-- "ahmedkhalf/project.nvim",
-	"TheLeoP/project.nvim",
+	-- "TheLeoP/project.nvim",
 
 	-- lualine
 	{
