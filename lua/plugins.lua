@@ -157,7 +157,7 @@ require("lazy").setup({
 	},
 
 	-- 代码片段，用于cmp自动提示
-	-- "L3MON4D3/LuaSnip", -- Snippet engine
+	"L3MON4D3/LuaSnip", -- Snippet engine
 
 	-- cmp
 	{
