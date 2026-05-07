@@ -1,8 +1,11 @@
 require("conform").setup({
 	format_on_save = {
 		-- These options will be passed to conform.format()
-		timeout_ms = 500,
+		timeout_ms = 8000,
 		lsp_fallback = true,
+	},
+	formatters = {
+		prettier = { timeout_ms = 10000 }, -- 针对 prettier 单独放宽
 	},
 	formatters_by_ft = {
 		lua = { "stylua" },
