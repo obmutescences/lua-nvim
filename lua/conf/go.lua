@@ -23,7 +23,18 @@ require("go").setup({
 	comment_placeholder = "", -- comment_placeholder your cool placeholder e.g. ﳑ       
 	icons = { breakpoint = "🧘", currentpos = "🏃" }, -- setup to `false` to disable icons setup
 	verbose = false, -- output loginf in messages
-	lsp_cfg = true, -- true: use non-default gopls setup specified in go/lsp.lua
+	lsp_cfg = {
+		settings = {
+			gopls = {
+				analyses = {
+					ST1000 = false, -- 明确禁用这个分析器
+					-- 如果你还在意其他 ST 开头的规则，也可以一并禁用
+					-- ST1003 = false,
+					-- ST1016 = false,
+				},
+			},
+		},
+	}, -- true: use non-default gopls setup specified in go/lsp.lua
 	-- false: do nothing
 	-- if lsp_cfg is a table, merge table with with non-default gopls setup in go/lsp.lua, e.g.
 	--   lsp_cfg = {settings={gopls={matcher='CaseInsensitive', ['local'] = 'your_local_module_path', gofumpt = true }}}
