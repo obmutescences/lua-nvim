@@ -176,34 +176,7 @@ Cmp_config = {
 	},
 	preselect = cmp.PreselectMode.None,
 	formatting = {
-		fields = { "abbr", "kind", "menu" },
-		kind_icons = {
-			Class = " ",
-			Color = " ",
-			Constant = "ﲀ ",
-			Constructor = " ",
-			Enum = "練",
-			EnumMember = " ",
-			Event = " ",
-			Field = " ",
-			File = "",
-			Folder = " ",
-			Function = " ",
-			Interface = "ﰮ ",
-			Keyword = " ",
-			Method = " ",
-			Module = " ",
-			Operator = "",
-			Property = " ",
-			Reference = " ",
-			Snippet = " ",
-			Struct = " ",
-			Text = " ",
-			TypeParameter = " ",
-			Unit = "塞",
-			Value = " ",
-			Variable = " ",
-		},
+		fields = { "abbr", "icon", "kind", "menu" },
 		source_names = {
 			nvim_lsp = "[LSP]",
 			-- emoji = "[Emoji]",
@@ -225,13 +198,24 @@ Cmp_config = {
 		},
 		duplicates_default = 0,
 		format = lspkind.cmp_format({
-			maxwidth = 30,
+			maxwidth = 60,
 			ellipsis_char = "...",
 			mode = "symbol_text",
 			before = function(entry, vim_item)
 				vim_item.menu = Cmp_config.formatting.source_names[entry.source.name]
 				vim_item.dup = Cmp_config.formatting.duplicates[entry.source.name]
 					or Cmp_config.formatting.duplicates_default
+
+				local highlights_info = require("colorful-menu").cmp_highlights(entry)
+
+				-- highlight_info is nil means we are missing the ts parser, it's
+				-- better to fallback to use default `vim_item.abbr`. What this plugin
+				-- offers is two fields: `vim_item.abbr_hl_group` and `vim_item.abbr`.
+				if highlights_info ~= nil then
+					vim_item.abbr_hl_group = highlights_info.highlights
+					vim_item.abbr = highlights_info.text
+				end
+
 				return vim_item
 			end,
 		}),

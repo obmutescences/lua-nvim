@@ -53,6 +53,30 @@ vim.opt.fillchars = {
 -- 	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 -- views can only be fully collapsed with the global statusline
 vim.opt.laststatus = 3
+vim.o.cmdheight = 0
+require("vim._core.ui2").enable({
+	enable = true, -- Whether to enable or disable the UI.
+	msg = { -- Options related to the message module.
+		---@type 'cmd'|'msg' Default message target, either in the
+		---cmdline or in a separate ephemeral message window.
+		---@type string|table<string, 'cmd'|'msg'|'pager'> Default message target
+		---or table mapping |ui-messages| kinds and triggers to a target.
+		targets = "cmd",
+		cmd = { -- Options related to messages in the cmdline window.
+			height = 0.1, -- Maximum height while expanded for messages beyond 'cmdheight'.
+		},
+		dialog = { -- Options related to dialog window.
+			height = 0.1, -- Maximum height.
+		},
+		msg = { -- Options related to msg window.
+			height = 0.5, -- Maximum height.
+			timeout = 4000, -- Time a message is visible in the message window.
+		},
+		pager = { -- Options related to message window.
+			height = 1, -- Maximum height.
+		},
+	},
+})
 
 -- -- neovide
 vim.g.neovide_refresh_rate = 180

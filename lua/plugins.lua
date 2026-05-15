@@ -305,21 +305,21 @@ require("lazy").setup({
 	},
 
 	-- noice
-	{
-		"folke/noice.nvim",
-		enabled = true,
-		opts = {
-			-- add any options here
-		},
-		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
-		},
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	enabled = true,
+	-- 	opts = {
+	-- 		-- add any options here
+	-- 	},
+	-- 	dependencies = {
+	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		-- OPTIONAL:
+	-- 		--   `nvim-notify` is only needed, if you want to use the notification view.
+	-- 		--   If not available, we use `mini` as the fallback
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- },
 
 	-- cmdline
 	"wookayin/wilder.nvim",
@@ -523,4 +523,7 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- colorful cmp menu
+	"xzbdmw/colorful-menu.nvim",
 })
