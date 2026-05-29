@@ -22,7 +22,6 @@ require("conf.lspsaga")
 -- require "conf.tokyonight"
 -- require("conf.chatGPT")
 require("conf.line-diagnostic")
-require("conf.avante")
 require("conf.render-markdown")
 require("conf.catppuccin")
 require("conf.illuminate")
