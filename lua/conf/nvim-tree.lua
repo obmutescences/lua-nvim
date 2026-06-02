@@ -93,6 +93,7 @@ nvim_tree.setup({
 			"target",
 			"Cargo.lock",
 			"package-lock.json",
+			"target",
 		},
 		exclude = {
 			".gitignore",

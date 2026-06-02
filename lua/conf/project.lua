@@ -1,3 +1,3 @@
 require("project").setup({
-	patterns = { ".git", "go.mod", "Cargo.toml", "package.json", "pyproject.toml" },
+	patterns = { ".git", "go.mod", "package.json", "pyproject.toml" },
 })
