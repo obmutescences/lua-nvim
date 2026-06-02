@@ -1,3 +1,5 @@
+local rustacean_server = require("rustaceanvim.config.server")
+
 vim.g.rustaceanvim = {
 	-- Plugin configuration
 	tools = {
@@ -35,11 +37,14 @@ vim.g.rustaceanvim = {
 	-- LSP configuration
 	server = {
 		standalone = true,
-		capabilities = vim.lsp.protocol.make_client_capabilities(),
+		capabilities = vim.tbl_deep_extend(
+			"force",
+			rustacean_server.create_client_capabilities(),
+			require("lsp.handlers").capabilities
+		),
 		on_attach = function(_, bufnr)
 			-- you can also put keymaps in here
-			-- vim.lsp.inlay_hint.enable(bufnr, true)
-			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+			vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 			local opts = { noremap = true, silent = true }
 			vim.api.nvim_buf_set_keymap(
 				bufnr,
@@ -56,7 +61,7 @@ vim.g.rustaceanvim = {
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "<Space>ca", "<Cmd>RustLsp codeAction<CR>", opts)
 		end,
-		settings = {
+		default_settings = {
 			-- rust-analyzer language server configuration
 			["rust-analyzer"] = {
 				lens = {
@@ -79,24 +84,27 @@ vim.g.rustaceanvim = {
 				check = {
 					command = "clippy",
 					features = "all",
-				},
-				checkOnSave = {
-					enable = true,
-					command = "clippy",
 					extraArgs = { "--no-deps" },
 				},
+				checkOnSave = true,
 				cargo = {
-					allFeatures = true,
-					-- loadOutDirsFromCheck = true,
-					runBuildScripts = true,
+					features = "all",
+					targetDir = true,
+					buildScripts = {
+						enable = true,
+					},
+				},
+				procMacro = {
+					enable = true,
 				},
 				diagnostics = {
 					enable = true,
 					experimental = {
-						enable = true,
+						enable = false,
 					},
 				},
 				inlayHints = {
+					maxLength = 25,
 					bindingModeHints = {
 						enable = true,
 					},
@@ -121,7 +129,6 @@ vim.g.rustaceanvim = {
 					lifetimeElisionHints = {
 						enable = false,
 						useParameterNames = false,
-						maxLength = 25,
 					},
 					parameterHints = {
 						enable = true,
@@ -156,7 +163,7 @@ vim.g.rustaceanvim = {
 				},
 			},
 		},
-		-- DAP configuration
-		dap = {},
 	},
+	-- DAP configuration
+	dap = {},
 }
