@@ -42,6 +42,9 @@ nvim_tree.setup({
 	update_cwd = true,
 	sync_root_with_cwd = true,
 	respect_buf_cwd = true,
+	filesystem_watchers = {
+		enable = false,
+	},
 	diagnostics = {
 		enable = true,
 		icons = {
@@ -87,13 +90,11 @@ nvim_tree.setup({
 			".ropeproject",
 			".pytest_cache",
 			"dist",
-			"node_modules",
-			".git",
-			"go.sum",
-			"target",
-			"Cargo.lock",
-			"package-lock.json",
-			"target",
+			"^target$",
+			"^Cargo\\.lock$",
+			"^package%-lock\\.json$",
+			"^go\\.sum$",
+			"^node_modules$",
 		},
 		exclude = {
 			".gitignore",
