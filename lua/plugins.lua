@@ -187,21 +187,50 @@ require("lazy").setup({
 		dependencies = "kyazdani42/nvim-web-devicons",
 	},
 
-	-- Treesitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
-		build = ":TSUpdate",
-	},
-
+	-- Treesitter (lightweight parser management)
 	{
 		"romus204/tree-sitter-manager.nvim",
 		dependencies = {}, -- tree-sitter CLI must be installed system-wide
 		config = function()
+			local ensure_installed = {
+				"bash",
+				"json",
+				"lua",
+				"python",
+				"go",
+				"vim",
+				"gomod",
+				"toml",
+				"yaml",
+				"vue",
+				"html",
+				"http",
+				"javascript",
+				"rust",
+				"markdown",
+				"markdown_inline",
+				"typescript",
+				"proto",
+				"sql",
+				"regex",
+				"gowork",
+				"gosum",
+				"gotmpl",
+				"comment",
+				"latex",
+				"typst",
+			}
 			require("tree-sitter-manager").setup({
-				-- Optional: custom paths
-				-- parser_dir = vim.fn.stdpath("data") .. "/site/parser",
-				-- query_dir = vim.fn.stdpath("data") .. "/site/queries",
+				ensure_installed = ensure_installed,
+				highlight = true,
+				noauto_install = {
+					"lua",
+					"markdown",
+					"markdown_inline",
+					"query",
+					"vim",
+					"vimdoc",
+				},
 			})
 		end,
 	},
