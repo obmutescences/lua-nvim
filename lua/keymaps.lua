@@ -127,6 +127,48 @@ vim.keymap.set("n", "<C-->", function()
 	change_scale_factor_delete(0.05)
 end)
 
+-- highlight symbol (toggle variable highlight in scope)
+-- Use LSP documentHighlight to get references, then apply matchadd/matchdelete
+local _hl_match_ids = nil
+vim.keymap.set("n", "<Leader>k", function()
+	if _hl_match_ids and #_hl_match_ids > 0 then
+		-- toggle off: clear highlights
+		for _, id in ipairs(_hl_match_ids) do
+			pcall(vim.fn.matchdelete, id)
+		end
+		_hl_match_ids = {}
+		return
+	end
+
+	-- toggle on: request LSP highlights and apply
+	local params = vim.lsp.util.make_position_params(0, "utf-8")
+	vim.lsp.buf_request(0, "textDocument/documentHighlight", params, function(err, result, _)
+		if err or not result or #result == 0 then
+			vim.notify("No references found for symbol", vim.log.levels.INFO)
+			return
+		end
+		-- clear any previous
+		if _hl_match_ids then
+			for _, id in ipairs(_hl_match_ids) do
+				pcall(vim.fn.matchdelete, id)
+			end
+		end
+		_hl_match_ids = {}
+		-- local winid = vim.fn.bufwinid(0)
+		for _, ref in ipairs(result) do
+			local r = ref.range
+			local line = r.start.line + 1
+			local col = r.start.character + 1
+			local width = r["end"].character - r.start.character
+			if width < 1 then
+				width = 1
+			end
+			local id = vim.fn.matchaddpos("Visual", { { line, col, width } }, 10)
+			table.insert(_hl_match_ids, id)
+		end
+	end)
+end, { desc = "Toggle highlight current symbol via LSP" })
+
 -- dap
 nnoremap("<LEADER>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
 nnoremap("<LEADER>dc", "<cmd>lua require'dap'.continue()<CR>")

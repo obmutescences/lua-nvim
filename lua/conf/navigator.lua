@@ -138,11 +138,11 @@ require("navigator").setup({
 		-- func = vim.lsp.buf.implementation,
 		-- desc = 'implementation',
 		--  },
-		{
-			key = "<Space>k",
-			func = require("navigator.dochighlight").hi_symbol,
-			desc = "hi_symbol",
-		},
+		-- {
+		-- 	key = "<Space>k",
+		-- 	func = require("navigator.dochighlight").hi_symbol,
+		-- 	desc = "hi_symbol",
+		-- },
 		--  {
 		-- key = '<Space>wa',
 		-- func = require('navigator.workspace').add_workspace_folder,
