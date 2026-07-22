@@ -17,11 +17,11 @@ nnoremap("S", "<cmd>w<cr>")
 -- undo operations
 nnoremap("l", "u")
 
--- make y to copy till the end of the line
-nnoremap("y", "y$")
+-- Y to copy till the end of the line (like D / C behavior)
+nnoremap("Y", "y$")
 
--- copy to system clipboard
-vnoremap("y", '"+y')
+-- copy to system clipboard in visual mode (use Y for yank to clipboard)
+vnoremap("Y", '\"+y')
 
 -- cursor movement
 nnoremap("u", "k")
