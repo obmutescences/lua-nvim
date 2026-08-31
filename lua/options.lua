@@ -107,7 +107,7 @@ vim.g.neovide_scale_factor = 1.0
 vim.g.neovide_floating_shadow = false
 vim.g.neovide_padding_left = 30
 vim.g.neovide_padding_top = 20
-vim.g.neovide_opacity = 0.80
+vim.g.neovide_opacity = 1.0
 vim.g.neovide_normal_opacity = 1
 vim.g.neovide_window_blurred = true
 -- vim.g.transparency = 1
@@ -127,6 +127,12 @@ vim.g.neovide_progress_bar_animation_speed = 200.0
 vim.g.neovide_progress_bar_hide_delay = 0.2
 vim.g.neovide_cursor_cell_color_fallback = true
 -- vim.g.neovide_remember_window_size          = true
+vim.g.neovide_float_transition_enabled = true -- 总开关 (默认 true)
+vim.g.neovide_float_transition_spring = "bouncy" -- "smooth" 临界阻尼弹簧(默认) | "expo" 指数(与窗口位移一致) | "bouncy" 欠阻尼回弹(~20%过冲)
+vim.g.neovide_float_transition_bounce_strength = 0.4 -- 0.0–0.5,默认 0.2
+vim.g.neovide_float_transition_open_length = 0.25 -- 开启时长秒 (默认 0.2)
+vim.g.neovide_float_transition_close_length = 0.10
+vim.g.neovide_cursor_vfx_particle_size = 1.7
 local alpha = function()
 	return string.format("%x", math.floor(255 * 0.8))
 end
