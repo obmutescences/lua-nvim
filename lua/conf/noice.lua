@@ -1,28 +1,10 @@
 require("noice").setup({
 	cmdline = {
-		enabled = false, -- enables the Noice cmdline UI
-		view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-		opts = {}, -- global options for the cmdline. See section on views
-		format = {
-			-- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
-			-- view: (default is cmdline view)
-			-- opts: any options passed to the view
-			-- icon_hl_group: optional hl_group for the icon
-			-- title: set to anything or empty string to hide
-			cmdline = { pattern = "^:", icon = "", lang = "vim" },
-			search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
-			search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
-			filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
-			lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
-			help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
-			input = {}, -- Used by input()
-			-- lua = false, -- to disable a format, set to `false`
-		},
+		-- Noice 命令行 UI 已禁用：命令行补全交给 wilder.nvim，保持经典底部命令行
+		enabled = false,
 	},
 	messages = {
-		-- NOTE: If you enable messages, then the cmdline is enabled automatically.
-		-- This is a current Neovim limitation.
-		enabled = true, -- enables the Noice messages UI
+		enabled = true, -- enables the Noice messages UI（不影响经典 cmdline）
 		view = "notify", -- default view for messages
 		view_error = "notify", -- view for errors
 		view_warn = "notify", -- view for warnings
@@ -30,11 +12,8 @@ require("noice").setup({
 		view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
 	},
 	popupmenu = {
-		enabled = true, -- enables the Noice popupmenu UI
-		---@type 'nui'|'cmp'
-		backend = "nui", -- backend to use to show regular cmdline completions
-		-- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
-		kind_icons = {}, -- set to `false` to disable icons
+		-- 原生补全弹窗已禁用：cmdline 补全由 wilder.nvim 接管，避免与 noice 双弹窗
+		enabled = false,
 	},
 	-- default options for require('noice').redirect
 	-- see the section on Command Redirection
@@ -313,7 +292,15 @@ require("noice").setup({
 			},
 		},
 	}, ---@see section on views
-	routes = {}, --- @see section on routes
+	routes = {
+		-- {
+		-- 	-- nvim 0.11+ 的 :w 保存提示使用 msg_show kind="bufwrite"（旧版是空 kind），
+		-- 	-- noice 默认路由不包含它，补一条让它也显示为右上角通知
+		-- 	filter = { event = "msg_show", kind = "bufwrite" },
+		-- 	view = "notify",
+		-- 	opts = { replace = true, merge = true },
+		-- },
+	}, --- @see section on routes
 	status = {}, --- @see section on statusline components
 	format = {}, --- @see section on formatting
 })

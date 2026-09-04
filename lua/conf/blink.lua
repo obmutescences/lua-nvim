@@ -14,62 +14,21 @@ require("blink.cmp").setup({
 	--
 	-- See :h blink-cmp-config-keymap for defining your own keymap
 	enabled = function()
-		local m = vim.api.nvim_get_mode().mode
-
-		vim.keymap.set("i", "<Tab>", function()
-			local cmp = require("blink.cmp")
-
-			if cmp.is_visible() then
-				return cmp.select_next()
-			end
-
-			if vim.snippet and vim.snippet.active({ direction = 1 }) then
-				return vim.snippet.jump(1)
-			end
-
-			return "\t"
-		end, { expr = true })
-
-		vim.keymap.set("i", "<S-Tab>", function()
-			local cmp = require("blink.cmp")
-
-			if cmp.is_visible() then
-				return cmp.select_prev()
-			end
-
-			return "\t"
-		end, { expr = true })
-
-		vim.keymap.set("i", "<CR>", function()
-			local cmp = require("blink.cmp")
-
-			if cmp.is_visible() then
-				return cmp.select_and_accept()
-			end
-
-			return "\r"
-		end, { expr = true })
-
-		vim.keymap.set("i", "<C-e>", function()
-			local cmp = require("blink.cmp")
-
-			if cmp.is_visible() then
-				return cmp.hide()
-			end
-
-			return ""
-		end, { expr = true })
-
-		return m == "i" -- 仅插入模式（含命令行补全）启用
+		return vim.api.nvim_get_mode().mode == "i" -- 仅插入模式启用（命令行补全已单独禁用）
 	end,
 	keymap = {
 		-- set to 'none' to disable the 'default' preset
 		preset = "enter",
+		-- 自定义覆盖（合并进 preset，同名键覆盖）：
+		-- Tab: 菜单可见时选中下一个（preselect=false 时第一次 Tab 即选中第一项）
+		--      -> 否则跳 snippet -> 否则插入字面 Tab
+		["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+		["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+		-- CR: 有选中则接受选中项，无选中则接受第一项
+		["<CR>"] = { "select_and_accept", "fallback" },
+		["<C-e>"] = { "hide", "fallback" },
 		-- ["<Up>"] = { "select_prev", "fallback" },
 		-- ["<Down>"] = { "select_next", "fallback" },
-		-- ["<C-e>"] = { "hide", "fallback" },
-		-- ["<CR>"] = { "select_and_accept", "fallback" },
-		--
 		-- ["<C-u>"] = { "scroll_documentation_up", "fallback" },
 		-- ["<C-j>"] = { "scroll_documentation_down", "fallback" },
 	},
@@ -88,10 +47,19 @@ require("blink.cmp").setup({
 		documentation = { auto_show = true, auto_show_delay_ms = 700 },
 		list = {
 			max_items = 30,
-			selection = { preselect = true, auto_insert = true },
+			selection = {
+				-- 不自动选中第一项：菜单弹出后无选中，用 Tab 选中
+				preselect = false,
+				-- 选中时不自动插入/预览到缓冲区（避免"选了第一个但实际没补全"）
+				auto_insert = true,
+			},
 		},
 		-- accept = { auto_brackets = { enabled = true } },
 		menu = {
+			-- 输入满 2 个字符才自动弹出补全菜单（手动 <C-space> 不受此限制）
+			-- auto_show = function(ctx)
+			-- 	return #ctx.get_keyword() >= 2
+			-- end,
 			winblend = blend,
 			scrollbar = false,
 			draw = {
@@ -115,7 +83,7 @@ require("blink.cmp").setup({
 	-- Default list of enabled providers defined so that you can extend it
 	-- elsewhere in your config, without redefining it, due to `opts_extend`
 	sources = {
-		default = { "lsp", "buffer", "path" },
+		default = { "lsp", "buffer", "path", "snippets" },
 	},
 
 	cmdline = {
@@ -127,5 +95,5 @@ require("blink.cmp").setup({
 	-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
 	--
 	-- See the fuzzy documentation for more information
-	fuzzy = { implementation = "prefer_rust_with_warning" },
+	fuzzy = { implementation = "rust" },
 })

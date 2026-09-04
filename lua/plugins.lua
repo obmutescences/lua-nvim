@@ -172,13 +172,27 @@ require("lazy").setup({
 		"onsails/lspkind.nvim", -- cmp kind
 		"lukas-reineke/cmp-rg",
 	},
+	-- {
+	-- 	"saghen/blink.cmp",
+	-- 	-- optional: provides snippets for the snippet source
+	-- 	dependencies = { "rafamadriz/friendly-snippets" },
+	--
+	-- 	-- use a release tag to download pre-built binaries
+	-- 	version = "1.*",
+	-- },
+
 	{
 		"saghen/blink.cmp",
-		-- optional: provides snippets for the snippet source
-		dependencies = { "rafamadriz/friendly-snippets" },
-
-		-- use a release tag to download pre-built binaries
-		version = "1.*",
+		dependencies = {
+			"saghen/blink.lib",
+			-- optional: provides snippets for the snippet source
+			"rafamadriz/friendly-snippets",
+		},
+		build = function()
+			-- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
+			-- you can use `gb` in `:Lazy` to rebuild the plugin as needed
+			require("blink.cmp").build():pwait()
+		end,
 	},
 
 	-- NvimTree
@@ -337,9 +351,7 @@ require("lazy").setup({
 	-- {
 	-- 	"folke/noice.nvim",
 	-- 	enabled = true,
-	-- 	opts = {
-	-- 		-- add any options here
-	-- 	},
+	-- 	-- 完整配置在 lua/conf/noice.lua；不写 opts，避免 lazy 自动 setup 造成二次初始化
 	-- 	dependencies = {
 	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 	-- 		"MunifTanjim/nui.nvim",
