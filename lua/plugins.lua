@@ -191,7 +191,18 @@ require("lazy").setup({
 		build = function()
 			-- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
 			-- you can use `gb` in `:Lazy` to rebuild the plugin as needed
-			require("blink.cmp").build():pwait()
+			-- global cargo target-dir (~/.cargo/config.toml) sends artifacts to ~/.cache/target;
+			-- pin CARGO_TARGET_DIR to the plugin's own target/ so blink.cmp's artifact
+			-- lookup (init.lua:109) finds the .so
+			local prev = vim.env.CARGO_TARGET_DIR
+			vim.env.CARGO_TARGET_DIR = vim.fn.stdpath("data") .. "/lazy/blink.cmp/target"
+			local ok, err = pcall(function()
+				require("blink.cmp").build():pwait()
+			end)
+			vim.env.CARGO_TARGET_DIR = prev
+			if not ok then
+				error(err, 0)
+			end
 		end,
 	},
 
