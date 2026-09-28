@@ -214,6 +214,11 @@ require("lazy").setup({
 
 	-- Treesitter (lightweight parser management)
 	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		build = ":TSUpdate",
+	},
+	{
 		"romus204/tree-sitter-manager.nvim",
 		dependencies = {}, -- tree-sitter CLI must be installed system-wide
 		config = function()
@@ -533,11 +538,18 @@ require("lazy").setup({
 	"xzbdmw/colorful-menu.nvim",
 
 	-- markdown
+	-- {
+	-- 	"MeanderingProgrammer/render-markdown.nvim",
+	-- 	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
+	-- 	-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+	-- 	-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+	-- 	opts = {},
+	-- },
+
 	{
-		"MeanderingProgrammer/render-markdown.nvim",
-		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
-		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
-		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		"blackhat-7/vellum.nvim",
+		ft = "markdown",
+		keys = { { "<leader>mp", "<cmd>Vellum<cr>", desc = "Markdown preview" } },
 		opts = {},
 	},
 })
